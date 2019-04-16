@@ -1,0 +1,17 @@
+import React, { Component } from 'react';
+
+class Nav extends Component {
+    render() {
+        return (
+        <div className="nav">
+            <nav>
+                {/* <img className="logo" src="" alt="logo"></img> */}
+                <div className="logo">Song Manager</div>
+                <div></div>
+            </nav>
+        </div>
+        )
+    }
+}
+
+export default Nav;
