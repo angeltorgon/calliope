@@ -6,12 +6,12 @@ class Nav extends Component {
         <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <div className="logo">Song Manager</div>
-                <div>
-                    <a>Blog</a>
-                    <a>Learn</a>
-                    <a>About Us</a>
+                <div className="link-container">
+                    <a className="link">Blog</a>
+                    <a className="link">Learn</a>
+                    <a className="link">About Us</a>
                 </div>
-                <div className="CTA">
+                <div className="cta-container">
                     <a>Sign up</a>
                     <a>Log in</a>
                 </div>
@@ -19,5 +19,4 @@ class Nav extends Component {
         )
     }
 }
-
 export default Nav;
