@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 class Nav extends Component {
     render() {
         return (
-        <div className="nav">
-            <nav>
+        <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <div className="logo">Song Manager</div>
                 <div>
@@ -16,8 +15,7 @@ class Nav extends Component {
                     <a>Sign up</a>
                     <a>Log in</a>
                 </div>
-            </nav>
-        </div>
+        </nav>
         )
     }
 }
