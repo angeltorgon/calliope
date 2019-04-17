@@ -180,7 +180,9 @@ img {
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 15%;
+  width: 20%;
+  font-weight: 600;
+  font-size: 25px;
 }
 .nav .link-container {
   display: flex;
@@ -196,6 +198,7 @@ img {
   height: 100%;
   text-align: center;
   padding-top: 40px;
+  font-size: 18px;
 }
 .nav .cta-container {
   display: flex;
@@ -209,4 +212,5 @@ img {
   width: 50%;
   height: 100%;
   padding-top: 40px;
+  font-size: 18px;
 }
