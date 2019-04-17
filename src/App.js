@@ -7,7 +7,7 @@ import Login from './views/auth/Login';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app-container">
         <Nav/>
         <Route path="/login" render={Login}/>
       </div>
