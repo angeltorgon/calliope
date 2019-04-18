@@ -13,8 +13,8 @@ class Nav extends Component {
                     <a className="link">About Us</a>
                 </div>
                 <div className="cta-container">
-                    <NavLink to="/signup" className="nav-cta">Sign up</NavLink>
-                    <NavLink to="/login" className="nav-cta">Log in</NavLink>
+                    <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
+                    <NavLink to="/login" className="nav-cta login">Log in</NavLink>
                 </div>
         </nav>
         )

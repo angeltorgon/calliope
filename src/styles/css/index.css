@@ -217,6 +217,19 @@ img {
   font-size: 18px;
   text-decoration: none;
   color: black;
+  text-align: center;
+  transition: 0.5s;
+}
+.nav .cta-container .signup {
+  border: 1px solid lightgray;
+  background-color: #32b9ee;
+  color: white;
+}
+.nav .cta-container .login {
+  transition: 0.5s;
+}
+.nav .cta-container .login:hover {
+  background-color: lightgray;
 }
 .home-container {
   width: 100%;
