@@ -230,6 +230,12 @@ img {
   overflow: hidden;
   object-fit: cover;
 }
+.home-container .welcome-text {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 60px;
+  padding: 50px;
+}
 .form-container {
   display: flex;
   align-items: center;
