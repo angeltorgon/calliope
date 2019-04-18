@@ -183,6 +183,8 @@ img {
   width: 30%;
   font-weight: 600;
   font-size: 40px;
+  text-decoration: none;
+  color: black;
 }
 .nav .link-container {
   display: flex;
@@ -213,6 +215,8 @@ img {
   height: 100%;
   padding-top: 40px;
   font-size: 18px;
+  text-decoration: none;
+  color: black;
 }
 .form-container {
   display: flex;
@@ -232,6 +236,9 @@ img {
   height: 50%;
   max-width: 80%;
   flex-direction: column;
+}
+.form-container form label {
+  padding-top: 10px;
 }
 .form-container form input {
   width: 100%;

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Login() {
+function Login() {
     return (
         <div className="form-container">
             <h2>Log in</h2>
@@ -12,3 +12,5 @@ export default function Login() {
         </div>
     )
 }
+
+export default Login;
