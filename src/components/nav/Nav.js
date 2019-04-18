@@ -5,7 +5,7 @@ class Nav extends Component {
         return (
         <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
-                <div className="logo">Song Manager</div>
+                <h2 className="logo">Song Manager</h2>
                 <div className="link-container">
                     <a className="link">Blog</a>
                     <a className="link">Learn</a>
