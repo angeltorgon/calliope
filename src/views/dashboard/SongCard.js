@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import SongContext from '../../context/song-context';
 
 export default function SongCard() {
     return (

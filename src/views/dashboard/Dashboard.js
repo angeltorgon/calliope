@@ -14,11 +14,16 @@ export default function Dashboard() {
         songList: []
     });
 
+    const addSong = song => {console.log("Adding song..")};
+    
+    const deleteSong = songId => {console.log("Deleting song.. ")};
 
     return (
         <SongContext.Provider value={{
             songs: song.songs,
-            songList: song.songList
+            songList: song.songList,
+            addSong: addSong,
+            deleteSong: deleteSong
         }}>
             <div>
                 <SongCard/>
