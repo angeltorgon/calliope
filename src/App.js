@@ -5,7 +5,7 @@ import Nav from './components/nav/Nav';
 import Login from './views/auth/Login';
 import Signup from './views/auth/Signup';
 import Home from './views/home/Home';
-import User from './views/dashboard/User';
+import Dashboard from './views/dashboard/Dashboard';
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
       <div className="app-container">
         <Nav/>
         <Route exact path="/" render={Home}/>
-        <User/>
+        <Route path="/user" render={Dashboard}/>
         <Route path="/login" render={Login}/>
         <Route path="/signup" render={Signup}/>
       </div>
