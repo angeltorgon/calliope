@@ -20,9 +20,8 @@ export default function Dashboard() {
     // const deleteSong = songId => {console.log("Deleting song.. ")};
 
     return (
-       
-            <div>
-                {songList.map( song => <SongCard song={song}/> )}
-            </div>
+        <div>
+            {songList.map( song => <SongCard song={song}/> )}
+        </div>
   )
 }
