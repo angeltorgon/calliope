@@ -8,9 +8,9 @@ class Nav extends Component {
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <NavLink to="/" className="logo">Song Manager</NavLink>
                 <div className="link-container">
-                    <a className="link">Blog</a>
-                    <a className="link">Learn</a>
-                    <a className="link">About Us</a>
+                    <div className="link">Blog</div>
+                    <div className="link">Learn</div>
+                    <div className="link">About Us</div>
                 </div>
                 <div className="cta-container">
                     <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
