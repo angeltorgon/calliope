@@ -10,7 +10,6 @@ export default function SongCard(props) {
             <h2 className="card-title">{song}</h2>
             <h2 className="card-artist" >{artist}</h2>
             <a href={`${link}`} className="card-title" >View on YouTube</a>
-            <p>song</p>
         </div>
     )
 }

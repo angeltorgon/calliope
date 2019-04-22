@@ -12,10 +12,10 @@ const songListDummy = [
 
 function SongList() {
 
-    // const [song, setSong] = useState("song")
+    const [songList, setSongList] = useState(songListDummy)
     return (
         <div>
-        {songListDummy.map( (song, index) => <SongCard key={index} song={song}/> )}
+        {songList.map( (song, index) => <SongCard key={index} song={song}/> )}
         </div>
     )
 }
