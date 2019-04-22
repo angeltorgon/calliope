@@ -286,3 +286,12 @@ img {
   border-radius: 5px;
   font-size: 16px;
 }
+.song-card {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  margin: 60px auto;
+  justify-content: space-around;
+}
