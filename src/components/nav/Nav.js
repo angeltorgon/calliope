@@ -20,13 +20,13 @@ function Nav() {
                 </div>
                 {context.loggedIn ? 
                 <div className="cta-container">
-                        <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
-                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
+                    <NavLink to="/profile" className="nav-cta login">Profile</NavLink>
+                    <NavLink to="/settings" className="nav-cta login">Settings</NavLink>
                 </div>
                 : 
                 <div className="cta-container">
-                    <NavLink to="/profile" className="nav-cta login">Profile</NavLink>
-                    <NavLink to="/settings" className="nav-cta login">Settings</NavLink>
+                        <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
+                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
                 </div>
             }
         </nav>
