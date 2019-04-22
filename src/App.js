@@ -5,7 +5,7 @@ import Nav from './components/nav/Nav';
 import Login from './views/auth/Login';
 import Signup from './views/auth/Signup';
 import Home from './views/home/Home';
-import Dashboard from './views/dashboard/Dashboard';
+import Dashboard from './views/dashboard/SongList';
 
 class App extends Component {
   render() {
