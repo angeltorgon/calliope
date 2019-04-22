@@ -4,7 +4,7 @@ import SongCard from './SongCard';
 import SongContext from '../../context/song-context';
 
 function Dashboard() {
-    const [ song, setSong ] = useState();
+    // const [ song, setSong ] = useState();
 
     // const addSong = song => {console.log("Adding song..")};
     
