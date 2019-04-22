@@ -11,11 +11,10 @@ function Dashboard() {
     // const deleteSong = songId => {console.log("Deleting song.. ")};
 
     return (
-        <SongContext.Provider>
+       
             <div>
                 <SongCard/>
             </div>
-        </ SongContext.Provider>
   )
 }
 
