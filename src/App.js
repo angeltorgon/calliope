@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
         <UserContext.Provider value={{
-          loggedIn: false
+          loggedIn: true
       }}>
           <div className="app-container">
             <Nav/>
