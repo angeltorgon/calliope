@@ -11,9 +11,6 @@ import Dashboard from './views/dashboard/Dashboard';
 class App extends Component {
   render() {
     return (
-        <UserContext.Provider value={{
-          loggedIn: true
-      }}>
           <div className="app-container">
             <Nav/>
             <Route exact path="/" render={Home}/>
@@ -21,7 +18,6 @@ class App extends Component {
             <Route path="/login" render={Login}/>
             <Route path="/signup" render={Signup}/>
           </div>
-      </UserContext.Provider>
     );
   }
 }
