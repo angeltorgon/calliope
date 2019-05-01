@@ -12,7 +12,7 @@ function Nav() {
     return (
         <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
-                <NavLink to="/dashboard" className="logo">Song Manager</NavLink>
+                <NavLink to="/dashboard" className="logo">Calliope</NavLink>
                 <div className="link-container">
                     <div className="link">Blog</div>
                     <div className="link">Learn</div>
