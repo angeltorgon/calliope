@@ -222,8 +222,11 @@ img {
 }
 .nav .cta-container .signup {
   border: 1px solid lightgray;
-  background-color: #e68686;
   color: white;
+  background-color: #ac5e5e;
+}
+.nav .cta-container .signup:hover {
+  background-color: #a84949;
 }
 .nav .cta-container .login {
   transition: 0.5s;

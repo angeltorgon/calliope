@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import SongContext from '../../context/song-context';
 
-export default function SongCard(props) {
+export default function PoemCard(props) {
     const [ title, setTitle ] = useState(props.poem.title);
     const [ poet, setPoet ] = useState(props.poem.poet);
     const [ likes, setLies ] = useState(props.poem.likes);
