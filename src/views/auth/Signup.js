@@ -1,6 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react';
 
 function Signup() {
+
+    const [ firstName, setFirstName ] = useState('');
+    const [ lastName, setLastName ] = useState('');
+    const [ username, setUsername ] = useState('');
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
+
+    const handleSubmit = function() {
+        console.log({})
+    }
+
     return (
         <div className="form-container">
             <h2>Sign up</h2>
