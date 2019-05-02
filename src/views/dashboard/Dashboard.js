@@ -1,10 +1,10 @@
 import React from 'react';
-import SongList from './SongList';
+import PoemList from './PoemList';
 
 export default function Dashboard() {
   return (
     <div>
-      <SongList />
+      <PoemList />
     </div>
   )
 }

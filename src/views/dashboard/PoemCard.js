@@ -6,6 +6,7 @@ export default function SongCard(props) {
     const [ poet, setPoet ] = useState(props.song.poet);
     const [ likes, setLies ] = useState(props.song.likes);
     const [ text, setText ] = useState(props.song.text);
+    
     return (
         <div className="song-card">
             <h2 className="card-title">{title}</h2>
