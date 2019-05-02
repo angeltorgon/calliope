@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function Signup() {
+function Signup(props) {
 
     const [ firstName, setFirstName ] = useState('');
     const [ lastName, setLastName ] = useState('');
@@ -10,7 +10,7 @@ function Signup() {
 
     const handleSubmit = function(e) {
         e.preventDefault();
-        console.log({firstName, lastName, useState,email, password});
+        console.log({firstName, lastName, useState,email, password}, this.props);
     }
 
     return (

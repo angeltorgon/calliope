@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
-export default function Login() {
+export default function Login(props) {
   
   const [ email, setEmail ] = useState(''); 
   const [ password, setPassword ] = useState(''); 
 
   const handleSubmit = function(e) {
     e.preventDefault();
-    console.log({email, password})
+    console.log({email, password}, props)
+    props.history.push("/dashboard");
   }
   
   return (
