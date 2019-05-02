@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import UserContext from '../../context/user-context';
+import UserContext from '../../../context/user-context';
 
 function Nav() {
     const context = useContext(UserContext);
