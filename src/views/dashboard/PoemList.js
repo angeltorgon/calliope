@@ -8,7 +8,7 @@ function SongList() {
     const [poemList, setPoemList] = useState(poems);
     return (
         <div>
-        {poemList.map( (poem, index) => <PoemCard key={index} song={poem}/> )}
+        {poemList.map( (poem, index) => <PoemCard key={index} poem={poem}/> )}
         </div>
     )
 }
