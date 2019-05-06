@@ -1,13 +1,13 @@
 
 
 
-const initialState = {
-
+export const initialState = {
+    hello: "hello"
 }
 
-export const reducer = function(initialState, action) {
+export const red = (initialState, action) => {
     switch (action.type) {
         case 'SAY_HELLO':
-            return { greeting: "hello"}
+            return { greeting: "hello now"}
     }
 }
