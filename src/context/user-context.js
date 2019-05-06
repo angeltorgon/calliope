@@ -5,5 +5,5 @@ export default React.createContext({
     astName: 'martin',
     userName: 'stevon',
     email: 'stevon@gmail.com',
-    loggedIn: false
+    loggedIn: true,
 });

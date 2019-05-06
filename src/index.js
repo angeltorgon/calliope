@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import './styles/css/index.css';
 import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
+const initialState = { act: 'no'}
+
+function reducer(initialState, action) {
+    switch (action.type) {
+        case 'act':
+            return {act: 'act'}
+    }
+}
+
+const store = createStore(reducer);
+
 ReactDOM.render(
     <Router>
-        <App /> 
+        <Provider store={store}>
+            <App /> 
+        </Provider>
     </Router>,
  document.getElementById('root'));
 
