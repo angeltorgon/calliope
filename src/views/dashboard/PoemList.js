@@ -4,11 +4,11 @@ import poemContext from '../../context/poem-context';
 
 
 function SongList() {
-    const poems = useContext(poemContext);
-    const [poemList, setPoemList] = useState(poems);
+    // const poems = useContext(poemContext);
+    // const [poemList, setPoemList] = useState(poems);
     return (
         <div>
-        {poemList.map( (poem, index) => <PoemCard key={index} poem={poem}/> )}
+        {/* {poemList.map( (poem, index) => <PoemCard key={index} poem={poem}/> )} */}
         </div>
     )
 }
