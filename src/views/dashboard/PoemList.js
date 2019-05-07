@@ -8,14 +8,10 @@ function SongList() {
     // const poems = useContext(poemContext);
     // const [poemList, setPoemList] = useState(poems);
     const [state, dispatch] = useReducer(red, initialState);
-    console.log(state)
-
-    
 
     return (
         <div onClick={() => dispatch({type:'SAY_HELLO'})}>
-        {/* {poemList.map( (poem, index) => <PoemCard key={index} poem={poem}/> )} */}
-            <h1>Greeting: {state.greeting}</h1>
+        {state.poems.map( (poem, index) => <PoemCard key={index} poem={poem}/> )}
         </div>
     )
 }
