@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import SongContext from '../../context/song-context';
 
 export default function PoemCard(props) {
     const [ title, setTitle ] = useState(props.poem.title);

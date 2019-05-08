@@ -30,9 +30,12 @@ export const initialState = {
     ]
 }
 
-export const red = (initialState, action) => {
+export const red = (state, action) => {
+    console.log(action);
     switch (action.type) {
-        case 'SAY_HELLO':
-            return { poems: initialState.poems}
+        case 'FETCH_POEMS':
+            return action.payload;
+        default: 
+            return state;
     }
 }

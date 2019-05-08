@@ -1,17 +1,15 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import UserContext from '../../../context/user-context';
 
 function Nav() {
-    const context = useContext(UserContext);
 
     useEffect(() => {
-        console.log(context.loggedIn)
+        console.log("hello")
     })
 
     return (
         <>
-        {context.loggedIn ? 
+        {true ? 
             <nav className="nav">
                     {/* <img className="logo" src="" alt="logo"></img> */}
                     <div to="/dashboard" className="logo">Calliope</div>
