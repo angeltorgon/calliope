@@ -3,13 +3,14 @@ import {
 } from '../actions/auth';
 
 const initialState = {
-    gretting: ""
+    greeting: ""
 }
 
 export const authReducer = (state = initialState, action ) => {
-    console.log(action)
     switch (action.type) {
         case SAY_HELLO:
-            return {greeting:"hello"}
+            return {greeting: "hello"};
+        default:
+            return {...state}
     }
 }

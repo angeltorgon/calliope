@@ -1,16 +1,25 @@
 import React, { useState, useContext, useReducer, useEffect } from 'react';
+
+import { connect } from 'react-redux';
 import PoemCard from './PoemCard';
 
-import { sayHello } from '../../store/actions/auth'
+import { sayHello } from '../../store/actions/auth';
 
 
-function SongList() {
-
+function SongList(props) {
+    console.log(props)
     return (
         <div >
-            "hello"
+            {props.greeting}
         </div>
     )
 }
 
-export default SongList;
+const mapStateToProps = state => {
+    console.log(state)
+    return { ...state }
+}
+
+
+export default connect(mapStateToProps, {sayHello})(SongList);
+

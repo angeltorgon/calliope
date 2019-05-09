@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 function Nav() {
 
     useEffect(() => {
-        console.log("hello")
+        console.log("useEffect works!")
     })
 
     return (

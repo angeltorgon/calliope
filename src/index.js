@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
@@ -12,16 +12,8 @@ import App from './App';
 import './styles/css/index.css';
 // import * as serviceWorker from './serviceWorker';
 
-const initialState = { act: 'no'}
 
-function reducer(initialState, action) {
-    switch (action.type) {
-        case 'act':
-            return {act: 'act'}
-    }
-}
-
-const store = createStore(authReducer, applyMiddleware(thunk));
+const store = createStore(authReducer);
 
 ReactDOM.render(
     <Router>
