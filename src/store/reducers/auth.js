@@ -2,8 +2,10 @@ import {
     SAY_HELLO
 } from '../actions/auth';
 
+import { poems } from '../../context/poem-context';
+
 const initialState = {
-    greeting: ""
+    poems
 }
 
 export const authReducer = (state = initialState, action ) => {

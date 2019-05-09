@@ -14,7 +14,7 @@ function Nav() {
                     {/* <img className="logo" src="" alt="logo"></img> */}
                     <div to="/dashboard" className="logo">Calliope</div>
                     <div className="link-container">
-                        <NavLink to="/dashboard" className="link">Dashboard</NavLink>
+                        <NavLink to="/dashboard" className="link">Feed</NavLink>
                     </div>
                     
                     <div className="cta-container">

@@ -7,16 +7,17 @@ import { sayHello } from '../../store/actions/auth';
 
 
 function SongList(props) {
-    console.log(props)
+    console.log(props.poems)
     return (
-        <div >
-            {props.greeting}
+        <div>
+            {props.poems.poems.map( poem => (
+                <h1>{poem.title}</h1>
+            ))}
         </div>
     )
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     return { ...state }
 }
 
