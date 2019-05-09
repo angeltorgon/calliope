@@ -6,12 +6,13 @@ import PoemCard from './PoemCard';
 import { sayHello } from '../../store/actions/auth';
 
 
+
 function SongList(props) {
     console.log(props.poems)
     return (
         <div>
-            {props.poems.poems.map( poem => (
-                <h1>{poem.title}</h1>
+            {props.poems.map( poem => (
+                <PoemCard poem={poem}/>
             ))}
         </div>
     )
