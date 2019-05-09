@@ -1,6 +1,6 @@
 import {
-    SAY_HELLO
-} from '../actions/auth';
+    SIGN_UP
+} from '../actions';
 
 import { poems } from './dummy-poems';
 
@@ -10,7 +10,7 @@ const initialState = {
 
 export const authReducer = (state = initialState, action ) => {
     switch (action.type) {
-        case SAY_HELLO:
+        case SIGN_UP:
             return {greeting: "hello"};
         default:
             return {...state}

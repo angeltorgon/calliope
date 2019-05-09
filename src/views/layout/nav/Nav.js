@@ -11,16 +11,16 @@ function Nav() {
         <>
         {false ? 
             <nav className="nav">
-                    {/* <img className="logo" src="" alt="logo"></img> */}
-                    <div to="/dashboard" className="logo">Calliope</div>
-                    <div className="link-container">
-                        <NavLink to="/dashboard" className="link">Feed</NavLink>
-                    </div>
-                    
-                    <div className="cta-container">
-                        <NavLink to="/profile" className="nav-cta login">Profile</NavLink>
-                        <NavLink to="/settings" className="nav-cta login">Settings</NavLink>
-                    </div>
+                {/* <img className="logo" src="" alt="logo"></img> */}
+                <div to="/dashboard" className="logo">Calliope</div>
+                <div className="link-container">
+                    <NavLink to="/dashboard" className="link">Feed</NavLink>
+                </div>
+                
+                <div className="cta-container">
+                    <NavLink to="/profile" className="nav-cta login">Profile</NavLink>
+                    <NavLink to="/settings" className="nav-cta login">Settings</NavLink>
+                </div>
             </nav>
         :
             <nav className="nav">

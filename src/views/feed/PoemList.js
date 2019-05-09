@@ -3,7 +3,7 @@ import React, { useState, useContext, useReducer, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PoemCard from './PoemCard';
 
-import { sayHello } from '../../store/actions/auth';
+import { sayHello } from '../../store/actions';
 
 
 
