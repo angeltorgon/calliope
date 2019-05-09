@@ -2,7 +2,7 @@ import {
     SAY_HELLO
 } from '../actions/auth';
 
-import { poems } from '../../context/poem-context';
+import { poems } from './dummy-poems';
 
 const initialState = {
     poems

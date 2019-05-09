@@ -8,7 +8,6 @@ import { sayHello } from '../../store/actions/auth';
 
 
 function SongList(props) {
-    console.log(props.poems)
     return (
         <div>
             {props.poems.map( poem => (

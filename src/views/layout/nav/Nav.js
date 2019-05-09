@@ -9,7 +9,7 @@ function Nav() {
 
     return (
         <>
-        {true ? 
+        {false ? 
             <nav className="nav">
                     {/* <img className="logo" src="" alt="logo"></img> */}
                     <div to="/dashboard" className="logo">Calliope</div>
