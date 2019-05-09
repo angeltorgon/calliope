@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { connect } from 'react-redux';
+import { signUp } from '../../store/actions';
 
 function Signup(props) {
 
@@ -10,7 +12,7 @@ function Signup(props) {
 
     const handleSubmit = function(e) {
         e.preventDefault();
-        console.log({firstName, lastName, useState,email, password}, this.props);
+        props.signUp({firstName, lastName, username, email, password})
     }
 
     return (
@@ -28,4 +30,8 @@ function Signup(props) {
   )
 }
 
-export default Signup;
+const mapStateToProps = (state) => {
+    return {}
+}
+
+export default connect(mapStateToProps, {signUp})(Signup);
