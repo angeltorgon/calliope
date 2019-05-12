@@ -44,7 +44,6 @@ function Nav(props) {
 }
 
 const mapStateToProps = state => {
-    console.log(state.authReducer)
     return {
         isLoggedIn: state.authReducer.isLoggedIn
     }
