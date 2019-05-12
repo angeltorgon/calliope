@@ -26,7 +26,7 @@ export const logIn = (credentials) => dispatch => {
     credentials)
     .then( res => {
         console.log(res)
-        // dispatch({type: SIGN_UP, payload: res})
+        dispatch({type: LOG_IN, payload: res})
     })
     .catch( err => console.log(err))
 }
