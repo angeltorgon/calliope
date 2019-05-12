@@ -6,7 +6,8 @@ import {
 import { poems } from './dummy-poems';
 
 const initialState = {
-    poems,
+    poems: poems,
+    isLoggedIn: false
 }
 
 export const authReducer = (state = initialState, action ) => {
@@ -14,8 +15,8 @@ export const authReducer = (state = initialState, action ) => {
         case SIGN_UP:
             return {greeting: "hello"};
         case LOG_IN:
-            return {greeting: "hello"}
+            return {...state, isLoggedIn: true}
         default:
-            return {...state}
+            return {state}
     }
 }

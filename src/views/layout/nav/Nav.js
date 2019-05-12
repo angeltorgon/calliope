@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-function Nav() {
+function Nav(props) {
 
     useEffect(() => {
-        console.log("useEffect works!")
-    })
+        console.log(props)
+    }, [])
 
     return (
         <>
-        {false ? 
+        {props.isLoggedIn ? 
             <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <div to="/dashboard" className="logo">Calliope</div>
@@ -41,4 +42,11 @@ function Nav() {
         </>
     )
 }
-export default Nav;
+
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: state.authReducer.state.isLoggedIn
+    }
+}
+
+export default connect(mapStateToProps, {})(Nav);

@@ -27,8 +27,4 @@ function Login(props) {
   )
 }
 
-const mapStateToProps = state => {
-  return {}
-}
-
 export default connect(null, { logIn } )(Login);

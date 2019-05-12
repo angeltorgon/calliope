@@ -8,6 +8,11 @@ import { signUp } from '../../store/actions';
 
 
 function SongList(props) {
+
+    useEffect(() => {
+        console.log(props)
+    }, [])
+
     return (
         <div>
             {props.poems.map( poem => (
@@ -18,7 +23,8 @@ function SongList(props) {
 }
 
 const mapStateToProps = state => {
-    return { ...state }
+    // console.log(state.authReducer)
+    return { poems: state.authReducer.state.poems }
 }
 
 

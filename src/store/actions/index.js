@@ -20,7 +20,6 @@ export const signUp = (userInfo) => dispatch => {
 }
 
 export const logIn = (credentials) => dispatch => {
-    console.log(credentials)
     axios
     .post('http://localhost:5000/api/auth/login', 
     credentials)

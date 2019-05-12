@@ -30,8 +30,5 @@ function Signup(props) {
   )
 }
 
-const mapStateToProps = (state) => {
-    return {}
-}
 
-export default connect(mapStateToProps, {signUp})(Signup);
+export default connect(null, {signUp})(Signup);
