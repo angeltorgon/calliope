@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom';
 function Nav(props) {
 
     useEffect(() => {
-        console.log(props)
-    }, [])
+        console.log(props.isLoggedIn)
+    })
 
     return (
         <>
@@ -44,9 +44,10 @@ function Nav(props) {
 }
 
 const mapStateToProps = state => {
+    console.log(state)
     return {
         isLoggedIn: state.authReducer.state.isLoggedIn
     }
 }
 
-export default connect(mapStateToProps, {})(Nav);
+export default connect(mapStateToProps)(Nav);

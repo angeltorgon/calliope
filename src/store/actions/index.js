@@ -24,7 +24,7 @@ export const logIn = (credentials) => dispatch => {
     .post('http://localhost:5000/api/auth/login', 
     credentials)
     .then( res => {
-        console.log(res)
+        // console.log(res)
         dispatch({type: LOG_IN, payload: res})
     })
     .catch( err => console.log(err))

@@ -9,7 +9,6 @@ function Login(props) {
   const [ password, setPassword ] = useState(''); 
 
   const handleSubmit = function(e) {
-    console.log(props)
     e.preventDefault();
     props.logIn({username, password})
     props.history.push("/dashboard");

@@ -9,14 +9,14 @@ import { signUp } from '../../store/actions';
 
 function SongList(props) {
 
-    useEffect(() => {
-        console.log(props)
-    }, [])
+    // useEffect(() => {
+    //     console.log(props)
+    // }, [])
 
     return (
         <div>
             {props.poems.map( poem => (
-                <PoemCard poem={poem}/>
+                <PoemCard key={poem.id} poem={poem}/>
             ))}
         </div>
     )
