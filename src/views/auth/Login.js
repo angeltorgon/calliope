@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
-export default function Login(props) {
+import { logIn } from '../../store/actions';
+
+function Login(props) {
   
-  const [ email, setEmail ] = useState(''); 
+  const [ username, setUsername ] = useState(''); 
   const [ password, setPassword ] = useState(''); 
 
   const handleSubmit = function(e) {
+    console.log(props)
     e.preventDefault();
-    
+    props.logIn({username, password})
     props.history.push("/dashboard");
   }
   
@@ -15,10 +19,16 @@ export default function Login(props) {
     <div className="form-container">
     <h2>Log In</h2>
     <form className="form" onSubmit={handleSubmit}>
-        <input onChange={(e) => setEmail(e.target.value)} value={email} type="text" placeholder="email"></input>
+        <input onChange={(e) => setUsername(e.target.value)} value={username} type="text" placeholder="username"></input>
         <input onChange={(e) => setPassword(e.target.value)} value={password} type="text" placeholder="password"></input>
         <button>Sign up</button>
     </form>
 </div>
   )
 }
+
+const mapStateToProps = state => {
+  return {}
+}
+
+export default connect(null, { logIn } )(Login);
