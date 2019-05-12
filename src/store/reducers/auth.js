@@ -5,7 +5,7 @@ import {
 import { poems } from './dummy-poems';
 
 const initialState = {
-    poems
+    poems,
 }
 
 export const authReducer = (state = initialState, action ) => {

@@ -7,7 +7,7 @@ export default function Login(props) {
 
   const handleSubmit = function(e) {
     e.preventDefault();
-    console.log({email, password}, props)
+    
     props.history.push("/dashboard");
   }
   
