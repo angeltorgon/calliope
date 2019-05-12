@@ -24,7 +24,7 @@ function SongList(props) {
 
 const mapStateToProps = state => {
     // console.log(state.authReducer)
-    return { poems: state.authReducer.state.poems }
+    return { poems: state.authReducer.poems }
 }
 
 

@@ -11,12 +11,13 @@ const initialState = {
 }
 
 export const authReducer = (state = initialState, action ) => {
+    console.log(state)
     switch (action.type) {
         case SIGN_UP:
             return {greeting: "hello"};
         case LOG_IN:
             return {...state, isLoggedIn: true}
         default:
-            return {state}
+            return state
     }
 }

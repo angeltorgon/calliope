@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 function Nav(props) {
 
-    useEffect(() => {
-        console.log(props.isLoggedIn)
-    })
+    // useEffect(() => {
+    //     console.log(props.isLoggedIn)
+    // })
 
     return (
         <>
-        {props.isLoggedIn ? 
+        { props.isLoggedIn ? 
             <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <div to="/dashboard" className="logo">Calliope</div>
@@ -44,9 +44,9 @@ function Nav(props) {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
+    console.log(state.authReducer)
     return {
-        isLoggedIn: state.authReducer.state.isLoggedIn
+        isLoggedIn: state.authReducer.isLoggedIn
     }
 }
 
