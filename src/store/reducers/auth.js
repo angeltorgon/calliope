@@ -1,7 +1,8 @@
 import {
     SIGN_UP,
     LOGGING_IN,
-    LOG_IN
+    LOG_IN,
+    INVALID_CREDENTIALS
 } from '../actions';
 
 import { poems } from './dummy-poems';

@@ -3,6 +3,7 @@ import axios from 'axios';
 export const SIGN_UP = 'SIGN_UP';
 export const LOG_IN = 'LOG_IN';
 export const LOGGING_IN = 'LOGGING_IN';
+export const INVALID_CREDENTIALS = 'INVALID_CREDENTIALS';
 
 // export const sayHello = () => dispatch => {
 //     dispatch({type: SIGN_UP});
@@ -30,7 +31,11 @@ export const logIn = (credentials) => dispatch => {
     credentials)
     .then( res => {
         console.log(res.data.token)
-        dispatch({type: LOG_IN, payload: res})
+        if(!res.data.token) {
+            dispatch({type: INVALID_CREDENTIALS})
+        } else {
+            dispatch({type: LOG_IN, payload: res})
+        }
     })
     .catch( err => console.log(err))
 }
