@@ -5,6 +5,7 @@ export const LOG_IN = 'LOG_IN';
 export const LOGGING_IN = 'LOGGING_IN';
 export const INVALID_CREDENTIALS = 'INVALID_CREDENTIALS';
 export const FETCHING_POEMS = 'FETCHING_POEMS';
+export const FETCHED_POEMS = 'FETCHED_POEMS';
 
 // export const sayHello = () => dispatch => {
 //     dispatch({type: SIGN_UP});
@@ -45,7 +46,8 @@ export const fetchPoems = () => dispatch => {
     axios
     .get('http://localhost:5000/api/poem/', {headers: {Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJpY2siLCJpYXQiOjE1NTc4OTExNDcsImV4cCI6MTU1Nzg5ODM0N30.3Rg4WHAPrJXS9YwQMZ7vD_31-2jTM-OuUxCdLRk_Uco"}})
     .then( res => {
-        console.log(res);
+        console.log(res.data);
+        dispatch({type:FETCHED_POEMS, payload: res.data})
     })
     .catch( err => console.log(err))
 }

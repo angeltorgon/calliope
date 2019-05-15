@@ -2,16 +2,19 @@ import {
     SIGN_UP,
     LOGGING_IN,
     LOG_IN,
-    INVALID_CREDENTIALS
+    INVALID_CREDENTIALS,
+    FETCHING_POEMS,
+    FETCHED_POEMS
 } from '../actions';
 
 import { poems } from './dummy-poems';
 
 const initialState = {
     user: {},
-    poems: poems,
+    poems: [],
     loggingIn: false,
     isLoggedIn: false,
+    idFetchingPoems: false,
     token: ""
 }
 
@@ -29,6 +32,10 @@ export const authReducer = (state = initialState, action ) => {
                 user: action.payload.user,
                 token: action.payload.token
             }
+        case FETCHING_POEMS: 
+            return {...state, isFetchingPoems: true}
+        case FETCHED_POEMS: 
+            return {...state, poems: action.payload}
         default:
             return state
     }

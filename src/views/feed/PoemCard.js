@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 export default function PoemCard(props) {
-    const [ title, setTitle ] = useState(props.poem.title);
-    const [ poet, setPoet ] = useState(props.poem.poet);
+    const [ title, setTitle ] = useState(props.poem.poemTitle);
+    const [ poet, setPoet ] = useState(props.poem.username);
     const [ likes, setLies ] = useState(props.poem.likes);
-    const [ text, setText ] = useState(props.poem.text);
+    const [ text, setText ] = useState(props.poem.poem);
 
     return (
         <div className="song-card">

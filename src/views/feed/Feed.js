@@ -9,19 +9,19 @@ function Dashboard(props) {
     console.log(props)
     props.fetchPoems();
 
-  })
+  }, [])
 
   return (
     <div>
-      <PoemList />
+      <PoemList poems={props.poems}/>
     </div>
   )
 };
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
-    token: state.authReducer.token
+    token: state.authReducer.token,
+    poems: state.authReducer.poems
   }
 }
 
