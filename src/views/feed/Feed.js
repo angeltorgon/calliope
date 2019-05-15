@@ -6,8 +6,10 @@ import { fetchPoems } from '../../store/actions';
 function Dashboard(props) {
 
   useEffect(() => {
+    console.log(props)
     props.fetchPoems();
-  }, [])
+
+  })
 
   return (
     <div>
@@ -17,9 +19,10 @@ function Dashboard(props) {
 };
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
-    
+    token: state.authReducer.token
   }
 }
 
-export default connect(null, { fetchPoems })(Dashboard)
+export default connect(mapStateToProps, { fetchPoems })(Dashboard)
