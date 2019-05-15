@@ -9,6 +9,11 @@ function Dashboard(props) {
     console.log(props)
     props.fetchPoems();
 
+    if(props.isLoggedIn) {
+      props.history.push('/dashboard');
+    } else {
+      props.history.push('/login');
+    }
   }, [])
 
   return (
@@ -21,7 +26,8 @@ function Dashboard(props) {
 const mapStateToProps = state => {
   return {
     token: state.authReducer.token,
-    poems: state.authReducer.poems
+    poems: state.authReducer.poems,
+    isLoggedIn: state.authReducer.isLoggedIn
   }
 }
 
