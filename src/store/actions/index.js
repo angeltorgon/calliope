@@ -17,7 +17,7 @@ export const signUp = (userInfo) => dispatch => {
     .post('http://localhost:5000/api/auth/signup', 
     {...userInfo})
     .then( res => {
-        console.log(res.data.token)
+        console.log(res.data)
         // if (!res.data.token) {
         //     dispatch({type:})
         // }
