@@ -1,6 +1,16 @@
-import React from 'react'
+import React, {useEffect} from 'react';
+import { connect } from 'react-redux';
 
-export default function Home() {
+function Home(props) {
+
+  useEffect(() => {
+    if(props.isLoggedIn) {
+      props.history.push('/dashboard');
+    } else {
+      props.history.push('/');
+    }
+  }, [props.isLoggedIn])
+
   return (
     <div className="home-container">
       <div className="banner">
@@ -10,3 +20,11 @@ export default function Home() {
     </div>
   )
 }
+
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.authReducer.isLoggedIn
+  }
+}
+
+export default connect(mapStateToProps)(Home)

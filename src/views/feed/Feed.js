@@ -12,9 +12,9 @@ function Dashboard(props) {
     if(props.isLoggedIn) {
       props.history.push('/dashboard');
     } else {
-      props.history.push('/login');
+      props.history.push('/');
     }
-  }, [])
+  }, [props.isLoggedIn])
 
   return (
     <div>

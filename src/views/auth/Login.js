@@ -12,9 +12,7 @@ function Login(props) {
     console.log(props.isLoggedIn)
     if(props.isLoggedIn) {
       props.history.push('/dashboard');
-    } else {
-      props.history.push('/login');
-    }
+    } 
   }, [props.isLoggedIn]) 
 
   const handleSubmit = function (e) {
