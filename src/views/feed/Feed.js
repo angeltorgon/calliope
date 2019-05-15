@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PoemList from './PoemList';
 import { fetchPoems } from '../../store/actions';
 
-function Dashboard() {
+function Dashboard(props) {
+
+  useEffect(() => {
+    props.fetchPoems();
+  }, [])
+
   return (
     <div>
       <PoemList />

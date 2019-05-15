@@ -44,7 +44,7 @@ export const logIn = (credentials) => dispatch => {
 export const fetchPoems = () => dispatch => {
     dispatch({type: FETCHING_POEMS});
     axios
-    .get("'http://localhost:5000/api/poems")
-    .then( res => console.log(res))
+    .get('http://localhost:5000/api/poem/')
+    .then( res => (console.log(res)))
     .catch( err => console.log(err))
 }
