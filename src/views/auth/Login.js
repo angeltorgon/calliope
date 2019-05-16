@@ -28,7 +28,7 @@ function Login(props) {
       <form className="form" onSubmit={handleSubmit}>
         <input onChange={(e) => setUsername(e.target.value)} value={username} type="text" placeholder="username"></input>
         <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="password"></input>
-        <button>Sign up</button>
+        <button>Log In</button>
       </form>
     </div>
   )
