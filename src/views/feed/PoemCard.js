@@ -14,7 +14,7 @@ export default function PoemCard(props) {
             <h2 className="card-artist" >{poet}</h2>
             <p className="card-poem" >{text}</p>
             <p>Likes: {likes}</p>
-            <div>
+            <div className="comments-container">
                 {comments.map(comment => {
                     return <Comment comment={comment}/>
                 })}
