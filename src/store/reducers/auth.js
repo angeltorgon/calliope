@@ -1,5 +1,6 @@
 import {
     SIGN_UP,
+    SIGN_UP_SUCCESS,
     LOG_IN,
     LOG_IN_SUCCESS,
     INVALID_CREDENTIALS,
@@ -13,15 +14,20 @@ const initialState = {
     user: {},
     poems: [],
     loggingIn: false,
+    signingUp: false,
+    isSignedUp: false,
     isLoggedIn: false,
-    idFetchingPoems: false,
+    isFetchingPoems: false,
     token: ""
 }
 
 export const authReducer = (state = initialState, action ) => {
+    console.log(action)
     switch (action.type) {
         case SIGN_UP:
-            return {greeting: "hello"};
+            return {...state, signingUp: true};
+        case SIGN_UP_SUCCESS:
+            return {...state, isSignedUp: true, signingUp: false};
         case LOG_IN:
             return {...state, loggingIn: true}
         case LOG_IN_SUCCESS:
@@ -35,7 +41,7 @@ export const authReducer = (state = initialState, action ) => {
         case FETCH_POEMS: 
             return {...state, isFetchingPoems: true}
         case FETCH_POEMS_SUCCESS: 
-            return {...state, poems: action.payload}
+            return {...state,isFetchingPoems: false, poems: action.payload}
         default:
             return state
     }

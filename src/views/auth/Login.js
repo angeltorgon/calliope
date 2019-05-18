@@ -28,7 +28,7 @@ function Login(props) {
         color="#AC5D5E"
         height="50"
         width="50"
-      /> : <div></div> }
+      /> : null}
       <h2>Log In</h2>
       <form className="form" onSubmit={handleSubmit}>
         <input onChange={(e) => setUsername(e.target.value)} value={username} type="text" placeholder="username"></input>

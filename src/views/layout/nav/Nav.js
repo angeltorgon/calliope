@@ -10,7 +10,7 @@ function Nav(props) {
 
     return (
         <>
-        { props.isLoggedIn ? 
+        { localStorage.getItem('token') ? 
             <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <div to="/dashboard" className="logo">Calliope</div>
