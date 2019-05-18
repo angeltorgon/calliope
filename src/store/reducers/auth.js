@@ -1,7 +1,7 @@
 import {
     SIGN_UP,
     LOGGING_IN,
-    LOG_IN,
+    LOG_IN_SUCCESS,
     INVALID_CREDENTIALS,
     FETCHING_POEMS,
     FETCHED_POEMS
@@ -24,7 +24,7 @@ export const authReducer = (state = initialState, action ) => {
             return {greeting: "hello"};
         case LOGGING_IN:
             return {...state, loggingIn: true}
-        case LOG_IN:
+        case LOG_IN_SUCCESS:
             return {
                 ...state, 
                 loggingIn: false, 

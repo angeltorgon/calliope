@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
 
 import { logIn } from '../../store/actions';
@@ -10,20 +11,24 @@ function Login(props) {
 
   useEffect(() => {
     console.log(props.isLoggedIn)
-    if(props.isLoggedIn) {
+    if (props.isLoggedIn) {
       props.history.push('/dashboard');
-    } 
-  }, [props.isLoggedIn]) 
+    }
+  }, [props.isLoggedIn])
 
   const handleSubmit = function (e) {
     e.preventDefault();
     props.logIn({ username, password })
-    console.log(props)
-    props.history.push("/dashboard");
   }
 
   return (
     <div className="form-container">
+      {props.loggingIn ? <Loader
+        type="ThreeDots"
+        color="#AC5D5E"
+        height="50"
+        width="50"
+      /> : <div></div> }
       <h2>Log In</h2>
       <form className="form" onSubmit={handleSubmit}>
         <input onChange={(e) => setUsername(e.target.value)} value={username} type="text" placeholder="username"></input>
@@ -35,9 +40,10 @@ function Login(props) {
 }
 
 const mapStateToProps = state => {
-  return { 
+  return {
+    loggingIn: state.authReducer.loggingIn,
     isLoggedIn: state.authReducer.isLoggedIn,
-    token: state.authReducer.token 
+    token: state.authReducer.token
   }
 }
 

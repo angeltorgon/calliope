@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const SIGN_UP = 'SIGN_UP';
-export const LOG_IN = 'LOG_IN';
+export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 export const LOGGING_IN = 'LOGGING_IN';
 export const INVALID_CREDENTIALS = 'INVALID_CREDENTIALS';
 export const FETCHING_POEMS = 'FETCHING_POEMS';
@@ -35,7 +35,9 @@ export const logIn = (credentials) => dispatch => {
         if(!res.data.token) {
             dispatch({type: INVALID_CREDENTIALS})
         } else {
-            dispatch({type: LOG_IN, payload: res.data})
+            setInterval(function(){ 
+                dispatch({type: LOG_IN_SUCCESS, payload: res.data})
+            }, 5000);
         }
     })
     .catch( err => console.log(err))
@@ -44,7 +46,7 @@ export const logIn = (credentials) => dispatch => {
 export const fetchPoems = () => dispatch => {
     dispatch({type: FETCHING_POEMS});
     axios
-    .get('http://localhost:4000/api/poems', {headers: {Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJpY2siLCJpYXQiOjE1NTgwMzA5ODIsImV4cCI6MTU1ODAzODE4Mn0.Q-VP-rdtaJkaX-2eNmPUzLFM8iFt9PwwJavwSa6sAEU"}})
+    .get('http://localhost:4000/api/poems', {headers: {Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJpY2siLCJpYXQiOjE1NTgxNTg3NzQsImV4cCI6MTU1ODE2NTk3NH0.nmvi5NdLia4VMpRf60YIpMIJnchWBDC_Xwnq0YyFwB8"}})
     .then( res => {
         console.log(res.data);
         dispatch({type:FETCHED_POEMS, payload: res.data})
