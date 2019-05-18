@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { logOut } from '../../../store/actions/index';
 
 function Nav(props) {
 
@@ -10,7 +11,7 @@ function Nav(props) {
 
     return (
         <>
-        { localStorage.getItem('token') ? 
+        { props.isLoggedIn ? 
             <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <div to="/dashboard" className="logo">Calliope</div>
@@ -20,7 +21,7 @@ function Nav(props) {
                 
                 <div className="cta-container">
                     <NavLink to="/profile" className="nav-cta login">Profile</NavLink>
-                    <NavLink to="/settings" className="nav-cta login">Settings</NavLink>
+                    <NavLink onClick={() => props.logOut()} to="/" className="nav-cta login">Log Out</NavLink>
                 </div>
             </nav>
         :
@@ -49,4 +50,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Nav);
+export default connect(mapStateToProps, { logOut })(Nav);

@@ -4,6 +4,7 @@ import {
     LOG_IN,
     LOG_IN_SUCCESS,
     INVALID_CREDENTIALS,
+    LOG_OUT,
     FETCH_POEMS,
     FETCH_POEMS_SUCCESS
 } from '../actions';
@@ -28,9 +29,9 @@ export const authReducer = (state = initialState, action ) => {
             return {...state, signingUp: true};
         case SIGN_UP_SUCCESS:
             return {...state, isSignedUp: true, signingUp: false};
-        case LOG_IN:
-            return {...state, loggingIn: true}
-        case LOG_IN_SUCCESS:
+            case LOG_IN:
+                return {...state, loggingIn: true}
+            case LOG_IN_SUCCESS:
             return {
                 ...state, 
                 loggingIn: false, 
@@ -38,6 +39,8 @@ export const authReducer = (state = initialState, action ) => {
                 user: action.payload.user,
                 token: action.payload.token
             }
+        case LOG_OUT:
+        return {...state, isLoggedIn: false}
         case FETCH_POEMS: 
             return {...state, isFetchingPoems: true}
         case FETCH_POEMS_SUCCESS: 

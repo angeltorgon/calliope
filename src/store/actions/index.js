@@ -5,6 +5,7 @@ export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 export const LOG_IN = 'LOG_IN';
 export const INVALID_CREDENTIALS = 'INVALID_CREDENTIALS';
+export const LOG_OUT = 'LOG_OUT';
 export const FETCH_POEMS = 'FETCH_POEMS';
 export const FETCH_POEMS_SUCCESS = 'FETCHFETCH_POEMS_SUCCESSED_POEMS';
 
@@ -40,6 +41,13 @@ export const logIn = (credentials) => dispatch => {
             }
         })
         .catch(err => console.log(err))
+}
+
+export const logOut = () => {
+    localStorage.removeItem('token');
+    return {
+        type: LOG_OUT
+    }
 }
 
 export const fetchPoems = () => dispatch => {
