@@ -1,10 +1,10 @@
 import {
     SIGN_UP,
-    LOGGING_IN,
+    LOG_IN,
     LOG_IN_SUCCESS,
     INVALID_CREDENTIALS,
-    FETCHING_POEMS,
-    FETCHED_POEMS
+    FETCH_POEMS,
+    FETCH_POEMS_SUCCESS
 } from '../actions';
 
 import { poems } from './dummy-poems';
@@ -22,7 +22,7 @@ export const authReducer = (state = initialState, action ) => {
     switch (action.type) {
         case SIGN_UP:
             return {greeting: "hello"};
-        case LOGGING_IN:
+        case LOG_IN:
             return {...state, loggingIn: true}
         case LOG_IN_SUCCESS:
             return {
@@ -32,9 +32,9 @@ export const authReducer = (state = initialState, action ) => {
                 user: action.payload.user,
                 token: action.payload.token
             }
-        case FETCHING_POEMS: 
+        case FETCH_POEMS: 
             return {...state, isFetchingPoems: true}
-        case FETCHED_POEMS: 
+        case FETCH_POEMS_SUCCESS: 
             return {...state, poems: action.payload}
         default:
             return state
