@@ -5,13 +5,9 @@ import { logOut } from '../../../store/actions/index';
 
 function Nav(props) {
 
-    // useEffect(() => {
-    //     console.log(props.isLoggedIn)
-    // })
-
     return (
         <>
-        { props.isLoggedIn ? 
+        { localStorage.getItem('token') ? 
             <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <div to="/dashboard" className="logo">Calliope</div>

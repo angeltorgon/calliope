@@ -11,7 +11,6 @@ import './styles/css/index.css';
 // import * as serviceWorker from './serviceWorker';
 
 
-
 ReactDOM.render(
     <Router>
         <Provider store={store}>
