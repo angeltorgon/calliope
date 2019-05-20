@@ -9,8 +9,6 @@ import {
     FETCH_POEMS_SUCCESS
 } from '../actions';
 
-import { poems } from './dummy-poems';
-
 const initialState = {
     user: {},
     poems: [],
@@ -19,11 +17,11 @@ const initialState = {
     isSignedUp: false,
     isLoggedIn: false,
     isFetchingPoems: false,
-    token: ""
+    token: localStorage.getItem('token'),
 }
 
 export const authReducer = (state = initialState, action ) => {
-    console.log(action)
+    console.log(state.token)
     switch (action.type) {
         case SIGN_UP:
             return {...state, signingUp: true};

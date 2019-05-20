@@ -7,7 +7,7 @@ function Nav(props) {
 
     return (
         <>
-        { localStorage.getItem('token') ? 
+        { props.token ? 
             <nav className="nav">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <div to="/dashboard" className="logo">Calliope</div>
@@ -42,7 +42,8 @@ function Nav(props) {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.authReducer.isLoggedIn
+        isLoggedIn: state.authReducer.isLoggedIn,
+        token: state.authReducer.token
     }
 }
 
