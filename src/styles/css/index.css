@@ -291,7 +291,7 @@ img {
   border-radius: 5px;
   font-size: 16px;
 }
-.song-card {
+.poem-post-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -303,35 +303,48 @@ img {
   justify-content: space-around;
   border-radius: 10px;
 }
-.song-card .poem-stamp {
+.poem-post-container .poem-stamp {
   width: 100%;
   height: 70px;
   display: flex;
 }
-.song-card .poem-stamp .avatar {
+.poem-post-container .poem-stamp .avatar {
   margin: 0 10px;
   width: 70px;
   height: 70px;
   border-radius: 50%;
 }
-.song-card .poem-stamp .stamp-text {
+.poem-post-container .poem-stamp .stamp-text {
   margin-top: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.song-card .poem-stamp .stamp-text .stamp-text-item {
+.poem-post-container .poem-stamp .stamp-text .stamp-text-item {
   text-align: center;
   padding-bottom: 0px;
+  font-size: 15px;
 }
-.song-card a {
-  font-size: 1.5rem;
+.poem-post-container .poem-stamp .stamp-text .author {
+  font-weight: bolder;
+  font-size: 20px;
 }
-.song-card .comments-container {
+.poem-post-container .poem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.poem-post-container .poem .comments-container {
   border: 1px solid whitesmoke;
   padding: 20px;
   background-color: #eeeeee;
+  height: 300px;
+  overflow: hidden;
 }
-.song-card .comments-container .comment {
+.poem-post-container .poem .comments-container .comment {
   font-size: 8px;
+}
+.poem-post-container a {
+  font-size: 1.5rem;
 }

@@ -16,7 +16,7 @@ export default function PoemCard(props) {
     })
 
     return (
-        <div className="song-card">
+        <div className="poem-post-container">
             <div className="poem-stamp">
                 <img className="avatar" src="https://images.unsplash.com/photo-1476657680631-c07285ff2581?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1310&q=80" alt="user picture" />
 
@@ -29,13 +29,15 @@ export default function PoemCard(props) {
                 </div>
 
             </div>
-            <h2 className="poem-title">{title}</h2>
-            <p className="card-poem" >{text}</p>
-            <p>Likes: {likes}</p>
-            <div className="comments-container">
-                {comments.map(comment => {
-                    return <Comment comment={comment} />
-                })}
+            <div className="poem">
+                <h2 className="poem-title">{title}</h2>
+                <p className="card-poem" >{text}</p>
+                <p>Likes: {likes}</p>
+                <div className="comments-container">
+                    {comments.map(comment => {
+                        return <Comment comment={comment} />
+                    })}
+                </div>
             </div>
         </div>
     )
