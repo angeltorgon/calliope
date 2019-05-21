@@ -32,12 +32,23 @@ export default function PoemCard(props) {
             <div className="poem">
                 <h2 className="poem-title">{title}</h2>
                 <p className="card-poem" >{text}</p>
-                <p>Likes: {likes}</p>
-                <div className="comments-container">
-                    {comments.map(comment => {
-                        return <Comment comment={comment} />
-                    })}
+            </div>
+
+            <div className="poem-stats">
+                <div className="stats-left">
+                    <img className="stats-item upvote-icon" src="https://img.icons8.com/flat_round/60/000000/hearts.png" />
+                    <p className="stats-item">{likes}</p>
+
                 </div>
+                <div className="stats-right">
+                    <p className="stats-item">Comments: {comments.length}</p>
+                </div>
+
+            </div>
+            <div className="comments-container">
+                {comments.map(comment => {
+                    return <Comment comment={comment} />
+                })}
             </div>
         </div>
     )

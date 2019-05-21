@@ -335,14 +335,35 @@ img {
   justify-content: center;
   flex-direction: column;
 }
-.poem-post-container .poem .comments-container {
+.poem-post-container .poem-stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.poem-post-container .poem-stats .stats-item {
+  margin: 2px;
+  padding: 0;
+}
+.poem-post-container .poem-stats .stats-left {
+  display: flex;
+  margin: 5px 10px 5px 10px;
+}
+.poem-post-container .poem-stats .stats-left .upvote-icon {
+  width: 25px;
+  height: 25px;
+}
+.poem-post-container .poem-stats .stats-right {
+  display: flex;
+  margin: 5px 10px 5px 0px;
+}
+.poem-post-container .comments-container {
   border: 1px solid whitesmoke;
   padding: 20px;
   background-color: #eeeeee;
   height: 300px;
   overflow: hidden;
 }
-.poem-post-container .poem .comments-container .comment {
+.poem-post-container .comments-container .comment {
   font-size: 8px;
 }
 .poem-post-container a {

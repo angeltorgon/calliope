@@ -29,7 +29,7 @@
             .stamp-text-item {
                 text-align    : center;
                 padding-bottom: 0px;
-                font-size: 15px;
+                font-size     : 15px;
             }
 
             .author {
@@ -42,18 +42,47 @@
     .poem {
         .center();
         flex-direction: column;
-        .comments-container {
-            border          : 1px solid whitesmoke;
-            padding         : 20px;
-            background-color: rgb(238, 238, 238);
-            height: 300px;
-            overflow: hidden;
-    
-            .comment {
-                font-size: 8px;
-            }
+
+    }
+
+    .poem-stats {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .stats-item {
+            margin: 2px;
+            padding: 0;
         }
         
+        .stats-left {
+            display: flex;
+            margin: 5px 10px 5px 10px;
+
+
+            .upvote-icon {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        .stats-right {
+            display: flex;
+            margin: 5px 10px 5px 0px;
+        }
+
+    }
+
+    .comments-container {
+        border          : 1px solid whitesmoke;
+        padding         : 20px;
+        background-color: rgb(238, 238, 238);
+        height          : 300px;
+        overflow        : hidden;
+
+        .comment {
+            font-size: 8px;
+        }
     }
 
     a {
