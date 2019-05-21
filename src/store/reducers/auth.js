@@ -18,11 +18,12 @@ const initialState = {
     isSignedUp: false,
     isLoggedIn: false,
     isFetchingPoems: false,
+    passwordsMatch: true,
     token: localStorage.getItem('token'),
 }
 
 export const authReducer = (state = initialState, action ) => {
-    console.log(state.token)
+    console.log(state.passwordsMatch)
     switch (action.type) {
         case SIGN_UP:
             return {...state, signingUp: true};
@@ -37,6 +38,7 @@ export const authReducer = (state = initialState, action ) => {
                 ...state, 
                 loggingIn: false, 
                 isLoggedIn: true,
+                passwordsMatch: true,
                 user: action.payload.user,
                 token: action.payload.token
             }
