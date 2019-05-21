@@ -254,6 +254,13 @@ img {
   font-size: 60px;
   padding: 50px;
 }
+.feed .loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 100vh;
+}
 .form-container {
   display: flex;
   align-items: center;
