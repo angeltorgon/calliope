@@ -20,7 +20,6 @@ export const signUp = (userInfo) => dispatch => {
         .post('http://localhost:4000/api/auth/signup',
             userInfo)
         .then(res => {
-            console.log(res)
             dispatch({ type: SIGN_UP_SUCCESS, payload: res.data });
         })
         .catch(err => console.log(err))
