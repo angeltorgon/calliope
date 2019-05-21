@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
 
-import { logIn } from '../../store/actions';
+import { logIn,  } from '../../store/actions';
 
 function Login(props) {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [credentials, setCredentials] = useState(true)
 
   useEffect(() => {
     console.log(props.isLoggedIn)
@@ -18,7 +19,12 @@ function Login(props) {
 
   const handleSubmit = function (e) {
     e.preventDefault();
-    props.logIn({ username, password })
+    if (username && password) {
+      props.logIn({ username, password })
+      setCredentials(true)
+    } else {
+      setCredentials(false)
+    }
   }
 
   return (
@@ -33,7 +39,9 @@ function Login(props) {
       /> : null}
       <h2>Log In</h2>
       <form className="form" onSubmit={handleSubmit}>
-        <input onChange={(e) => setUsername(e.target.value)} value={username} type="text" placeholder="username"></input>
+      {credentials ? null : <p>Provide credentials</p>}
+        <input onChange={(e) => setUsername(e.target.value)} value={username} type="text" placeholder="username">
+        </input>
         <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="password"></input>
         <button>Log In</button>
       </form>

@@ -16,14 +16,16 @@ function Dashboard(props) {
   }, [])
 
   return (
-    <div>
+    <div className="feed">
       {props.isFetchingPoems 
-      ? <Loader 
+      ? <div className="loader">
+        <Loader 
       type="ThreeDots"
       color="#AC5D5E"
       height="50"
       width="50"
-      /> : <PoemList poems={props.poems}/>
+      /> 
+        </div>: <PoemList poems={props.poems}/>
       }
     </div>
   )

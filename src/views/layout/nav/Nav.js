@@ -5,6 +5,10 @@ import { logOut } from '../../../store/actions/index';
 
 function Nav(props) {
 
+    useEffect(() => {
+        
+    }, [props.isLoggedIn])
+
     return (
         <>
         { localStorage.getItem('token') ? 

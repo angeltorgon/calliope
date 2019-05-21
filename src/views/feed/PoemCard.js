@@ -46,12 +46,18 @@ export default function PoemCard(props) {
 
             </div>
             {comments.length < 1 ? null :
-            <div className="comments-container">
-                {comments.map(comment => {
-                    return <Comment comment={comment} />
-                })}
-            </div>    
-        }
+                <div className="comments-container">
+                    {comments.map(comment => {
+                        return <Comment comment={comment} />
+                    })}
+                    <div className="comment">
+                        <p>slkdflksjdflhsldhflsj
+                            lskdjflksjdlfkjsdf <br/><br/>
+                            slkdjflksjdlfkjsd
+                            slkdjflksjdlfkjsd</p>
+                    </div>
+                </div>
+            }
         </div>
     )
 }
