@@ -280,8 +280,8 @@ img {
   width: 70%;
   flex-direction: column;
 }
-.form-container form label {
-  padding-top: 10px;
+.form-container form p {
+  color: red;
 }
 .form-container form input {
   width: 100%;

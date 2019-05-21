@@ -39,11 +39,11 @@ function Login(props) {
       /> : null}
       <h2>Log In</h2>
       <form className="form" onSubmit={handleSubmit}>
-      {credentials ? null : <p>Provide credentials</p>}
         <input onChange={(e) => setUsername(e.target.value)} value={username} type="text" placeholder="username">
         </input>
         <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="password"></input>
-        <button>Log In</button>
+        <button >Log In</button>
+        {credentials ? null : <p>Please provide username and password *</p>}
       </form>
     </div>
   )
