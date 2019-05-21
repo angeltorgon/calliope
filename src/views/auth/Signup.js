@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { connect } from 'react-redux';
-import { signUp } from '../../store/actions';
+import { signUp, passwordsMustMatch } from '../../store/actions';
 
 function Signup(props) {
 
@@ -9,10 +9,15 @@ function Signup(props) {
     const [ username, setUsername ] = useState('');
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
+    const [ confirmPassword, setConfirmPassword ] = useState('');
 
     const handleSubmit = function(e) {
-        e.preventDefault();
-        props.signUp({firstName, lastName, username, email, password})
+        if(password === confirmPassword) {
+            e.preventDefault();
+            props.signUp({firstName, lastName, username, email, password})
+        } else {
+
+        }
     }
 
     return (
@@ -23,7 +28,9 @@ function Signup(props) {
                 <input onChange={(e)=>{setLastName(e.target.value)}} value={lastName} type="text" placeholder="last name"></input>
                 <input onChange={(e)=>{setUsername(e.target.value)}} value={username} type="text" placeholder="username"></input>
                 <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="text" placeholder="email"></input>
-                <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="text" placeholder="password"></input>
+                <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" placeholder="password"></input>
+                {password !== confirmPassword ? <label>PASSWORDS MUST MATCH</label> : null}
+                <input onChange={(e)=>{setConfirmPassword(e.target.value)}} value={confirmPassword} type="password" placeholder="confirm password"></input>
                 <button>Sign up</button>
             </form>
         </div>
@@ -31,4 +38,7 @@ function Signup(props) {
 }
 
 
-export default connect(null, {signUp})(Signup);
+export default connect(null, {
+    signUp,
+    passwordsMustMatch
+})(Signup);

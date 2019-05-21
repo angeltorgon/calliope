@@ -4,6 +4,7 @@ export const SIGN_UP = 'SIGN_UP';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 export const LOG_IN = 'LOG_IN';
+export const PASSWORDS_MUST_MATCH = 'PASSWORDS_MUST_MATCH';
 export const INVALID_CREDENTIALS = 'INVALID_CREDENTIALS';
 export const LOG_OUT = 'LOG_OUT';
 export const FETCH_POEMS = 'FETCH_POEMS';
@@ -44,10 +45,14 @@ export const logIn = (credentials) => dispatch => {
 }
 
 export const logOut = () => {
-    localStorage.removeItem('token');
-    console.log(localStorage.getItem('token'))
     return {
         type: LOG_OUT
+    }
+}
+
+export const passwordsMustMatch = () => {
+    return {
+        type: PASSWORDS_MUST_MATCH
     }
 }
 

@@ -3,6 +3,7 @@ import {
     SIGN_UP_SUCCESS,
     LOG_IN,
     LOG_IN_SUCCESS,
+    PASSWORDS_MUST_MATCH,
     INVALID_CREDENTIALS,
     LOG_OUT,
     FETCH_POEMS,
@@ -29,6 +30,8 @@ export const authReducer = (state = initialState, action ) => {
             return {...state, isSignedUp: true, signingUp: false};
             case LOG_IN:
                 return {...state, loggingIn: true}
+            case PASSWORDS_MUST_MATCH:
+                return {...state, passwordsMatch: false}
             case LOG_IN_SUCCESS:
             return {
                 ...state, 
