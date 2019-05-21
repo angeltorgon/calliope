@@ -45,11 +45,13 @@ export default function PoemCard(props) {
                 </div>
 
             </div>
+            {comments.length < 1 ? null :
             <div className="comments-container">
                 {comments.map(comment => {
                     return <Comment comment={comment} />
                 })}
-            </div>
+            </div>    
+        }
         </div>
     )
 }
