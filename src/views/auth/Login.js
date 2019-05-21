@@ -23,6 +23,8 @@ function Login(props) {
 
   return (
     <div className="form-container">
+
+      {props.isSignedUp ? <div>Registration Successful! Log in to continue!</div>: null}
       {props.loggingIn ? <Loader
         type="ThreeDots"
         color="#AC5D5E"
@@ -43,7 +45,8 @@ const mapStateToProps = state => {
   return {
     loggingIn: state.authReducer.loggingIn,
     isLoggedIn: state.authReducer.isLoggedIn,
-    token: state.authReducer.token
+    token: state.authReducer.token,
+    isSignedUp: state.authReducer.isSignedUp
   }
 }
 

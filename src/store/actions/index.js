@@ -38,13 +38,14 @@ export const logIn = (credentials) => dispatch => {
                 setTimeout(function () {
                     localStorage.setItem('token', res.data.token);
                     dispatch({ type: LOG_IN_SUCCESS, payload: res.data })
-                }, 5000);
+                }, 2000);
             }
         })
         .catch(err => console.log(err))
 }
 
 export const logOut = () => {
+    localStorage.removeItem('token');
     return {
         type: LOG_OUT
     }
@@ -64,7 +65,7 @@ export const fetchPoems = () => dispatch => {
         .then(res => {
             setTimeout(function () {
                 dispatch({ type: FETCH_POEMS_SUCCESS, payload: res.data })
-            }, 5000);
+            }, 2000);
         })
         .catch(err => console.log(err))
 }
