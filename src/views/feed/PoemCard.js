@@ -14,6 +14,8 @@ function PoemCard(props) {
     const [comments, setComments] = useState(props.poem.comments);
     const [poemDate, setPoemDate] = useState(props.poem.created_at);
 
+    const [openMenu, setOpenMenu] = useState(false);
+
     const handleLike = () => {
         if (liked) {
             props.dislike({ ...props.poem, likes: likes - 1 });
@@ -43,7 +45,15 @@ function PoemCard(props) {
                 </div>
 
 
-                <img className="post-menu" src="https://img.icons8.com/small/90/000000/menu-2.png" />
+                {openMenu 
+                ? 
+                <div className="modal" >
+                    <img className="menu-exit" onClick={() => setOpenMenu(false)} src="https://img.icons8.com/material-rounded/90/000000/delete-sign.png"></img>
+                </div> 
+                :
+                <img onClick={() => setOpenMenu(true)} className="post-menu" src="https://img.icons8.com/small/90/000000/menu-2.png" />
+
+                }
 
             </div>
             <div className="poem">
