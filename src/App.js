@@ -6,6 +6,8 @@ import Login from './views/auth/Login';
 import Signup from './views/auth/Signup';
 import Home from './views/home/Home';
 import Dashboard from './views/feed/Feed';
+import Profile from './views/profile/Profile';
+
 
 class App extends Component {
 
@@ -17,6 +19,7 @@ class App extends Component {
             <Route path="/dashboard" component={Dashboard}/>
             <Route path="/login" component={Login}/>
             <Route path="/signup" component={Signup}/>
+            <Route path="/profile" component={Profile}/>
           </div>
     );
   }

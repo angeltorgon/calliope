@@ -261,6 +261,9 @@ img {
   margin: 0 auto;
   height: 100vh;
 }
+.profile-container {
+  border: 1px solid blue;
+}
 .form-container {
   display: flex;
   align-items: center;
@@ -271,6 +274,9 @@ img {
   margin: 150px auto;
   max-width: 500px;
   padding: 150px 0;
+}
+.form-container .success {
+  color: green;
 }
 .form-container form {
   display: flex;

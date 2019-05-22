@@ -29,7 +29,12 @@ export const authReducer = (state = initialState, action ) => {
         case SIGN_UP_SUCCESS:
             return {...state, isSignedUp: true, signingUp: false};
             case LOG_IN:
-                return {...state, loggingIn: true}
+                return {
+                    ...state, 
+                    loggingIn: true,
+                    isSignedUp: false,
+                    validCredentials: true,
+                }
             case INVALID_CREDENTIALS:
                 return {
                     ...state, 

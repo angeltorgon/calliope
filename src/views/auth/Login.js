@@ -30,8 +30,7 @@ function Login(props) {
 
   return (
     <div className="form-container">
-
-      {props.isSignedUp ? <div>Registration Successful! Log in to continue!</div>: null}
+      {props.isSignedUp ? <p className="success">Registration Successful! Log in to continue!</p>: null}
       {props.loggingIn ? <Loader
         type="ThreeDots"
         color="#AC5D5E"
