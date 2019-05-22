@@ -359,6 +359,10 @@ img {
   height: 200px;
   z-index: 15;
   position: absolute;
+  float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .poem-post-container .poem-stamp .modal .menu-exit {
   width: 35px;
