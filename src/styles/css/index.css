@@ -405,7 +405,7 @@ img {
   padding: 20px;
   background-color: #eeeeee;
   height: 300px;
-  overflow: hidden;
+  overflow: scroll;
 }
 .poem-post-container .comments-container .comment {
   font-size: 8px;
