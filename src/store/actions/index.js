@@ -11,6 +11,8 @@ export const FETCH_POEMS = 'FETCH_POEMS';
 export const FETCH_POEMS_SUCCESS = 'FETCHFETCH_POEMS_SUCCESSED_POEMS';
 export const LIKE = 'LIKE';
 export const LIKE_SUCCESS = 'LIKE_SUCCESS';
+export const DISLIKE = 'DISLIKE';
+export const DISLIKE_SUCCESS = 'DISLIKE_SUCCESS';
 
 // export const sayHello = () => dispatch => {
 //     dispatch({type: SIGN_UP});
@@ -81,6 +83,20 @@ export const like = (poem) => dispatch => {
         .then(res => {
             console.log(res)
             dispatch({ type: LIKE_SUCCESS, payload: res.data });
+        })
+        .catch(err => console.log(err))
+}
+
+export const dislike = (poem) => dispatch => {
+    delete poem.comments;
+    const token = localStorage.getItem('token');
+    dispatch({ type: DISLIKE });
+    axios
+        .put(`http://localhost:4000/api/poems/${poem.id}`, poem, { headers: { Authorization: token }
+     })
+        .then(res => {
+            console.log(res)
+            dispatch({ type: DISLIKE_SUCCESS, payload: res.data });
         })
         .catch(err => console.log(err))
 }

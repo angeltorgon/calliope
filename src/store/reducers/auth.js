@@ -9,7 +9,8 @@ import {
     FETCH_POEMS,
     FETCH_POEMS_SUCCESS,
     LIKE,
-    LIKE_SUCCESS
+    LIKE_SUCCESS,
+    DISLIKE
 } from '../actions';
 
 const initialState = {
