@@ -9,6 +9,8 @@ export const PROVIDE_CREDENTIALS = 'PROVIDE_CREDENTIALS';
 export const LOG_OUT = 'LOG_OUT';
 export const FETCH_POEMS = 'FETCH_POEMS';
 export const FETCH_POEMS_SUCCESS = 'FETCHFETCH_POEMS_SUCCESSED_POEMS';
+export const LIKE = 'LIKE';
+export const LIKE_SUCCESS = 'LIKE_SUCCESS';
 
 // export const sayHello = () => dispatch => {
 //     dispatch({type: SIGN_UP});
@@ -65,6 +67,20 @@ export const fetchPoems = () => dispatch => {
         .get('http://localhost:4000/api/poems', { headers: { Authorization: token } })
         .then(res => {
             dispatch({ type: FETCH_POEMS_SUCCESS, payload: res.data });
+        })
+        .catch(err => console.log(err))
+}
+
+export const like = (poem) => dispatch => {
+    delete poem.comments;
+    const token = localStorage.getItem('token');
+    dispatch({ type: LIKE });
+    axios
+        .put(`http://localhost:4000/api/poems/${poem.id}`, poem, { headers: { Authorization: token }
+     })
+        .then(res => {
+            console.log(res)
+            dispatch({ type: LIKE_SUCCESS, payload: res.data });
         })
         .catch(err => console.log(err))
 }

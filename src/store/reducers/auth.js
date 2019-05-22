@@ -7,7 +7,9 @@ import {
     PROVIDE_CREDENTIALS,
     LOG_OUT,
     FETCH_POEMS,
-    FETCH_POEMS_SUCCESS
+    FETCH_POEMS_SUCCESS,
+    LIKE,
+    LIKE_SUCCESS
 } from '../actions';
 
 const initialState = {
@@ -66,7 +68,11 @@ export const authReducer = (state = initialState, action ) => {
         case FETCH_POEMS: 
             return {...state, isFetchingPoems: true}
         case FETCH_POEMS_SUCCESS: 
-            return {...state,isFetchingPoems: false, poems: action.payload}
+            return {...state,isFetchingPoems: false, poems: action.payload};
+        case LIKE:
+            return {...state}
+        case LIKE_SUCCESS:
+            return {...state}
         default:
             return state
     }
