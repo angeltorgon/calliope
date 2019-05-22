@@ -362,8 +362,11 @@ img {
   margin: 5px 10px 5px 10px;
 }
 .poem-post-container .poem-stats .stats-left .upvote-icon {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
+}
+.poem-post-container .poem-stats .stats-left .likes-count {
+  padding-top: 3px;
 }
 .poem-post-container .poem-stats .stats-right {
   display: flex;
