@@ -25,7 +25,9 @@ const initialState = {
     token: localStorage.getItem('token'),
 }
 
-export const authReducer = (state = initialState, action ) => {
+export const authReducer = (state = initialState, action ) => 
+{
+    console.log(action.type, action.payload)
     switch (action.type) {
         case SIGN_UP:
             return {...state, signingUp: true};

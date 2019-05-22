@@ -78,12 +78,6 @@ function PoemCard(props) {
                     {comments.map(comment => {
                         return <Comment comment={comment} />
                     })}
-                    <div className="comment">
-                        <p>slkdflksjdflhsldhflsj
-                            lskdjflksjdlfkjsdf <br /><br />
-                            slkdjflksjdlfkjsd
-                            slkdjflksjdlfkjsd</p>
-                    </div>
                 </div>
             }
         </div>

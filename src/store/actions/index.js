@@ -35,13 +35,8 @@ export const logIn = (credentials) => dispatch => {
         .post('http://localhost:4000/api/auth/login',
             credentials)
         .then(res => {
-            if (!res.data.token) {
-                console.log(res.data)
-            } else {
-                console.log(res.data);
-                localStorage.setItem('token', res.data.token);
-                dispatch({ type: LOG_IN_SUCCESS, payload: res.data });
-            }
+            localStorage.setItem('token', res.data.token);
+            dispatch({ type: LOG_IN_SUCCESS, payload: res.data });
         })
         .catch(err => {
             console.log(err)
@@ -78,8 +73,9 @@ export const like = (poem) => dispatch => {
     const token = localStorage.getItem('token');
     dispatch({ type: LIKE });
     axios
-        .put(`http://localhost:4000/api/poems/${poem.id}`, poem, { headers: { Authorization: token }
-     })
+        .put(`http://localhost:4000/api/poems/${poem.id}`, poem, {
+            headers: { Authorization: token }
+        })
         .then(res => {
             console.log(res)
             dispatch({ type: LIKE_SUCCESS, payload: res.data });
@@ -92,8 +88,9 @@ export const dislike = (poem) => dispatch => {
     const token = localStorage.getItem('token');
     dispatch({ type: DISLIKE });
     axios
-        .put(`http://localhost:4000/api/poems/${poem.id}`, poem, { headers: { Authorization: token }
-     })
+        .put(`http://localhost:4000/api/poems/${poem.id}`, poem, {
+            headers: { Authorization: token }
+        })
         .then(res => {
             console.log(res)
             dispatch({ type: DISLIKE_SUCCESS, payload: res.data });
