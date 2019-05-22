@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Loader from 'react-loader-spinner';
 
-import { signUp, passwordsMustMatch } from '../../store/actions';
+import { signUp } from '../../store/actions';
 
 function Signup(props) {
 
@@ -17,7 +17,6 @@ function Signup(props) {
     const [passwordsMatch, setPasswordsMatch] = useState(true);
 
     useEffect(() => {
-        console.log(props)
         if(props.isSignedUp) {
             props.history.push('/login');
         } else {
@@ -57,7 +56,6 @@ function Signup(props) {
                 <input onChange={(e)=>{setUsername(e.target.value)}} value={username} type="text" placeholder="username"></input>
                 <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="text" placeholder="email"></input>
                 <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" placeholder="password"></input>
-                {!props.passwordsMatch ? <label>PASSWORDS MUST MATCH</label> : null}
                 <input onChange={(e)=>{setConfirmPassword(e.target.value)}} value={confirmPassword} type="password" placeholder="confirm password"></input>
                 <button>Sign up</button>
                 {credentials ? null : <p>Please complete required fields *</p>}
@@ -68,13 +66,11 @@ function Signup(props) {
 }
 
 const mapStateToProps = state => ({
-    passwordsMatch: state.authReducer.passwordsMatch,
     signingUp: state.authReducer.signingUp,
     isSignedUp: state.authReducer.isSignedUp,
 })
 
 
 export default connect(mapStateToProps, {
-    signUp,
-    passwordsMustMatch
+    signUp
 })(Signup);

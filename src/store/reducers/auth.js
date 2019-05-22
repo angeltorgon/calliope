@@ -3,8 +3,8 @@ import {
     SIGN_UP_SUCCESS,
     LOG_IN,
     LOG_IN_SUCCESS,
-    PASSWORDS_MUST_MATCH,
     INVALID_CREDENTIALS,
+    PROVIDE_CREDENTIALS,
     LOG_OUT,
     FETCH_POEMS,
     FETCH_POEMS_SUCCESS
@@ -18,12 +18,11 @@ const initialState = {
     isSignedUp: false,
     isLoggedIn: false,
     isFetchingPoems: false,
-    passwordsMatch: true,
+    validCredentials: true, 
     token: localStorage.getItem('token'),
 }
 
 export const authReducer = (state = initialState, action ) => {
-    console.log(state.passwordsMatch)
     switch (action.type) {
         case SIGN_UP:
             return {...state, signingUp: true};
@@ -31,8 +30,17 @@ export const authReducer = (state = initialState, action ) => {
             return {...state, isSignedUp: true, signingUp: false};
             case LOG_IN:
                 return {...state, loggingIn: true}
-            case PASSWORDS_MUST_MATCH:
-                return {...state, passwordsMatch: false}
+            case INVALID_CREDENTIALS:
+                return {
+                    ...state, 
+                    loggingIn: false,
+                    validCredentials: false,
+                }
+            case PROVIDE_CREDENTIALS:
+                return {
+                    ...state, 
+                    validCredentials: true,
+                }
             case LOG_IN_SUCCESS:
             return {
                 ...state, 
@@ -40,11 +48,16 @@ export const authReducer = (state = initialState, action ) => {
                 isLoggedIn: true,
                 passwordsMatch: true,
                 isSignedUp: false,
+                validCredentials: true,
                 user: action.payload.user,
                 token: action.payload.token
             }
         case LOG_OUT:
-        return {...state, isLoggedIn: false}
+        return {
+            ...state, 
+            isLoggedIn: false,
+            poems: [],
+        }
         case FETCH_POEMS: 
             return {...state, isFetchingPoems: true}
         case FETCH_POEMS_SUCCESS: 

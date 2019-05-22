@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
 
-import { logIn,  } from '../../store/actions';
+import { logIn, provideCredentials } from '../../store/actions';
 
 function Login(props) {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [credentials, setCredentials] = useState(true)
+  const [credentials, setCredentials] = useState(true);
 
   useEffect(() => {
     console.log(props.isLoggedIn)
@@ -23,7 +23,8 @@ function Login(props) {
       props.logIn({ username, password })
       setCredentials(true)
     } else {
-      setCredentials(false)
+      setCredentials(false);
+      props.provideCredentials();
     }
   }
 
@@ -43,7 +44,8 @@ function Login(props) {
         </input>
         <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="password"></input>
         <button >Log In</button>
-        {credentials ? null : <p>Please provide username and password *</p>}
+        {credentials ? null : <p>Please provide username and password</p>}
+        {props.validCredentials  ? null : <p> Invalid credentials</p> }
       </form>
     </div>
   )
@@ -54,8 +56,9 @@ const mapStateToProps = state => {
     loggingIn: state.authReducer.loggingIn,
     isLoggedIn: state.authReducer.isLoggedIn,
     token: state.authReducer.token,
-    isSignedUp: state.authReducer.isSignedUp
+    isSignedUp: state.authReducer.isSignedUp,
+    validCredentials: state.authReducer.validCredentials,
   }
 }
 
-export default connect(mapStateToProps, { logIn })(Login);
+export default connect(mapStateToProps, { logIn, provideCredentials })(Login);

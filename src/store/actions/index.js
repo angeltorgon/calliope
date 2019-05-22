@@ -4,8 +4,8 @@ export const SIGN_UP = 'SIGN_UP';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const LOG_IN_SUCCESS = 'LOG_IN_SUCCESS';
 export const LOG_IN = 'LOG_IN';
-export const PASSWORDS_MUST_MATCH = 'PASSWORDS_MUST_MATCH';
 export const INVALID_CREDENTIALS = 'INVALID_CREDENTIALS';
+export const PROVIDE_CREDENTIALS = 'PROVIDE_CREDENTIALS';
 export const LOG_OUT = 'LOG_OUT';
 export const FETCH_POEMS = 'FETCH_POEMS';
 export const FETCH_POEMS_SUCCESS = 'FETCHFETCH_POEMS_SUCCESSED_POEMS';
@@ -32,16 +32,20 @@ export const logIn = (credentials) => dispatch => {
             credentials)
         .then(res => {
             if (!res.data.token) {
-                dispatch({ type: INVALID_CREDENTIALS })
+                console.log(res.data)
             } else {
+                console.log(res.data)
                 setTimeout(function () {
                     localStorage.setItem('token', res.data.token);
                     dispatch({ type: LOG_IN_SUCCESS, payload: res.data })
                 }, 2000);
             }
         })
-        .catch(err => console.log(err))
-}
+        .catch(err => {
+            console.log(err)
+            dispatch({ type: INVALID_CREDENTIALS })
+        })
+    }
 
 export const logOut = () => {
     localStorage.removeItem('token');
@@ -50,9 +54,9 @@ export const logOut = () => {
     }
 }
 
-export const passwordsMustMatch = () => {
+export const provideCredentials = () => {
     return {
-        type: PASSWORDS_MUST_MATCH
+        type: PROVIDE_CREDENTIALS
     }
 }
 
