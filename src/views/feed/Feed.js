@@ -7,8 +7,8 @@ import { fetchPoems } from '../../store/actions';
 function Dashboard(props) {
 
   useEffect(() => {
-    props.fetchPoems();
     if(localStorage.getItem('token')) {
+      props.fetchPoems();
       props.history.push('/dashboard');
     } else {
       props.history.push('/');

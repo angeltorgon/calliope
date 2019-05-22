@@ -34,18 +34,16 @@ export const logIn = (credentials) => dispatch => {
             if (!res.data.token) {
                 console.log(res.data)
             } else {
-                console.log(res.data)
-                setTimeout(function () {
-                    localStorage.setItem('token', res.data.token);
-                    dispatch({ type: LOG_IN_SUCCESS, payload: res.data })
-                }, 2000);
+                console.log(res.data);
+                localStorage.setItem('token', res.data.token);
+                dispatch({ type: LOG_IN_SUCCESS, payload: res.data });
             }
         })
         .catch(err => {
             console.log(err)
             dispatch({ type: INVALID_CREDENTIALS })
         })
-    }
+}
 
 export const logOut = () => {
     localStorage.removeItem('token');
@@ -66,9 +64,7 @@ export const fetchPoems = () => dispatch => {
     axios
         .get('http://localhost:4000/api/poems', { headers: { Authorization: token } })
         .then(res => {
-            setTimeout(function () {
-                dispatch({ type: FETCH_POEMS_SUCCESS, payload: res.data })
-            }, 2000);
+            dispatch({ type: FETCH_POEMS_SUCCESS, payload: res.data });
         })
         .catch(err => console.log(err))
 }
