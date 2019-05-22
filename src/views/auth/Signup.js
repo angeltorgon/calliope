@@ -13,6 +13,8 @@ function Signup(props) {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ confirmPassword, setConfirmPassword ] = useState('');
+    const [credentials, setCredentials] = useState(true);
+    const [passwordsMatch, setPasswordsMatch] = useState(true);
 
     useEffect(() => {
         console.log(props)
@@ -25,12 +27,19 @@ function Signup(props) {
 
     const handleSubmit = function(e) {
         e.preventDefault();
-        if(password === confirmPassword) {
-            props.signUp({firstName, lastName, username, email, password})
-        } else {
-            console.log('conditional is working')
-            props.passwordsMustMatch();
-        }
+
+        if (firstName && lastName && username && email && password) {
+            if(password === confirmPassword) {
+                props.signUp({firstName, lastName, username, email, password})
+                setCredentials(true);
+            } else {
+                setPasswordsMatch(false)
+                setCredentials(true);
+            }
+          } else {
+            setCredentials(false);
+          }
+          
     }
 
     return (
@@ -51,6 +60,8 @@ function Signup(props) {
                 {!props.passwordsMatch ? <label>PASSWORDS MUST MATCH</label> : null}
                 <input onChange={(e)=>{setConfirmPassword(e.target.value)}} value={confirmPassword} type="password" placeholder="confirm password"></input>
                 <button>Sign up</button>
+                {credentials ? null : <p>Please complete required fields *</p>}
+                {passwordsMatch ? null : <p>Passwords must match *</p>}
             </form>
         </div>
   )
