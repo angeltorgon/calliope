@@ -8,6 +8,8 @@ import {
     LOG_OUT,
     FETCH_POEMS,
     FETCH_POEMS_SUCCESS,
+    FETCH_USER,
+    FETCH_USER_SUCCESS,
     LIKE,
     LIKE_SUCCESS,
     DISLIKE

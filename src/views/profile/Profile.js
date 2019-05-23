@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { fetchUser } from '../../store/actions';
 
 function Profile(props) {
   
   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetchUser();
+  });
 
   console.log(props.user)
   return (
