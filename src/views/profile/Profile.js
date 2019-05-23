@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 function Profile(props) {
+  
+  const [user, setUser] = useState(null);
+
   console.log(props.user)
   return (
     <div className="profile-container">

@@ -7,7 +7,7 @@ import { signUp } from '../../store/actions';
 
 
 
-function SongList(props) {
+function PoemList(props) {
 
     // useEffect(() => {
     //     console.log(props)
@@ -28,5 +28,5 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, {signUp})(SongList);
+export default connect(mapStateToProps, {signUp})(PoemList);
 
