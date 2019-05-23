@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PoemList from './PoemList';
 import { fetchPoems } from '../../store/actions';
 
-function Dashboard(props) {
+function Feed(props) {
 
   useEffect(() => {
     if(localStorage.getItem('token')) {
@@ -40,4 +40,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchPoems })(Dashboard)
+export default connect(mapStateToProps, { fetchPoems })(Feed);
