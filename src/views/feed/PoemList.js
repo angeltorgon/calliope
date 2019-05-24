@@ -9,10 +9,6 @@ import { signUp } from '../../store/actions';
 
 function PoemList(props) {
 
-    // useEffect(() => {
-    //     console.log(props)
-    // }, [])
- 
     return (
         <div>
             {props.poems.map( poem => (
@@ -23,7 +19,6 @@ function PoemList(props) {
 }
 
 const mapStateToProps = state => {
-    // console.log(state.authReducer)
     return { poems: state.authReducer.allPoems }
 }
 

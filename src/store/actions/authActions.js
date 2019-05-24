@@ -37,6 +37,7 @@ export const logIn = (credentials) => dispatch => {
 
 export const logOut = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('userId');
     return {
         type: LOG_OUT
     }

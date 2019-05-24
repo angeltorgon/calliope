@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Comment from './Comment';
 import dateFormat from 'dateformat';
 
+
 import { like, dislike } from '../../store/actions';
 
 function PoemCard(props) {
@@ -42,7 +43,6 @@ function PoemCard(props) {
                         }</p>
 
                     </div>
-
                 </div>
 
 
