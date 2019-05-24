@@ -15,6 +15,7 @@ export const LIKE = 'LIKE';
 export const LIKE_SUCCESS = 'LIKE_SUCCESS';
 export const DISLIKE = 'DISLIKE';
 export const DISLIKE_SUCCESS = 'DISLIKE_SUCCESS';
+export const FETCH_USER_POEMS_SUCCESS = 'FETCH_USER_POEMS_SUCCESS';
 
 // export const sayHello = () => dispatch => {
 //     dispatch({type: SIGN_UP});
@@ -121,7 +122,7 @@ export const fetchUserPosts  = () => dispatch => {
         headers: { Authorization: token }
     })
     .then(res => {
-        console.log(res)
+        dispatch({type: FETCH_USER_POEMS_SUCCESS, payload: res.data})
     })
     .catch(err => {
         console.log(err)

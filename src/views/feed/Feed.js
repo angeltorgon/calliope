@@ -32,6 +32,7 @@ function Feed(props) {
 };
 
 const mapStateToProps = state => {
+  console.log(state.authReducer.poems)
   return {
     token: state.authReducer.token,
     poems: state.authReducer.allPoems,

@@ -1,13 +1,13 @@
 
 
 const initialState  = {
-    userPoems = []
+    userPoems: []
 }
 
 export const poemsReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case FETCH_USER_POEMS:
-            return {...state}
+            return {...state, userPoems: action.payload}
     }
 }
