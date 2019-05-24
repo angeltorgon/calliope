@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import UserFeed from './UserFeed';
 
-import { fetchUser } from '../../store/actions';
+import { fetchUser, fetchUserPosts } from '../../store/actions';
 
 function Profile(props) {
   
@@ -11,7 +11,6 @@ function Profile(props) {
 
   useEffect(() => {
     fetchUser();
-    console.log(props)
   });
 
   console.log(props.user)
@@ -23,7 +22,7 @@ function Profile(props) {
       <div className="user-posts">
         s
       </div>
-      <UserFeed poems={props.poems} />
+      <UserFeed poems={props.poems} fetchUserPosts={fetchUserPosts} />
     </div>
   )
 }
@@ -35,4 +34,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, fetchUserPosts)(Profile);

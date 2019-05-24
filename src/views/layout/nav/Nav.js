@@ -20,7 +20,7 @@ function Nav(props) {
                 </div>
                 
                 <div className="cta-container">
-                    <NavLink to="/profile" className="nav-cta login">Profile</NavLink>
+                    <NavLink to={`/profile/${props.user.id}`} className="nav-cta login">Profile</NavLink>
                     <NavLink onClick={() => props.logOut()} to="/" className="nav-cta login">Log Out</NavLink>
                 </div>
             </nav>
@@ -47,7 +47,8 @@ function Nav(props) {
 const mapStateToProps = state => {
     return {
         isLoggedIn: state.authReducer.isLoggedIn,
-        token: state.authReducer.token
+        token: state.authReducer.token,
+        user: state.authReducer.user
     }
 }
 
