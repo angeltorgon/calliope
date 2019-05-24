@@ -25,6 +25,8 @@ const initialState = {
     isFetchingPoems: false,
     validCredentials: true,
     token: localStorage.getItem('token'),
+    isFetchingUserInView: false,
+    userInView: {}
 }
 
 export const authReducer = (state = initialState, action) => {
@@ -69,6 +71,18 @@ export const authReducer = (state = initialState, action) => {
                 isLoggedIn: false,
                 allPoems: [],
             }
+        case FETCH_USER:
+            return {
+                ...state,
+                isFetchingUserInView: true,
+            }
+        case FETCH_USER_SUCCESS:
+            return {
+                ...state,
+                userInView: action.payload,
+                isFetchingUserInView: false,
+            }
+
         case FETCH_POEMS:
             return { ...state, isFetchingPoems: true }
         case FETCH_POEMS_SUCCESS:

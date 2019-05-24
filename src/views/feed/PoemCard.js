@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import Comment from './Comment';
 import dateFormat from 'dateformat';
 
@@ -35,7 +36,7 @@ function PoemCard(props) {
                     <img className="avatar" src="https://images.unsplash.com/photo-1476657680631-c07285ff2581?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1310&q=80" alt="user picture" />
 
                     <div className="stamp-text">
-                        <p className="stamp-text-item author" >{poet}</p>
+                    <NavLink to={`/profile/${props.poem.user_id}`} className="nav-cta login">{poet}</NavLink>
                         <p className="stamp-text-item" >{
                             dateFormat(poemDate, 'mediumDate')
                         }</p>

@@ -38,9 +38,8 @@ export const fetchPoems = () => dispatch => {
         .catch(err => console.log(err))
 }
 
-export const fetchUser = () => dispatch => {
+export const fetchUser = (id) => dispatch => {
     const token = localStorage.getItem('token');
-    const id = 'hello';
     dispatch({ type: FETCH_USER });
     axios
         .get(`http://localhost:4000/api/users/${id}`, { headers: { Authorization: token } })
