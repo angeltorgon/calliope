@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { fetchUserPosts } from '../../store/actions';
 
 
-function UserFeed() {
+function UserFeed(props) {
     return (
         <div>
             

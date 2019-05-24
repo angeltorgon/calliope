@@ -111,3 +111,19 @@ export const dislike = (poem) => dispatch => {
         })
         .catch(err => console.log(err))
 }
+
+export const fetchUserPosts  = () => dispatch => {
+    const token = localStorage.getItem('token');
+    const id = 1;
+
+    axios
+    .get(`http://localhost:4000/api/poems/user/${id}`, {
+        headers: { Authorization: token }
+    })
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+};

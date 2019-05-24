@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+
+import UserFeed from './UserFeed';
+
 import { fetchUser } from '../../store/actions';
 
 function Profile(props) {
@@ -19,6 +22,7 @@ function Profile(props) {
       <div className="user-posts">
         s
       </div>
+      <UserFeed />
     </div>
   )
 }
