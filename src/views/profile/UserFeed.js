@@ -6,11 +6,6 @@ import PoemCard from '../feed/PoemCard';
 
 
 function UserFeed(props) {
-
-    useEffect(() => {
-        props.fetchUserPosts();
-    })
-
     return (
         <div>
             {props.poems.map( poem => (
@@ -26,4 +21,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default UserFeed;
+export default connect(null, fetchUserPosts)(UserFeed);

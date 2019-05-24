@@ -46,6 +46,7 @@ export const fetchUser = () => dispatch => {
     axios
         .get(`http://localhost:4000/api/users/${id}`, { headers: { Authorization: token } })
         .then(res => {
+            console.log(res)
             dispatch({ type: FETCH_USER_SUCCESS, payload: res.data });
         })
         .catch(err => console.log(err))

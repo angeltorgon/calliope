@@ -8,7 +8,6 @@ const initialState  = {
 
 
 export const poemsReducer = (state = initialState, action) => {
-
     switch(action.type) {
         case FETCH_USER_POEMS_SUCCESS:
             return {...state, userPoems: action.payload};

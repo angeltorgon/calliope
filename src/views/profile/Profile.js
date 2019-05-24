@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import UserFeed from './UserFeed';
 
-import { fetchUser, fetchUserPosts } from '../../store/actions';
+import { fetchUser } from '../../store/actions';
 
 function Profile(props) {
-  
-  const [user, setUser] = useState(null);
 
   useEffect(() => {
     fetchUser();
@@ -22,7 +20,7 @@ function Profile(props) {
       <div className="user-posts">
         s
       </div>
-      <UserFeed poems={props.poems} fetchUserPosts={fetchUserPosts} />
+      <UserFeed poems={props.poems} />
     </div>
   )
 }
@@ -34,4 +32,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, fetchUserPosts)(Profile);
+export default connect(mapStateToProps)(Profile);
