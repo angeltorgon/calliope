@@ -17,7 +17,7 @@ import {
 
 const initialState = {
     user: {},
-    poems: [],
+    allPoems: [],
     loggingIn: false,
     signingUp: false,
     isSignedUp: false,
@@ -68,7 +68,7 @@ export const authReducer = (state = initialState, action ) =>
         return {
             ...state, 
             isLoggedIn: false,
-            poems: [],
+            allPoems: [],
         }
         case FETCH_POEMS: 
             return {...state, isFetchingPoems: true}

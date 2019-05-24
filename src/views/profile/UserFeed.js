@@ -11,5 +11,12 @@ function UserFeed(props) {
     )
 }
 
+const mapStateToProps = state => {
+    console.log(state)
+
+    return {
+
+    }
+}
 
 export default connect(null, fetchUserPosts)(UserFeed)
