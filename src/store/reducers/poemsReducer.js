@@ -1,5 +1,7 @@
 import {
     FETCH_USER_POEMS_SUCCESS,
+    FETCH_USER,
+    FETCH_USER_SUCCESS,
 } from '../actions'
 
 const initialState  = {

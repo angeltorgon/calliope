@@ -29,7 +29,7 @@ function Profile(props) {
 
 const mapStateToProps = state => {
   return {
-    user: state.authReducer.user,
+    user: state.authReducer.userInView,
     poems: state.poemsReducer.userPoems
   }
 }

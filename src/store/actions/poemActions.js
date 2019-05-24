@@ -45,7 +45,7 @@ export const fetchUser = (id) => dispatch => {
         .get(`http://localhost:4000/api/users/${id}`, { headers: { Authorization: token } })
         .then(res => {
             console.log(res)
-            dispatch({ type: FETCH_USER_SUCCESS, payload: res.data });
+            dispatch({ type: FETCH_USER_SUCCESS, payload: res.data.user });
         })
         .catch(err => console.log(err))
 }
