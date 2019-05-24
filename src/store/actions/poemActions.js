@@ -12,9 +12,8 @@ export const FETCH_USER_POEMS_SUCCESS = 'FETCH_USER_POEMS_SUCCESS';
 
 
 
-export const fetchUserPosts  = () => dispatch => {
+export const fetchUserPosts  = (id) => dispatch => {
     const token = localStorage.getItem('token');
-    const id = 1;
 
     axios
     .get(`http://localhost:4000/api/poems/user/${id}`, {

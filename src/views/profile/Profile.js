@@ -3,15 +3,17 @@ import { connect } from 'react-redux';
 
 import UserFeed from './UserFeed';
 
-import { fetchUser } from '../../store/actions';
+import { fetchUser, fetchUserPosts } from '../../store/actions';
 
 function Profile(props) {
 
   useEffect(() => {
-    fetchUser();
-  });
+    console.log(props)
+    props.fetchUser();
+    props.fetchUserPosts(props.match.params.id)
 
-  console.log(props.user)
+  }, []);
+
   return (
     <div className="profile-container">
       <img src="https://images.unsplash.com/photo-1476657680631-c07285ff2581?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1310&q=80" alt="user picture" alt="profile picture" />
@@ -32,4 +34,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps, { fetchUser, fetchUserPosts })(Profile);
