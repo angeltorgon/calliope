@@ -11,6 +11,7 @@ function Profile(props) {
 
   useEffect(() => {
     fetchUser();
+    console.log(props)
   });
 
   console.log(props.user)
@@ -22,7 +23,7 @@ function Profile(props) {
       <div className="user-posts">
         s
       </div>
-      <UserFeed />
+      <UserFeed poems={props.poems} />
     </div>
   )
 }
@@ -30,6 +31,7 @@ function Profile(props) {
 const mapStateToProps = state => {
   return {
     user: state.authReducer.user,
+    poems: state.poemsReducer.userPoems
   }
 }
 
