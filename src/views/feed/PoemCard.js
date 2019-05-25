@@ -22,6 +22,7 @@ function PoemCard(props) {
 
     const handleLike = () => {
         if (liked) {
+            console.log(props)
             props.dislike({ ...props.poem, likes: likes - 1 });
             setLikes(likes - 1);
 
@@ -36,8 +37,10 @@ function PoemCard(props) {
         <div className="poem-post-container">
             <div className="poem-stamp">
                 <UserStamp 
-                    userId={props.poem.user_id} poet={poet} 
+                    userId={props.poem.user_id} 
+                    poet={poet} 
                     date={poemDate}
+                 
                 />
                 {openMenu 
                 ? 
