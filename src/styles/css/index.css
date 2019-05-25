@@ -322,32 +322,6 @@ img {
   display: flex;
   justify-content: space-between;
 }
-.poem-post-container .poem-stamp .container-left {
-  width: 200px;
-  height: 70px;
-  display: flex;
-}
-.poem-post-container .poem-stamp .container-left .avatar {
-  margin: 0 10px;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-}
-.poem-post-container .poem-stamp .container-left .stamp-text {
-  margin-top: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.poem-post-container .poem-stamp .container-left .stamp-text .stamp-text-item {
-  text-align: center;
-  padding-bottom: 0px;
-  font-size: 15px;
-}
-.poem-post-container .poem-stamp .container-left .stamp-text .author {
-  font-weight: bolder;
-  font-size: 20px;
-}
 .poem-post-container .poem-stamp .post-menu {
   width: 35px;
   height: 35px;
@@ -412,4 +386,30 @@ img {
 }
 .poem-post-container a {
   font-size: 1.5rem;
+}
+.container-left {
+  width: 200px;
+  height: 70px;
+  display: flex;
+}
+.container-left .avatar {
+  margin: 0 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.container-left .stamp-text {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container-left .stamp-text .stamp-text-item {
+  text-align: center;
+  padding-bottom: 0px;
+  font-size: 15px;
+}
+.container-left .stamp-text .author {
+  font-weight: bolder;
+  font-size: 20px;
 }
