@@ -6,15 +6,18 @@ function CommentForm(props) {
 
     const [commentText, setCommentText] = useState('');
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(props)
 
         const comment = {
             comment: commentText,
-            username: '',
-            user_id: '',
-            poem_id: '',
+            username: props.user.username,
+            user_id: props.user.id,
+            poem_id: props.poemId,
         }
-        props.addComment();
+        props.addComment(comment);
     }
 
 
@@ -28,4 +31,11 @@ function CommentForm(props) {
     )
 }
 
-export default connect(null, addComment)(CommentForm);
+const mapStateToProps = state => {
+    console.log(state.authReducer.user)
+    return {
+        user: state.authReducer.user
+    }
+}
+
+export default connect(mapStateToProps, {addComment})(CommentForm);

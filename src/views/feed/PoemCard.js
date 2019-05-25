@@ -77,7 +77,7 @@ function PoemCard(props) {
                     })}
                 </div>
             }
-            <CommentForm avatar={props.user.avatar} />
+            <CommentForm avatar={props.user.avatar} poemId={props.poem.id} />
         </div>
     )
 }
