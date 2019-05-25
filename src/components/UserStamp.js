@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import dateFormat from 'dateformat';
 
 export default function UserStamp(props) {
-    console.log(props)
     
     return (
         <div className="container-left">
