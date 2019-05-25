@@ -1,5 +1,6 @@
 import React from 'react';
 import dateFormat from 'dateformat';
+import UserStamp from '../../components/UserStamp';
 
 export default function Comment(props) {
 

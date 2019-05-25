@@ -34,7 +34,10 @@ function PoemCard(props) {
     return (
         <div className="poem-post-container">
             <div className="poem-stamp">
-                <UserStamp userId={props.poem.user_id} poet={poet} poemDate={poemDate}/>
+                <UserStamp 
+                    userId={props.poem.user_id} poet={poet} 
+                    date={poemDate}
+                />
                 {openMenu 
                 ? 
                 <div className="modal" >
