@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Comment from './Comment';
-import dateFormat from 'dateformat';
+import UserStamp from '../../components/UserStamp';
+
 
 
 import { like, dislike } from '../../store/actions';
@@ -33,19 +34,7 @@ function PoemCard(props) {
     return (
         <div className="poem-post-container">
             <div className="poem-stamp">
-                <div className="container-left">
-                    <img className="avatar" src="https://images.unsplash.com/photo-1476657680631-c07285ff2581?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1310&q=80" alt="user picture" />
-
-                    <div className="stamp-text">
-                    <NavLink to={`/profile/${props.poem.user_id}`} className="nav-cta login">{poet}</NavLink>
-                        <p className="stamp-text-item" >{
-                            dateFormat(poemDate, 'mediumDate')
-                        }</p>
-
-                    </div>
-                </div>
-
-
+                <UserStamp userId={props.poem.user_id} poet={poet} poemDate={poemDate}/>
                 {openMenu 
                 ? 
                 <div className="modal" >
