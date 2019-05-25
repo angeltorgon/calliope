@@ -10,7 +10,8 @@ export default function UserStamp(props) {
             <img className="avatar" src={`https://api.adorable.io/avatars/200/${props.poet}`} alt="user picture" />
 
             <div className="stamp-text">
-                <Link to={`/profile/${props.userId}`} className="nav-cta login">{props.poet}</Link>
+                <Link to={`/profile/${props.userId}`} className="stamp-text-item">{props.poet}</Link>
+
                 <p className="stamp-text-item" >{
                     dateFormat(props.date, 'mediumDate')
                 }</p>

@@ -77,9 +77,16 @@ function PoemCard(props) {
                     })}
                 </div>
             }
-            <CommentForm />
+            <CommentForm avatar={props.user.avatar} />
         </div>
     )
 }
 
-export default connect(null, { like, dislike })(PoemCard);
+const mapStateToProps = state => {
+    console.log(state.authReducer.user.avatar)
+    return {
+        user: state.authReducer.user
+    }
+}
+
+export default connect(mapStateToProps, { like, dislike })(PoemCard);
