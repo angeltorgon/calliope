@@ -413,3 +413,23 @@ img {
   font-weight: bolder;
   font-size: 20px;
 }
+.comment-form-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: whitesmoke;
+}
+.comment-form-container .comment-input {
+  width: 80%;
+  height: 50px;
+  font-size: 14px;
+  padding: 10px;
+}
+.comment-form-container .avatar {
+  margin: 0 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}

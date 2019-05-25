@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Comment from './Comment';
 import UserStamp from '../../components/UserStamp';
+import CommentForm from './CommentForm';
 
 
 
@@ -47,8 +48,8 @@ function PoemCard(props) {
                 <img onClick={() => setOpenMenu(true)} className="post-menu" src="https://img.icons8.com/small/90/000000/menu-2.png" />
 
                 }
-
             </div>
+
             <div className="poem">
                 <h2 className="poem-title">{title}</h2>
                 <p className="card-poem" >{text}</p>
@@ -64,8 +65,8 @@ function PoemCard(props) {
                 <div className="stats-right">
                     <p className="stats-item">Comments: {comments.length}</p>
                 </div>
-
             </div>
+
             {comments.length < 1 ? null :
                 <div className="comments-container">
                     {comments.map(comment => {
@@ -73,6 +74,7 @@ function PoemCard(props) {
                     })}
                 </div>
             }
+            <CommentForm />
         </div>
     )
 }
