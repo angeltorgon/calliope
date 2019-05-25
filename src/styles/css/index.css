@@ -409,6 +409,8 @@ img {
   text-align: center;
   padding: 0;
   font-size: 15px;
+  color: black;
+  text-decoration: none;
 }
 .container-left .stamp-text .author {
   font-weight: bolder;

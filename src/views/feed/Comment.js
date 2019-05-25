@@ -3,9 +3,6 @@ import dateFormat from 'dateformat';
 import UserStamp from '../../components/UserStamp';
 
 export default function Comment(props) {
-
-  console.log(props)
-
   return (
     <div className="comment">
       <UserStamp

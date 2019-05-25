@@ -29,7 +29,13 @@ function Signup(props) {
 
         if (firstName && lastName && username && email && password) {
             if(password === confirmPassword) {
-                props.signUp({firstName, lastName, username, email, password})
+                props.signUp({
+                    firstName, 
+                    lastName, 
+                    username, 
+                    email, 
+                    password, 
+                    avatar: `https://api.adorable.io/avatars/200/${username}`})
                 setCredentials(true);
             } else {
                 setPasswordsMatch(false)
