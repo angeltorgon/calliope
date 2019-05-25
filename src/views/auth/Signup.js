@@ -54,7 +54,7 @@ function Signup(props) {
                 <input onChange={(e)=>{setFirstName(e.target.value)}} value={firstName} type="text" placeholder="first name"></input>
                 <input onChange={(e)=>{setLastName(e.target.value)}} value={lastName} type="text" placeholder="last name"></input>
                 <input onChange={(e)=>{setUsername(e.target.value)}} value={username} type="text" placeholder="username"></input>
-                <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="text" placeholder="email"></input>
+                <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" placeholder="email"></input>
                 <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" placeholder="password"></input>
                 <input onChange={(e)=>{setConfirmPassword(e.target.value)}} value={confirmPassword} type="password" placeholder="confirm password"></input>
                 <button>Sign up</button>
