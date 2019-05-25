@@ -79,3 +79,17 @@ export const dislike = (poem) => dispatch => {
         })
         .catch(err => console.log(err))
 }
+
+export const addComment = (comment) => dispatch => {
+    const token = localStorage.getItem('token');
+    dispatch({ type: DISLIKE });
+    axios
+        .post(`http://localhost:4000/api/comments/`, comment, {
+            headers: { Authorization: token }
+        })
+        .then(res => {
+            console.log(res)
+            // dispatch({ type: DISLIKE_SUCCESS, payload: res.data });
+        })
+        .catch(err => console.log(err))
+}
