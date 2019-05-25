@@ -24,4 +24,3 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, {signUp})(PoemList);
-
