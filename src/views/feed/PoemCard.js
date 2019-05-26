@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import Comment from './Comment';
+import CommentSection from './CommentSection';
 import UserStamp from '../../components/UserStamp';
 import CommentForm from './CommentForm';
 import CommentList from './CommentList';
@@ -70,8 +70,7 @@ function PoemCard(props) {
                     <p className="stats-item">Comments: {comments.length}</p>
                 </div>
             </div>
-            <CommentList comments={comments} />
-            <CommentForm avatar={props.user.avatar} poemId={props.poem.id} />
+            <CommentSection comments={comments} avatar={props.user.avatar} poemId={props.poem.id}/>
         </div>
     )
 }

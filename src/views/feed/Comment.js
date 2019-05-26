@@ -1,13 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import dateFormat from 'dateformat';
 import UserStamp from '../../components/UserStamp';
-import { connect } from 'react-redux';
 
 function Comment(props) {
-
-  useEffect(() => {
-    console.log(props)
-  }, [])
 
   return (
     <div className="comment">
