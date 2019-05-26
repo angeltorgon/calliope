@@ -8,9 +8,6 @@ function CommentForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        console.log(props)
-
         const comment = {
             comment: commentText,
             username: props.user.username,
