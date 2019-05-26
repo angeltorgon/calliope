@@ -3,10 +3,18 @@ import ComponentList from './CommentList';
 import ComponentForm from './CommentForm';
 
 function CommentSection(props) {
+
+    const addComment = (e, comment) => {
+        e.preventDefault();
+        props.addComment(comment);
+        
+    }
+
+
     return (
         <div>
             <ComponentList comments={props.comments}/>
-            <ComponentForm avatar={props.poemId} poemId={props.avatar}/>
+            <ComponentForm addComment={addComment} avatar={props.poemId} poemId={props.avatar}/>
         </div>
     )
 }

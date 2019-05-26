@@ -14,10 +14,10 @@ function CommentForm(props) {
             user_id: props.user.id,
             poem_id: props.poemId,
         }
+
         props.addComment(comment);
         setCommentText('');
     }
-
 
     return (
         <div className="comment-form-container">
