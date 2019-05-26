@@ -70,14 +70,7 @@ function PoemCard(props) {
                     <p className="stats-item">Comments: {comments.length}</p>
                 </div>
             </div>
-
-            {comments.length < 1 ? null :
-                <div className="comments-container">
-                    {comments.map(comment => {
-                        return <Comment comment={comment} />
-                    })}
-                </div>
-            }
+            <CommentList comments={comments} />
             <CommentForm avatar={props.user.avatar} poemId={props.poem.id} />
         </div>
     )
