@@ -24,10 +24,4 @@ function Comment(props) {
   )
 };
 
-const mapStateToProps = state => {
-  return {
-    allPoems: state.authReducer.allPoems
-  }
-}
-
-export default connect(mapStateToProps)(Comment);
+export default Comment;
