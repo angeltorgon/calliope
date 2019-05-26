@@ -8,7 +8,7 @@ import PoemCard from '../feed/PoemCard';
 function UserFeed(props) {
 
     return (
-        <div>
+        <div className="feed">
             {props.poems.map( poem => (
                 <PoemCard key={poem.id} poem={poem} />
             ))}
