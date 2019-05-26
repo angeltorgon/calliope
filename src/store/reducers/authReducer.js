@@ -12,7 +12,7 @@ import {
     FETCH_USER_SUCCESS,
     LIKE,
     LIKE_SUCCESS,
-    DISLIKE
+    ADD_COMMENT_SUCCESS
 } from '../actions';
 
 const initialState = {
@@ -87,6 +87,8 @@ export const authReducer = (state = initialState, action) => {
             return { ...state, isFetchingPoems: true }
         case FETCH_POEMS_SUCCESS:
             return { ...state, isFetchingPoems: false, allPoems: action.payload };
+        case ADD_COMMENT_SUCCESS:
+            return { ...state, allPoems: action.payload };
         case LIKE:
             return { ...state }
         case LIKE_SUCCESS:

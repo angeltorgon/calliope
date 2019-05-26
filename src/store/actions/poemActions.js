@@ -9,6 +9,7 @@ export const LIKE_SUCCESS = 'LIKE_SUCCESS';
 export const DISLIKE = 'DISLIKE';
 export const DISLIKE_SUCCESS = 'DISLIKE_SUCCESS';
 export const FETCH_USER_POEMS_SUCCESS = 'FETCH_USER_POEMS_SUCCESS';
+export const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
 
 
 
@@ -87,8 +88,12 @@ export const addComment = (comment) => dispatch => {
             headers: { Authorization: token }
         })
         .then(res => {
-            console.log(res)
-            // dispatch({ type: DISLIKE_SUCCESS, payload: res.data });
+            return axios
+            .get('http://localhost:4000/api/poems', 
+            { headers: { Authorization: token } })
+        })
+        .then(res => {
+            dispatch({type: ADD_COMMENT_SUCCESS, payload: res.data})
         })
         .catch(err => console.log(err))
 }

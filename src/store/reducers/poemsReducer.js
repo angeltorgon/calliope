@@ -5,7 +5,8 @@ import {
 } from '../actions'
 
 const initialState  = {
-    userPoems: []
+    userPoems: [],
+    allPoems: [],
 }
 
 

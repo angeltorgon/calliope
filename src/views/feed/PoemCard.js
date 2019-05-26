@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Comment from './Comment';
 import UserStamp from '../../components/UserStamp';
 import CommentForm from './CommentForm';
+import CommentList from './CommentList';
 
 
 

@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import dateFormat from 'dateformat';
 import UserStamp from '../../components/UserStamp';
+import { connect } from 'react-redux';
 
-export default function Comment(props) {
+function Comment(props) {
+
+  useEffect(() => {
+    console.log(props)
+  }, [])
+
   return (
     <div className="comment">
       <UserStamp
@@ -16,4 +22,12 @@ export default function Comment(props) {
       <hr/>
     </div>
   )
+};
+
+const mapStateToProps = state => {
+  return {
+    allPoems: state.authReducer.allPoems
+  }
 }
+
+export default connect(mapStateToProps)(Comment);
