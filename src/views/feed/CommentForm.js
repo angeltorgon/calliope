@@ -15,7 +15,7 @@ function CommentForm(props) {
             poem_id: props.poemId,
         }
         props.addComment(comment);
-        props.fetchComments(props.poemId);
+        props.fetchComments(props.poemId, comment);
         setCommentText('');
     }
     return (

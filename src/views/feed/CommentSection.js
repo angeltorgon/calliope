@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ComponentList from './CommentList';
 import ComponentForm from './CommentForm';
+import { connect } from 'react-redux';
 
 import axios from 'axios';
 
@@ -8,18 +9,21 @@ function CommentSection(props) {
 
     const [ comments, setComments ] = useState(props.comments)
 
-    const fetchComments = (poemId) => {
+    const fetchComments = (poemId, comment) => {
         console.log('fetchComments was triggered')
-            axios
-            .get(`http://localhost:4000/api/comments/${poemId}`)
-            .then( res => {
-                setComments(res.data.comments);
-                console.log(res.data.comments)
-            })
-            .catch( err => {
-                console.log(err);
-            })
+            // axios
+            // .get(`http://localhost:4000/api/comments/${poemId}`)
+            // .then( res => {
+            //     console.log(res.data.comments)
+        
+            // })
+            // .catch( err => {
+            //     console.log(err);
+            // })
+            // setComments({...comments, comment});
     }
+
+
 
 
     return (
@@ -29,5 +33,11 @@ function CommentSection(props) {
         </div>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        allPoems: state.authReducer.allPoems
+    }
+}
   
-export default CommentSection;
+export default connect(mapStateToProps)(CommentSection);

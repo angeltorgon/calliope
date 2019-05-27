@@ -23,7 +23,6 @@ function PoemCard(props) {
 
     const handleLike = () => {
         if (liked) {
-            console.log(props)
             props.dislike({ ...props.poem, likes: likes - 1 });
             setLikes(likes - 1);
 
@@ -76,7 +75,6 @@ function PoemCard(props) {
 }
 
 const mapStateToProps = state => {
-    console.log(state.authReducer.user.avatar)
     return {
         user: state.authReducer.user
     }

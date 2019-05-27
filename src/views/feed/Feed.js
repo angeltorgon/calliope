@@ -25,7 +25,7 @@ function Feed(props) {
       height="50"
       width="50"
       /> 
-        </div>: <PoemList poems={props.poems}/>
+        </div>: <PoemList poems={props.allPoems}/>
       }
     </div>
   )
@@ -34,7 +34,7 @@ function Feed(props) {
 const mapStateToProps = state => {
   return {
     token: state.authReducer.token,
-    poems: state.authReducer.allPoems,
+    allPoems: state.authReducer.allPoems,
     isLoggedIn: state.authReducer.isLoggedIn,
     isFetchingPoems: state.authReducer.isFetchingPoems
   }
