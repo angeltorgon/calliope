@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addComment } from '../../store/actions/poemActions';
 
 function CommentForm(props) {
 
@@ -15,7 +14,6 @@ function CommentForm(props) {
             poem_id: props.poemId,
         }
         props.addComment(comment);
-        props.fetchComments(props.poemId, comment);
         setCommentText('');
     }
     return (
@@ -34,4 +32,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {addComment})(CommentForm);
+export default connect(mapStateToProps)(CommentForm);

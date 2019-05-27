@@ -81,7 +81,7 @@ export const dislike = (poem) => dispatch => {
         .catch(err => console.log(err))
 }
 
-export const addComment = (comment) => dispatch => {
+export const postComment = (comment) => dispatch => {
     const token = localStorage.getItem('token');
     axios
         .post(`http://localhost:4000/api/comments/`, comment, {
@@ -89,7 +89,7 @@ export const addComment = (comment) => dispatch => {
         })
         .then(res => {
             return axios
-            .get('http://localhost:4000/api/poems', 
+            .get('http://localhost:4000/api/poems/', 
             { headers: { Authorization: token } })
         })
         .then(res => {
