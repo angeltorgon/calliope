@@ -26,7 +26,9 @@ export const logIn = (credentials) => dispatch => {
             credentials)
         .then(res => {
             localStorage.setItem('token', res.data.token);
-            localStorage.setItem('userId', res.data.user);
+            localStorage.setItem('userId', res.data.user.id);
+            localStorage.setItem('username', res.data.user.username);
+            localStorage.setItem('avatar', res.data.user.avatar);
             dispatch({ type: LOG_IN_SUCCESS, payload: res.data });
         })
         .catch(err => {
@@ -38,6 +40,8 @@ export const logIn = (credentials) => dispatch => {
 export const logOut = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('userId');
+    localStorage.removeItem('username');
+    localStorage.removeItem('avatar');
     return {
         type: LOG_OUT
     }
