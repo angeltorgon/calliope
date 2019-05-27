@@ -14,11 +14,10 @@ function CommentForm(props) {
             user_id: props.user.id,
             poem_id: props.poemId,
         }
-
         props.addComment(comment);
+        props.fetchComments(props.poemId);
         setCommentText('');
     }
-
     return (
         <div className="comment-form-container">
             <img className="avatar" className="avatar" src={props.avatar} alt="user picture" />
@@ -30,7 +29,6 @@ function CommentForm(props) {
 }
 
 const mapStateToProps = state => {
-    console.log(state.authReducer.user)
     return {
         user: state.authReducer.user
     }
