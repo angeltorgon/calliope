@@ -4,6 +4,11 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid gainsboro;
+
+    @media(max-width:600px) {
+        flex-direction: column;
+        height: auto;
+    }
     
     .logo {
         .center;
@@ -13,6 +18,12 @@
         font-size: 40px;
         text-decoration: none;
         color: black;
+
+        @media(max-width:600px) {
+            flex-direction: column;
+            height: 80px;
+            width: 100%;
+        }
     }
 
     .link-container {
@@ -37,8 +48,14 @@
     .cta-container {
         .center();
         justify-content: space-around;
-        width: 20%;
+        width: 200px;
         height: 100%;
+
+        @media(max-width:600px) {
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+        }
         
         .nav-cta {
             width: 50%;
@@ -49,6 +66,13 @@
             color: black;
             text-align: center;
             transition: .5s;
+
+            @media(max-width:600px) {
+                .center();
+                padding: 16px;
+                height: 70px;
+                width: 100%;
+            }
         }
 
         .signup {

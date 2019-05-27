@@ -4,11 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { logOut } from '../../../store/actions/index';
 
 function Nav(props) {
-
-    useEffect(() => {
-        
-    }, [props.isLoggedIn])
-
     return (
         <>
         { localStorage.getItem('token') ? 
@@ -29,9 +24,9 @@ function Nav(props) {
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <NavLink to="/" className="logo">Calliope</NavLink>
                 <div className="link-container">
-                    <div className="link">Blog</div>
+                    {/* <div className="link">Blog</div>
                     <div className="link">Learn</div>
-                    <div className="link">About Us</div>
+                    <div className="link">About Us</div> */}
                 </div>
                 
                 <div className="cta-container">

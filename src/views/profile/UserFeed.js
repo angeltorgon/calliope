@@ -10,7 +10,7 @@ function UserFeed(props) {
     return (
         <div className="feed">
             {props.poems.map( poem => (
-                <PoemCard key={poem.id} poem={poem} />
+                <PoemCard key={poem.id} poem={poem}/>
             ))}
         </div>
     )

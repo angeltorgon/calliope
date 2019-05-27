@@ -20,11 +20,8 @@ function Profile(props) {
         <img className="user-avatar" src={props.user.avatar} alt="profile picture" />
         <h2 className="user-name">{`${props.user.firstName} ${props.user.lastName}`}</h2>
         <p className="user-bio">Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner.</p>
-        <div className="user-posts">
-        </div>
-
       </div>
-      <UserFeed poems={props.poems} />
+      <UserFeed className="user-feed" poems={props.poems} />
     </div>
   )
 }
