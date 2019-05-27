@@ -3,6 +3,10 @@
     max-width: 900px;
     display: flex;
 
+    @media(max-width:600px){
+        flex-direction: column;
+    }
+
 
     .user-profile-container {
         .border(lightgrey);
@@ -14,8 +18,13 @@
         width: 200px;
         border-radius: 10px;
 
+        @media(max-width:600px){
+            width: 100%;
+        }
+
         .user-avatar {
             border-radius: 10px;
+            margin: 20px 0;
         }
     }    
 

@@ -197,6 +197,7 @@ img {
     flex-direction: column;
     height: 80px;
     width: 100%;
+    border-bottom: 1px solid lightgrey;
   }
 }
 .nav .link-container {
@@ -325,6 +326,11 @@ img {
   max-width: 900px;
   display: flex;
 }
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+  }
+}
 .profile-container .user-profile-container {
   border: 1px solid lightgrey;
   display: flex;
@@ -337,8 +343,14 @@ img {
   width: 200px;
   border-radius: 10px;
 }
+@media (max-width: 600px) {
+  .profile-container .user-profile-container {
+    width: 100%;
+  }
+}
 .profile-container .user-profile-container .user-avatar {
   border-radius: 10px;
+  margin: 20px 0;
 }
 .profile-container .user-feed {
   border: 1px solid red;
