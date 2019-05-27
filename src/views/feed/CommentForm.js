@@ -9,9 +9,9 @@ function CommentForm(props) {
         e.preventDefault();
         const comment = {
             comment: commentText,
-            username: props.user.username,
+            username: localStorage.getItem('username'),
             user_id: localStorage.getItem('userId'),
-            poem_id: localStorage.getItem('username'),
+            poem_id: props.poemId,
         }
         props.addComment(comment);
         setCommentText('');
