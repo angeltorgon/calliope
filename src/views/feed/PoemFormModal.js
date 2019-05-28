@@ -38,19 +38,19 @@ class PoemFormModal extends React.Component {
     render() {
         return (
             <div>
-                <Button className='add-button' color="danger" onClick={this.toggle}>
+                <button className='add-button' color="danger" onClick={this.toggle}>
                     <img src="https://img.icons8.com/ios/100/000000/plus-math.png" />
-                </Button>
+                </button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} unmountOnClose={this.state.unmountOnClose}>
                     <ModalHeader toggle={this.toggle}>Let's write a poem!</ModalHeader>
-                    <ModalBody>
-                        <input name="poemTitle" value={this.state.inputText} onChange={this.onChange} type="textarea" placeholder="Title" rows={10} />
-                        <input name="poem" value={this.state.inputText} onChange={this.onChange} type="textarea" placeholder="Poem" rows={10} />
+                    <ModalBody className="poem-form">
+                        <input name="poemTitle" value={this.state.inputText} onChange={this.onChange} type="text" placeholder="Title"/>
+                        <input name="poem" value={this.state.inputText} onChange={this.onChange} type="textarea" placeholder="Poem"/>
                     </ModalBody>
-                    {/* <ModalFooter>
+                    <ModalFooter>
                         <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                    </ModalFooter> */}
+                    </ModalFooter>
                 </Modal>
             </div>
         );

@@ -12,10 +12,7 @@ function PoemList(props) {
 
     return (
         <div>
-            {/* <Link to='/poemform'>
-            <img className='add-button' src="https://img.icons8.com/ios/100/000000/plus-math.png"/>
-            </Link> */}
-            <PoemFormModal />
+            <PoemFormModal className={"poem-form-modal"} />
             {props.poems.map( poem => (
                 <PoemCard key={poem.id} poem={poem}/>
             ))}

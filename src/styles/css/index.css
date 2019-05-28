@@ -313,9 +313,6 @@ img {
 .feed {
   margin: 0 auto;
   max-width: 700px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .feed .loader {
   display: flex;
@@ -325,7 +322,7 @@ img {
   height: 100vh;
 }
 .feed .add-button {
-  border: 1px solid #DE7878;
+  border: 1px solid lightgrey;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,6 +334,21 @@ img {
   text-decoration: none;
   font-size: 40px;
   border-radius: 50%;
+}
+.feed .modal-content {
+  border: 1px solid blue;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
 }
 .profile-container {
   margin: 0 auto;
