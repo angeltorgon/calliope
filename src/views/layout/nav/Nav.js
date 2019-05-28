@@ -7,7 +7,7 @@ function Nav(props) {
     return (
         <>
         { localStorage.getItem('token') ? 
-            <nav className="nav">
+            <nav className="navbar">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <div to="/dashboard" className="logo">Calliope</div>
                 <div className="link-container">
@@ -20,7 +20,7 @@ function Nav(props) {
                 </div>
             </nav>
         :
-            <nav className="nav">
+            <nav className="navbar">
                 {/* <img className="logo" src="" alt="logo"></img> */}
                 <NavLink to="/" className="logo">Calliope</NavLink>
                 <div className="link-container">
