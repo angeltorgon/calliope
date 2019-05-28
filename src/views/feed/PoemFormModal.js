@@ -8,11 +8,14 @@ class PoemFormModal extends React.Component {
         super(props);
         this.state = {
             modal: false,
-            unmountOnClose: true
+            unmountOnClose: true,
+            poemTitle: '',
+            poem: ''
         };
 
         this.toggle = this.toggle.bind(this);
         this.changeUnmountOnClose = this.changeUnmountOnClose.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
 
     toggle() {
@@ -26,23 +29,28 @@ class PoemFormModal extends React.Component {
         this.setState({ unmountOnClose: JSON.parse(value) });
     }
 
+    onChange(e) {
+        const inputText = e.target.name 
+        this.setState({ ...this.state, [inputText]: e.target.value });
+        console.log(this.state)
+    }
+
     render() {
         return (
             <div>
-                <Form inline onSubmit={(e) => e.preventDefault()}>
-                    <Button className='add-button' color="danger" onClick={this.toggle}>
-                    <img src="https://img.icons8.com/ios/100/000000/plus-math.png"/>
-                    </Button>
-                </Form>
+                <Button className='add-button' color="danger" onClick={this.toggle}>
+                    <img src="https://img.icons8.com/ios/100/000000/plus-math.png" />
+                </Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} unmountOnClose={this.state.unmountOnClose}>
                     <ModalHeader toggle={this.toggle}>Let's write a poem!</ModalHeader>
                     <ModalBody>
-                        <Input type="textarea" placeholder="Write something (data should remain in modal if unmountOnClose is set to false)" rows={5} />
+                        <input name="poemTitle" value={this.state.inputText} onChange={this.onChange} type="textarea" placeholder="Title" rows={10} />
+                        <input name="poem" value={this.state.inputText} onChange={this.onChange} type="textarea" placeholder="Poem" rows={10} />
                     </ModalBody>
-                    <ModalFooter>
+                    {/* <ModalFooter>
                         <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                    </ModalFooter>
+                    </ModalFooter> */}
                 </Modal>
             </div>
         );
