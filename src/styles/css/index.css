@@ -168,7 +168,7 @@ img {
   width: 100%;
   margin: 0 auto;
 }
-.nav {
+.navbar {
   display: flex;
   height: 100px;
   justify-content: space-between;
@@ -176,12 +176,12 @@ img {
   border-bottom: 1px solid gainsboro;
 }
 @media (max-width: 600px) {
-  .nav {
+  .navbar {
     flex-direction: column;
     height: auto;
   }
 }
-.nav .logo {
+.navbar .logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,14 +193,14 @@ img {
   color: black;
 }
 @media (max-width: 600px) {
-  .nav .logo {
+  .navbar .logo {
     flex-direction: column;
     height: 80px;
     width: 100%;
     border-bottom: 1px solid lightgrey;
   }
 }
-.nav .link-container {
+.navbar .link-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,11 +210,11 @@ img {
   width: 33.3%;
 }
 @media (max-width: 600px) {
-  .nav .link-container {
+  .navbar .link-container {
     width: 100%;
   }
 }
-.nav .link-container .link {
+.navbar .link-container .link {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -224,11 +224,11 @@ img {
   color: black;
   transition: 0.5s;
 }
-.nav .link-container .link:hover {
+.navbar .link-container .link:hover {
   background-color: lightgray;
 }
 @media (max-width: 600px) {
-  .nav .link-container .link {
+  .navbar .link-container .link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -237,7 +237,7 @@ img {
     width: 100%;
   }
 }
-.nav .cta-container {
+.navbar .cta-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -246,13 +246,13 @@ img {
   height: 100%;
 }
 @media (max-width: 600px) {
-  .nav .cta-container {
+  .navbar .cta-container {
     flex-direction: column;
     height: auto;
     width: 100%;
   }
 }
-.nav .cta-container .nav-cta {
+.navbar .cta-container .nav-cta {
   width: 50%;
   height: 100%;
   padding-top: 40px;
@@ -263,7 +263,7 @@ img {
   transition: 0.5s;
 }
 @media (max-width: 600px) {
-  .nav .cta-container .nav-cta {
+  .navbar .cta-container .nav-cta {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -272,24 +272,24 @@ img {
     width: 100%;
   }
 }
-.nav .cta-container .signup {
+.navbar .cta-container .signup {
   border: 1px solid lightgray;
   color: white;
   background-color: #EB5972;
 }
-.nav .cta-container .signup:hover {
+.navbar .cta-container .signup:hover {
   background-color: #d14960;
 }
-.nav .cta-container .login {
+.navbar .cta-container .login {
   transition: 0.5s;
 }
-.nav .cta-container .login:hover {
+.navbar .cta-container .login:hover {
   background-color: lightgray;
 }
-.nav .cta-container .profile {
+.navbar .cta-container .profile {
   background-color: #6FF2C4;
 }
-.nav .cta-container .profile:hover {
+.navbar .cta-container .profile:hover {
   background-color: #51ebb5;
 }
 .home-container {
