@@ -5,53 +5,41 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form,
 
 class PoemFormModal extends React.Component {
     constructor(props) {
-        super(props);
+        super();
         this.state = {
-            modal: false,
-            unmountOnClose: true,
-            poemTitle: '',
-            poem: ''
-        };
-
-        this.toggle = this.toggle.bind(this);
-        this.changeUnmountOnClose = this.changeUnmountOnClose.bind(this);
-        this.onChange = this.onChange.bind(this);
+            isOpen: false,
+    
+        }
+        this.toggleModal = this.toggleModal.bind(this);
+        
     }
 
-    toggle() {
-        this.setState(prevState => ({
-            modal: !prevState.modal
-        }));
-    }
+    toggleModal() {
 
-    changeUnmountOnClose(e) {
-        let value = e.target.value;
-        this.setState({ unmountOnClose: JSON.parse(value) });
-    }
-
-    onChange(e) {
-        const inputText = e.target.name 
-        this.setState({ ...this.state, [inputText]: e.target.value });
-        console.log(this.state)
+        this.setState((prevState) => ({isOpen:!prevState.isOpen})
+        )
+        // this.setState({isOpen: true})
     }
 
     render() {
         return (
             <div>
-                <button className='add-button' color="danger" onClick={this.toggle}>
+                <button className='add-button' onClick={this.toggleModal}>
                     <img src="https://img.icons8.com/ios/100/000000/plus-math.png" />
                 </button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} unmountOnClose={this.state.unmountOnClose}>
-                    <ModalHeader toggle={this.toggle}>Let's write a poem!</ModalHeader>
-                    <ModalBody className="poem-form">
-                        <input name="poemTitle" value={this.state.inputText} onChange={this.onChange} type="text" placeholder="Title"/>
-                        <input name="poem" value={this.state.inputText} onChange={this.onChange} type="textarea" placeholder="Poem"/>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-                        <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                    </ModalFooter>
-                </Modal>
+
+                {
+                    this.state.isOpen
+                    ?
+                    <div className='poem-form-modal'>
+                        <form>
+                            <input type='text' placeholder='title'/>
+                        </form>
+                    </div>
+                    :
+                    null
+                }
+               
             </div>
         );
     }

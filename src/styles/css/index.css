@@ -186,7 +186,7 @@ img {
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 30%;
+  width: 25%;
   font-weight: 600;
   font-size: 40px;
   text-decoration: none;
@@ -204,14 +204,13 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40%;
+  width: 125px;
   justify-content: space-between;
   height: 100%;
-  width: 33.3%;
 }
 @media (max-width: 600px) {
   .navbar .link-container {
-    width: 100%;
+    width: 125px;
   }
 }
 .navbar .link-container .link {
@@ -335,20 +334,19 @@ img {
   font-size: 40px;
   border-radius: 50%;
 }
-.feed .modal-content {
-  border: 1px solid blue;
+.feed .modal-header {
   position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
   width: 100%;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0;
+  border: 1px solid blue;
+  color: blue;
 }
 .profile-container {
   margin: 0 auto;
