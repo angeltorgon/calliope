@@ -6,35 +6,38 @@ import { logOut } from '../../../store/actions/index';
 function Nav(props) {
     return (
         <>
-        { localStorage.getItem('token') ? 
-            <nav className="navbar">
-                {/* <img className="logo" src="" alt="logo"></img> */}
-                <div to="/dashboard" className="logo">Calliope</div>
-                <div className="link-container">
-                    <NavLink to="/dashboard" className="link">Feed</NavLink>
-                </div>
-                
-                <div className="cta-container">
-                    <NavLink to={`/profile/${localStorage.getItem('userId')}`} className="nav-cta profile">Profile</NavLink>
-                    <NavLink onClick={() => props.logOut()} to="/" className="nav-cta login">Log Out</NavLink>
-                </div>
-            </nav>
-        :
-            <nav className="navbar">
-                {/* <img className="logo" src="" alt="logo"></img> */}
-                <NavLink to="/" className="logo">Calliope</NavLink>
-                <div className="link-container">
-                    {/* <div className="link">Blog</div>
+            {localStorage.getItem('token') ?
+                <nav className="navbar">
+                    {/* <img className="logo" src="" alt="logo"></img> */}
+                    <div to="/dashboard" className="logo">Calliope</div>
+                    <div className="link-container">
+                        <NavLink to="/dashboard" className="link">Feed</NavLink>
+                    </div>
+
+                    <div className="cta-container">
+                        <NavLink to={`/profile/${localStorage.getItem('userId')}`} className="nav-cta profile">Profile</NavLink>
+                        <NavLink onClick={() => props.logOut()} to="/" className="nav-cta login">Log Out</NavLink>
+                        <NavLink to="/poem-form" >
+                            <img src="https://img.icons8.com/ios/100/000000/plus-math.png" />
+                        </NavLink>
+                    </div>
+                </nav>
+                :
+                <nav className="navbar">
+                    {/* <img className="logo" src="" alt="logo"></img> */}
+                    <NavLink to="/" className="logo">Calliope</NavLink>
+                    <div className="link-container">
+                        {/* <div className="link">Blog</div>
                     <div className="link">Learn</div>
                     <div className="link">About Us</div> */}
-                </div>
-                
-                <div className="cta-container">
+                    </div>
+
+                    <div className="cta-container">
                         <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
                         <NavLink to="/login" className="nav-cta login">Log in</NavLink>
-                </div>
-            </nav>
-        }
+                    </div>
+                </nav>
+            }
         </>
     )
 }

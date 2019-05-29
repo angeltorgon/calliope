@@ -7,6 +7,7 @@ import Signup from './views/auth/Signup';
 import Home from './views/home/Home';
 import Dashboard from './views/feed/Feed';
 import Profile from './views/profile/Profile';
+import PoemForm from './views/feed/PoemForm';
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/login" component={Login}/>
             <Route path="/signup" component={Signup}/>
             <Route path="/profile/:id" component={Profile}/>
+            <Route path="/poem-form" component={PoemForm}/>
           </div>
     );
   }
