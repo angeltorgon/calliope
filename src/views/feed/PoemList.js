@@ -12,7 +12,7 @@ function PoemList(props) {
 
     return (
         <div>
-            <PoemFormModal className={"poem-form-modal"} />
+            <PoemFormModal />
             {props.poems.map( poem => (
                 <PoemCard key={poem.id} poem={poem}/>
             ))}
