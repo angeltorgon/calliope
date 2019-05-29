@@ -1,9 +1,17 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
-class PoemForm extends React.Component {
-    render() {
+function PoemForm(props) {
+
+    useEffect(() => {
+        if(localStorage.getItem('token')) {
+          props.history.push('/dashboard');
+        } else {
+          props.history.push('/');
+        }
+      }, [])
+
         return (
             <div className='poem-form'>
                 <h2>Write a Poem</h2>
@@ -49,6 +57,5 @@ class PoemForm extends React.Component {
             </div>
         );
     }
-}
 
 export default PoemForm;

@@ -8,9 +8,15 @@ import { fetchUser, fetchUserPosts } from '../../store/actions';
 function Profile(props) {
 
   useEffect(() => {
-    console.log(props)
     props.fetchUser(props.match.params.id);
     props.fetchUserPosts(props.match.params.id)
+
+      if(localStorage.getItem('token')) {
+        props.fetchPoems();
+        props.history.push('/dashboard');
+      } else {
+        props.history.push('/');
+      }
 
   }, [props.match.params.id]);
 
