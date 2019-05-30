@@ -15,7 +15,6 @@ function PoemCard(props) {
     const [poet, setPoet] = useState(props.poem.username);
     const [likes, setLikes] = useState(props.poem.likes);
     const [liked, setLiked] = useState(false);
-    const [text, setText] = useState(props.poem.poem);
     const [comments, setComments] = useState(props.poem.comments);
     const [poemDate, setPoemDate] = useState(props.poem.created_at);
 
@@ -55,7 +54,25 @@ function PoemCard(props) {
 
             <div className="poem">
                 <h2 className="poem-title">{title}</h2>
-                <p className="card-poem" >{text}</p>
+                <p className="card-poem" >{props.poem.line_1}</p>
+                <p className="card-poem" >{props.poem.line_2}</p>
+                <p className="card-poem" >{props.poem.line_3}</p>
+                <p className="card-poem" >{props.poem.line_4}</p>
+                <p className="card-poem" >{props.poem.line_5}</p>
+                <p className="card-poem" >{props.poem.line_6}</p>
+                <p className="card-poem" >{props.poem.line_7}</p>
+                <p className="card-poem" >{props.poem.line_8}</p>
+                <p className="card-poem" >{props.poem.line_9}</p>
+                <p className="card-poem" >{props.poem.line_10}</p>
+                <p className="card-poem" >{props.poem.line_11}</p>
+                <p className="card-poem" >{props.poem.line_12}</p>
+                <p className="card-poem" >{props.poem.line_13}</p>
+                <p className="card-poem" >{props.poem.line_14}</p>
+                <p className="card-poem" >{props.poem.line_15}</p>
+                <p className="card-poem" >{props.poem.line_16}</p>
+                <p className="card-poem" >{props.poem.line_17}</p>
+                <p className="card-poem" >{props.poem.line_18}</p>
+                <p className="card-poem" >{props.poem.line_19}</p>
             </div>
 
             <div className="poem-stats">
