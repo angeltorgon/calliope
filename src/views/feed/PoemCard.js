@@ -73,6 +73,7 @@ function PoemCard(props) {
                 <p className="card-poem" >{props.poem.line_17}</p>
                 <p className="card-poem" >{props.poem.line_18}</p>
                 <p className="card-poem" >{props.poem.line_19}</p>
+                <p className="card-poem" >{props.poem.line_20}</p>
             </div>
 
             <div className="poem-stats">

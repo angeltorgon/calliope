@@ -1,6 +1,9 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+
+import { postPoem } from '../../store/actions';
 
 function PoemForm(props) {
 
@@ -33,6 +36,28 @@ useEffect(() => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        props.postPoem({
+            line_1: line_1,
+            line_2: line_2,
+            line_3: line_3,
+            line_4: line_4,
+            line_5: line_5,
+            line_6: line_6,
+            line_7: line_7,
+            line_8: line_8,
+            line_9: line_9,
+            line_10: line_10,
+            line_11: line_11,
+            line_12: line_12,
+            line_13: line_13,
+            line_14: line_14,
+            line_15: line_15,
+            line_16: line_16,
+            line_17: line_17,
+            line_18: line_18,
+            line_19: line_19,
+            line_20: line_20
+        });
     }
 
     return (
@@ -61,10 +86,10 @@ useEffect(() => {
                 <input value={line_19} onChange={(e) => setLine_19(e.target.value)} name='line_19' type='text' placeholder='' />
                 <input value={line_20} onChange={(e) => setLine_20(e.target.value)} name='line_20' type='text' placeholder='' />
             
+                <button>Add Poem</button>
             </form>
-            <button>Add Poem</button>
         </div>
     );
 }
 
-export default PoemForm;
+export default connect(null, { postPoem })(PoemForm);

@@ -97,3 +97,17 @@ export const postComment = (comment) => dispatch => {
         })
         .catch(err => console.log(err))
 }
+
+export const postPoem = (poem) => dispatch => {
+    const token = localStorage.getItem('token');
+    console.log(poem)
+    axios
+        .post(`http://localhost:4000/api/poems/`, poem, {
+            headers: { Authorization: token }
+        })
+        .then(res => {
+            console.log(res);
+            // dispatch({type: ADD_COMMENT_SUCCESS, payload: res.data})
+        })
+        .catch(err => console.log(err))
+}
