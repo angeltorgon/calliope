@@ -11,10 +11,7 @@ function Profile(props) {
     props.fetchUser(props.match.params.id);
     props.fetchUserPosts(props.match.params.id)
 
-      if(localStorage.getItem('token')) {
-        props.fetchPoems();
-        props.history.push('/dashboard');
-      } else {
+      if(!localStorage.getItem('token')) {
         props.history.push('/');
       }
 

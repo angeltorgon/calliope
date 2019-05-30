@@ -5,9 +5,7 @@ import React, { useEffect } from 'react';
 function PoemForm(props) {
 
     useEffect(() => {
-        if(localStorage.getItem('token')) {
-          props.history.push('/dashboard');
-        } else {
+        if(!localStorage.getItem('token')) {
           props.history.push('/');
         }
       }, [])
@@ -18,6 +16,12 @@ function PoemForm(props) {
                 <form>
                     <input className="poem-title" type='text' placeholder='title' />
                     <input type='text' placeholder='Write a poem' />
+                    <input type='text' placeholder='' />
+                    <input type='text' placeholder='' />
+                    <input type='text' placeholder='' />
+                    <input type='text' placeholder='' />
+                    <input type='text' placeholder='' />
+                    <input type='text' placeholder='' />
                     <input type='text' placeholder='' />
                     <input type='text' placeholder='' />
                     <input type='text' placeholder='' />
