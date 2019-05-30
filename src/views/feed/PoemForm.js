@@ -13,6 +13,7 @@ useEffect(() => {
     }
     }, [])
 
+    const [ title, setTitle ] = useState('')
     const [ line_1, setLine_1 ] = useState('')
     const [ line_2, setLine_2 ] = useState('')
     const [ line_3, setLine_3 ] = useState('')
@@ -37,6 +38,9 @@ useEffect(() => {
     const handleSubmit = (e) => {
         e.preventDefault();
         props.postPoem({
+            poemTitle: title,
+            username: localStorage.getItem('username'),
+            user_id: localStorage.getItem('userId'),
             line_1: line_1,
             line_2: line_2,
             line_3: line_3,
@@ -58,13 +62,34 @@ useEffect(() => {
             line_19: line_19,
             line_20: line_20
         });
+
+        setLine_1('');
+        setLine_2('');
+        setLine_3('');
+        setLine_4('');
+        setLine_5('');
+        setLine_6('');
+        setLine_7('');
+        setLine_8('');
+        setLine_9('');
+        setLine_10('');
+        setLine_11('');
+        setLine_12('');
+        setLine_13('');
+        setLine_14('');
+        setLine_15('');
+        setLine_16('');
+        setLine_17('');
+        setLine_18('');
+        setLine_19('');
+        setLine_20('');
     }
 
     return (
         <div className='poem-form'>
             <h2>Write a Poem</h2>
             <form onSubmit={handleSubmit}>
-                <input className="poem-title" type='text' placeholder='title' />
+                <input value={title} onChange={(e) => setTitle(e.target.value)} className="poem-title" type='text' placeholder='title' />
                 <input value={line_1} onChange={(e) => setLine_1(e.target.value)} name='line_1' type='text' placeholder='Write a poem' />
                 <input value={line_2} onChange={(e) => setLine_2(e.target.value)} name='line_2' type='text' placeholder='' />
                 <input value={line_3} onChange={(e) => setLine_3(e.target.value)} name='line_3' type='text' placeholder='' />
