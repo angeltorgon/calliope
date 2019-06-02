@@ -15,9 +15,6 @@ function CommentSection(props) {
             props.postComment(comment);
     }
 
-
-
-
     return (
         <>
             <ComponentList comments={comments}/>

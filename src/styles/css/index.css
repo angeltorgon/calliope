@@ -368,8 +368,8 @@ img {
   border-radius: 10px;
   margin: 20px 0;
 }
-.profile-container .user-feed {
-  border: 1px solid red;
+.profile-container .feed {
+  width: 100%;
 }
 .form-container {
   display: flex;

@@ -12,16 +12,12 @@ function Nav(props) {
                     <div to="/dashboard" className="logo">
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png"/>
                         Calliope</div>
-                    <div className="link-container">
-                        <NavLink to="/dashboard" className="link">Feed</NavLink>
-                    </div>
 
                     <div className="cta-container">
-                        <NavLink to={`/profile/${localStorage.getItem('userId')}`} className="nav-cta profile">Profile</NavLink>
+                        <NavLink to="/poem-form" className="nav-cta" >Add Poem</NavLink>
+                        <NavLink to="/dashboard" className="nav-cta">Feed</NavLink>
+                        <NavLink to={`/profile/${localStorage.getItem('userId')}`} className="nav-cta">Profile</NavLink>
                         <NavLink onClick={() => props.logOut()} to="/" className="nav-cta login">Log Out</NavLink>
-                        <NavLink to="/poem-form" >
-                            <img src="https://img.icons8.com/ios/100/000000/plus-math.png" />
-                        </NavLink>
                     </div>
                 </nav>
                 :
