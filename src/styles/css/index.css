@@ -134,14 +134,14 @@ html {
 }
 html,
 body {
-  font-family: 'Gloria Hallelujah', regular;
+  font-family: 'Roboto', sans-serif;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'Gloria Hallelujah', regular;
+  font-family: 'Roboto', sans-serif;
 }
 h1 {
   font-size: 4rem;
@@ -191,6 +191,7 @@ img {
   font-size: 40px;
   text-decoration: none;
   color: black;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 @media (max-width: 600px) {
   .navbar .logo {
@@ -222,6 +223,7 @@ img {
   text-decoration: none;
   color: black;
   transition: 0.5s;
+  font-family: 'Roboto', sans-serif;
 }
 .navbar .link-container .link:hover {
   background-color: lightgray;
@@ -260,6 +262,7 @@ img {
   color: black;
   text-align: center;
   transition: 0.5s;
+  font-family: 'Roboto', sans-serif;
 }
 @media (max-width: 600px) {
   .navbar .cta-container .nav-cta {
@@ -467,8 +470,12 @@ img {
   border-radius: 10px;
   width: 100%;
 }
+.poem-post-container .poem p {
+  font-family: 'Gloria Hallelujah', regular;
+}
 .poem-post-container .poem h2 {
   padding: 15px;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 .poem-post-container .poem-stats {
   width: 100%;
