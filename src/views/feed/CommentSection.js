@@ -6,13 +6,6 @@ import { connect } from 'react-redux';
 
 
 function CommentSection(props) {
-
-    const [ comments, setComments ] = useState(props.comments)
-
-    const addComment = (comment) => {
-          
-    }
-
     return (
         <>
             <CommentList comments={props.comments}/>

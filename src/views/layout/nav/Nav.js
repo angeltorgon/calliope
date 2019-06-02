@@ -23,7 +23,9 @@ function Nav(props) {
                 :
                 <nav className="navbar">
                     {/* <img className="logo" src="" alt="logo"></img> */}
-                    <NavLink to="/" className="logo">Calliope</NavLink>
+                    <NavLink to="/" className="logo">
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png"/>
+                        Calliope</NavLink>
                     <div className="link-container">
                         {/* <div className="link">Blog</div>
                     <div className="link">Learn</div>

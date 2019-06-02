@@ -205,8 +205,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-around;
-  width: 390px;
+  justify-content: flex-end;
+  width: 420px;
   height: 100%;
 }
 @media (max-width: 600px) {
@@ -218,6 +218,7 @@ img {
 }
 .navbar .cta-container .nav-cta {
   width: 100%;
+  min-width: 100px;
   height: 100%;
   padding-top: 40px;
   font-size: 18px;
@@ -244,12 +245,14 @@ img {
 .navbar .cta-container .signup {
   border: 1px solid lightgray;
   color: white;
+  width: 150px;
   background-color: #EB5972;
 }
 .navbar .cta-container .signup:hover {
   background-color: #d14960;
 }
 .navbar .cta-container .login {
+  width: 150px;
   transition: 0.5s;
 }
 .navbar .cta-container .login:hover {
