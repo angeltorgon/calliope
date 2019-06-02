@@ -201,44 +201,6 @@ img {
     border-bottom: 1px solid lightgrey;
   }
 }
-.navbar .link-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 125px;
-  justify-content: space-between;
-  height: 100%;
-  border: 1px solid blue;
-}
-@media (max-width: 600px) {
-  .navbar .link-container {
-    width: 125px;
-  }
-}
-.navbar .link-container .link {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  padding-top: 40px;
-  font-size: 18px;
-  text-decoration: none;
-  color: black;
-  transition: 0.5s;
-  font-family: 'Roboto', sans-serif;
-}
-.navbar .link-container .link:hover {
-  background-color: lightgray;
-}
-@media (max-width: 600px) {
-  .navbar .link-container .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    height: 70px;
-    width: 100%;
-  }
-}
 .navbar .cta-container {
   display: flex;
   align-items: center;
