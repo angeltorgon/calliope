@@ -10,6 +10,8 @@ export const DISLIKE = 'DISLIKE';
 export const DISLIKE_SUCCESS = 'DISLIKE_SUCCESS';
 export const FETCH_USER_POEMS_SUCCESS = 'FETCH_USER_POEMS_SUCCESS';
 export const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
+export const ADD_POEM = 'ADD_POEM';
+export const ADD_POEM_SUCCESS = 'ADD_POEM_SUCCESS';
 
 
 
@@ -100,6 +102,7 @@ export const postComment = (comment) => dispatch => {
 
 export const postPoem = (poem) => dispatch => {
     const token = localStorage.getItem('token');
+    dispatch({type: ADD_POEM})
     console.log(poem)
     axios
         .post(`http://localhost:4000/api/poems/`, poem, {
@@ -107,7 +110,7 @@ export const postPoem = (poem) => dispatch => {
         })
         .then(res => {
             console.log(res);
-            // dispatch({type: ADD_COMMENT_SUCCESS, payload: res.data})
+            dispatch({type: ADD_POEM_SUCCESS})
         })
         .catch(err => console.log(err))
 }
