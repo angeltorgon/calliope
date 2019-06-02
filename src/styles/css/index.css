@@ -134,14 +134,14 @@ html {
 }
 html,
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Shadows Into Light', cursive;
 }
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Shadows Into Light', cursive;
 }
 h1 {
   font-size: 4rem;
@@ -466,6 +466,7 @@ img {
   border: 1px solid lightgrey;
   border-radius: 10px;
   width: 100%;
+  font-family: 'Shadows Into Light', cursive;
 }
 .poem-post-container .poem h2 {
   padding: 15px;
