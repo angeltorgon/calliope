@@ -208,6 +208,7 @@ img {
   width: 125px;
   justify-content: space-between;
   height: 100%;
+  border: 1px solid blue;
 }
 @media (max-width: 600px) {
   .navbar .link-container {
@@ -243,7 +244,7 @@ img {
   align-items: center;
   justify-content: center;
   justify-content: space-around;
-  width: 250px;
+  width: 390px;
   height: 100%;
 }
 @media (max-width: 600px) {
@@ -254,7 +255,7 @@ img {
   }
 }
 .navbar .cta-container .nav-cta {
-  width: 50%;
+  width: 100%;
   height: 100%;
   padding-top: 40px;
   font-size: 18px;
@@ -263,6 +264,10 @@ img {
   text-align: center;
   transition: 0.5s;
   font-family: 'Roboto', sans-serif;
+}
+.navbar .cta-container .nav-cta:hover {
+  color: white;
+  background-color: #EB5972;
 }
 @media (max-width: 600px) {
   .navbar .cta-container .nav-cta {
