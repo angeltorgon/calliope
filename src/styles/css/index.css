@@ -463,6 +463,12 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  width: 100%;
+}
+.poem-post-container .poem h2 {
+  padding: 15px;
 }
 .poem-post-container .poem-stats {
   width: 100%;
