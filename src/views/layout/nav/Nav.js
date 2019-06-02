@@ -9,7 +9,9 @@ function Nav(props) {
             {localStorage.getItem('token') ?
                 <nav className="navbar">
                     {/* <img className="logo" src="" alt="logo"></img> */}
-                    <div to="/dashboard" className="logo">Calliope</div>
+                    <div to="/dashboard" className="logo">
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png"/>
+                        Calliope</div>
                     <div className="link-container">
                         <NavLink to="/dashboard" className="link">Feed</NavLink>
                     </div>
