@@ -117,4 +117,11 @@ useEffect(() => {
     );
 }
 
+const mapStateToProps = state => {
+    return {
+        addingPoem: state.poemsReducer.addingPoem,
+        poemIsAdded: state.poemsReducer.poemIsAdded
+    }
+}
+
 export default connect(null, { postPoem })(PoemForm);
