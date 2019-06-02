@@ -7,12 +7,14 @@ function CommentForm(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         const comment = {
             comment: commentText,
             username: localStorage.getItem('username'),
             user_id: localStorage.getItem('userId'),
             poem_id: props.poemId,
         }
+        
         props.addComment(comment);
         setCommentText('');
     }

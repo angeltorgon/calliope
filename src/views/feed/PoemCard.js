@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import CommentSection from './CommentSection';
 import UserStamp from '../../components/UserStamp';
-import CommentForm from './CommentForm';
-import CommentList from './CommentList';
+import { postComment } from '../../store/actions';
+
 
 
 
@@ -30,6 +30,12 @@ function PoemCard(props) {
             setLikes(likes + 1);
         }
         setLiked(!liked);
+    }
+
+    const addComment = comment => {
+        console.log(comment)
+        setComments([...comments, comment]);
+        props.postComment(comment);
     }
 
     return (
@@ -87,7 +93,7 @@ function PoemCard(props) {
                     <p className="stats-item">Comments: {comments.length}</p>
                 </div>
             </div>
-            <CommentSection comments={comments} avatar={props.user.avatar} poemId={props.poem.id}/>
+            <CommentSection addComment={addComment} comments={comments} avatar={props.user.avatar} poemId={props.poem.id}/>
         </div>
     )
 }
@@ -98,4 +104,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { like, dislike })(PoemCard);
+export default connect(mapStateToProps, { like, dislike, postComment })(PoemCard);
