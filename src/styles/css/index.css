@@ -507,6 +507,7 @@ img {
   background-color: #eeeeee;
   height: 300px;
   overflow: scroll;
+  width: 100%;
 }
 .poem-post-container .comments-container .comment {
   font-size: 8px;

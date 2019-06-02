@@ -19,10 +19,10 @@ function CommentSection(props) {
 
 
     return (
-        <div>
+        <>
             <ComponentList comments={comments}/>
             <ComponentForm addComment={addComment} avatar={props.avatar} poemId={props.poemId}/>
-        </div>
+        </>
     )
 }
 
