@@ -36,7 +36,7 @@ export const fetchPoems = () => dispatch => {
     const token = localStorage.getItem('token');
     dispatch({ type: FETCH_POEMS });
     axios
-        .get(`{api}/api/poems`, { headers: { Authorization: token } })
+        .get(`${api}/api/poems`, { headers: { Authorization: token } })
         .then(res => {
             dispatch({ type: FETCH_POEMS_SUCCESS, payload: res.data });
         })
