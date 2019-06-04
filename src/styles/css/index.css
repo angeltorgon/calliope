@@ -251,12 +251,32 @@ img {
 .navbar .cta-container .signup:hover {
   background-color: #d14960;
 }
+@media (max-width: 600px) {
+  .navbar .cta-container .signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    height: 70px;
+    width: 100%;
+  }
+}
 .navbar .cta-container .login {
   width: 150px;
   transition: 0.5s;
 }
 .navbar .cta-container .login:hover {
   background-color: lightgray;
+}
+@media (max-width: 600px) {
+  .navbar .cta-container .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    height: 70px;
+    width: 100%;
+  }
 }
 .navbar .cta-container .profile {
   background-color: #6FF2C4;
