@@ -13,7 +13,7 @@ const api = "https://calliope-api.herokuapp.com";
 export const signUp = (userInfo) => dispatch => {
     dispatch({ type: SIGN_UP })
     axios
-        .post(`${api}/auth/signup`,
+        .post(`${api}/api/auth/signup`,
             userInfo)
         .then(res => {
             dispatch({ type: SIGN_UP_SUCCESS, payload: res.data });
@@ -24,7 +24,7 @@ export const signUp = (userInfo) => dispatch => {
 export const logIn = (credentials) => dispatch => {
     dispatch({ type: LOG_IN });
     axios
-        .post(`${api}/auth/login`,
+        .post(`${api}/api/auth/login`,
             credentials)
         .then(res => {
             localStorage.setItem('token', res.data.token);
