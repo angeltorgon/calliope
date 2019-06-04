@@ -93,7 +93,7 @@ export const postComment = (comment) => dispatch => {
         })
         .then(res => {
             return axios
-            .get('http://localhost:4000/api/poems/', 
+            .get(`${api}/api/poems/`, 
             { headers: { Authorization: token } })
         })
         .then(res => {
@@ -107,7 +107,7 @@ export const postPoem = (poem) => dispatch => {
     dispatch({type: ADD_POEM})
     console.log(poem)
     axios
-        .post(`${api}api/poems/`, poem, {
+        .post(`${api}/api/poems/`, poem, {
             headers: { Authorization: token }
         })
         .then(res => {
