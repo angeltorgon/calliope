@@ -13,13 +13,15 @@ export const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
 export const ADD_POEM = 'ADD_POEM';
 export const ADD_POEM_SUCCESS = 'ADD_POEM_SUCCESS';
 
+const api = "https://calliope-api.herokuapp.com";
+
 
 
 export const fetchUserPosts  = (id) => dispatch => {
     const token = localStorage.getItem('token');
 
     axios
-    .get(`http://localhost:4000/api/poems/user/${id}`, {
+    .get(`${api}/poems/user/${id}`, {
         headers: { Authorization: token }
     })
     .then(res => {
@@ -34,7 +36,7 @@ export const fetchPoems = () => dispatch => {
     const token = localStorage.getItem('token');
     dispatch({ type: FETCH_POEMS });
     axios
-        .get('http://localhost:4000/api/poems', { headers: { Authorization: token } })
+        .get(`{api}/api/poems`, { headers: { Authorization: token } })
         .then(res => {
             dispatch({ type: FETCH_POEMS_SUCCESS, payload: res.data });
         })
@@ -45,7 +47,7 @@ export const fetchUser = (id) => dispatch => {
     const token = localStorage.getItem('token');
     dispatch({ type: FETCH_USER });
     axios
-        .get(`http://localhost:4000/api/users/${id}`, { headers: { Authorization: token } })
+        .get(`${api}/api/users/${id}`, { headers: { Authorization: token } })
         .then(res => {
             console.log(res)
             dispatch({ type: FETCH_USER_SUCCESS, payload: res.data.user });
@@ -58,7 +60,7 @@ export const like = (poem) => dispatch => {
     const token = localStorage.getItem('token');
     dispatch({ type: LIKE });
     axios
-        .put(`http://localhost:4000/api/poems/${poem.id}`, poem, {
+        .put(`${api}/api/poems/${poem.id}`, poem, {
             headers: { Authorization: token }
         })
         .then(res => {
@@ -73,7 +75,7 @@ export const dislike = (poem) => dispatch => {
     const token = localStorage.getItem('token');
     dispatch({ type: DISLIKE });
     axios
-        .put(`http://localhost:4000/api/poems/${poem.id}`, poem, {
+        .put(`${api}/api/poems/${poem.id}`, poem, {
             headers: { Authorization: token }
         })
         .then(res => {
@@ -86,7 +88,7 @@ export const dislike = (poem) => dispatch => {
 export const postComment = (comment) => dispatch => {
     const token = localStorage.getItem('token');
     axios
-        .post(`http://localhost:4000/api/comments/`, comment, {
+        .post(`${api}/api/comments/`, comment, {
             headers: { Authorization: token }
         })
         .then(res => {
@@ -105,7 +107,7 @@ export const postPoem = (poem) => dispatch => {
     dispatch({type: ADD_POEM})
     console.log(poem)
     axios
-        .post(`http://localhost:4000/api/poems/`, poem, {
+        .post(`${api}api/poems/`, poem, {
             headers: { Authorization: token }
         })
         .then(res => {

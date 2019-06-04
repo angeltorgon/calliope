@@ -8,10 +8,12 @@ export const INVALID_CREDENTIALS = 'INVALID_CREDENTIALS';
 export const PROVIDE_CREDENTIALS = 'PROVIDE_CREDENTIALS';
 export const LOG_OUT = 'LOG_OUT';
 
+const api = "https://calliope-api.herokuapp.com";
+
 export const signUp = (userInfo) => dispatch => {
     dispatch({ type: SIGN_UP })
     axios
-        .post('http://localhost:4000/api/auth/signup',
+        .post(`${api}/auth/signup`,
             userInfo)
         .then(res => {
             dispatch({ type: SIGN_UP_SUCCESS, payload: res.data });
@@ -22,7 +24,7 @@ export const signUp = (userInfo) => dispatch => {
 export const logIn = (credentials) => dispatch => {
     dispatch({ type: LOG_IN });
     axios
-        .post('http://localhost:4000/api/auth/login',
+        .post(`${api}/auth/login`,
             credentials)
         .then(res => {
             localStorage.setItem('token', res.data.token);
