@@ -21,7 +21,7 @@ export const fetchUserPosts  = (id) => dispatch => {
     const token = localStorage.getItem('token');
 
     axios
-    .get(`${api}/poems/user/${id}`, {
+    .get(`${api}/api/poems/user/${id}`, {
         headers: { Authorization: token }
     })
     .then(res => {
