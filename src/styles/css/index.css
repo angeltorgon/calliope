@@ -230,7 +230,7 @@ img {
 }
 .navbar .cta-container .nav-cta:hover {
   color: white;
-  background-color: #EB5972;
+  background-color: #d14960;
 }
 @media (max-width: 600px) {
   .navbar .cta-container .nav-cta {
@@ -245,8 +245,8 @@ img {
 .navbar .cta-container .signup {
   border: 1px solid lightgray;
   color: white;
-  width: 150px;
-  background-color: #EB5972;
+  width: 120px;
+  background-color: #ca6777;
 }
 .navbar .cta-container .signup:hover {
   background-color: #d14960;
@@ -261,7 +261,7 @@ img {
   }
 }
 .navbar .cta-container .login {
-  width: 150px;
+  width: 120px;
   transition: 0.5s;
 }
 .navbar .cta-container .login:hover {
@@ -276,12 +276,6 @@ img {
     width: 100%;
   }
 }
-.navbar .cta-container .profile {
-  background-color: #6FF2C4;
-}
-.navbar .cta-container .profile:hover {
-  background-color: #51ebb5;
-}
 .home-container {
   width: 100%;
 }
@@ -290,7 +284,7 @@ img {
 }
 .home-container .banner img {
   width: 100%;
-  height: 400px;
+  height: 100vh;
   overflow: hidden;
   object-fit: cover;
 }

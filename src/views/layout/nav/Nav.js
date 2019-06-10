@@ -5,17 +5,17 @@ import { logOut } from '../../../store/actions/index';
 
 function Nav(props) {
 
-    const [ isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         console.log('Nav is updating');
         setIsLoggedIn(localStorage.getItem('token'));
     });
 
-    const handleLogOut= function(){
+    const handleLogOut = function () {
         setIsLoggedIn(false);
         props.logOut();
-    }
+    };
 
     return (
         <>
@@ -23,7 +23,7 @@ function Nav(props) {
                 <nav className="navbar">
                     {/* <img className="logo" src="" alt="logo"></img> */}
                     <div to="/dashboard" className="logo">
-                        <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png"/>
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png" />
                         Calliope</div>
 
                     <div className="cta-container">
@@ -35,17 +35,17 @@ function Nav(props) {
                 </nav>
                 :
                 <nav className="navbar">
-                    {/* <img className="logo" src="" alt="logo"></img> */}
                     <NavLink to="/" className="logo">
-                        <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png"/>
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png" />
                         Calliope</NavLink>
                     <div className="link-container">
-                        {/* <div className="link">Blog</div>
-                    <div className="link">Learn</div>
-                    <div className="link">About Us</div> */}
                     </div>
 
                     <div className="cta-container">
+                        <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
+                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
+                    </div>
+                    <div className="mobile-cta-container">
                         <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
                         <NavLink to="/login" className="nav-cta login">Log in</NavLink>
                     </div>
