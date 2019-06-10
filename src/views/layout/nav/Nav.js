@@ -33,10 +33,10 @@ function Nav(props) {
                     </div>
                     
                     <div className="mobile-cta-container">
-                        <NavLink to="/poem-form" className="nav-cta" >Add Poem</NavLink>
-                        <NavLink to="/dashboard" className="nav-cta">Feed</NavLink>
-                        <NavLink to={`/profile/${localStorage.getItem('userId')}`} className="nav-cta">Profile</NavLink>
-                        <NavLink onClick={() => handleLogOut()} to="/" className="nav-cta login">Log Out</NavLink>
+                        <NavLink to="/poem-form" className="nav-cta" ><img src="https://img.icons8.com/ios/30/000000/plus-2-math.png"/></NavLink>
+                        <NavLink to="/dashboard" className="nav-cta"><img src="https://img.icons8.com/ios/30/000000/activity-feed.png"/></NavLink>
+                        <NavLink to={`/profile/${localStorage.getItem('userId')}`} className="nav-cta"><img src="https://img.icons8.com/ios/30/000000/gender-neutral-user.png"/></NavLink>
+                        <NavLink onClick={() => handleLogOut()} to="/" className="nav-cta login"><img src="https://img.icons8.com/ios/30/000000/exit.png"/></NavLink>
                     </div>
                 </nav>
                 :
@@ -47,7 +47,7 @@ function Nav(props) {
                     <div className="link-container">
                     </div>
 
-                    <div className="cta-container">
+                    <div className="logged-out-cta-container">
                         <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
                         <NavLink to="/login" className="nav-cta login">Log in</NavLink>
                     </div>
