@@ -276,6 +276,15 @@ img {
     width: 100%;
   }
 }
+.navbar .mobile-cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
+  border: 1px solid red;
+  height: 100px;
+}
 .home-container {
   width: 100%;
 }

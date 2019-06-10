@@ -21,12 +21,18 @@ function Nav(props) {
         <>
             {isLoggedIn ?
                 <nav className="navbar">
-                    {/* <img className="logo" src="" alt="logo"></img> */}
                     <div to="/dashboard" className="logo">
                         <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png" />
                         Calliope</div>
 
                     <div className="cta-container">
+                        <NavLink to="/poem-form" className="nav-cta" >Add Poem</NavLink>
+                        <NavLink to="/dashboard" className="nav-cta">Feed</NavLink>
+                        <NavLink to={`/profile/${localStorage.getItem('userId')}`} className="nav-cta">Profile</NavLink>
+                        <NavLink onClick={() => handleLogOut()} to="/" className="nav-cta login">Log Out</NavLink>
+                    </div>
+                    
+                    <div className="mobile-cta-container">
                         <NavLink to="/poem-form" className="nav-cta" >Add Poem</NavLink>
                         <NavLink to="/dashboard" className="nav-cta">Feed</NavLink>
                         <NavLink to={`/profile/${localStorage.getItem('userId')}`} className="nav-cta">Profile</NavLink>
@@ -42,10 +48,6 @@ function Nav(props) {
                     </div>
 
                     <div className="cta-container">
-                        <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
-                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
-                    </div>
-                    <div className="mobile-cta-container">
                         <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
                         <NavLink to="/login" className="nav-cta login">Log in</NavLink>
                     </div>
