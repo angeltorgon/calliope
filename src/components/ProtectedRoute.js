@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function ProtectedRoute() {
+function ProtectedRoute(component, props) {
     return (
         <div>
             
         </div>
     )
 }
+
+export default ProtectedRoute;

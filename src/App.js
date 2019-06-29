@@ -8,6 +8,7 @@ import Home from './views/home/Home';
 import Dashboard from './views/feed/Feed';
 import Profile from './views/profile/Profile';
 import PoemForm from './views/feed/PoemForm';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 class App extends Component {
