@@ -30,7 +30,7 @@ export const fetchUserPosts  = (id) => dispatch => {
     })
     .catch(err => {
         console.log(err)
-    })
+    });
 };
 
 export const fetchPoems = () => dispatch => {
