@@ -8,22 +8,21 @@ import Home from './views/home/Home';
 import Dashboard from './views/feed/Feed';
 import Profile from './views/profile/Profile';
 import PoemForm from './views/feed/PoemForm';
-import ProtectedRoute from './components/ProtectedRoute';
 
 
 class App extends Component {
 
   render() {
     return (
-          <div className="app-container">
-            <Nav/>
-            <Route exact path="/" component={Home}/>
-            <Route path="/dashboard" component={Dashboard}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/signup" component={Signup}/>
-            <Route path="/profile/:id" component={Profile}/>
-            <Route path="/poem-form" component={PoemForm}/>
-          </div>
+      <div className="app-container">
+        <Nav />
+        <Route exact path="/" component={Home} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/profile/:id" component={Profile} />
+        <Route path="/poem-form" component={PoemForm} />
+      </div>
     );
   }
 }

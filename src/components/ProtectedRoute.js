@@ -1,6 +1,8 @@
 import React from 'react'
 
-function ProtectedRoute(component, props) {
+function ProtectedRoute({component, props}) {
+    console.log(component);
+    console.log(props);
     return (
         <div>
             

@@ -64,7 +64,7 @@ function Signup(props) {
                 <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" placeholder="password"></input>
                 <input onChange={(e)=>{setConfirmPassword(e.target.value)}} value={confirmPassword} type="password" placeholder="confirm password"></input>
                 <button>Sign up</button>
-                {credentials ? null : <p>Please complete required fields *</p>}
+                {credentials ? null : <p>Please complete required fields * </p>}
                 {passwordsMatch ? null : <p>Passwords must match *</p>}
             </form>
         </div>

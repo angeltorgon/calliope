@@ -13,7 +13,7 @@ function Comment(props) {
       />
    
       <p>{props.comment.comment}</p>
-      {/* <p>Likes: {props.comment.likes}</p> */}
+      <p>Likes: {props.comment.likes}</p>
       <hr/>
     </div>
   )
