@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import CommentSection from '../comments/CommentSection';
 import UserStamp from '../components/UserStamp';
 import { postComment } from '../../store/actions';
@@ -11,12 +10,12 @@ import { postComment } from '../../store/actions';
 import { like, dislike } from '../../store/actions';
 
 function PoemCard(props) {
-    const [title, setTitle] = useState(props.poem.poemTitle);
-    const [poet, setPoet] = useState(props.poem.username);
+    const [title] = useState(props.poem.poemTitle);
+    const [poet] = useState(props.poem.username);
     const [likes, setLikes] = useState(props.poem.likes);
     const [liked, setLiked] = useState(false);
     const [comments, setComments] = useState(props.poem.comments);
-    const [poemDate, setPoemDate] = useState(props.poem.created_at);
+    const [poemDate] = useState(props.poem.created_at);
 
     const [openMenu, setOpenMenu] = useState(false);
 
@@ -45,7 +44,6 @@ function PoemCard(props) {
                     userId={props.poem.user_id} 
                     poet={poet} 
                     date={poemDate}
-                 
                 />
                 {openMenu 
                 ? 
