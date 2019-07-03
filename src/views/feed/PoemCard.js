@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import CommentSection from './CommentSection';
+import CommentSection from '../comments/CommentSection';
 import UserStamp from '../components/UserStamp';
 import { postComment } from '../../store/actions';
 
