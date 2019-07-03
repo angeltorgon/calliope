@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUserPosts } from '../../store/actions';
 
@@ -16,10 +16,10 @@ function UserFeed(props) {
     )
 }
 
-const mapStateToProps = state => {
-    return {
+// const mapStateToProps = state => {
+//     return {
 
-    }
-}
+//     }
+// }
 
 export default connect(null, fetchUserPosts)(UserFeed);

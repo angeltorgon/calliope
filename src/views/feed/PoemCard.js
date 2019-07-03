@@ -39,7 +39,7 @@ function PoemCard(props) {
     }
 
     return (
-        <div className="poem-post-container">
+        <div className="poem-post-container" key={props.poem.id}>
             <div className="poem-stamp">
                 <UserStamp 
                     userId={props.poem.user_id} 

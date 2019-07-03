@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import { connect } from 'react-redux';

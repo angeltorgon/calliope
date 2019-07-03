@@ -22,7 +22,7 @@ function Nav(props) {
             {isLoggedIn ?
                 <nav className="navbar">
                     <div to="/dashboard" className="logo">
-                        <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png" />
+                        <img alt="icon" src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png" />
                         Calliope</div>
 
                     <div className="cta-container">
@@ -42,7 +42,7 @@ function Nav(props) {
                 :
                 <nav className="navbar">
                     <NavLink to="/" className="logo">
-                        <img src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png" />
+                        <img alt="icon" src="https://img.icons8.com/ios-glyphs/30/000000/quill-with-ink.png" />
                         Calliope</NavLink>
                     <div className="link-container">
                     </div>

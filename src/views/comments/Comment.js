@@ -5,7 +5,7 @@ import UserStamp from '../components/UserStamp';
 function Comment(props) {
 
   return (
-    <div className="comment">
+    <div className="comment" >
       <UserStamp
         userId={props.comment.user_id}
         poet={props.comment.username}
