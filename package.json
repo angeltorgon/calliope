@@ -8,6 +8,8 @@
     "auth0-js": "^9.11.2",
     "axios": "^0.18.0",
     "dateformat": "^3.0.3",
+    "firebase": "^6.3.0",
+    "firebaseui": "^4.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-loader-spinner": "^2.3.0",
