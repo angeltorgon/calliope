@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import CommentSection from '../views/comments/CommentSection';
+import CommentSection from './comments/CommentSection';
 import UserStamp from './UserStamp';
 import { postComment } from '../store/actions';
 

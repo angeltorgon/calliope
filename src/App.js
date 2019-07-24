@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
-import Nav from "./views/layout/nav/Nav";
-import Login from "./views/auth/Login";
-import Signup from "./views/auth/Signup";
-import Home from "./views/home/Home";
+import Nav from "./components/Nav";
+import Login from "./views/Login";
+import Signup from "./views/Signup";
+import Home from "./views/Home";
 import Feed from "./views/Feed.js";
 import Profile from "./views/Profile";
 import PoemForm from "./components/PoemForm";

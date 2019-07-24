@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Loader from 'react-loader-spinner';
 import { connect } from 'react-redux';
 
-import { logIn, provideCredentials } from '../../store/actions';
+import { logIn, provideCredentials } from '../store/actions';
 
 function Login(props) {
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { logOut } from '../../../store/actions/index';
+import { logOut } from '../store/actions/index';
 
 function Nav(props) {
 
