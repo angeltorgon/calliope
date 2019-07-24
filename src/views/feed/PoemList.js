@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PoemCard from './PoemCard';
+import PoemCard from '../../components/PoemCard';
 
 import { signUp } from '../../store/actions';
 

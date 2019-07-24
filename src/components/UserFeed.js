@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchUserPosts } from '../../store/actions';
+import { fetchUserPosts } from '../store/actions';
 
-import PoemCard from '../feed/PoemCard';
+import PoemCard from './PoemCard.js';
 
 
 function UserFeed(props) {
