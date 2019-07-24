@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import CommentSection from '../comments/CommentSection';
-import UserStamp from '../components/UserStamp';
-import { postComment } from '../../store/actions';
+import CommentSection from './comments/CommentSection';
+import UserStamp from './UserStamp';
+import { postComment } from '../store/actions';
 
 
 
 
-import { like, dislike } from '../../store/actions';
+import { like, dislike } from '../store/actions';
 
 function PoemCard(props) {
     const [title] = useState(props.poem.poemTitle);

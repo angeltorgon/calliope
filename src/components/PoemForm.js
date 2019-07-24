@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 
-import { postPoem } from '../../store/actions';
+import { postPoem } from '../store/actions';
 
 function PoemForm(props) {
 

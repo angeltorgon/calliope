@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Loader from 'react-loader-spinner';
 
-import { signUp } from '../../store/actions';
+import { signUp } from '../store/actions';
 
 function Signup(props) {
 
