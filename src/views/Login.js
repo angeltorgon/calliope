@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 // External Libraries/API's
 import Loader from "react-loader-spinner";
 import { connect } from "react-redux";
-import firebaseAuth from "../firebase/firebase.js";
+import firebaseAuth from "../firebase/firebase";
 
 // Store
 import { logIn, provideCredentials } from "../store/actions";
