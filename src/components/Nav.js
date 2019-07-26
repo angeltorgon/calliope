@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logOut } from '../store/actions/index';
 
+import firebaseAuth from '../firebase/firebase';
+
 function Nav(props) {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);

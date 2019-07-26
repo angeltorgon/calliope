@@ -1,11 +1,19 @@
-import firebase from "./firebaseInit.js";
+import firebase from "firebase";
 
-class FirebaseAuth {
-    provider = new firebase.auth.GoogleAuthProvider();
+const firebaseConfig = {
+    apiKey: "AIzaSyAWA4BH7aoYX1-lwUPaNl9xfKCk82Fqv48",
+    authDomain: "fir-tutorial-cad7d.firebaseapp.com",
+    databaseURL: "https://fir-tutorial-cad7d.firebaseio.com",
+    projectId: "fir-tutorial-cad7d",
+    storageBucket: "fir-tutorial-cad7d.appspot.com",
+    messagingSenderId: "976833235192",
+    appId: "1:976833235192:web:ee123d5777eb0ff2"
+};
 
-    login() {
-        firebase.auth().signInWithRedirect(this.provider);
-    }
-}
+firebase.initializeApp(firebaseConfig);
 
-export default FirebaseAuth;
+const firebaseAuth = firebase.auth();
+
+console.log(firebaseAuth)
+
+export default firebaseAuth;
