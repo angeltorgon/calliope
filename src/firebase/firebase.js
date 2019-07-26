@@ -1,11 +1,11 @@
-import firebase from './firebaseInit.js';
+import firebase from "./firebaseInit.js";
 
-export default class firebaseAuth {    
+class FirebaseAuth {
     provider = new firebase.auth.GoogleAuthProvider();
 
-    
-
     login() {
-        
-    };
+        firebase.auth().signInWithRedirect(this.provider);
+    }
 }
+
+export default FirebaseAuth;

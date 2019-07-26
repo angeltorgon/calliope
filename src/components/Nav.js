@@ -8,7 +8,6 @@ function Nav(props) {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        console.log('Nav is updating');
         setIsLoggedIn(localStorage.getItem('token'));
     });
 
@@ -48,12 +47,12 @@ function Nav(props) {
                     </div>
 
                     <div className="cta-container">
-                        <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
-                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
+                        <NavLink to="/signup" className="nav-cta signup">Signup/Login</NavLink>
+                        {/* <NavLink to="/login" className="nav-cta login">Log in</NavLink> */}
                     </div>
                     <div className="mobile-cta-container">
-                        <NavLink to="/signup" className="nav-cta signup">Sign up</NavLink>
-                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
+                        <NavLink to="/signup" className="nav-cta signup">Signup/Login</NavLink>
+                        {/* <NavLink to="/login" className="nav-cta login">Log in</NavLink> */}
                     </div>
                 </nav>
             }
