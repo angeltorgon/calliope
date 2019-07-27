@@ -4,13 +4,13 @@ import React, { useState, useEffect } from "react";
 // External Libraries/API's
 import Loader from "react-loader-spinner";
 import { connect } from "react-redux";
-import firebaseAuth from "../firebase/firebase";
+import firebase from "../firebase/firebase";
 
 // Store
 import { logIn, provideCredentials } from "../store/actions";
 
 function Login(props) {
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [credentials, setCredentials] = useState(true);
 
@@ -23,13 +23,26 @@ function Login(props) {
 
     const handleSubmit = function(e) {
         e.preventDefault();
-        if (username && password) {
-            props.logIn({ username, password });
+        if (email && password) {
+            props.logIn({ email, password });
             setCredentials(true);
         } else {
             setCredentials(false);
             props.provideCredentials();
         }
+    };
+    const login = function(e) {
+        e.preventDefault();
+        console.log("email", email, password);
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     };
 
     return (
@@ -48,12 +61,13 @@ function Login(props) {
                 />
             ) : null}
             <h2>Log In</h2>
-            <form className="form" onSubmit={handleSubmit}>
+            {/* <form className="form" onSubmit={handleSubmit}> */}
+            <form>
                 <input
-                    onChange={e => setUsername(e.target.value)}
-                    value={username}
+                    onChange={e => setEmail(e.target.value)}
+                    value={email}
                     type="text"
-                    placeholder="username"
+                    placeholder="email"
                 />
                 <input
                     onChange={e => setPassword(e.target.value)}
@@ -61,10 +75,8 @@ function Login(props) {
                     type="password"
                     placeholder="password"
                 />
-                <button onClick={()=>firebaseAuth.login()} >Log In</button>
-                {credentials ? null : (
-                    <p>Please provide username and password</p>
-                )}
+                <button onClick={login}>Log In</button>
+                {credentials ? null : <p>Please provide email and password</p>}
                 {props.validCredentials ? null : <p> Invalid credentials</p>}
             </form>
         </div>

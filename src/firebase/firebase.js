@@ -12,8 +12,4 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-const firebaseAuth = firebase.auth();
-
-console.log(firebaseAuth)
-
-export default firebaseAuth;
+export default firebase;

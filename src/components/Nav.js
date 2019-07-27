@@ -49,12 +49,12 @@ function Nav(props) {
                     </div>
 
                     <div className="cta-container">
-                        <NavLink to="/signup" className="nav-cta signup">Signup/Login</NavLink>
-                        {/* <NavLink to="/login" className="nav-cta login">Log in</NavLink> */}
+                        <NavLink to="/signup" className="nav-cta signup">Signup</NavLink>
+                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
                     </div>
                     <div className="mobile-cta-container">
-                        <NavLink to="/signup" className="nav-cta signup">Signup/Login</NavLink>
-                        {/* <NavLink to="/login" className="nav-cta login">Log in</NavLink> */}
+                        <NavLink to="/signup" className="nav-cta signup">Signup</NavLink>
+                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
                     </div>
                 </nav>
             }
