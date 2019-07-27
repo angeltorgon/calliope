@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logOut } from '../store/actions/index';
 
-import firebaseAuth from '../firebase/firebase';
-
 function Nav(props) {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -49,12 +47,12 @@ function Nav(props) {
                     </div>
 
                     <div className="cta-container">
-                        <NavLink to="/signup" className="nav-cta signup">Signup/Login</NavLink>
-                        {/* <NavLink to="/login" className="nav-cta login">Log in</NavLink> */}
+                        <NavLink to="/signup" className="nav-cta signup">Signup</NavLink>
+                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
                     </div>
                     <div className="mobile-cta-container">
-                        <NavLink to="/signup" className="nav-cta signup">Signup/Login</NavLink>
-                        {/* <NavLink to="/login" className="nav-cta login">Log in</NavLink> */}
+                        <NavLink to="/signup" className="nav-cta signup">Signup</NavLink>
+                        <NavLink to="/login" className="nav-cta login">Log in</NavLink>
                     </div>
                 </nav>
             }
