@@ -2,11 +2,59 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 import Loader from "react-loader-spinner";
-import { Card, Container } from "@material-ui/core";
+import { Card, Container, Divider, TextField, makeStyles } from "@material-ui/core";
 
 import { signUp } from "../store/actions";
 
+const currencies = [
+    {
+        value: "USD",
+        label: "$"
+    },
+    {
+        value: "EUR",
+        label: "€"
+    },
+    {
+        value: "BTC",
+        label: "฿"
+    },
+    {
+        value: "JPY",
+        label: "¥"
+    }
+];
+
+const useStyles = makeStyles(theme => ({
+    container: {
+        display: "flex",
+        flexWrap: "wrap"
+    },
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1)
+    },
+    dense: {
+        marginTop: theme.spacing(2)
+    },
+    menu: {
+        width: 200
+    }
+}));
+
 function Signup(props) {
+    const classes = useStyles();
+    const [values, setValues] = React.useState({
+        name: "Cat in the Hat",
+        age: "",
+        multiline: "Controlled",
+        currency: "EUR"
+    });
+
+    const handleChange = name => event => {
+        setValues({ ...values, [name]: event.target.value });
+    };
+
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [username, setUsername] = useState("");
@@ -56,6 +104,16 @@ function Signup(props) {
         <Container maxWidth="sm">
             <Card>
                 <p>Sign up with the following</p>
+                <Divider variant="middle" />
+                <TextField
+                    id="outlined-name"
+                    label="Name"
+                    className={classes.textField}
+                    value={values.name}
+                    onChange={handleChange("name")}
+                    margin="normal"
+                    variant="outlined"
+                />
             </Card>
         </Container>
     );
