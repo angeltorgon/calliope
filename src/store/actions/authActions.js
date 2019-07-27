@@ -1,4 +1,5 @@
 import axios from 'axios';
+import firebase from '../../firebase';
 
 export const SIGN_UP = 'SIGN_UP';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
@@ -21,9 +22,19 @@ export const signUp = (userInfo) => dispatch => {
         .catch(err => console.log(err))
 }
 
-export const logIn = (credentials) => dispatch => {
+export const login = (credentials) => dispatch => {
+    const { email, password } = credentials
     dispatch({ type: LOG_IN });
-    axios
+    firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(res => {
+        console.log(res);
+    })
+    .catch(err => {
+        console.log(err);
+    });
+    firebase.auth()
         .post(`${api}/api/auth/login`,
             credentials)
         .then(res => {

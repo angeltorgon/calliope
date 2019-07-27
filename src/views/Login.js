@@ -4,10 +4,9 @@ import React, { useState, useEffect } from "react";
 // External Libraries/API's
 import Loader from "react-loader-spinner";
 import { connect } from "react-redux";
-import firebase from "../firebase/firebase";
 
 // Store
-import { logIn, provideCredentials } from "../store/actions";
+import { login, provideCredentials } from "../store/actions";
 
 function Login(props) {
     const [email, setEmail] = useState("");
@@ -24,7 +23,7 @@ function Login(props) {
     const handleSubmit = function(e) {
         e.preventDefault();
         if (email && password) {
-            props.logIn({ email, password });
+            props.login({ email, password });
             setCredentials(true);
         } else {
             setCredentials(false);
@@ -33,16 +32,6 @@ function Login(props) {
     };
     const login = function(e) {
         e.preventDefault();
-        console.log("email", email, password);
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(email, password)
-            .then(res => {
-                console.log(res);
-            })
-            .catch(err => {
-                console.log(err);
-            });
     };
 
     return (
@@ -61,8 +50,7 @@ function Login(props) {
                 />
             ) : null}
             <h2>Log In</h2>
-            {/* <form className="form" onSubmit={handleSubmit}> */}
-            <form>
+            <form className="form" onSubmit={handleSubmit}>
                 <input
                     onChange={e => setEmail(e.target.value)}
                     value={email}
@@ -75,7 +63,7 @@ function Login(props) {
                     type="password"
                     placeholder="password"
                 />
-                <button onClick={login}>Log In</button>
+                <button>Log In</button>
                 {credentials ? null : <p>Please provide email and password</p>}
                 {props.validCredentials ? null : <p> Invalid credentials</p>}
             </form>
@@ -95,5 +83,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { logIn, provideCredentials }
+    { login, provideCredentials }
 )(Login);
