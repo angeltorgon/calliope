@@ -1,82 +1,132 @@
-import React, {useState, useEffect} from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
-import Loader from 'react-loader-spinner';
+import Loader from "react-loader-spinner";
+import { Card, Container, Divider, TextField, makeStyles } from "@material-ui/core";
 
-import { signUp } from '../store/actions';
+import { signUp } from "../store/actions";
+
+const currencies = [
+    {
+        value: "USD",
+        label: "$"
+    },
+    {
+        value: "EUR",
+        label: "€"
+    },
+    {
+        value: "BTC",
+        label: "฿"
+    },
+    {
+        value: "JPY",
+        label: "¥"
+    }
+];
+
+const useStyles = makeStyles(theme => ({
+    container: {
+        display: "flex",
+        flexWrap: "wrap"
+    },
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1)
+    },
+    dense: {
+        marginTop: theme.spacing(2)
+    },
+    menu: {
+        width: 200
+    }
+}));
 
 function Signup(props) {
+    const classes = useStyles();
+    const [values, setValues] = React.useState({
+        name: "Cat in the Hat",
+        age: "",
+        multiline: "Controlled",
+        currency: "EUR"
+    });
 
-    const [ firstName, setFirstName ] = useState('');
-    const [ lastName, setLastName ] = useState('');
-    const [ username, setUsername ] = useState('');
-    const [ email, setEmail ] = useState('');
-    const [ password, setPassword ] = useState('');
-    const [ confirmPassword, setConfirmPassword ] = useState('');
+    const handleChange = name => event => {
+        setValues({ ...values, [name]: event.target.value });
+    };
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [credentials, setCredentials] = useState(true);
     const [passwordsMatch, setPasswordsMatch] = useState(true);
 
+    const [formValues, setFormValues] = useState({
+        email: "",
+        password: ""
+    });
+
     useEffect(() => {
-        if(props.isSignedUp) {
-            props.history.push('/login');
+        if (props.isSignedUp) {
+            props.history.push("/login");
         } else {
-            props.history.push('/signup');
+            props.history.push("/signup");
         }
-    }, [props.isSignedUp])
+    }, [props.isSignedUp]);
 
     const handleSubmit = function(e) {
         e.preventDefault();
 
         if (firstName && lastName && username && email && password) {
-            if(password === confirmPassword) {
+            if (password === confirmPassword) {
                 props.signUp({
-                    firstName, 
-                    lastName, 
-                    username, 
-                    email, 
-                    password, 
-                    avatar: `https://api.adorable.io/avatars/200/${username}`})
+                    firstName,
+                    lastName,
+                    username,
+                    email,
+                    password,
+                    avatar: `https://api.adorable.io/avatars/200/${username}`
+                });
                 setCredentials(true);
             } else {
-                setPasswordsMatch(false)
+                setPasswordsMatch(false);
                 setCredentials(true);
             }
-          } else {
+        } else {
             setCredentials(false);
-          }
-          
-    }
+        }
+    };
 
     return (
-        <div className="form-container">
-                {props.signingUp ? <Loader
-        type="ThreeDots"
-        color="#AC5D5E"
-        height="50"
-        width="50"
-      /> : null}
-            <h2>Sign up</h2>
-            <form className="form" onSubmit={handleSubmit}>
-                <input onChange={(e)=>{setFirstName(e.target.value)}} value={firstName} type="text" placeholder="first name"></input>
-                <input onChange={(e)=>{setLastName(e.target.value)}} value={lastName} type="text" placeholder="last name"></input>
-                <input onChange={(e)=>{setUsername(e.target.value)}} value={username} type="text" placeholder="username"></input>
-                <input onChange={(e)=>{setEmail(e.target.value)}} value={email} type="email" placeholder="email"></input>
-                <input onChange={(e)=>{setPassword(e.target.value)}} value={password} type="password" placeholder="password"></input>
-                <input onChange={(e)=>{setConfirmPassword(e.target.value)}} value={confirmPassword} type="password" placeholder="confirm password"></input>
-                <button>Sign up</button>
-                {credentials ? null : <p>Please complete required fields * </p>}
-                {passwordsMatch ? null : <p>Passwords must match *</p>}
-            </form>
-        </div>
-  )
+        <Container maxWidth="sm">
+            <Card>
+                <p>Sign up with the following</p>
+                <Divider variant="middle" />
+                <TextField
+                    id="outlined-name"
+                    label="Name"
+                    className={classes.textField}
+                    value={values.name}
+                    onChange={handleChange("name")}
+                    margin="normal"
+                    variant="outlined"
+                />
+            </Card>
+        </Container>
+    );
 }
 
 const mapStateToProps = state => ({
     signingUp: state.authReducer.signingUp,
-    isSignedUp: state.authReducer.isSignedUp,
-})
+    isSignedUp: state.authReducer.isSignedUp
+});
 
-
-export default connect(mapStateToProps, {
-    signUp
-})(Signup);
+export default connect(
+    mapStateToProps,
+    {
+        signUp
+    }
+)(Signup);
