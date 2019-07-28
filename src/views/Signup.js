@@ -32,12 +32,15 @@ const useStyles = makeStyles(theme => ({
     button: {
         width: "90%",
         height: "40px",
-        margin: "10px"
+        margin: "10px",
+        fontSize: "1.2rem"
     },
     card: {
+        marginTop: "150px",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center"
+        alignItems: "center",
+        padding: "100px"
     }
 }));
 
@@ -73,7 +76,7 @@ function Signup(props) {
 
     return (
         <Container maxWidth="sm">
-            <Card classNamt={classes.card}>
+            <Card className={classes.card}>
                 <p>Sign up with the following</p>
                 <Divider variant="middle" />
                 <Button
