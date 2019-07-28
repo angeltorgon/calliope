@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function Signup(props) {
+function Signup() {
     const classes = useStyles();
 
     return (
