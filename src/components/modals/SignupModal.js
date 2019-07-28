@@ -19,8 +19,8 @@ const styles = theme => ({
         top: theme.spacing(1),
         color: theme.palette.grey[500]
     },
-    button: {
-        width: "90%",
+    openButton: {
+        width: "100%",
         height: "40px",
         margin: "10px",
         fontSize: "1.2rem"
@@ -45,6 +45,20 @@ const DialogTitle = withStyles(styles)(props => {
     );
 });
 
+const OpenDialogueButton = withStyles(styles)(props => {
+    const { classes, onOpen } = props;
+    return (
+        <Button
+            variant="contained"
+            color="primary"
+            className={classes.openButton}
+            onClick={onOpen}
+        >
+            Login with Email
+        </Button>
+    );
+});
+
 const DialogContent = withStyles(theme => ({
     root: {
         padding: theme.spacing(2)
@@ -60,14 +74,11 @@ const DialogActions = withStyles(theme => ({
 
 class SignupModal extends React.Component {
 
-    classes = this.props;
-
     state = {
         open: false
     };
 
     handleClickOpen = () => {
-        console.log(this.classes)
         this.setState({
             open: true
         });
@@ -80,14 +91,7 @@ class SignupModal extends React.Component {
     render() {
         return (
             <div>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={this.handleClickOpen}
-                    className={this.classes.button}
-                >
-                    Open dialog
-                </Button>
+                <OpenDialogueButton onOpen={this.handleClickOpen} />
                 <Dialog
                     onClose={this.handleClose}
                     aria-labelledby="customized-dialog-title"
