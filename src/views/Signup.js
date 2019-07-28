@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
-import Loader from "react-loader-spinner";
 import {
     Card,
     Container,
     Divider,
     Button,
-    makeStyles,
-    FormGroup
+    makeStyles
 } from "@material-ui/core";
 
-import { signUp } from "../store/actions";
+import { signup } from "../store/actions";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -46,33 +44,6 @@ const useStyles = makeStyles(theme => ({
 
 function Signup(props) {
     const classes = useStyles();
-    const [values, setValues] = React.useState({
-        name: "Cat in the Hat",
-        age: "",
-        multiline: "Controlled",
-        currency: "EUR"
-    });
-
-    const handleChange = name => event => {
-        setValues({ ...values, [name]: event.target.value });
-    };
-
-    const [formValues, setFormValues] = useState({
-        email: "",
-        password: ""
-    });
-
-    useEffect(() => {
-        if (props.isSignedUp) {
-            props.history.push("/login");
-        } else {
-            props.history.push("/signup");
-        }
-    }, [props.isSignedUp]);
-
-    const handleSubmit = function(e) {
-        e.preventDefault();
-    };
 
     return (
         <Container maxWidth="sm">
@@ -106,6 +77,6 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     {
-        signUp
+        signup
     }
 )(Signup);
