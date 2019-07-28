@@ -48,7 +48,7 @@ function Signup(props) {
     return (
         <Container maxWidth="sm">
             <Card className={classes.card}>
-                <p>Sign up with the following</p>
+                <p>Signup with the following</p>
                 <Divider variant="middle" />
                 <Button
                     variant="contained"

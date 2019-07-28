@@ -1,73 +1,76 @@
 // React
 import React, { useState, useEffect } from "react";
 
-// External Libraries/API's
-import Loader from "react-loader-spinner";
 import { connect } from "react-redux";
 
 // Store
 import { login, provideCredentials } from "../store/actions";
 
+import {
+    Card,
+    Container,
+    Divider,
+    Button,
+    makeStyles
+} from "@material-ui/core";
+
+const useStyles = makeStyles(theme => ({
+    container: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+    },
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1)
+    },
+    dense: {
+        marginTop: theme.spacing(2)
+    },
+    menu: {
+        width: "100%"
+    },
+    button: {
+        width: "90%",
+        height: "40px",
+        margin: "10px",
+        fontSize: "1.2rem"
+    },
+    card: {
+        marginTop: "150px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        padding: "100px"
+    }
+}));
+
 function Login(props) {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [credentials, setCredentials] = useState(true);
 
-    useEffect(() => {
-        console.log(props.isLoggedIn);
-        if (props.isLoggedIn) {
-            props.history.push("/dashboard");
-        }
-    }, [props.isLoggedIn]);
-
-    const handleSubmit = function(e) {
-        e.preventDefault();
-        if (email && password) {
-            props.login({ email, password });
-            setCredentials(true);
-        } else {
-            setCredentials(false);
-            props.provideCredentials();
-        }
-    };
-    const login = function(e) {
-        e.preventDefault();
-    };
+    const classes = useStyles();
 
     return (
-        <div className="form-container">
-            {props.isSignedUp ? (
-                <p className="success">
-                    Registration Successful! Log in to continue!
-                </p>
-            ) : null}
-            {props.loggingIn ? (
-                <Loader
-                    type="ThreeDots"
-                    color="#AC5D5E"
-                    height="50"
-                    width="50"
-                />
-            ) : null}
-            <h2>Log In</h2>
-            <form className="form" onSubmit={handleSubmit}>
-                <input
-                    onChange={e => setEmail(e.target.value)}
-                    value={email}
-                    type="text"
-                    placeholder="email"
-                />
-                <input
-                    onChange={e => setPassword(e.target.value)}
-                    value={password}
-                    type="password"
-                    placeholder="password"
-                />
-                <button>Log In</button>
-                {credentials ? null : <p>Please provide email and password</p>}
-                {props.validCredentials ? null : <p> Invalid credentials</p>}
-            </form>
-        </div>
+
+        <Container maxWidth="sm">
+            <Card className={classes.card}>
+                <p>Login with the following</p>
+                <Divider variant="middle" />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                >
+                    Login with Google
+                </Button>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                >
+                    Login with Email
+                </Button>
+            </Card>
+        </Container>
     );
 }
 
