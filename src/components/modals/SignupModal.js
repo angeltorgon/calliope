@@ -1,17 +1,22 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import MuiDialogActions from "@material-ui/core/DialogActions";
-import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-import Typography from "@material-ui/core/Typography";
+import {
+    Button,
+    Dialog,
+    IconButton,
+    TextField,
+    Typography
+} from "@material-ui/core";
+
 const styles = theme => ({
     root: {
         margin: 0,
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
+        width: "300px"
     },
     closeButton: {
         position: "absolute",
@@ -19,8 +24,8 @@ const styles = theme => ({
         top: theme.spacing(1),
         color: theme.palette.grey[500]
     },
-    button: {
-        width: "90%",
+    openButton: {
+        width: "100%",
         height: "40px",
         margin: "10px",
         fontSize: "1.2rem"
@@ -45,6 +50,20 @@ const DialogTitle = withStyles(styles)(props => {
     );
 });
 
+const OpenDialogueButton = withStyles(styles)(props => {
+    const { classes, onOpen } = props;
+    return (
+        <Button
+            variant="contained"
+            color="primary"
+            className={classes.openButton}
+            onClick={onOpen}
+        >
+            Login with Email
+        </Button>
+    );
+});
+
 const DialogContent = withStyles(theme => ({
     root: {
         padding: theme.spacing(2)
@@ -59,15 +78,11 @@ const DialogActions = withStyles(theme => ({
 }))(MuiDialogActions);
 
 class SignupModal extends React.Component {
-
-    classes = this.props;
-
     state = {
         open: false
     };
 
     handleClickOpen = () => {
-        console.log(this.classes)
         this.setState({
             open: true
         });
@@ -79,15 +94,8 @@ class SignupModal extends React.Component {
 
     render() {
         return (
-            <div>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={this.handleClickOpen}
-                    className={this.classes.button}
-                >
-                    Open dialog
-                </Button>
+            <>
+                <OpenDialogueButton onOpen={this.handleClickOpen} />
                 <Dialog
                     onClose={this.handleClose}
                     aria-labelledby="customized-dialog-title"
@@ -97,34 +105,27 @@ class SignupModal extends React.Component {
                         id="customized-dialog-title"
                         onClose={this.handleClose}
                     >
-                        Modal title
+                        Login with Email
                     </DialogTitle>
                     <DialogContent dividers>
-                        <Typography gutterBottom>
-                            Cras mattis consectetur purus sit amet fermentum.
-                            Cras justo odio, dapibus ac facilisis in, egestas
-                            eget quam. Morbi leo risus, porta ac consectetur ac,
-                            vestibulum at eros.
-                        </Typography>
-                        <Typography gutterBottom>
-                            Praesent commodo cursus magna, vel scelerisque nisl
-                            consectetur et. Vivamus sagittis lacus vel augue
-                            laoreet rutrum faucibus dolor auctor.
-                        </Typography>
-                        <Typography gutterBottom>
-                            Aenean lacinia bibendum nulla sed consectetur.
-                            Praesent commodo cursus magna, vel scelerisque nisl
-                            consectetur et. Donec sed odio dui. Donec
-                            ullamcorper nulla non metus auctor fringilla.
-                        </Typography>
+                        <form>
+                            <TextField
+                                id="email"
+                                label="Email"
+                                // className={classes.textField}
+                                // value={values.name}
+                                // onChange={handleChange("name")}
+                                margin="normal"
+                            />
+                        </form>
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={this.handleClose} color="primary">
-                            Save changes
+                            Login
                         </Button>
                     </DialogActions>
                 </Dialog>
-            </div>
+            </>
         );
     }
 }

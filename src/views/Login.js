@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
         width: "100%"
     },
     button: {
-        width: "90%",
+        width: "100%",
         height: "40px",
         margin: "10px",
         fontSize: "1.2rem"
@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function Login(props) {
+function Login() {
     const classes = useStyles();
 
     return (
@@ -62,14 +62,7 @@ function Login(props) {
                 >
                     Login with Google
                 </Button>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}
-                >
-                    Login with Email
-                </Button>
-                <SignupModal />
+                <SignupModal className={classes.button} />
             </Card>
         </Container>
     );
