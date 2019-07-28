@@ -2,33 +2,22 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 import Loader from "react-loader-spinner";
-import { Card, Container, Divider, TextField, makeStyles } from "@material-ui/core";
+import {
+    Card,
+    Container,
+    Divider,
+    Button,
+    makeStyles,
+    FormGroup
+} from "@material-ui/core";
 
 import { signUp } from "../store/actions";
-
-const currencies = [
-    {
-        value: "USD",
-        label: "$"
-    },
-    {
-        value: "EUR",
-        label: "€"
-    },
-    {
-        value: "BTC",
-        label: "฿"
-    },
-    {
-        value: "JPY",
-        label: "¥"
-    }
-];
 
 const useStyles = makeStyles(theme => ({
     container: {
         display: "flex",
-        flexWrap: "wrap"
+        flexDirection: "column",
+        alignItems: "center"
     },
     textField: {
         marginLeft: theme.spacing(1),
@@ -38,7 +27,17 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(2)
     },
     menu: {
-        width: 200
+        width: "100%"
+    },
+    button: {
+        width: "90%",
+        height: "40px",
+        margin: "10px"
+    },
+    card: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
     }
 }));
 
@@ -55,15 +54,6 @@ function Signup(props) {
         setValues({ ...values, [name]: event.target.value });
     };
 
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [credentials, setCredentials] = useState(true);
-    const [passwordsMatch, setPasswordsMatch] = useState(true);
-
     const [formValues, setFormValues] = useState({
         email: "",
         password: ""
@@ -79,41 +69,27 @@ function Signup(props) {
 
     const handleSubmit = function(e) {
         e.preventDefault();
-
-        if (firstName && lastName && username && email && password) {
-            if (password === confirmPassword) {
-                props.signUp({
-                    firstName,
-                    lastName,
-                    username,
-                    email,
-                    password,
-                    avatar: `https://api.adorable.io/avatars/200/${username}`
-                });
-                setCredentials(true);
-            } else {
-                setPasswordsMatch(false);
-                setCredentials(true);
-            }
-        } else {
-            setCredentials(false);
-        }
     };
 
     return (
         <Container maxWidth="sm">
-            <Card>
+            <Card classNamt={classes.card}>
                 <p>Sign up with the following</p>
                 <Divider variant="middle" />
-                <TextField
-                    id="outlined-name"
-                    label="Name"
-                    className={classes.textField}
-                    value={values.name}
-                    onChange={handleChange("name")}
-                    margin="normal"
-                    variant="outlined"
-                />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                >
+                    Signup with Google
+                </Button>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                >
+                    Signup with Email
+                </Button>
             </Card>
         </Container>
     );
