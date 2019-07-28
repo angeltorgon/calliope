@@ -1,10 +1,12 @@
 // React
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { connect } from "react-redux";
 
 // Store
 import { login, provideCredentials } from "../store/actions";
+
+import SignupModal from "../components/modals/SignupModal";
 
 import {
     Card,
@@ -46,11 +48,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function Login(props) {
-
     const classes = useStyles();
 
     return (
-
         <Container maxWidth="sm">
             <Card className={classes.card}>
                 <p>Login with the following</p>
@@ -70,6 +70,7 @@ function Login(props) {
                     Login with Email
                 </Button>
             </Card>
+            <SignupModal />
         </Container>
     );
 }
