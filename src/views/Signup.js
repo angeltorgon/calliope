@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
         width: "100%"
     },
     button: {
-        width: "90%",
+        width: "100%",
         height: "40px",
         margin: "10px",
         fontSize: "1.2rem"

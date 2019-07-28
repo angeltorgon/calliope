@@ -62,14 +62,7 @@ function Login() {
                 >
                     Login with Google
                 </Button>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}
-                >
-                    Login with Email
-                </Button>
-                <SignupModal className={classes.button}/>
+                <SignupModal className={classes.button} />
             </Card>
         </Container>
     );

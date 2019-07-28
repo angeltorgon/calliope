@@ -90,7 +90,7 @@ class SignupModal extends React.Component {
 
     render() {
         return (
-            <div>
+            <>
                 <OpenDialogueButton onOpen={this.handleClickOpen} />
                 <Dialog
                     onClose={this.handleClose}
@@ -128,7 +128,7 @@ class SignupModal extends React.Component {
                         </Button>
                     </DialogActions>
                 </Dialog>
-            </div>
+            </>
         );
     }
 }
