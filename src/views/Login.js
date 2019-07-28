@@ -69,8 +69,8 @@ function Login(props) {
                 >
                     Login with Email
                 </Button>
+                <SignupModal />
             </Card>
-            <SignupModal />
         </Container>
     );
 }
