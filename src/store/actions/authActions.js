@@ -11,14 +11,32 @@ export const LOG_OUT = "LOG_OUT";
 
 const api = "https://calliope-api.herokuapp.com";
 
+var provider = new firebase.auth.GoogleAuthProvider();
+
 export const signup = userInfo => dispatch => {
-    dispatch({ type: SIGN_UP });
-    axios
-        .post(`${api}/api/auth/signup`, userInfo)
-        .then(res => {
-            dispatch({ type: SIGN_UP_SUCCESS, payload: res.data });
+    console.log("signing up...");
+    firebase
+        .auth()
+        .signInWithRedirect(provider)
+        .then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+            console.log("token", token);
+            console.log("user", user);
         })
-        .catch(err => console.log(err));
+        .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
 };
 
 export const login = credentials => dispatch => {
