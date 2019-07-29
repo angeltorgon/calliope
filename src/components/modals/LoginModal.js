@@ -59,7 +59,7 @@ const OpenDialogueButton = withStyles(styles)(props => {
             className={classes.openButton}
             onClick={onOpen}
         >
-            Signup with Email
+            Login with Email
         </Button>
     );
 });
@@ -77,7 +77,7 @@ const DialogActions = withStyles(theme => ({
     }
 }))(MuiDialogActions);
 
-class SignupModal extends React.Component {
+class LoginModal extends React.Component {
     state = {
         open: false
     };
@@ -105,7 +105,7 @@ class SignupModal extends React.Component {
                         id="customized-dialog-title"
                         onClose={this.handleClose}
                     >
-                        Signup with Email
+                        Login with Email
                     </DialogTitle>
                     <DialogContent dividers>
                         <form>
@@ -130,4 +130,4 @@ class SignupModal extends React.Component {
     }
 }
 
-export default SignupModal;
+export default LoginModal;

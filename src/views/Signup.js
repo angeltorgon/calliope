@@ -9,6 +9,8 @@ import {
     makeStyles
 } from "@material-ui/core";
 
+import SignupModal from "../components/modals/SignupModal";
+
 import { signup } from "../store/actions";
 
 const useStyles = makeStyles(theme => ({
@@ -57,13 +59,7 @@ function Signup() {
                 >
                     Signup with Google
                 </Button>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}
-                >
-                    Signup with Email
-                </Button>
+                <SignupModal />
             </Card>
         </Container>
     );

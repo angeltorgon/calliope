@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 // Store
 import { login, provideCredentials } from "../store/actions";
 
-import SignupModal from "../components/modals/SignupModal";
+import LoginModal from "../components/modals/LoginModal";
 
 import {
     Card,
@@ -62,7 +62,7 @@ function Login() {
                 >
                     Login with Google
                 </Button>
-                <SignupModal className={classes.button} />
+                <LoginModal />
             </Card>
         </Container>
     );
