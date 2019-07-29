@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function Signup() {
+function Signup(props) {
     const classes = useStyles();
 
     return (
@@ -56,6 +56,7 @@ function Signup() {
                     variant="contained"
                     color="primary"
                     className={classes.button}
+                    onClick={props.signup}
                 >
                     Signup with Google
                 </Button>
