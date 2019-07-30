@@ -4,7 +4,6 @@ import React from "react";
 import { connect } from "react-redux";
 
 // Store
-import { login, provideCredentials } from "../store/actions";
 
 import LoginModal from "../components/modals/LoginModal";
 
@@ -70,15 +69,10 @@ function Login() {
 
 const mapStateToProps = state => {
     return {
-        loggingIn: state.authReducer.loggingIn,
-        isLoggedIn: state.authReducer.isLoggedIn,
-        token: state.authReducer.token,
-        isSignedUp: state.authReducer.isSignedUp,
-        validCredentials: state.authReducer.validCredentials
+    
     };
 };
 
 export default connect(
-    mapStateToProps,
-    { login, provideCredentials }
+    mapStateToProps
 )(Login);

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect } from "react";
 import { connect } from "react-redux";
 
 import {
@@ -47,6 +47,10 @@ const useStyles = makeStyles(theme => ({
 function Signup(props) {
     const classes = useStyles();
 
+    useEffect(() => {
+        console.log(props.started);
+    })
+
     return (
         <Container maxWidth="sm">
             <Card className={classes.card}>
@@ -66,14 +70,14 @@ function Signup(props) {
     );
 }
 
-const mapStateToProps = state => ({
-    signingUp: state.authReducer.signingUp,
-    isSignedUp: state.authReducer.isSignedUp
-});
+const mapStateToProps = state => {
+    const { started } = state.signupReducer;
+    
+    return {
+        started: started
+}};
 
 export default connect(
     mapStateToProps,
-    {
-        signup
-    }
+    { signup }
 )(Signup);

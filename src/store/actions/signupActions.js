@@ -7,7 +7,7 @@ export const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
-export const signup = () => {
+export const signup = () => dispatch => {
     dispatch({type: SIGN_UP_START})
     firebase
         .auth()

@@ -6,7 +6,7 @@ const initialState = {
     error: null
 };
 
-export const authReducer = (state = initialState, action) => {
+export const signupReducer = (state = initialState, action) => {
     console.log(action.type, action.payload);
     switch (action.type) {
         case SIGN_UP_START:
