@@ -1,5 +1,6 @@
-import React,{ useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import Loader from "react-loader-spinner";
 
 import {
     Card,
@@ -48,12 +49,16 @@ function Signup(props) {
     const classes = useStyles();
 
     useEffect(() => {
-        console.log(props.started);
-    })
+        console.log("started", props.started);
+        console.log("finished", props.finished);
+        console.log("error", props.error);
+    });
 
     return (
         <Container maxWidth="sm">
             <Card className={classes.card}>
+              { props.started ? <Loader type="Oval" color="blue" height={80} width={80} />
+              : <>
                 <p>Signup with the following</p>
                 <Divider variant="middle" />
                 <Button
@@ -65,17 +70,22 @@ function Signup(props) {
                     Signup with Google
                 </Button>
                 <SignupModal />
+                </>
+                }
             </Card>
         </Container>
     );
 }
 
 const mapStateToProps = state => {
-    const { started } = state.signupReducer;
-    
+    const { started, finished, error } = state.signupReducer;
+
     return {
-        started: started
-}};
+        started: started,
+        finished: finished,
+        error: error
+    };
+};
 
 export default connect(
     mapStateToProps,
