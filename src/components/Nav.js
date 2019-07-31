@@ -17,7 +17,7 @@ function Nav(props) {
 
     return (
         <>
-            {isLoggedIn ? (
+            {false ? (
                 <nav className="navbar">
                     <div to="/dashboard" className="logo">
                         <img

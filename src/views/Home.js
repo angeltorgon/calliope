@@ -17,9 +17,7 @@ function Home(props) {
 }
 
 const mapStateToProps = state => {
-    return {
-        isLoggedIn: state.authReducer.isLoggedIn
-    };
+
 };
 
 export default connect(mapStateToProps)(Home);
