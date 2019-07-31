@@ -5,9 +5,8 @@ export const SIGN_UP_START = "SIGN_UP";
 export const SIGN_UP_SUCCESS = "SIGN_UP_SUCCESS";
 export const SIGN_UP_FAILURE = "SIGN_UP_FAILURE";
 
-var provider = new firebase.auth.GoogleAuthProvider();
-
-export const signup = () => dispatch => {
+export const signUpWithGoogle = () => dispatch => {
+    var provider = new firebase.auth.GoogleAuthProvider();
     dispatch({ type: SIGN_UP_START });
     firebase
         .auth()
@@ -20,7 +19,7 @@ export const signup = () => dispatch => {
             // ...
             console.log("token", token);
             console.log("user", user);
-            dispatch({ type: SIGN_UP_SUCCESS })
+            dispatch({ type: SIGN_UP_SUCCESS });
         })
         .catch(function(error) {
             // Handle Errors here.
@@ -32,5 +31,18 @@ export const signup = () => dispatch => {
             var credential = error.credential;
             // ...
             dispatch({ type: SIGN_UP_FAILURE });
+        });
+};
+
+export const signUpWithEmail = function(credentials) {
+    const { email, password } = credentials;
+    firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(res => {
+            console.log("signupwithemail reaponse", res);
+        })
+        .catch(err => {
+            console.log("signupwithemail error", err);
         });
 };
