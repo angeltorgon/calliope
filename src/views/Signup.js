@@ -52,7 +52,9 @@ function Signup(props) {
         console.log("started", props.started);
         console.log("finished", props.finished);
         console.log("error", props.error);
-    });
+        console.log(props)
+        props.finished ? props.history.push("/signup") : props.history.push("/signup") 
+    }, []);
 
     return (
         <Container maxWidth="sm">
@@ -79,7 +81,6 @@ function Signup(props) {
 
 const mapStateToProps = state => {
     const { started, finished, error } = state.signupReducer;
-
     return {
         started: started,
         finished: finished,
