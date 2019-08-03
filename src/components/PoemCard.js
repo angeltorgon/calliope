@@ -15,20 +15,8 @@ function PoemCard(props) {
         <div className="poem-post-container" key={props.poem.id}>
             <div className="poem">{props.poem.title}</div>
             <div className="poem">{props.poem.content}</div>
-            <div className="poem-stats">
-                <div className="stats-left">
-                    {/* <p className="stats-item likes-count">{likes}</p> */}
-                </div>
-                <div className="stats-right">
-                    {/* <p className="stats-item">Comments: {comments.length}</p> */}
-                </div>
-            </div>
-            <CommentSection
-            // addComment={addComment}
-            // comments={comments}
-            // avatar={props.user.avatar}
-            // poemId={props.poem.id}
-            />
+
+            <CommentSection />
         </div>
     );
 }
