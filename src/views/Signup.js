@@ -12,7 +12,7 @@ import {
 
 import SignupModal from "../components/modals/SignupModal";
 
-import { signup } from "../store/actions";
+import { signUpWithGoogle } from "../store/actions";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -48,32 +48,37 @@ const useStyles = makeStyles(theme => ({
 function Signup(props) {
     const classes = useStyles();
 
+    const handleAuth = () => {
+        props.finished
+            ? props.history.push("/home")
+            : props.history.push("./signup");
+    };
+
     useEffect(() => {
-        console.log("started", props.started);
-        console.log("finished", props.finished);
-        console.log("error", props.error);
-        console.log(props)
-        props.finished ? props.history.push("/signup") : props.history.push("/signup") 
-    }, []);
+        handleAuth();
+        console.log(props);
+    }, [props.finished]);
 
     return (
         <Container maxWidth="sm">
             <Card className={classes.card}>
-              { props.started ? <Loader type="Oval" color="blue" height={80} width={80} />
-              : <>
-                <p>Signup with the following</p>
-                <Divider variant="middle" />
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}
-                    onClick={props.signup}
-                >
-                    Signup with Google
-                </Button>
-                <SignupModal />
-                </>
-                }
+                {props.started ? (
+                    <Loader type="Oval" color="blue" height={80} width={80} />
+                ) : (
+                    <>
+                        <p>Signup with the following</p>
+                        <Divider variant="middle" />
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                            onClick={props.signUpWithGoogle}
+                        >
+                            Signup with Google
+                        </Button>
+                        <SignupModal />
+                    </>
+                )}
             </Card>
         </Container>
     );
@@ -90,5 +95,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { signup }
+    { signUpWithGoogle }
 )(Signup);

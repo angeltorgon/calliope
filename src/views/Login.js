@@ -2,9 +2,6 @@
 import React from "react";
 
 import { connect } from "react-redux";
-
-// Store
-
 import LoginModal from "../components/modals/LoginModal";
 
 import {

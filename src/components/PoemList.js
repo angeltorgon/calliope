@@ -5,9 +5,10 @@ import PoemCard from "./PoemCard";
 import { signup } from "../store/actions";
 
 function PoemList(props) {
+    const poems = [];
     return (
         <div>
-            {props.poems.map(poem => (
+            {poems.map(poem => (
                 <PoemCard key={poem.id} poem={poem} />
             ))}
         </div>
@@ -15,10 +16,9 @@ function PoemList(props) {
 }
 
 const mapStateToProps = state => {
-    return { poems: state.authReducer.allPoems };
+    // return { poems: state.authReducer.allPoems };
 };
 
 export default connect(
-    mapStateToProps,
-    { signup }
+    // mapStateToProps
 )(PoemList);
