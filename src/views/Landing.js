@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-function Home(props) {
+function Landing(props) {
     useEffect(() => {}, [props.isLoggedIn]);
 
     return (
@@ -20,4 +20,4 @@ const mapStateToProps = state => {
 
 };
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps)(Landing);
