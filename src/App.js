@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Landing from "./views/Landing";
-import Feed from "./views/Feed.js";
+import Home from "./views/Home";
 import Profile from "./views/Profile";
 import PoemForm from "./components/PoemForm";
 
@@ -15,7 +15,7 @@ class App extends Component {
             <div className="app-container">
                 <Nav />
                 <Route exact path="/" component={Landing} />
-                <Route path="/dashboard" component={Feed} />
+                <Route path="/home" component={Home} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/profile/:id" component={Profile} />

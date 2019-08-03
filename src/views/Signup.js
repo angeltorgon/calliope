@@ -48,15 +48,16 @@ const useStyles = makeStyles(theme => ({
 function Signup(props) {
     const classes = useStyles();
 
-    useEffect(() => {
-        console.log("started", props.started);
-        console.log("finished", props.finished);
-        console.log("error", props.error);
-        console.log(props);
+    const handleAuth = () => {
         props.finished
-            ? props.history.push("/signup")
-            : props.history.push("/signup");
-    }, []);
+            ? props.history.push("/home")
+            : props.history.push("./signup");
+    };
+
+    useEffect(() => {
+        handleAuth();
+        console.log(props);
+    }, [props.finished]);
 
     return (
         <Container maxWidth="sm">
