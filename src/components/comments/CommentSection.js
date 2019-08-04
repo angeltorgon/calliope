@@ -16,7 +16,7 @@ function CommentSection(props) {
 
 const mapStateToProps = state => {
     return {
-        allPoems: state.authReducer.allPoems
+        // allPoems: state.authReducer.allPoems
     }
 }
   
