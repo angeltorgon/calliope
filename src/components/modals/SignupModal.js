@@ -92,7 +92,7 @@ class SignupModal extends React.Component {
     };
 
     handleClose = () => {
-        this.props.signUpWithEmail();
+        // this.props.signUpWithEmail();
         this.setState({ open: false });
     };
 

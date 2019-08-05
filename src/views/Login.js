@@ -1,8 +1,9 @@
 // React
-import React from "react";
+import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
 import LoginModal from "../components/modals/LoginModal";
+import { authWithGoogle } from "../store/actions";
 
 import {
     Card,
@@ -43,8 +44,19 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function Login() {
+function Login(props) {
     const classes = useStyles();
+
+    const handleAuth = () => {
+        props.finished
+            ? props.history.push("/home")
+            : props.history.push("./signup");
+    };
+
+    useEffect(() => {
+        handleAuth();
+        console.log(props);
+    }, [props.finished]);
 
     return (
         <Container maxWidth="sm">
@@ -65,11 +77,15 @@ function Login() {
 }
 
 const mapStateToProps = state => {
+    const { started, finished, error } = state.signupReducer;
     return {
-    
+        started: started,
+        finished: finished,
+        error: error
     };
 };
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    { authWithGoogle }
 )(Login);

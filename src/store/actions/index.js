@@ -1,2 +1,2 @@
-export * from './signupActions';
+export * from './authActions';
 export * from './poemActions';

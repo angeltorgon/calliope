@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -13,7 +14,7 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1
     },
     nav: {
-        background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+        background: "linear-gradient(45deg, #232926 30%, #252830 90%)",
         border: 0,
         borderRadius: 3,
         boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
@@ -25,10 +26,20 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         flexGrow: 1
+    },
+    button: {
+        fontSize: "20px",
+        textDecoration: "none",
+        color: "white",
+        padding: "10px",
+        "&:hover": {
+            color: "white",
+            textDecoration: "none"
+        }
     }
 }));
 
-function Nav(props) {
+function Navbar(props) {
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -37,8 +48,12 @@ function Nav(props) {
                     <Typography variant="h3" className={classes.title}>
                         Calliope
                     </Typography>
-                    <Button color="inherit">Login</Button>
-                    <Button color="inherit">Signup</Button>
+                    <Link to="/login" className={classes.button}>
+                        Login
+                    </Link>
+                    <Link to="/signup" className={classes.button}>
+                        Signup
+                    </Link>
                 </Toolbar>
             </AppBar>
         </div>
@@ -49,4 +64,4 @@ const mapStateToProps = state => {
     return {};
 };
 
-export default connect(mapStateToProps)(Nav);
+export default connect(mapStateToProps)(Navbar);
