@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
-import Nav from "./components/Nav";
+import Navbar from "./components/Navbar";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Landing from "./views/Landing";
@@ -13,7 +13,7 @@ class App extends Component {
     render() {
         return (
             <div className="app-container">
-                <Nav />
+                <Navbar />
                 <Route exact path="/" component={Landing} />
                 <Route path="/home" component={Home} />
                 <Route path="/login" component={Login} />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -13,7 +14,7 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1
     },
     nav: {
-        background: "linear-gradient(45deg, #232526 30%, #232530 90%)",
+        background: "linear-gradient(45deg, #232926 30%, #252830 90%)",
         border: 0,
         borderRadius: 3,
         boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
@@ -27,11 +28,18 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1
     },
     button: {
-        fontSize: "16px"
+        fontSize: "20px",
+        textDecoration: "none",
+        color: "white",
+        padding: "10px",
+        "&:hover": {
+            color: "white",
+            textDecoration: "none"
+        }
     }
 }));
 
-function Nav(props) {
+function Navbar(props) {
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -40,12 +48,12 @@ function Nav(props) {
                     <Typography variant="h3" className={classes.title}>
                         Calliope
                     </Typography>
-                    <Button className={classes.button} color="inherit">
+                    <Link to="/login" className={classes.button}>
                         Login
-                    </Button>
-                    <Button className={classes.button} color="inherit">
+                    </Link>
+                    <Link to="/signup" className={classes.button}>
                         Signup
-                    </Button>
+                    </Link>
                 </Toolbar>
             </AppBar>
         </div>
@@ -56,4 +64,4 @@ const mapStateToProps = state => {
     return {};
 };
 
-export default connect(mapStateToProps)(Nav);
+export default connect(mapStateToProps)(Navbar);
