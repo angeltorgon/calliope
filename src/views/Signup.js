@@ -12,7 +12,7 @@ import {
 
 import SignupModal from "../components/modals/SignupModal";
 
-import { signUpWithGoogle } from "../store/actions";
+import { authWithGoogle } from "../store/actions";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -72,7 +72,7 @@ function Signup(props) {
                             variant="contained"
                             color="primary"
                             className={classes.button}
-                            onClick={props.signUpWithGoogle}
+                            onClick={props.authWithGoogle}
                         >
                             Signup with Google
                         </Button>
@@ -95,5 +95,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { signUpWithGoogle }
+    { authWithGoogle }
 )(Signup);
