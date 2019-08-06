@@ -94,7 +94,12 @@ class SignupModal extends React.Component {
     };
 
     handleClose = () => {
+        const credentials = {
+            email: this.state.email,
+            password: this.state.password
+        };
         this.setState({ open: false });
+        signUpWithEmail(credentials);
     };
 
     handleChange = (name, e) => {
@@ -124,7 +129,6 @@ class SignupModal extends React.Component {
                             <TextField
                                 id="email"
                                 label="Email"
-                                // className={classes.textField}
                                 value={email}
                                 onChange={e => this.handleChange("email", e)}
                                 margin="normal"
@@ -132,7 +136,6 @@ class SignupModal extends React.Component {
                             <TextField
                                 id="password"
                                 label="Password"
-                                // className={classes.textField}
                                 value={password}
                                 onChange={e => this.handleChange("password", e)}
                                 margin="normal"
