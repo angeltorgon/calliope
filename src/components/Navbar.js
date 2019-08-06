@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         background: "linear-gradient(45deg, #232926 30%, #252830 90%)",
         border: 0,
         borderRadius: 3,
-        boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+        boxShadow: "0 3px 5px 2px rgba(5, 5, 5, .3)",
         color: "white",
         padding: "0 30px"
     },
@@ -25,7 +25,15 @@ const useStyles = makeStyles(theme => ({
         marginRight: theme.spacing(2)
     },
     title: {
-        flexGrow: 1
+        flexGrow: 1,
+        textDecoration: "none",
+        color: "white",
+        padding: "10px",
+        fontSize: "20px",
+        "&:hover": {
+            color: "white",
+            textDecoration: "none"
+        }
     },
     button: {
         fontSize: "20px",
@@ -45,9 +53,13 @@ function Navbar(props) {
         <div className={classes.root}>
             <AppBar position="static" className={classes.nav}>
                 <Toolbar>
-                    <Typography variant="h3" className={classes.title}>
+                    <Link
+                        className={classes.button}
+                        to="/"
+                        className={classes.title}
+                    >
                         Calliope
-                    </Typography>
+                    </Link>
                     <Link to="/login" className={classes.button}>
                         Login
                     </Link>
