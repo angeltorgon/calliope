@@ -17,8 +17,7 @@ export const authWithGoogle = () => dispatch => {
             // The signed-in user info.
             var user = result.user;
             // ...
-            console.log("token", token);
-            console.log("user", user.ra);
+            localStorage.setItem("token", user.ra);
             dispatch({ type: SIGN_UP_SUCCESS });
         })
         .catch(function(error) {
