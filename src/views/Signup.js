@@ -56,7 +56,6 @@ function Signup(props) {
 
     useEffect(() => {
         handleAuth();
-        console.log(props);
     }, [props.finished]);
 
     return (

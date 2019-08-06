@@ -82,7 +82,11 @@ const DialogActions = withStyles(theme => ({
 
 class SignupModal extends React.Component {
     state = {
-        open: false
+        open: false,
+        credentials: {
+            email: "",
+            password: ""
+        }
     };
 
     handleClickOpen = () => {
@@ -92,11 +96,21 @@ class SignupModal extends React.Component {
     };
 
     handleClose = () => {
-        // this.props.signUpWithEmail();
         this.setState({ open: false });
     };
 
+    handleChange = e => {
+        // this.setState({
+        //     ...this.state,
+        //     credentials: {
+        //         ...this.state.credentials,
+        //         [name]: e.target.value
+        //     }
+        // });
+    };
+
     render() {
+        const { password, email } = this.state.credentials;
         return (
             <>
                 <OpenDialogueButton onOpen={this.handleClickOpen} />
@@ -117,7 +131,15 @@ class SignupModal extends React.Component {
                                 id="email"
                                 label="Email"
                                 // className={classes.textField}
-                                // value={values.name}
+                                value={email}
+                                onChange={() => this.handleChange("name")}
+                                margin="normal"
+                            />
+                            <TextField
+                                id="password"
+                                label="Password"
+                                // className={classes.textField}
+                                value={password}
                                 // onChange={handleChange("name")}
                                 margin="normal"
                             />
