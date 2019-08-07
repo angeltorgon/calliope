@@ -50,7 +50,7 @@ function Login(props) {
     const handleAuth = () => {
         props.finished
             ? props.history.push("/home")
-            : props.history.push("./signup");
+            : props.history.push("/login");
     };
 
     useEffect(() => {
@@ -66,6 +66,7 @@ function Login(props) {
                     variant="contained"
                     color="primary"
                     className={classes.button}
+                    onClick={props.authWithGoogle}
                 >
                     Login with Google
                 </Button>

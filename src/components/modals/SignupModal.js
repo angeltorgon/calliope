@@ -94,12 +94,13 @@ class SignupModal extends React.Component {
     };
 
     handleClose = () => {
+        console.log("handling close");
         const credentials = {
             email: this.state.email,
             password: this.state.password
         };
         this.setState({ open: false });
-        signUpWithEmail(credentials);
+        this.props.signUpWithEmail(credentials);
     };
 
     handleChange = (name, e) => {

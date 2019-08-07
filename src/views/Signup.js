@@ -51,7 +51,7 @@ function Signup(props) {
     const handleAuth = () => {
         props.finished
             ? props.history.push("/home")
-            : props.history.push("./signup");
+            : props.history.push("/signup");
     };
 
     useEffect(() => {

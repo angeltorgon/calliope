@@ -33,15 +33,19 @@ export const authWithGoogle = () => dispatch => {
         });
 };
 
-export const signUpWithEmail = function(credentials) {
+export const signUpWithEmail = credentials => dispatch => {
     const { email, password } = credentials;
+    dispatch({ type: SIGN_UP_START });
     firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then(res => {
-            console.log("signupwithemail reaponse", res);
+            console.log(res);
+            localStorage.setItem("token", res.user.ra);
+            dispatch({ type: SIGN_UP_SUCCESS });
         })
         .catch(err => {
-            console.log("signupwithemail error", err);
+            console.error(err);
+            dispatch({ type: SIGN_UP_FAILURE });
         });
 };
