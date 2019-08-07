@@ -13,6 +13,7 @@ import {
 import SignupModal from "../components/modals/SignupModal";
 
 import { authWithGoogle } from "../store/actions";
+import firebase from "../firebase";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -49,9 +50,8 @@ function Signup(props) {
     const classes = useStyles();
 
     const handleAuth = () => {
-        props.finished
-            ? props.history.push("/home")
-            : props.history.push("./signup");
+        const user = firebase.auth().currentUser;
+        user ? props.history.push("/home") : props.history.push("/signup");
     };
 
     useEffect(() => {

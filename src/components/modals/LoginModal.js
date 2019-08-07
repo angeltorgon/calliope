@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { withStyles } from "@material-ui/core/styles";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
@@ -11,6 +12,8 @@ import {
     TextField,
     Typography
 } from "@material-ui/core";
+
+import { loginWithEmail } from "../../store/actions";
 
 const styles = theme => ({
     root: {
@@ -91,7 +94,12 @@ class LoginModal extends React.Component {
     };
 
     handleClose = () => {
+        const credentials = {
+            email: this.state.email,
+            password: this.state.password
+        };
         this.setState({ open: false });
+        this.props.loginWithEmail(credentials);
     };
 
     handleChange = (name, e) => {
@@ -145,4 +153,16 @@ class LoginModal extends React.Component {
     }
 }
 
-export default LoginModal;
+const mapStateToProps = state => {
+    const { started, finished, error } = state.signupReducer;
+    return {
+        started: started,
+        finished: finished,
+        error: error
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    { loginWithEmail }
+)(LoginModal);

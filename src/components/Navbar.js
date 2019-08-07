@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+
+import firebase from "../firebase";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -49,24 +47,50 @@ const useStyles = makeStyles(theme => ({
 
 function Navbar(props) {
     const classes = useStyles();
+
+    const handleAuth = () => {
+        const user = firebase.auth().currentUser;
+        console.log("user", user);
+        return user;
+    };
+
+    useEffect(() => {
+        handleAuth();
+    }, []);
+
     return (
         <div className={classes.root}>
             <AppBar position="static" className={classes.nav}>
-                <Toolbar>
-                    <Link
-                        className={classes.button}
-                        to="/"
-                        className={classes.title}
-                    >
-                        Calliope
-                    </Link>
-                    <Link to="/login" className={classes.button}>
-                        Login
-                    </Link>
-                    <Link to="/signup" className={classes.button}>
-                        Signup
-                    </Link>
-                </Toolbar>
+                {true ? (
+                    <Toolbar>
+                        <Link
+                            className={classes.button}
+                            to="/"
+                            className={classes.title}
+                        >
+                            Calliope
+                        </Link>
+                        <Link to="/signup" className={classes.button}>
+                            Logout
+                        </Link>
+                    </Toolbar>
+                ) : (
+                    <Toolbar>
+                        <Link
+                            className={classes.button}
+                            to="/"
+                            className={classes.title}
+                        >
+                            Calliope
+                        </Link>
+                        <Link to="/login" className={classes.button}>
+                            Login
+                        </Link>
+                        <Link to="/signup" className={classes.button}>
+                            Signup
+                        </Link>
+                    </Toolbar>
+                )}
             </AppBar>
         </div>
     );

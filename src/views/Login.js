@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import LoginModal from "../components/modals/LoginModal";
 import { authWithGoogle } from "../store/actions";
+import firebase from "../firebase";
 
 import {
     Card,
@@ -48,9 +49,8 @@ function Login(props) {
     const classes = useStyles();
 
     const handleAuth = () => {
-        props.finished
-            ? props.history.push("/home")
-            : props.history.push("./signup");
+        const user = firebase.auth().currentUser;
+        user ? props.history.push("/home") : props.history.push("/login");
     };
 
     useEffect(() => {
@@ -66,6 +66,7 @@ function Login(props) {
                     variant="contained"
                     color="primary"
                     className={classes.button}
+                    onClick={props.authWithGoogle}
                 >
                     Login with Google
                 </Button>
