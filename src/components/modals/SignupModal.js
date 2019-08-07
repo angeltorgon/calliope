@@ -155,7 +155,12 @@ class SignupModal extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
+    const { started, finished, error } = state.signupReducer;
+    return {
+        started: started,
+        finished: finished,
+        error: error
+    };
 };
 
 export default connect(
