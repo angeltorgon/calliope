@@ -40,7 +40,21 @@ export const signUpWithEmail = credentials => dispatch => {
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then(res => {
-            console.log(res);
+            localStorage.setItem("token", res.user.ra);
+            dispatch({ type: SIGN_UP_SUCCESS });
+        })
+        .catch(err => {
+            console.error(err);
+            dispatch({ type: SIGN_UP_FAILURE });
+        });
+};
+export const loginWithEmail = credentials => dispatch => {
+    const { email, password } = credentials;
+    dispatch({ type: SIGN_UP_START });
+    firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(res => {
             localStorage.setItem("token", res.user.ra);
             dispatch({ type: SIGN_UP_SUCCESS });
         })

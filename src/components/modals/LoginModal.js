@@ -13,7 +13,7 @@ import {
     Typography
 } from "@material-ui/core";
 
-import { signUpWithEmail } from "../../store/actions";
+import { loginWithEmail } from "../../store/actions";
 
 const styles = theme => ({
     root: {
@@ -99,7 +99,7 @@ class LoginModal extends React.Component {
             password: this.state.password
         };
         this.setState({ open: false });
-        this.props.signUpWithEmail(credentials);
+        this.props.loginWithEmail(credentials);
     };
 
     handleChange = (name, e) => {
@@ -164,5 +164,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { signUpWithEmail }
+    { loginWithEmail }
 )(LoginModal);
