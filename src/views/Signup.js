@@ -84,7 +84,7 @@ function Signup(props) {
 }
 
 const mapStateToProps = state => {
-    const { started, finished, error } = state.signupReducer;
+    const { started, finished, error } = state.authReducer;
     return {
         started: started,
         finished: finished,
