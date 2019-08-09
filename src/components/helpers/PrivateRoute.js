@@ -1,9 +1,12 @@
-// import React from "react";
+import React from "react";
 
-// const PrivateRoute = (component as Component) => (props) => {
-//     return (
-//         <div>
-//             <h1> Hello! </h1>
-//         </div>
-//     );
-// }
+const PrivateRoute = ({ component: Commponent, ...props }) => {
+
+    console.log("component", Component));
+
+    return (
+        <div>
+            <h1> Hello! </h1>
+        </div>
+    );
+};
