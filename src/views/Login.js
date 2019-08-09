@@ -50,7 +50,7 @@ function Login(props) {
 
     const handleAuth = () => {
         const user = firebase.auth().currentUser;
-        user ? props.history.push("/home") : props.history.push("/login");
+        false ? props.history.push("/home") : props.history.push("/login");
     };
 
     useEffect(() => {

@@ -49,15 +49,14 @@ function Navbar(props) {
     const classes = useStyles();
     const token = localStorage.getItem("token");
 
-    const handleAuth = () => {};
-
     const handleLogout = () => {
         localStorage.removeItem("token");
         props.history.push("/");
     };
 
     useEffect(() => {
-        handleAuth();
+        const user = props.user;
+        console.log("user", user);
     });
 
     return (
