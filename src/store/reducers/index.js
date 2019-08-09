@@ -1,9 +1,9 @@
-import { signupReducer } from './signupReducer';
-import { poemsReducer } from './poemsReducer';
+import { authReducer } from "./authReducer";
+import { poemsReducer } from "./poemsReducer";
 
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
 export default combineReducers({
-    signupReducer,
+    authReducer,
     poemsReducer
 });

@@ -50,7 +50,7 @@ function Login(props) {
 
     const handleAuth = () => {
         const user = firebase.auth().currentUser;
-        user ? props.history.push("/home") : props.history.push("/login");
+        false ? props.history.push("/home") : props.history.push("/login");
     };
 
     useEffect(() => {
@@ -77,7 +77,7 @@ function Login(props) {
 }
 
 const mapStateToProps = state => {
-    const { started, finished, error } = state.signupReducer;
+    const { started, finished, error } = state.authReducer;
     return {
         started: started,
         finished: finished,
