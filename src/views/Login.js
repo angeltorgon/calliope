@@ -49,8 +49,8 @@ function Login(props) {
     const classes = useStyles();
 
     const handleAuth = () => {
-        const user = firebase.auth().currentUser;
-        false ? props.history.push("/home") : props.history.push("/login");
+        const user = localStorage.getItem("token");
+        user ? props.history.push("/home") : props.history.push("/login");
     };
 
     useEffect(() => {

@@ -50,7 +50,7 @@ function Signup(props) {
     const classes = useStyles();
 
     const handleAuth = () => {
-        const user = firebase.auth().currentUser;
+        const user = localStorage.getItem("token");
         user ? props.history.push("/home") : props.history.push("/signup");
     };
 
