@@ -47,21 +47,23 @@ const useStyles = makeStyles(theme => ({
 
 function Navbar(props) {
     const classes = useStyles();
+    const token = localStorage.getItem("token");
 
-    const handleAuth = () => {
-        const user = firebase.auth().currentUser;
-        console.log("user", user);
-        return user;
+    const handleAuth = () => {};
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        props.history.push("/");
     };
 
     useEffect(() => {
         handleAuth();
-    }, []);
+    });
 
     return (
         <div className={classes.root}>
             <AppBar position="static" className={classes.nav}>
-                {true ? (
+                {token ? (
                     <Toolbar>
                         <Link
                             className={classes.button}
@@ -70,7 +72,11 @@ function Navbar(props) {
                         >
                             Calliope
                         </Link>
-                        <Link to="/signup" className={classes.button}>
+                        <Link
+                            onClick={handleLogout}
+                            to="/signup"
+                            className={classes.button}
+                        >
                             Logout
                         </Link>
                     </Toolbar>
@@ -97,7 +103,12 @@ function Navbar(props) {
 }
 
 const mapStateToProps = state => {
-    return {};
+    const { started, finished, error } = state.signupReducer;
+    return {
+        started: started,
+        finished: finished,
+        error: error
+    };
 };
 
 export default connect(mapStateToProps)(Navbar);
