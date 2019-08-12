@@ -9,13 +9,16 @@ import Home from "./views/Home";
 import Profile from "./views/Profile";
 import PoemForm from "./components/PoemForm";
 
+import PrivateRoute from "./components/helpers/PrivateRoute";
+
 class App extends Component {
     render() {
         return (
             <div className="app-container">
                 <Navbar />
+                <PrivateRoute component={Home} />
                 <Route exact path="/" component={Landing} />
-                <Route path="/home" component={Home} />
+                {/* <Route path="/home" component={Home} /> */}
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/profile/:id" component={Profile} />
