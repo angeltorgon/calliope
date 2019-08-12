@@ -16,7 +16,7 @@ class App extends Component {
         return (
             <div className="app-container">
                 <Navbar />
-                <PrivateRoute component={Home} />
+                <PrivateRoute path="home" component={Home} />
                 <Route exact path="/" component={Landing} />
                 {/* <Route path="/home" component={Home} /> */}
                 <Route path="/login" component={Login} />
