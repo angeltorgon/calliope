@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const PrivateRoute = ({ component: Commponent, ...props }) => {
+const PrivateRoute = ({ component: Component, ...props }) => {
+    useEffect(() => {
+        console.log("component", Component);
+    });
 
-    console.log("component", Component));
-
-    return (
-        <div>
-            <h1> Hello! </h1>
-        </div>
-    );
+    return <Component />;
 };
+
+export default PrivateRoute;
