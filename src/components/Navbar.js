@@ -55,10 +55,7 @@ function Navbar(props) {
         props.history.push("/");
     };
 
-    useEffect(() => {
-        const user = props.user;
-        console.log("user", user);
-    });
+    useEffect(() => {});
 
     return (
         <div className={classes.root}>
