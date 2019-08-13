@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { authWithGoogle } from "../store/actions";
-
+import { withRouter } from "react-router-dom";
 import firebase from "../firebase";
 
 const useStyles = makeStyles(theme => ({
@@ -50,12 +50,15 @@ function Navbar(props) {
     const classes = useStyles();
     const token = localStorage.getItem("token");
 
-    const handleLogout = () => {
+    const handleLogout = e => {
+        e.preventDefault();
         localStorage.removeItem("token");
         props.history.push("/");
     };
 
-    useEffect(() => {});
+    useEffect(() => {
+        console.log("props from nav", props);
+    });
 
     return (
         <div className={classes.root}>
@@ -71,7 +74,7 @@ function Navbar(props) {
                         </Link>
                         <Link
                             onClick={handleLogout}
-                            to="/signup"
+                            to="/"
                             className={classes.button}
                         >
                             Logout
@@ -111,4 +114,4 @@ const mapStateToProps = state => {
 export default connect(
     mapStateToProps,
     { authWithGoogle }
-)(Navbar);
+)(withRouter(Navbar));
