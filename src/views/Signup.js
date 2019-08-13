@@ -57,7 +57,7 @@ function Signup(props) {
     useEffect(() => {
         console.log("props from signup", props);
         handleAuth();
-    }, [props.finished]);
+    });
 
     return (
         <Container maxWidth="sm">

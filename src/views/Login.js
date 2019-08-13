@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import LoginModal from "../components/modals/LoginModal";
 import { authWithGoogle } from "../store/actions";
+import Loader from "react-loader-spinner";
 import firebase from "../firebase";
 
 import {
@@ -56,22 +57,28 @@ function Login(props) {
     useEffect(() => {
         console.log("props from login", props);
         handleAuth();
-    }, [props.finished]);
+    });
 
     return (
         <Container maxWidth="sm">
             <Card className={classes.card}>
-                <p>Login with the following</p>
-                <Divider variant="middle" />
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}
-                    onClick={props.authWithGoogle}
-                >
-                    Login with Google
-                </Button>
-                <LoginModal />
+                {props.started ? (
+                    <Loader type="Oval" color="blue" height={80} width={80} />
+                ) : (
+                    <>
+                        <p>Login with the following</p>
+                        <Divider variant="middle" />
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                            onClick={props.authWithGoogle}
+                        >
+                            Login with Google
+                        </Button>
+                        <LoginModal />
+                    </>
+                )}
             </Card>
         </Container>
     );
