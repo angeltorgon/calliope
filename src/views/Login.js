@@ -54,6 +54,7 @@ function Login(props) {
     };
 
     useEffect(() => {
+        console.log("props from login", props);
         handleAuth();
     }, [props.finished]);
 
