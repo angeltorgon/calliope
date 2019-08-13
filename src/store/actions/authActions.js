@@ -22,7 +22,7 @@ export const authWithGoogle = () => dispatch => {
             var errorMessage = error.message;
             var email = error.email;
             var credential = error.credential;
-            dispatch({ type: AUTH_FAILURE });
+            dispatch({ type: AUTH_FAILURE, payload: errorMessage });
         });
 };
 
@@ -38,7 +38,7 @@ export const signUpWithEmail = credentials => dispatch => {
         })
         .catch(err => {
             console.error(err);
-            dispatch({ type: AUTH_FAILURE });
+            dispatch({ type: AUTH_FAILURE, payload: err.message });
         });
 };
 export const loginWithEmail = credentials => dispatch => {
@@ -53,6 +53,6 @@ export const loginWithEmail = credentials => dispatch => {
         })
         .catch(err => {
             console.error(err);
-            dispatch({ type: AUTH_FAILURE });
+            dispatch({ type: AUTH_FAILURE, payload: err.message });
         });
 };

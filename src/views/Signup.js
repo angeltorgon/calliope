@@ -61,7 +61,7 @@ function Signup(props) {
     useEffect(() => {
         console.log("props from signup", props);
         handleAuth();
-    });
+    }, [props.started]);
 
     return (
         <Container maxWidth="sm">
@@ -75,6 +75,7 @@ function Signup(props) {
                     />
                 ) : (
                     <>
+                        <strong>{props.error}</strong>
                         <p>Signup with the following</p>
                         <Divider variant="middle" />
                         <Button
