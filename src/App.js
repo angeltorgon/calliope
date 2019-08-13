@@ -30,3 +30,6 @@ class App extends Component {
 }
 
 export default App;
+
+// Color Palette
+// #22223B, #4A4E69, #8E818C, #BCA29C, #F2E9E4

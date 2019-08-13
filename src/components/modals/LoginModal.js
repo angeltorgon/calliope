@@ -31,7 +31,11 @@ const styles = theme => ({
         width: "100%",
         height: "40px",
         margin: "10px",
-        fontSize: "1.2rem"
+        fontSize: "1.2rem",
+        backgroundColor: "#9A8C98",
+        "&:hover": {
+            backgroundColor: "#8E818C"
+        }
     }
 });
 
