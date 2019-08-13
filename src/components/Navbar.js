@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1
     },
     nav: {
-        background: "linear-gradient(45deg, #232926 30%, #252830 90%)",
+        backgroundColor: "#4A4E69",
         border: 0,
         borderRadius: 3,
         boxShadow: "0 3px 5px 2px rgba(5, 5, 5, .3)",

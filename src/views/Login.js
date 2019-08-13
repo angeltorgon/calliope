@@ -35,7 +35,11 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         height: "40px",
         margin: "10px",
-        fontSize: "1.2rem"
+        fontSize: "1.2rem",
+        backgroundColor: "#C9ADA7",
+        "&:hover": {
+            backgroundColor: "#BCA29C"
+        }
     },
     card: {
         marginTop: "150px",
@@ -63,7 +67,12 @@ function Login(props) {
         <Container maxWidth="sm">
             <Card className={classes.card}>
                 {props.started ? (
-                    <Loader type="Oval" color="blue" height={80} width={80} />
+                    <Loader
+                        type="Oval"
+                        color="#22223B"
+                        height={80}
+                        width={80}
+                    />
                 ) : (
                     <>
                         <p>Login with the following</p>
@@ -76,7 +85,7 @@ function Login(props) {
                         >
                             Login with Google
                         </Button>
-                        <LoginModal />
+                        <LoginModal className={classes.emailAuth} />
                     </>
                 )}
             </Card>
