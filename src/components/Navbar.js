@@ -50,12 +50,15 @@ function Navbar(props) {
     const classes = useStyles();
     const token = localStorage.getItem("token");
 
-    const handleLogout = () => {
+    const handleLogout = e => {
+        e.preventDefault();
         localStorage.removeItem("token");
         props.history.push("/");
     };
 
-    useEffect(() => {});
+    useEffect(() => {
+        console.log("props", props);
+    });
 
     return (
         <div className={classes.root}>
@@ -71,7 +74,7 @@ function Navbar(props) {
                         </Link>
                         <Link
                             onClick={handleLogout}
-                            to="/signup"
+                            to="/"
                             className={classes.button}
                         >
                             Logout

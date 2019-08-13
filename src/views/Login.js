@@ -55,7 +55,7 @@ function Login(props) {
 
     useEffect(() => {
         handleAuth();
-    }, []);
+    }, [props.finished]);
 
     return (
         <Container maxWidth="sm">
