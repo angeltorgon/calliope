@@ -75,6 +75,7 @@ function Login(props) {
                     />
                 ) : (
                     <>
+                        <strong>{props.error}</strong>
                         <p>Login with the following</p>
                         <Divider variant="middle" />
                         <Button
