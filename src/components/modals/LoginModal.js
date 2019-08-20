@@ -32,9 +32,11 @@ const styles = theme => ({
         height: "40px",
         margin: "10px",
         fontSize: "1.2rem",
-        backgroundColor: "#9A8C98",
+        backgroundColor: "#FFDAD8",
+        color: "black",
         "&:hover": {
-            backgroundColor: "#8E818C"
+            color: "black",
+            backgroundColor: "#FFDAD8"
         }
     }
 });
