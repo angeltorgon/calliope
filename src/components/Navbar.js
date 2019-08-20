@@ -13,36 +13,73 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1
     },
     nav: {
-        backgroundColor: "#4A4E69",
+        backgroundColor: "#FFFFFF",
         border: 0,
         borderRadius: 3,
         boxShadow: "0 3px 5px 2px rgba(5, 5, 5, .3)",
-        color: "white",
-        padding: "0 30px"
+        color: "black",
+        height: "60px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center"
     },
     menuButton: {
         marginRight: theme.spacing(2)
     },
-    title: {
-        flexGrow: 1,
+    logo: {
         textDecoration: "none",
+        fontFamily: "charcoal",
         color: "white",
         padding: "10px",
         fontSize: "20px",
+        height: "100%",
+        paddingTop: "18px",
+        width: "150px",
+        textAlign: "center",
+        backgroundColor: "#DA6991",
         "&:hover": {
             color: "white",
-            textDecoration: "none"
+            textDecoration: "none",
+            backgroundColor: "#DE6998"
         }
     },
-    button: {
+    link: {
         fontSize: "20px",
         textDecoration: "none",
         color: "white",
-        padding: "10px",
+        height: "100%",
+        width: "50%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#DA6991",
         "&:hover": {
+            textDecoration: "none",
             color: "white",
-            textDecoration: "none"
+            textDecoration: "none",
+            backgroundColor: "#DE6998"
         }
+    },
+    linkContainer: {
+        height: "100%",
+        width: "240px",
+        display: "flex"
+    },
+    linkPink: {
+        fontSize: "20px",
+        textDecoration: "none",
+        color: "black",
+        height: "100%",
+        width: "50%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#FFDAD8",
+        "&:hover": {
+            backgroundColor: "#FHGAG8",
+            color: "black",
+            textDecoration: "none"
+        },
     }
 }));
 
@@ -61,44 +98,34 @@ function Navbar(props) {
     }, []);
 
     return (
-        <div className={classes.root}>
-            <AppBar position="static" className={classes.nav}>
-                {token ? (
-                    <Toolbar>
-                        <Link
-                            className={classes.button}
-                            to="/"
-                            className={classes.title}
-                        >
-                            Calliope
-                        </Link>
-                        <Link
-                            onClick={handleLogout}
-                            to="/"
-                            className={classes.button}
-                        >
+        <>
+            {token ? (
+                <div className={classes.nav}>
+                    <Link to="/" className={classes.logo}>
+                        Calliope
+                    </Link>
+                    <div className={classes.linkContainer}>
+                        <Link onClick={handleLogout} to="/">
                             Logout
                         </Link>
-                    </Toolbar>
-                ) : (
-                    <Toolbar>
-                        <Link
-                            className={classes.button}
-                            to="/"
-                            className={classes.title}
-                        >
-                            Calliope
-                        </Link>
-                        <Link to="/login" className={classes.button}>
+                    </div>
+                </div>
+            ) : (
+                <div className={classes.nav}>
+                    <Link to="/" className={classes.logo}>
+                        Calliope
+                    </Link>
+                    <div className={classes.linkContainer}>
+                        <Link to="/login" className={classes.linkPink}>
                             Login
                         </Link>
-                        <Link to="/signup" className={classes.button}>
+                        <Link to="/signup" className={classes.link}>
                             Signup
                         </Link>
-                    </Toolbar>
-                )}
-            </AppBar>
-        </div>
+                    </div>
+                </div>
+            )}
+        </>
     );
 }
 
