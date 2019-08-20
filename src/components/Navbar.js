@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
     linkPink: {
         fontSize: "20px",
         textDecoration: "none",
-        color: "black",
+        color: "grey",
         height: "100%",
         width: "50%",
         display: "flex",
