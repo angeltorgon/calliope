@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
         textDecoration: "none",
         color: "white",
         height: "100%",
-        width: "50%",
+        width: "120px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -62,7 +62,7 @@ const useStyles = makeStyles(theme => ({
     },
     linkContainer: {
         height: "100%",
-        width: "240px",
+        width: "auto",
         display: "flex"
     },
     linkPink: {
@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
         textDecoration: "none",
         color: "grey",
         height: "100%",
-        width: "50%",
+        width: "120px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -79,7 +79,7 @@ const useStyles = makeStyles(theme => ({
             backgroundColor: "#FHGAG8",
             color: "black",
             textDecoration: "none"
-        },
+        }
     }
 }));
 
@@ -105,7 +105,11 @@ function Navbar(props) {
                         Calliope
                     </Link>
                     <div className={classes.linkContainer}>
-                        <Link onClick={handleLogout} to="/">
+                        <Link
+                            className={classes.linkPink}
+                            onClick={handleLogout}
+                            to="/"
+                        >
                             Logout
                         </Link>
                     </div>
