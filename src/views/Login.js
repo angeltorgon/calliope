@@ -36,9 +36,9 @@ const useStyles = makeStyles(theme => ({
         height: "40px",
         margin: "10px",
         fontSize: "1.2rem",
-        backgroundColor: "#C9ADA7",
+        backgroundColor: "#DA6991",
         "&:hover": {
-            backgroundColor: "#BCA29C"
+            backgroundColor: "#DA6991"
         }
     },
     card: {
