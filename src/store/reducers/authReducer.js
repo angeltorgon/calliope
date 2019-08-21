@@ -8,7 +8,6 @@ const initialState = {
 
 export const authReducer = (state = initialState, action) => {
     const errorMessage = action.payload;
-    console.log(errorMessage);
     switch (action.type) {
         case AUTH_START:
             return { ...state, started: true };
