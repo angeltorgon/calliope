@@ -1,10 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 import PoemCard from "./PoemCard";
+import { makeStyles } from "@material-ui/core";
 
 import { signup } from "../store/actions";
 
+const useStyles = makeStyles(theme => ({
+    poemListContainer: {
+        paddingTop: "60px"
+    }
+}));
+
 function PoemList(props) {
+    const classes = useStyles();
     const poems = [
         {
             title: "The Stars Fly",
@@ -24,7 +32,7 @@ function PoemList(props) {
     ];
 
     return (
-        <div>
+        <div className={classes.poemListContainer}>
             {poems.map(poem => (
                 <PoemCard key={poem.id} poem={poem} />
             ))}

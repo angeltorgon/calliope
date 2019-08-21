@@ -1,23 +1,75 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import CommentSection from "./comments/CommentSection";
+import { makeStyles, Card } from "@material-ui/core";
 import UserStamp from "./UserStamp";
 import { postComment } from "../store/actions";
 
 import { like, dislike } from "../store/actions";
 
+const useStyles = makeStyles(theme => ({
+    poemCard: {
+        margin: "20px 20px 0px"
+    },
+    poemHeader: {
+        height: "60px",
+        display: "flex",
+        justifyContent: "space-between"
+    },
+    poem: {
+        height: "400px",
+        padding: "20px"
+    },
+    poemStamp: {
+        display: "flex",
+        height: "100%"
+    },
+    stamp: {
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        fontSize: "12px",
+        justifyContent: "center",
+        alignItems: "start"
+    },
+    avatar: {
+        width: "50px"
+    },
+    menu: {
+        width: "50px"
+    }
+}));
+
 function PoemCard(props) {
+    const classes = useStyles();
     const handleLike = () => {};
 
     const addComment = comment => {};
 
     return (
-        <div className="poem-post-container" key={props.poem.id}>
-            <div className="poem">{props.poem.title}</div>
-            <div className="poem">{props.poem.content}</div>
-
+        <Card className={classes.poemCard} key={props.poem.id}>
+            <div className={classes.poemHeader}>
+                <div className={classes.poemStamp}>
+                    <img
+                        className={classes.avatar}
+                        src="https://img.icons8.com/material/96/000000/user--v1.png"
+                    />
+                    <div className={classes.stamp}>
+                        <strong className={classes.username}>Username</strong>
+                        <strong className={classes.timeStamp}>
+                            Aug 14th, 4:45pm
+                        </strong>
+                    </div>
+                </div>
+                <img
+                    className={classes.menu}
+                    src="https://img.icons8.com/windows/96/000000/menu-2.png"
+                />
+            </div>
+            <div className={classes.poemTitle}>{props.poem.title}</div>
+            <div className={classes.poem}>{props.poem.content}</div>
             <CommentSection />
-        </div>
+        </Card>
     );
 }
 

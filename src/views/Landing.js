@@ -1,14 +1,24 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
+import { Card, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+    banner: {
+        border: "1px solid red",
+        height: "500px",
+        margin: "50px 20px",
+        
+    }
+}));
+
 function Landing(props) {
+    const classes = useStyles();
     useEffect(() => {}, [props.isLoggedIn]);
 
     return (
-        <div className="home-container">
-            <div className="banner">
-                {/* <img src="https://images.unsplash.com/photo-1432821579285-1b649e5b1ce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" /> */}
-            </div>
+        <div className={classes.banner}>
+            
         </div>
     );
 }
