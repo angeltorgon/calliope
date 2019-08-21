@@ -9,14 +9,34 @@ import { like, dislike } from "../store/actions";
 
 const useStyles = makeStyles(theme => ({
     poemCard: {
-        marginTop: "20px"
+        margin: "20px 20px 0px"
     },
     poemHeader: {
-        border: "1px solid red",
-        height: "60px"
+        height: "60px",
+        display: "flex",
+        justifyContent: "space-between"
     },
     poem: {
-        height: "400px"
+        height: "400px",
+        padding: "20px"
+    },
+    poemStamp: {
+        display: "flex",
+        height: "100%"
+    },
+    stamp: {
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        fontSize: "12px",
+        justifyContent: "center",
+        alignItems: "start"
+    },
+    avatar: {
+        width: "50px"
+    },
+    menu: {
+        width: "50px"
     }
 }));
 
@@ -31,12 +51,20 @@ function PoemCard(props) {
             <div className={classes.poemHeader}>
                 <div className={classes.poemStamp}>
                     <img
-                        className={classes.Avatar}
-                        src="https://img.icons8.com/officel/16/000000/user-male.png"
+                        className={classes.avatar}
+                        src="https://img.icons8.com/material/96/000000/user--v1.png"
                     />
-                    <strong className={classes.username}>Username</strong>
-                    <p className={classes.timeStamp}>Aug 14th, 4:45pm</p>
+                    <div className={classes.stamp}>
+                        <strong className={classes.username}>Username</strong>
+                        <strong className={classes.timeStamp}>
+                            Aug 14th, 4:45pm
+                        </strong>
+                    </div>
                 </div>
+                <img
+                    className={classes.menu}
+                    src="https://img.icons8.com/windows/96/000000/menu-2.png"
+                />
             </div>
             <div className={classes.poemTitle}>{props.poem.title}</div>
             <div className={classes.poem}>{props.poem.content}</div>
