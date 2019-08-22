@@ -36,18 +36,15 @@ export const signupWithEmail = (email, password) => dispatch => {
             dispatch({ type: AUTH_FAILURE, payload: err.message });
         });
 };
-export const loginWithEmail = credentials => dispatch => {
-    const { email, password } = credentials;
+export const loginWithEmail = (email, password) => dispatch => {
     dispatch({ type: AUTH_START });
-    // firebase
-    //     .auth()
-    //     .signInWithEmailAndPassword(email, password)
-    //     .then(res => {
-    //         localStorage.setItem("token", res.user.ra);
-    //         dispatch({ type: AUTH_SUCCESS });
-    //     })
-    //     .catch(err => {
-    //         console.error(err);
-    //         dispatch({ type: AUTH_FAILURE, payload: err.message });
-    //     });
+    Firebase.loginWithEmail(email, password)
+        .then(res => {
+            localStorage.setItem("token", res.user.ra);
+            dispatch({ type: AUTH_SUCCESS });
+        })
+        .catch(err => {
+            console.error(err);
+            dispatch({ type: AUTH_FAILURE, payload: err.message });
+        });
 };
