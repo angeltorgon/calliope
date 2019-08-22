@@ -100,12 +100,10 @@ class LoginModal extends React.Component {
     };
 
     handleClose = () => {
-        const credentials = {
-            email: this.state.email,
-            password: this.state.password
-        };
+        const email = this.state.email;
+        const password = this.state.password;
         this.setState({ open: false });
-        this.props.loginWithEmail(credentials);
+        this.props.loginWithEmail(email, password);
     };
 
     handleChange = (name, e) => {

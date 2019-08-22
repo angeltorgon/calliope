@@ -15,7 +15,10 @@ class FirebaseAuth {
 
     firebaseAuth = firebase.initializeApp(this.firebaseConfig).auth();
 
-    loginWithGoogle = () => this.firebaseAuth.signInWithPopup(this.provider);
+    authWithGoogle = () => this.firebaseAuth.signInWithPopup(this.provider);
+
+    registerWithEmail = (email, password) =>
+        this.firebaseAuth.createUserWithEmailAndPassword(email, password);
 }
 
 const Firebase = new FirebaseAuth();
