@@ -94,7 +94,6 @@ function Navbar(props) {
     };
 
     useEffect(() => {
-        console.log("props from nav", props);
     }, []);
 
     return (
