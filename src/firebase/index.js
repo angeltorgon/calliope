@@ -19,6 +19,9 @@ class FirebaseAuth {
 
     registerWithEmail = (email, password) =>
         this.firebaseAuth.createUserWithEmailAndPassword(email, password);
+
+    loginWithEmail = (email, password) =>
+        this.firebaseAuth.signInWithEmailAndPassword(email.password);
 }
 
 const Firebase = new FirebaseAuth();
