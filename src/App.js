@@ -11,6 +11,10 @@ import PoemForm from "./components/PoemForm";
 
 import PrivateRoute from "./components/helpers/PrivateRoute";
 
+import Firebase from "./firebase";
+
+const user = Firebase.checkUser();
+
 class App extends Component {
     render() {
         return (
@@ -18,7 +22,7 @@ class App extends Component {
                 <Navbar />
                 <Switch>
                     <Route exact path="/" component={Landing} />
-                    <PrivateRoute path="/home" component={Home} />
+                    <PrivateRoute user={user} path="/home" component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/signup" component={Signup} />
                     <Route path="/profile/:id" component={Profile} />

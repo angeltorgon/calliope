@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import { authWithGoogle } from "../store/actions";
 import { withRouter } from "react-router-dom";
-import firebase from "../firebase";
+import Firebase from "../firebase";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -85,49 +83,52 @@ const useStyles = makeStyles(theme => ({
 
 function Navbar(props) {
     const classes = useStyles();
-    const token = localStorage.getItem("token");
+
+    useEffect(() => {
+        // Firebase.checkUser()
+        //     .getIdTokenResult()
+        //     .then(res => console.log(res));
+        // console.log(Firebase.checkUser());
+    }, [props.started, props.finished]);
 
     const handleLogout = e => {
-        e.preventDefault();
+        Firebase.signout();
         localStorage.removeItem("token");
         props.history.push("/");
     };
 
-    useEffect(() => {
-    }, []);
-
     return (
         <>
-            {token ? (
+            {localStorage.getItem("token") ? (
                 <div className={classes.nav}>
                     <Link to="/" className={classes.logo}>
                         Calliope
                     </Link>
                     <div className={classes.linkContainer}>
                         <Link
+                            to="/"
                             className={classes.linkPink}
                             onClick={handleLogout}
-                            to="/"
                         >
                             Logout
                         </Link>
                     </div>
                 </div>
             ) : (
-                <div className={classes.nav}>
-                    <Link to="/" className={classes.logo}>
-                        Calliope
+                    <div className={classes.nav}>
+                        <Link to="/" className={classes.logo}>
+                            Calliope
                     </Link>
-                    <div className={classes.linkContainer}>
-                        <Link to="/login" className={classes.linkPink}>
-                            Login
+                        <div className={classes.linkContainer}>
+                            <Link to="/login" className={classes.linkPink}>
+                                Login
                         </Link>
-                        <Link to="/signup" className={classes.link}>
-                            Signup
+                            <Link to="/signup" className={classes.link}>
+                                Signup
                         </Link>
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
         </>
     );
 }
