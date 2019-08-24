@@ -7,7 +7,7 @@ import { signup } from "../store/actions";
 
 const useStyles = makeStyles(theme => ({
     poemListContainer: {
-        paddingTop: "60px"
+        // padding: "60px 20px 20px 20px"
     }
 }));
 
@@ -40,6 +40,6 @@ function PoemList(props) {
     );
 }
 
-const mapStateToProps = state => {};
+const mapStateToProps = state => { };
 
 export default connect()(PoemList);

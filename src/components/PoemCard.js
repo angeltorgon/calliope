@@ -2,49 +2,14 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import CommentSection from "./comments/CommentSection";
 import { makeStyles, Card } from "@material-ui/core";
-import UserStamp from "./UserStamp";
-import { postComment } from "../store/actions";
+import useStyles from "./styles/poemCard";
 
-import { like, dislike } from "../store/actions";
+// const useStyles = makeStyles(theme => ({
 
-const useStyles = makeStyles(theme => ({
-    poemCard: {
-        margin: "20px 20px 0px"
-    },
-    poemHeader: {
-        height: "60px",
-        display: "flex",
-        justifyContent: "space-between"
-    },
-    poem: {
-        height: "400px",
-        padding: "20px"
-    },
-    poemStamp: {
-        display: "flex",
-        height: "100%"
-    },
-    stamp: {
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        fontSize: "12px",
-        justifyContent: "center",
-        alignItems: "start"
-    },
-    avatar: {
-        width: "50px"
-    },
-    menu: {
-        width: "50px"
-    }
-}));
+// }));
 
 function PoemCard(props) {
     const classes = useStyles();
-    const handleLike = () => {};
-
-    const addComment = comment => {};
 
     return (
         <Card className={classes.poemCard} key={props.poem.id}>
