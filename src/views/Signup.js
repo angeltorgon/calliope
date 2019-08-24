@@ -55,7 +55,7 @@ function Signup(props) {
 
     const handleAuth = () => {
         const user = Firebase.checkUser();
-        user ? props.history.push("/home") : props.history.push("/signup");
+        localStorage.getItem("token") ? props.history.push("/home") : props.history.push("/signup");
     };
 
     useEffect(() => {
@@ -74,21 +74,21 @@ function Signup(props) {
                         width={80}
                     />
                 ) : (
-                    <>
-                        <strong>{props.error}</strong>
-                        <p>Signup with the following</p>
-                        <Divider variant="middle" />
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            className={classes.button}
-                            onClick={props.authWithGoogle}
-                        >
-                            Signup with Google
+                        <>
+                            <strong>{props.error}</strong>
+                            <p>Signup with the following</p>
+                            <Divider variant="middle" />
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={props.authWithGoogle}
+                            >
+                                Signup with Google
                         </Button>
-                        <SignupModal />
-                    </>
-                )}
+                            <SignupModal />
+                        </>
+                    )}
             </Card>
         </Container>
     );

@@ -55,7 +55,7 @@ function Login(props) {
 
     const handleAuth = () => {
         const user = Firebase.checkUser();
-        user ? props.history.push("/home") : props.history.push("/login");
+        localStorage.getItem("token") ? props.history.push("/home") : props.history.push("/login");
     };
 
     useEffect(() => {
@@ -74,21 +74,21 @@ function Login(props) {
                         width={80}
                     />
                 ) : (
-                    <>
-                        <strong>{props.error}</strong>
-                        <p>Login with the following</p>
-                        <Divider variant="middle" />
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            className={classes.button}
-                            onClick={props.authWithGoogle}
-                        >
-                            Login with Google
+                        <>
+                            <strong>{props.error}</strong>
+                            <p>Login with the following</p>
+                            <Divider variant="middle" />
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={props.authWithGoogle}
+                            >
+                                Login with Google
                         </Button>
-                        <LoginModal className={classes.emailAuth} />
-                    </>
-                )}
+                            <LoginModal className={classes.emailAuth} />
+                        </>
+                    )}
             </Card>
         </Container>
     );
