@@ -14,12 +14,6 @@ const useStyles = makeStyles(theme => ({
 
 function Landing(props) {
     const classes = useStyles();
-    useEffect(() => { }, [props.isLoggedIn]);
-
-    const signout = () => {
-        Firebae.signout();
-        localStorage.removeItem("token");
-    };
 
     return (
         <div className={classes.banner}>
