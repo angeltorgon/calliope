@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import LoginModal from "../components/modals/LoginModal";
 import { authWithGoogle } from "../store/actions";
 import Loader from "react-loader-spinner";
-import firebase from "../firebase";
+import Firebase from "../firebase";
 
 import {
     Card,
@@ -54,14 +54,14 @@ function Login(props) {
     const classes = useStyles();
 
     const handleAuth = () => {
-        const user = localStorage.getItem("token");
+        const user = Firebase.checkUser();
         user ? props.history.push("/home") : props.history.push("/login");
     };
 
     useEffect(() => {
         console.log("props from login", props);
         handleAuth();
-    }, [props.started]);
+    }, [props.finished]);
 
     return (
         <Container maxWidth="sm">

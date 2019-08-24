@@ -35,6 +35,7 @@ export const signupWithEmail = (email, password) => dispatch => {
             dispatch({ type: AUTH_FAILURE, payload: err.message });
         });
 };
+
 export const loginWithEmail = (email, password) => dispatch => {
     dispatch({ type: AUTH_START });
     Firebase.loginWithEmail(email, password)

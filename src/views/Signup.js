@@ -13,7 +13,7 @@ import {
 import SignupModal from "../components/modals/SignupModal";
 
 import { authWithGoogle } from "../store/actions";
-import firebase from "../firebase";
+import Firebase from "../firebase";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -54,7 +54,7 @@ function Signup(props) {
     const classes = useStyles();
 
     const handleAuth = () => {
-        const user = localStorage.getItem("token");
+        const user = Firebase.checkUser();
         user ? props.history.push("/home") : props.history.push("/signup");
     };
 

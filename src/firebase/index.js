@@ -25,8 +25,9 @@ class FirebaseAuth {
     loginWithEmail = (email, password) =>
         this.firebaseAuth.signInWithEmailAndPassword(email, password);
 
-    checkUserStatus = () => this.firebaseAuth.currentUser;
-    
+    // checkUser = () => this.firebaseAuth.currentUser;
+    checkUser = () => Firebase.firebaseAuth.currentUser;
+
     signout = () => this.firebaseAuth.signOut();
 }
 
