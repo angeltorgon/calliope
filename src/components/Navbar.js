@@ -84,13 +84,6 @@ const useStyles = makeStyles(theme => ({
 function Navbar(props) {
     const classes = useStyles();
 
-    useEffect(() => {
-        // Firebase.checkUser()
-        //     .getIdTokenResult()
-        //     .then(res => console.log(res));
-        // console.log(Firebase.checkUser());
-    }, [props.started, props.finished]);
-
     const handleLogout = e => {
         Firebase.signout();
         localStorage.removeItem("token");

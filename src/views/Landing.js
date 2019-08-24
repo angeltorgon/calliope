@@ -14,22 +14,15 @@ const useStyles = makeStyles(theme => ({
 
 function Landing(props) {
     const classes = useStyles();
-    useEffect(() => {}, [props.isLoggedIn]);
-
-    const checkUser = () => {
-        const user = Firebae.checkUser();
-        console.log("user", user);
-    };
+    useEffect(() => { }, [props.isLoggedIn]);
 
     const signout = () => {
-        const user = Firebae.signout();
-        console.log("user", user);
+        Firebae.signout();
+        localStorage.removeItem("token");
     };
 
     return (
         <div className={classes.banner}>
-            <button onClick={checkUser}>Check User</button>
-            <button onClick={signout}>Signout User</button>
         </div>
     );
 }
