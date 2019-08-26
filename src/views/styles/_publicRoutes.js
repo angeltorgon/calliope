@@ -31,11 +31,11 @@ const useStyles = makeStyles(theme => ({
         }
     },
     card: {
-        padding: "60px 30px",
+        padding: "60px 50px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        minWidth: "300px",
+        minWidth: "400px",
         minHeight: "600px",
         justifyContent: "center"
     },
