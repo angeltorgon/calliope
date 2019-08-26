@@ -10,10 +10,9 @@ import Profile from "./views/Profile";
 import PoemForm from "./components/PoemForm";
 
 import PrivateRoute from "./components/helpers/PrivateRoute";
+import PublicRoute from "./components/helpers/PublicRoute";
 
 import Firebase from "./firebase";
-
-const user = Firebase.checkUser();
 
 class App extends Component {
     render() {
@@ -21,8 +20,8 @@ class App extends Component {
             <div className="app-container">
                 <Navbar />
                 <Switch>
-                    <Route exact path="/" component={Landing} />
-                    <PrivateRoute user={user} path="/home" component={Home} />
+                    <PublicRoute exact path="/" component={Landing} />
+                    <PrivateRoute path="/home" component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/signup" component={Signup} />
                     <Route path="/profile/:id" component={Profile} />
