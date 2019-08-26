@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import CommentSection from "./comments/CommentSection";
 import { makeStyles, Card } from "@material-ui/core";
 import useStyles from "./styles/poemCard";
+import UserStamp from "./UserStamp";
 
 // const useStyles = makeStyles(theme => ({
 
@@ -14,18 +15,7 @@ function PoemCard(props) {
     return (
         <Card className={classes.poemCard} key={props.poem.id}>
             <div className={classes.poemHeader}>
-                <div className={classes.poemStamp}>
-                    <img
-                        className={classes.avatar}
-                        src="https://img.icons8.com/material/96/000000/user--v1.png"
-                    />
-                    <div className={classes.stamp}>
-                        <strong className={classes.username}>Username</strong>
-                        <strong className={classes.timeStamp}>
-                            Aug 14th, 4:45pm
-                        </strong>
-                    </div>
-                </div>
+                <UserStamp />
                 <img
                     className={classes.menu}
                     src="https://img.icons8.com/windows/96/000000/menu-2.png"
