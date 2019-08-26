@@ -3,7 +3,6 @@ import Loader from "react-loader-spinner";
 import { connect } from "react-redux";
 import PoemList from "../components/PoemList.js";
 import { fetchPoems } from "../store/actions";
-import Firebase from "../firebase";
 
 function Home(props) {
     return (

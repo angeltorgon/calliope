@@ -108,19 +108,20 @@ function Navbar(props) {
                     </div>
                 </div>
             ) : (
-                    <div className={classes.nav}>
-                        <Link to="/" className={classes.logo}>
-                            Calliope
-                    </Link>
-                        <div className={classes.linkContainer}>
-                            <Link to="/login" className={classes.linkPink}>
-                                Login
-                        </Link>
-                            <Link to="/signup" className={classes.link}>
-                                Signup
-                        </Link>
-                        </div>
-                    </div>
+                    null
+                    // <div className={classes.nav}>
+                    //     <Link to="/" className={classes.logo}>
+                    //         Calliope
+                    // </Link>
+                    //     <div className={classes.linkContainer}>
+                    //         <Link to="/login" className={classes.linkPink}>
+                    //             Login
+                    //     </Link>
+                    //         <Link to="/signup" className={classes.link}>
+                    //             Signup
+                    //     </Link>
+                    //     </div>
+                    // </div>
                 )}
         </>
     );

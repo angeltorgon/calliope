@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
-import useStyles from "./styles/poemCard";
+import useStyles from "./styles/_poemCard";
 
 export default function UserStamp(props) {
     const classes = useStyles();

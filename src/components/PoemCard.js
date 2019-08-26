@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import CommentSection from "./comments/CommentSection";
 import { makeStyles, Card } from "@material-ui/core";
-import useStyles from "./styles/poemCard";
+import useStyles from "./styles/_poemCard";
 import UserStamp from "./UserStamp";
 
 // const useStyles = makeStyles(theme => ({
