@@ -33,10 +33,11 @@ const useStyles = makeStyles(theme => ({
     card: {
         padding: "60px 50px",
         display: "flex",
+        width: "100%",
         flexDirection: "column",
         alignItems: "center",
-        minWidth: "400px",
         minHeight: "600px",
+        maxWidth: "400px",
         justifyContent: "center"
     },
     mockup: {
