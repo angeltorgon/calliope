@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import useStyles from "./styles/commentForm";
 
 function CommentForm(props) {
+    const classes = useStyles();
+
     const [commentText, setCommentText] = useState("");
 
     const handleSubmit = e => {
@@ -19,20 +22,10 @@ function CommentForm(props) {
     };
 
     return (
-        <div className="comment-form-container">
-            <img
-                className="avatar"
-                src={localStorage.getItem("avatar")}
-                alt="user"
-            />
-            <form onSubmit={handleSubmit} className="comment-form">
-                <input
-                    onChange={e => setCommentText(e.target.value)}
-                    value={commentText}
-                    className="comment-input"
-                    type="text"
-                    placeholder="comment"
-                />
+        <div className={classes.commentFormContainer}>
+            <img className="avatar" src="https://img.icons8.com/material/96/000000/user--v1.png" alt="user" />
+            <form onSubmit={handleSubmit} className={classes.commentForm}>
+                <input onChange={e => setCommentText(e.target.value)} value={commentText} className={classes.commentInput} type="text" placeholder="comment" />
             </form>
         </div>
     );

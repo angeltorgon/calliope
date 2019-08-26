@@ -16,10 +16,7 @@ function PoemCard(props) {
         <Card className={classes.poemCard} key={props.poem.id}>
             <div className={classes.poemHeader}>
                 <UserStamp />
-                <img
-                    className={classes.menu}
-                    src="https://img.icons8.com/windows/96/000000/menu-2.png"
-                />
+                <img className={classes.menu} src="https://img.icons8.com/windows/96/000000/menu-2.png" />
             </div>
             <div className={classes.poemTitle}>{props.poem.title}</div>
             <div className={classes.poem}>{props.poem.content}</div>

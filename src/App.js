@@ -22,10 +22,10 @@ class App extends Component {
                 <Switch>
                     <PublicRoute exact path="/" component={Landing} />
                     <PrivateRoute path="/home" component={Home} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/signup" component={Signup} />
-                    <Route path="/profile/:id" component={Profile} />
-                    <Route path="/poem-form" component={PoemForm} />
+                    <PublicRoute path="/login" component={Login} />
+                    <PublicRoute path="/signup" component={Signup} />
+                    <PrivateRoute path="/profile/:id" component={Profile} />
+                    <PrivateRoute path="/poem-form" component={PoemForm} />
                 </Switch>
             </div>
         );

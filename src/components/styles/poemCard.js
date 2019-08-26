@@ -2,9 +2,10 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   poemCard: {
-    maxWidth: "800px",
+    maxWidth: "600px",
     width: "100%",
-    margin: "0 auto"
+    margin: "20px auto",
+    padding: "20px"
   },
   poemHeader: {
     height: "60px",
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   poem: {
     height: "400px",
-    padding: "20px"
+    padding: "25px"
   },
   poemStamp: {
     display: "flex",
