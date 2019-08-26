@@ -44,10 +44,10 @@ function Signup(props) {
                                 <input className={classes.formInputs} type="text" name="username" placeholder="Username" />
                                 <input className={classes.formInputs} type="password" name="password" placeholder="Password" />
                                 <input className={classes.formInputs} type="password" name="confirm-password" placeholder="Confirm Password" />
-                                <Button className={classes.button}>Sign Up</Button>
+                                <Button className={classes.button}>SignUp</Button>
                             </form>
                             <hr />
-                            <p>Already have an account? <Link to="/login">Log in</Link></p>
+                            <p>Already have an account? <Link to="/login">Login</Link></p>
                         </>
                     )}
             </Card>

@@ -2,10 +2,10 @@
 import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
-import LoginModal from "../components/modals/LoginModal";
 import { authWithGoogle } from "../store/actions";
 import Loader from "react-loader-spinner";
 import useStyles from "./styles/_publicRoutes";
+import { Link } from "react-router-dom";
 
 import {
     Card,
@@ -18,13 +18,13 @@ function Login(props) {
     const classes = useStyles();
 
     return (
-        <Container maxWidth="sm">
-            <p>hello</p>
+        <div className={classes.container}>
             <Card className={classes.card}>
                 {props.started ? (
                     <Loader type="Oval" color="#22223B" height={80} width={80} />
                 ) : (
                         <>
+                            <h1>Calliope</h1>
                             <p>Login with the following</p>
                             <Divider variant="middle" />
                             <Button
@@ -35,11 +35,18 @@ function Login(props) {
                             >
                                 Login with Google
                             </Button>
-                            <LoginModal className={classes.emailAuth} />
+                            or
+                            <form className={classes.loginForm}>
+                                <input className={classes.formInputs} type="email" name="email" placeholder="Email" />
+                                <input className={classes.formInputs} type="password" name="password" placeholder="Password" />
+                                <Button className={classes.button}>Login</Button>
+                            </form>
+                            <hr />
+                            <p>Don't have an account? <Link to="/">Signup</Link></p>
                         </>
                     )}
             </Card>
-        </Container>
+        </div>
     );
 }
 
