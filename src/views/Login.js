@@ -17,6 +17,12 @@ import {
 function Login(props) {
     const classes = useStyles();
 
+    useEffect(() => {
+        if (localStorage.getItem("token")) {
+            props.history.push("/home");
+        }
+    }, [props.finished]);
+
     return (
         <div className={classes.container}>
             <Card className={classes.card}>

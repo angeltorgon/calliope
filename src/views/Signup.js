@@ -19,6 +19,12 @@ import Firebase from "../firebase";
 function Signup(props) {
     const classes = useStyles();
 
+    useEffect(() => {
+        if (localStorage.getItem("token")) {
+            props.history.push("/home");
+        }
+    }, [props.finished]);
+
     return (
         <div className={classes.container}>
             {/* <div className={classes.mockup}><img className={classes.mockup} src="https://images.unsplash.com/photo-1485359466996-ba9d9b4958b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" /></div> */}
