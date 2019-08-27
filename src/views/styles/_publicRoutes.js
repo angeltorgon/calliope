@@ -58,12 +58,27 @@ const useStyles = makeStyles(theme => ({
         maxWidth: "400px",
         width: "100%"
     },
-    formInputs: {
+    formInput: {
         width: "100%",
         margin: "5px 0",
         height: "45px",
         padding: "5px",
-        borderRadius: "5px"
+        borderRadius: "5px",
+        display: "flex",
+        border: "1px solid lightgrey"
+    },
+    inputError: {
+        width: "10%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    textInput: {
+        width: "90%",
+        height: "100%",
+        border: "0",
+        padding: "10px"
     }
 }));
 

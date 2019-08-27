@@ -42,7 +42,7 @@ function Login(props) {
         <div className={classes.container}>
             <Card className={classes.card}>
                 {props.started ? (
-                    <Loader type="Oval" color="#22223B" height={80} width={80} />
+                    <Loader type="Oval" color="#DA6991" height={80} width={80} />
                 ) : (
                         <>
                             <h1>Calliope</h1>
@@ -54,10 +54,10 @@ function Login(props) {
                             >
                                 Login with Google
                             </button>
-                            or
+                            OR
                             <form className={classes.loginForm} onSubmit={onSubmit}>
-                                <input className={classes.formInputs} type="email" name="email" placeholder="Email" value={inputs.email} onChange={onChange} />
-                                <input className={classes.formInputs} type="password" name="password" placeholder="Password" value={inputs.password} onChange={onChange} />
+                                <input className={classes.formInput} type="email" name="email" placeholder="Email" value={inputs.email} onChange={onChange} />
+                                <input className={classes.formInput} type="password" name="password" placeholder="Password" value={inputs.password} onChange={onChange} />
                                 <button className={classes.button}>Login</button>
                             </form>
                             <hr />
