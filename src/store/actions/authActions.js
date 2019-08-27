@@ -26,7 +26,6 @@ export const authWithGoogle = () => dispatch => {
 };
 
 export const signupWithEmail = user => dispatch => {
-    console.log("user", user)
     dispatch({ type: AUTH_START });
     Firebase.addUser(user)
         .then((querySnapshot) => {
