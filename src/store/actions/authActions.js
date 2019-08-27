@@ -25,38 +25,40 @@ export const authWithGoogle = () => dispatch => {
         });
 };
 
-export const signupWithEmail = (user) => dispatch => {
+export const signupWithEmail = user => dispatch => {
+    console.log("user", user)
     dispatch({ type: AUTH_START });
     Firebase.addUser(user)
         .then((querySnapshot) => {
+
             if (querySnapshot.empty) {
+
                 const { email, username } = user;
                 db.add({ email, username })
-                    .then(function (docRef) {
+                    .then((docRef) => {
+
                         const { email, password } = user;
                         Firebase.registerWithEmail(email, password)
                             .then(res => {
                                 localStorage.setItem("token", res.user.ra);
-                                Firebase.addUser({ email, password });
+                                Firebase.addUser(user);
                                 dispatch({ type: AUTH_SUCCESS });
                             })
-                            .catch(err => {
-                                console.error(err);
-                                dispatch({ type: AUTH_FAILURE, payload: err.message });
+                            .catch(error => {
+                                console.error(error);
+                                dispatch({ type: AUTH_FAILURE, payload: error.message });
                             });
                     })
-                    .catch(function (error) {
+                    .catch((error) => {
+                        dispatch({ type: AUTH_FAILURE, payload: error.message });
                         console.error(error);
                         return "There was an error. Try again."
+
                     });
-                console.log("I don't exist");
             } else {
-                console.log("I exist!");
-                querySnapshot.forEach(function (doc) {
-                    console.log(doc.id, " => ", doc.data());
-                });
-                return "This user already exists";
+                dispatch({ type: AUTH_FAILURE, payload: "User already exists" });
             }
+
         })
         .catch(function (error) {
             console.log("Error getting documents: ", error);

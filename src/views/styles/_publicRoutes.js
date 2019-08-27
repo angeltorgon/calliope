@@ -79,6 +79,9 @@ const useStyles = makeStyles(theme => ({
         height: "100%",
         border: "0",
         padding: "10px"
+    },
+    error: {
+        color: "red"
     }
 }));
 

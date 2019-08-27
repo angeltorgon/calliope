@@ -24,37 +24,41 @@ function Signup(props) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        setError(null);
         if (localStorage.getItem("token")) {
             props.history.push("/home");
         }
     }, [props.finished]);
 
-    const checkPassword = () => {
-        if (inputs.password === inputs.confirmPassword) {
-            setError(null);
-            console.log(error);
-        } else {
-            setError("Passwords must match");
-            console.log(error);
-        };
-    };
+    useEffect(() => {
+        setInputs({
+            email: "",
+            username: "",
+            password: "",
+            confirmPassword: ""
+        });
+    }, [props.error]);
+
+    useEffect(() => {
+        console.log("inputs", inputs)
+        if (inputs.password.length <= inputs.confirmPassword.length) {
+            console.log("inside first if")
+            if (inputs.password !== inputs.confirmPassword) {
+                console.log("inside second if")
+                setError(true);
+            } else {
+                setError(null);
+            }
+        }
+    }, [inputs.confirmPassword]);
 
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value });
-
-        if (e.target.name === "confirmPassword") {
-            checkPassword();
-        }
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
         props.signupWithEmail(inputs);
-    };
-
-    const database = (e) => {
-        e.preventDefault()
-        // Firebase.addUser();
     };
 
     return (
@@ -90,9 +94,8 @@ function Signup(props) {
                                         style={{ fill: "#000000" }}><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{ mixBlendMode: "normal" }}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#e74c3c"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM60.29406,55.04l20.94234,30.76515l-21.19765,31.15485h8.75453l16.5214,-24.41594h0.68531l16.22578,24.41594h9.26515l-20.98265,-30.80547l21.45297,-31.11453h-8.79485l-16.56172,24.63094h-0.69203l-16.3064,-24.63094z"></path></g></g></svg> : null}
                                 </div>
                                 <button className={classes.button}>Signup</button>
-                                <button onClick={database}>database</button>
                             </form>
-                            <hr />
+                            <p className={classes.error}>{props.error}</p>
                             <p>Already have an account? <Link to="/login">Login</Link></p>
                         </>
                     )}
