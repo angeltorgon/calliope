@@ -1,11 +1,13 @@
 // React
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { connect } from "react-redux";
 import { authWithGoogle } from "../store/actions";
 import Loader from "react-loader-spinner";
 import useStyles from "./styles/_publicRoutes";
 import { Link } from "react-router-dom";
+import Firebase from "../firebase";
+import { loginWithEmail } from "../store/actions"
 
 import {
     Card,
@@ -16,12 +18,25 @@ import {
 
 function Login(props) {
     const classes = useStyles();
+    const [inputs, setInputs] = useState({
+        email: "",
+        password: ""
+    });
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
             props.history.push("/home");
         }
     }, [props.finished]);
+
+    const onChange = (e) => {
+        setInputs({ ...inputs, [e.target.name]: e.target.value })
+    };
+
+    const onSubmit = () => {
+        const { email, password } = inputs;
+        props.loginWithEmail(email, password);
+    };
 
     return (
         <div className={classes.container}>
@@ -40,9 +55,9 @@ function Login(props) {
                                 Login with Google
                             </button>
                             or
-                            <form className={classes.loginForm}>
-                                <input className={classes.formInputs} type="email" name="email" placeholder="Email" />
-                                <input className={classes.formInputs} type="password" name="password" placeholder="Password" />
+                            <form className={classes.loginForm} onSubmit={onSubmit}>
+                                <input className={classes.formInputs} type="email" name="email" placeholder="Email" value={inputs.email} onChange={onChange} />
+                                <input className={classes.formInputs} type="password" name="password" placeholder="Password" value={inputs.password} onChange={onChange} />
                                 <button className={classes.button}>Login</button>
                             </form>
                             <hr />
@@ -65,5 +80,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { authWithGoogle }
+    { authWithGoogle, loginWithEmail }
 )(Login);
