@@ -27,6 +27,7 @@ function Signup(props) {
     const [passwordSuccess, setPasswordSuccess] = useState(false);
     const [confirmPasswordError, setConfirmPasswordError] = useState(false);
     const [hadError, setHadError] = useState(false);
+    const [reachedMaxLength, setReachedMaxLength] = useState(false);
 
     useEffect(() => {
         if (localStorage.getItem("token")) {
@@ -41,6 +42,9 @@ function Signup(props) {
             password: "",
             confirmPassword: ""
         });
+        setPasswordSuccess(false);
+        setError(false);
+        setHadError(false);
     }, [props.error]);
 
     const changeHandler = (e) => {
@@ -54,20 +58,21 @@ function Signup(props) {
                     console.log("show success icon");
                     setPasswordSuccess(true);
                     setError(false);
+                    setReachedMaxLength(true);
                 } else {
-                    console.log("show error")
                     setError(true);
                     setHadError(true);
                     setPasswordSuccess(false);
+                    setReachedMaxLength(true);
                 }
-
             } if (e.target.value.length > inputs.password.length) {
                 setError(true);
                 setPasswordSuccess(false);
                 setHadError(true);
+                setReachedMaxLength(true);
                 console.log("show error")
 
-            } if (hadError && e.target.value.length < inputs.password.length) {
+            } if (hadError && e.target.value.length < inputs.password.length || reachedMaxLength && e.target.value.length < inputs.password.length) {
                 setError(true);
                 setPasswordSuccess(false);
                 console.log("show error")
