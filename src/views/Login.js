@@ -27,7 +27,7 @@ function Login(props) {
         if (localStorage.getItem("token")) {
             props.history.push("/home");
         }
-    }, [props.finished]);
+    });
 
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })

@@ -28,7 +28,7 @@ function Signup(props) {
         if (localStorage.getItem("token")) {
             props.history.push("/home");
         }
-    }, [props.finished]);
+    });
 
     useEffect(() => {
         setInputs({
