@@ -23,11 +23,19 @@ function Login(props) {
         password: ""
     });
 
+    const authListener = () => {
+        Firebase.firebaseAuth.onAuthStateChanged((user) => {
+            if (user) {
+                props.history.push('/home');
+            } else {
+                props.history.push('/login');
+            }
+        });
+    }
+
     useEffect(() => {
-        if (localStorage.getItem("token")) {
-            props.history.push("/home");
-        }
-    });
+        authListener();
+    }, [props.finished]);
 
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })

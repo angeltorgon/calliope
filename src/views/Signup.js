@@ -38,10 +38,8 @@ function Signup(props) {
         Firebase.firebaseAuth.onAuthStateChanged((user) => {
             if (user) {
                 props.history.push('/home');
-                setUser({ user });
             } else {
                 props.history.push('/');
-                setUser({ user: null });
             }
         });
     }
