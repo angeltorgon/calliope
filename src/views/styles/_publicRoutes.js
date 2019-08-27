@@ -62,10 +62,11 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         margin: "5px 0",
         height: "45px",
-        padding: "5px",
+        padding: "10px",
         borderRadius: "5px",
         display: "flex",
         border: "1px solid lightgrey",
+        fontSize: ".9rem",
         "&:focus": {
             outline: "none",
             backgroundColor: "#fffafc",
@@ -78,16 +79,29 @@ const useStyles = makeStyles(theme => ({
         height: "100%",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        position: "absolute",
+        right: "10px",
+        top: "0px",
+        zIndex: "10px",
     },
-    textInput: {
-        width: "90%",
+    inputSuccess: {
+        width: "10%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "absolute",
+        right: "10px",
+        top: "0px",
+        zIndex: "10px",
+    },
+    inputContainer: {
+        width: "100%",
         height: "100%",
         border: "0",
-        padding: "10px"
-    },
-    error: {
-        color: "red"
+        padding: "0",
+        position: "relative"
     }
 }));
 
