@@ -8,6 +8,8 @@ import Firebase from "../firebase";
 import {
     Card,
     Divider,
+    TextField,
+    Input
 } from "@material-ui/core";
 
 import { authWithGoogle, signupWithEmail } from "../store/actions";
@@ -59,6 +61,13 @@ function Signup(props) {
         props.signupWithEmail(inputs);
     };
 
+    const onFocus = (e) => {
+        console.log("onfocus");
+        classes.onFocus = {
+            backgroundColor: "blue"
+        }
+    };
+
     return (
         <div className={classes.container}>
             {/* <div className={classes.mockup}><img className={classes.mockup} src="https://images.unsplash.com/photo-1485359466996-ba9d9b4958b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" /></div> */}
@@ -80,7 +89,7 @@ function Signup(props) {
                             </button>
                             OR
                             <form className={classes.loginForm} onSubmit={onSubmit}>
-                                <input className={classes.formInput} type="email" name="email" placeholder="Email" value={inputs.email} onChange={onChange} />
+                                <input onFocus={onFocus} className={classes.formInput} type="email" name="email" placeholder="Email" value={inputs.email} onChange={onChange} />
                                 <input className={classes.formInput} type="text" name="username" placeholder="Username" value={inputs.username} onChange={onChange} />
                                 <input className={classes.formInput} type="password" name="password" placeholder="Password" value={inputs.password} onChange={onChange} />
                                 <div className={classes.formInput}>

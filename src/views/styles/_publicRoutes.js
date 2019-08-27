@@ -65,7 +65,13 @@ const useStyles = makeStyles(theme => ({
         padding: "5px",
         borderRadius: "5px",
         display: "flex",
-        border: "1px solid lightgrey"
+        border: "1px solid lightgrey",
+        "&:focus": {
+            outline: "none",
+            backgroundColor: "#fffafc",
+            boxShadow: "0px 0px 3px 1px rgba(112,82,112,1)",
+            border: "0px",
+        }
     },
     inputError: {
         width: "10%",
