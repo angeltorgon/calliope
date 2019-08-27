@@ -36,7 +36,7 @@ class FirebaseClass {
 
     addUser = (user) => {
         console.log("user at index", user);
-        return this.db.where("username", "==", user.username).get();
+        return this.db.where("email", "==", user.email).get();
     };
 }
 
