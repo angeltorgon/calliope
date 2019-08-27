@@ -1,6 +1,6 @@
 import firebase from "firebase";
 
-class FirebaseAuth {
+class FirebaseClass {
     firebaseConfig = {
         apiKey: "AIzaSyAWA4BH7aoYX1-lwUPaNl9xfKCk82Fqv48",
         authDomain: "fir-tutorial-cad7d.firebaseapp.com",
@@ -13,7 +13,9 @@ class FirebaseAuth {
 
     provider = new firebase.auth.GoogleAuthProvider();
 
-    firebaseAuth = firebase.initializeApp(this.firebaseConfig).auth();
+    firebase = firebase.initializeApp(this.firebaseConfig);
+
+    firebaseAuth = firebase.auth();
 
     authWithGoogle = () => this.firebaseAuth.signInWithPopup(this.provider);
 
@@ -29,8 +31,14 @@ class FirebaseAuth {
     checkUser = () => Firebase.firebaseAuth.currentUser;
 
     signout = () => this.firebaseAuth.signOut();
+
+    db = firebase.firestore().collection("users");
+
+    addUser = (user) => {
+        return this.db.where("username", "==", user.username).get();
+    };
 }
 
-const Firebase = new FirebaseAuth();
+const Firebase = new FirebaseClass();
 
 export default Firebase;
