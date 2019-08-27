@@ -102,6 +102,9 @@ const useStyles = makeStyles(theme => ({
         border: "0",
         padding: "0",
         position: "relative"
+    },
+    error: {
+        color: "red"
     }
 }));
 

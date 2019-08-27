@@ -27,20 +27,16 @@ export const authWithGoogle = () => dispatch => {
 
 export const signupWithEmail = user => dispatch => {
     dispatch({ type: AUTH_START });
-    Firebase.addUser(user)
+    Firebase.getUserByEmail(user)
         .then((querySnapshot) => {
-
             if (querySnapshot.empty) {
-
                 const { email, username } = user;
                 db.add({ email, username })
                     .then((docRef) => {
-
                         const { email, password } = user;
                         Firebase.registerWithEmail(email, password)
                             .then(res => {
                                 localStorage.setItem("token", res.user.ra);
-                                Firebase.addUser(user);
                                 dispatch({ type: AUTH_SUCCESS });
                             })
                             .catch(error => {

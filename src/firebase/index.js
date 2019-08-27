@@ -27,15 +27,16 @@ class FirebaseClass {
     loginWithEmail = (email, password) =>
         this.firebaseAuth.signInWithEmailAndPassword(email, password);
 
-    // checkUser = () => this.firebaseAuth.currentUser;
-    checkUser = () => Firebase.firebaseAuth.currentUser;
-
     signout = () => this.firebaseAuth.signOut();
 
     db = firebase.firestore().collection("users");
 
-    addUser = (user) => {
+    getUserByEmail = (user) => {
         return this.db.where("email", "==", user.email).get();
+    };
+
+    gatUserByUsername = (username) => {
+        return this.db.where("username", "==", username).get();
     };
 }
 
