@@ -27,19 +27,17 @@ function Login(props) {
                             <h1>Calliope</h1>
                             <p>Login with the following</p>
                             <Divider variant="middle" />
-                            <Button
-                                variant="contained"
-                                color="primary"
+                            <button
                                 className={classes.button}
                                 onClick={props.authWithGoogle}
                             >
                                 Login with Google
-                            </Button>
+                            </button>
                             or
                             <form className={classes.loginForm}>
                                 <input className={classes.formInputs} type="email" name="email" placeholder="Email" />
                                 <input className={classes.formInputs} type="password" name="password" placeholder="Password" />
-                                <Button className={classes.button}>Login</Button>
+                                <button className={classes.button}>Login</button>
                             </form>
                             <hr />
                             <p>Don't have an account? <Link to="/">Signup</Link></p>

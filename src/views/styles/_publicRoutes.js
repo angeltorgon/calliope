@@ -26,8 +26,9 @@ const useStyles = makeStyles(theme => ({
         maxWidth: "400px",
         color: "white",
         fontSize: "1rem",
+        borderRadius: "5px",
         "&:hover": {
-            backgroundColor: "#DA6991"
+            backgroundColor: "#d55582"
         }
     },
     card: {

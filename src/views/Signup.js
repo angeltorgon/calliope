@@ -30,21 +30,21 @@ function Signup(props) {
                             <h1>Calliope</h1>
                             <p>Signup with the following</p>
                             <Divider variant="middle" />
-                            <Button
+                            <button
                                 variant="contained"
                                 color="primary"
                                 className={classes.button}
                                 onClick={props.authWithGoogle}
                             >
                                 Signup with Google
-                            </Button>
+                            </button>
                             or
                             <form className={classes.loginForm}>
                                 <input className={classes.formInputs} type="email" name="email" placeholder="Email" />
                                 <input className={classes.formInputs} type="text" name="username" placeholder="Username" />
                                 <input className={classes.formInputs} type="password" name="password" placeholder="Password" />
                                 <input className={classes.formInputs} type="password" name="confirm-password" placeholder="Confirm Password" />
-                                <Button className={classes.button}>SignUp</Button>
+                                <button className={classes.button}>SignUp</button>
                             </form>
                             <hr />
                             <p>Already have an account? <Link to="/login">Login</Link></p>
