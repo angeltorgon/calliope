@@ -35,7 +35,7 @@ function Login(props) {
 
     useEffect(() => {
         authListener();
-    }, [props.finished]);
+    }, []);
 
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })

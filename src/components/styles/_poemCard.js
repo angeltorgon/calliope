@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   poemCard: {
-    maxWidth: "600px",
+    maxWidth: "800px",
     width: "100%",
     margin: "20px auto",
     padding: "20px"
@@ -10,15 +10,23 @@ const useStyles = makeStyles((theme) => ({
   poemHeader: {
     height: "60px",
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    marginBottom: "20px",
+    borderBottom: "1px solid whitesmoke"
   },
   poem: {
     height: "400px",
-    padding: "25px"
+    padding: "25px 40px",
+    overflow: "hidden",
+  },
+  poemTitle: {
+    margin: "0 auto",
+    textAlign: "center",
+    border: "1px solid red"
   },
   poemStamp: {
     display: "flex",
-    height: "100%"
+    padding: "5px",
   },
   stamp: {
     display: "flex",
@@ -29,10 +37,15 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "start"
   },
   avatar: {
-    width: "50px"
+    width: "40px",
+    height: "40px",
+    backgroundColor: "lightgrey",
+    borderRadius: "50%",
+    margin: "0 10px"
   },
   menu: {
-    width: "50px"
+    width: "40px",
+    height: "40px",
   }
 }));
 
