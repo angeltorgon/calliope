@@ -15,14 +15,14 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "1px solid whitesmoke"
   },
   poem: {
-    height: "400px",
     padding: "25px 40px",
     overflow: "hidden",
+    borderBottom: "1px solid whitesmoke",
+    marginBottom: "40pxgc"
   },
   poemTitle: {
     margin: "0 auto",
     textAlign: "center",
-    border: "1px solid red"
   },
   poemStamp: {
     display: "flex",
