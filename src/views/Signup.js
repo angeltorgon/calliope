@@ -46,7 +46,7 @@ function Signup(props) {
 
     useEffect(() => {
         authListener();
-    }, [props.finished]);
+    }, []);
 
     useEffect(() => {
         setInputs({
