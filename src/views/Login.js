@@ -68,7 +68,7 @@ function Login(props) {
                                 <input className={classes.formInput} type="password" name="password" placeholder="Password" value={inputs.password} onChange={onChange} />
                                 <button className={classes.button}>Login</button>
                             </form>
-                            <hr />
+                            <p className={classes.error}>{props.error}</p>
                             <p>Don't have an account? <Link to="/">Signup</Link></p>
                         </>
                     )}
