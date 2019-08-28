@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import CommentSection from "./comments/CommentSection";
-import { makeStyles, Card } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 import useStyles from "./styles/_poemCard";
 import UserStamp from "./UserStamp";
-
+import PoemStatusBar from "./PoemStatusBar";
 // const useStyles = makeStyles(theme => ({
 
 // }));
@@ -20,6 +20,7 @@ function PoemCard(props) {
             </div>
             <h3 className={classes.poemTitle}>{props.poem.title}</h3>
             <div className={classes.poem}>{props.poem.content}</div>
+            <PoemStatusBar />
             <CommentSection />
         </Card>
     );
