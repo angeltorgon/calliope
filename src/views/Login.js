@@ -1,19 +1,16 @@
 // React
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { connect } from "react-redux";
 import { authWithGoogle } from "../store/actions";
 import Loader from "react-loader-spinner";
 import useStyles from "./styles/_publicRoutes";
 import { Link } from "react-router-dom";
-import Firebase from "../firebase";
 import { loginWithEmail } from "../store/actions"
 
 import {
     Card,
-    Container,
     Divider,
-    Button,
 } from "@material-ui/core";
 
 function Login(props) {
