@@ -21,7 +21,7 @@ function PoemCard(props) {
             <h3 className={classes.poemTitle}>{props.poem.title}</h3>
             <div className={classes.poem}>{props.poem.poem}</div>
             <PoemStatusBar />
-            <CommentSection />
+            <CommentSection comments={props.poem.comments} />
         </Card>
     );
 }
