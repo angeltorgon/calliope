@@ -98,13 +98,18 @@ function Navbar(props) {
                         Calliope
                     </Link>
                     <div className={classes.linkContainer}>
-                        <Link
+
+                        <img
+                            className={classes.avatar}
+                            src="https://img.icons8.com/material/96/000000/user--v1.png"
+                        />
+                        {/* <Link
                             to="/"
                             className={classes.linkPink}
                             onClick={handleLogout}
                         >
                             Logout
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             ) : null}</>

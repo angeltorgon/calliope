@@ -19,7 +19,7 @@ function PoemCard(props) {
                 <img className={classes.menu} src="https://img.icons8.com/windows/96/000000/menu-2.png" />
             </div>
             <h3 className={classes.poemTitle}>{props.poem.title}</h3>
-            <div className={classes.poem}>{props.poem.content}</div>
+            <div className={classes.poem}>{props.poem.poem}</div>
             <PoemStatusBar />
             <CommentSection />
         </Card>

@@ -1,4 +1,3 @@
-import axios from "axios";
 import Firebase from "../../firebase";
 
 export const AUTH_START = "SIGN_UP";

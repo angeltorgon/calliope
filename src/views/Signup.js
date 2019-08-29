@@ -12,8 +12,6 @@ import {
 
 import { authWithGoogle, signupWithEmail } from "../store/actions";
 
-const db = Firebase.db;
-
 function Signup(props) {
     const classes = useStyles();
     const [inputs, setInputs] = useState({
@@ -27,7 +25,6 @@ function Signup(props) {
     const [passwordSuccess, setPasswordSuccess] = useState(false);
     const [hadError, setHadError] = useState(false);
     const [reachedMaxLength, setReachedMaxLength] = useState(false);
-
     const [usernameAvailable, setUsernameAvailable] = useState(null);
     const [searchedUsernameAvailable, setSearchedUsernameAvailable] = useState(null);
 
