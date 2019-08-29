@@ -32,14 +32,6 @@ function Signup(props) {
     const [searchedUsernameAvailable, setSearchedUsernameAvailable] = useState(null);
 
     useEffect(() => {
-        if (props.user) {
-            props.history.push('/home');
-        } else {
-            props.history.push('/');
-        }
-    }, [props.user]);
-
-    useEffect(() => {
         setInputs({
             email: "",
             username: "",
@@ -91,7 +83,6 @@ function Signup(props) {
                     if (querySnapshot.empty) {
                         setSearchedUsernameAvailable(true);
                         setUsernameAvailable(true);
-                        console.log("value", e.target.value)
                     } else {
                         setUsernameAvailable(false);
                         setSearchedUsernameAvailable(true);

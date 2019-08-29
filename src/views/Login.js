@@ -23,14 +23,6 @@ function Login(props) {
         password: ""
     });
 
-    useEffect(() => {
-        if (props.user) {
-            props.history.push("/home");
-        } else {
-            props.history.push("/login");
-        }
-    }, [props.user]);
-
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })
     };

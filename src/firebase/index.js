@@ -29,12 +29,8 @@ class FirebaseClass {
 
     Usernames = firebase.firestore().collection("usernames");
 
-    getUserByEmail = (user) => {
-        return this.db.where("email", "==", user.email).get();
-    };
-
     gatUserByUsername = (username) => {
-        return this.db.where("username", "==", username).get();
+        return this.Usernames.where("username", "==", username).get();
     };
 }
 

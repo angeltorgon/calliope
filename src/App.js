@@ -19,10 +19,11 @@ class App extends Component {
 
     authListener = () => {
         Firebase.firebaseAuth.onAuthStateChanged((user) => {
-            console.log("user in login", user);
             if (user) {
+                console.log("auth listener")
                 this.props.loggedIn()
             } else {
+                console.log("auth listener else")
                 this.props.loggedOut()
             }
         });

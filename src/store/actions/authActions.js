@@ -30,29 +30,25 @@ export const authWithGoogle = () => dispatch => {
 
 export const signupWithEmail = user => dispatch => {
     dispatch({ type: AUTH_START });
-    Firebase.getUserByEmail(user)
+    Firebase.gatUserByUsername(user.username)
         .then((querySnapshot) => {
             if (querySnapshot.empty) {
-                const { email, username } = user;
-                Usernames.add({ username })
-                    .then((docRef) => {
-                        const { email, password } = user;
-                        Firebase.registerWithEmail(email, password)
-                            .then(res => {
-                                localStorage.setItem("token", res.user.ra);
-                                dispatch({ type: AUTH_SUCCESS });
-                            })
-                            .catch(error => {
-                                console.error(error);
-                                dispatch({ type: AUTH_FAILURE, payload: error.message });
-                            });
+                const { email, username, password } = user;
+                Firebase.registerWithEmail(email, password)
+                    .then(res => {
+                        localStorage.setItem("token", res.user.ra);
+                        Usernames.add({ username }).then(res => {
+                            dispatch({ type: AUTH_SUCCESS });
+                        }).catch((error) => {
+                            dispatch({ type: AUTH_FAILURE, payload: error.message });
+                            console.error(error);
+                            return "There was an error. Try again."
+                        });
                     })
-                    .catch((error) => {
-                        dispatch({ type: AUTH_FAILURE, payload: error.message });
+                    .catch(error => {
                         console.error(error);
-                        return "There was an error. Try again."
-
-                    });
+                        dispatch({ type: AUTH_FAILURE, payload: error.message });
+                    })
             } else {
                 dispatch({ type: AUTH_FAILURE, payload: "User already exists" });
             }
