@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useStyles from "./styles/_poemStatusBar";
 
 
 export default function PoemStatusBar() {
     const classes = useStyles();
+    const [isLiked, setIsLiked] = useState(false);
 
     return (
         <div className={classes.poemStatusBarContainer}>

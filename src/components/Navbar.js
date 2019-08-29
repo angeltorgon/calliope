@@ -92,7 +92,7 @@ function Navbar(props) {
 
     return (
         <>
-            {localStorage.getItem("token") ? (
+            {props.user ? (
                 <div className={classes.nav}>
                     <Link to="/" className={classes.logo}>
                         Calliope
@@ -107,29 +107,14 @@ function Navbar(props) {
                         </Link>
                     </div>
                 </div>
-            ) : (
-                    null
-                    // <div className={classes.nav}>
-                    //     <Link to="/" className={classes.logo}>
-                    //         Calliope
-                    // </Link>
-                    //     <div className={classes.linkContainer}>
-                    //         <Link to="/login" className={classes.linkPink}>
-                    //             Login
-                    //     </Link>
-                    //         <Link to="/signup" className={classes.link}>
-                    //             Signup
-                    //     </Link>
-                    //     </div>
-                    // </div>
-                )}
-        </>
+            ) : null}</>
     );
 }
 
 const mapStateToProps = state => {
-    const { started, finished, error } = state.authReducer;
+    const { user, started, finished, error } = state.authReducer;
     return {
+        user: user,
         started: started,
         finished: finished,
         error: error

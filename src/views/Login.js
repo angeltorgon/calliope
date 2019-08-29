@@ -23,19 +23,13 @@ function Login(props) {
         password: ""
     });
 
-    const authListener = () => {
-        Firebase.firebaseAuth.onAuthStateChanged((user) => {
-            if (user) {
-                props.history.push('/home');
-            } else {
-                props.history.push('/login');
-            }
-        });
-    }
-
     useEffect(() => {
-        authListener();
-    }, []);
+        if (props.user) {
+            props.history.push("/home");
+        } else {
+            props.history.push("/login");
+        }
+    }, [props.user]);
 
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })
@@ -78,11 +72,12 @@ function Login(props) {
 }
 
 const mapStateToProps = state => {
-    const { started, finished, error } = state.authReducer;
+    const { user, started, finished, error } = state.authReducer;
     return {
         started: started,
         finished: finished,
-        error: error
+        error: error,
+        user: user
     };
 };
 

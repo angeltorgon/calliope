@@ -4,8 +4,11 @@ import Firebase from "../../firebase";
 export const AUTH_START = "SIGN_UP";
 export const AUTH_SUCCESS = "SIGN_UP_SUCCESS";
 export const AUTH_FAILURE = "SIGN_UP_FAILURE";
+export const USER = "USER";
+export const NO_USER = "NO_USER ";
 
-const db = Firebase.db;
+const Usernames = Firebase.Usernames;
+
 
 export const authWithGoogle = () => dispatch => {
     dispatch({ type: AUTH_START });
@@ -31,7 +34,7 @@ export const signupWithEmail = user => dispatch => {
         .then((querySnapshot) => {
             if (querySnapshot.empty) {
                 const { email, username } = user;
-                db.add({ email, username })
+                Usernames.add({ username })
                     .then((docRef) => {
                         const { email, password } = user;
                         Firebase.registerWithEmail(email, password)
@@ -73,4 +76,12 @@ export const loginWithEmail = (email, password) => dispatch => {
             console.error(err);
             dispatch({ type: AUTH_FAILURE, payload: err.message });
         });
+};
+
+export const loggedIn = () => dispatch => {
+    dispatch({ type: USER });
+};
+
+export const loggedOut = () => dispatch => {
+    dispatch({ type: NO_USER });
 };

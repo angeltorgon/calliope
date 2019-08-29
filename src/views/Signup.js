@@ -8,8 +8,6 @@ import Firebase from "../firebase";
 import {
     Card,
     Divider,
-    TextField,
-    Input
 } from "@material-ui/core";
 
 import { authWithGoogle, signupWithEmail } from "../store/actions";
@@ -29,24 +27,17 @@ function Signup(props) {
     const [passwordSuccess, setPasswordSuccess] = useState(false);
     const [hadError, setHadError] = useState(false);
     const [reachedMaxLength, setReachedMaxLength] = useState(false);
-    const [user, setUser] = useState(null);
 
     const [usernameAvailable, setUsernameAvailable] = useState(null);
     const [searchedUsernameAvailable, setSearchedUsernameAvailable] = useState(null);
 
-    const authListener = () => {
-        Firebase.firebaseAuth.onAuthStateChanged((user) => {
-            if (user) {
-                props.history.push('/home');
-            } else {
-                props.history.push('/');
-            }
-        });
-    }
-
     useEffect(() => {
-        authListener();
-    }, []);
+        if (props.user) {
+            props.history.push('/home');
+        } else {
+            props.history.push('/');
+        }
+    }, [props.user]);
 
     useEffect(() => {
         setInputs({
@@ -194,8 +185,9 @@ function Signup(props) {
 }
 
 const mapStateToProps = state => {
-    const { started, finished, error } = state.authReducer;
+    const { user, started, finished, error } = state.authReducer;
     return {
+        user: user,
         started: started,
         finished: finished,
         error: error

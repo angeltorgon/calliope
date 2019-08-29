@@ -19,8 +19,6 @@ class FirebaseClass {
 
     authWithGoogle = () => this.firebaseAuth.signInWithPopup(this.provider);
 
-    registerWithGoogle = () => this.firebaseAuth.sign;
-
     registerWithEmail = (email, password) =>
         this.firebaseAuth.createUserWithEmailAndPassword(email, password);
 
@@ -29,7 +27,7 @@ class FirebaseClass {
 
     signout = () => this.firebaseAuth.signOut();
 
-    db = firebase.firestore().collection("users");
+    Usernames = firebase.firestore().collection("usernames");
 
     getUserByEmail = (user) => {
         return this.db.where("email", "==", user.email).get();

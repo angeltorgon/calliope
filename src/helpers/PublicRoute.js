@@ -1,20 +1,27 @@
 
 import React from 'react';
 import { Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux"
 
 const PublicRoute = ({ component: Component, ...rest }) => {
 
 
     return (<Route {...rest} render={props => {
-        if (localStorage.getItem("token") === null) {
-            return <Component {...props} />;
+        if (rest.user) {
+            return (<Redirect to={{ pathname: "/home", state: { from: props.location } }} />);
         } else {
-            return (
-                <Redirect to={{ pathname: "/home", state: { from: props.location } }} />);
+            return <Component {...props} />;
         }
     }}
     />
     );
 };
 
-export default PublicRoute;
+const mapStateToProps = state => {
+    const { user } = state.authReducer;
+    return {
+        user: user,
+    };
+};
+
+export default connect(mapStateToProps)(PublicRoute);
