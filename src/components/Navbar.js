@@ -103,13 +103,13 @@ function Navbar(props) {
                             className={classes.avatar}
                             src="https://img.icons8.com/material/96/000000/user--v1.png"
                         />
-                        {/* <Link
+                        <Link
                             to="/"
                             className={classes.linkPink}
                             onClick={handleLogout}
                         >
                             Logout
-                        </Link> */}
+                        </Link>
                     </div>
                 </div>
             ) : null}</>

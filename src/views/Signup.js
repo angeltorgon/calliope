@@ -39,6 +39,24 @@ function Signup(props) {
         setError(false);
         setHadError(false);
         setSearchedUsernameAvailable(false);
+
+        Firebase.Poems.get()
+            .then((querySnapshot) => {
+                if (querySnapshot.empty) {
+
+                } else {
+                    const poems = []
+                    querySnapshot.docs.map(function (doc) {
+                        console.log(doc.data())
+                        poems.push(doc.data());
+                    })
+
+                }
+
+            })
+            .catch(function (error) {
+                console.log("Error getting documents: ", error);
+            });
     }, [props.error]);
 
     const changeHandler = (e) => {
