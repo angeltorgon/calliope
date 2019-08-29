@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import Firebase from "../firebase"
 import CommentSection from "./comments/CommentSection";
@@ -9,17 +9,30 @@ import PoemStatusBar from "./PoemStatusBar";
 
 function PoemCard(props) {
     const classes = useStyles();
+    const poemDoc = Firebase.Poems.doc(props.poem.docId);
+    const [poem, setPoem] = useState(props.poem);
+
+    const fetchPoem = () => {
+        poemDoc.get().then((querySnapshot) => {
+            console.log("fetching poems")
+            setPoem(querySnapshot.data());
+        })
+    }
+
+    useEffect(() => {
+        fetchPoem();
+    }, []);
 
     return (
-        <Card className={classes.poemCard} key={props.poem.id}>
+        <Card className={classes.poemCard} key={poem.id}>
             <div className={classes.poemHeader}>
-                <UserStamp username={props.poem.username} />
+                <UserStamp username={poem.username} />
                 <img className={classes.menu} src="https://img.icons8.com/windows/96/000000/menu-2.png" />
             </div>
-            <h3 className={classes.poemTitle}>{props.poem.title}</h3>
-            <div className={classes.poem}>{props.poem.poem}</div>
-            <PoemStatusBar docId={props.poem.docId} commentsLength={props.poem.comments.length} likes={props.poem.likes} />
-            <CommentSection comments={props.poem.comments} />
+            <h3 className={classes.poemTitle}>{poem.title}</h3>
+            <div className={classes.poem}>{poem.poem}</div>
+            <PoemStatusBar fetchPoem={fetchPoem} poemDoc={poemDoc} docId={poem.docId} commentsLength={poem.comments.length} likes={poem.likes} />
+            <CommentSection comments={poem.comments} />
         </Card>
     );
 }
