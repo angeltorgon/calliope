@@ -4,6 +4,7 @@ import Firebase from "../../firebase";
 export const AUTH_START = "SIGN_UP";
 export const AUTH_SUCCESS = "SIGN_UP_SUCCESS";
 export const AUTH_FAILURE = "SIGN_UP_FAILURE";
+export const CHECKING_USER = "CHECKING_USER";
 export const USER = "USER";
 export const NO_USER = "NO_USER ";
 
@@ -72,6 +73,11 @@ export const loginWithEmail = (email, password) => dispatch => {
             console.error(err);
             dispatch({ type: AUTH_FAILURE, payload: err.message });
         });
+};
+
+export const checkingUser = () => dispatch => {
+    console.log("checking user")
+    dispatch({ type: CHECKING_USER });
 };
 
 export const loggedIn = () => dispatch => {

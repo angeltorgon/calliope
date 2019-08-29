@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
 import Firebase from "./firebase";
-import { loggedIn, loggedOut } from './store/actions';
+import { loggedIn, loggedOut, checkingUser } from './store/actions';
 import "./App.scss";
 import Navbar from "./components/Navbar";
 import Login from "./views/Login";
@@ -18,12 +18,11 @@ import PublicRoute from "./helpers/PublicRoute";
 class App extends Component {
 
     authListener = () => {
+        this.props.checkingUser();
         Firebase.firebaseAuth.onAuthStateChanged((user) => {
             if (user) {
-                console.log("auth listener")
                 this.props.loggedIn()
             } else {
-                console.log("auth listener else")
                 this.props.loggedOut()
             }
         });
@@ -51,4 +50,4 @@ class App extends Component {
 
 
 
-export default connect(null, { loggedIn, loggedOut })(App);
+export default connect(null, { loggedIn, loggedOut, checkingUser })(App);
