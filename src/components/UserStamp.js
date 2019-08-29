@@ -13,7 +13,7 @@ export default function UserStamp(props) {
                     src="https://img.icons8.com/material/96/000000/user--v1.png"
                 />
                 <div className={classes.stamp}>
-                    <strong className={classes.username}>Username</strong>
+                    <strong className={classes.username}>{props.username}</strong>
                     <strong className={classes.timeStamp}>
                         Aug 14th, 4:45pm
                         </strong>

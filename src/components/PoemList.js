@@ -23,16 +23,15 @@ function PoemList(props) {
                 } else {
                     const poems = []
                     querySnapshot.docs.map(function (doc) {
-                        console.log(doc.data())
-                        poems.push(doc.data());
+                        poems.push({ ...doc.data(), docId: doc.id });
                     })
                     setPoems(poems);
                 }
-
             })
             .catch(function (error) {
                 console.log("Error getting documents: ", error);
             });
+
         return () => {
 
         };

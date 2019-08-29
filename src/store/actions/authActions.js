@@ -30,7 +30,7 @@ export const authWithGoogle = () => dispatch => {
 
 export const signupWithEmail = user => dispatch => {
     dispatch({ type: AUTH_START });
-    Firebase.gatUserByUsername(user.username)
+    Firebase.getUserByUsername(user.username)
         .then((querySnapshot) => {
             if (querySnapshot.empty) {
                 const { email, username, password } = user;
