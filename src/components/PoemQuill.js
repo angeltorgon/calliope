@@ -6,7 +6,7 @@ import Loader from 'react-loader-spinner';
 
 import { postPoem } from '../store/actions';
 
-function PoemForm(props) {
+function PoemQuill(props) {
 
     useEffect(() => {
         if (!localStorage.getItem('token')) {
@@ -90,7 +90,7 @@ function PoemForm(props) {
     return (
         <>
             {props.addingPoem
-                ? 
+                ?
                 <div className="loader">
                     <Loader
                         type="ThreeDots"
@@ -98,8 +98,8 @@ function PoemForm(props) {
                         height="50"
                         width="50"
                     />
-                </div> 
-                : 
+                </div>
+                :
                 <div className='poem-form'>
                     <h2>Write a Poem</h2>
                     <form onSubmit={handleSubmit}>
@@ -141,4 +141,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { postPoem })(PoemForm);
+export default connect(mapStateToProps, { postPoem })(PoemQuill);

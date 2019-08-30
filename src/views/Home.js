@@ -7,7 +7,7 @@ import { fetchPoems } from "../store/actions";
 function Home(props) {
     return (
         <div className="feed">
-            <PoemList poems={props.allPoems} />
+            <PoemList />
         </div>
     );
 }

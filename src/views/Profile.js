@@ -18,14 +18,14 @@ function Profile(props) {
     return (
         <div className="profile-container">
             <div className="user-profile-container">
-                <img
+                {/* <img
                     className="user-avatar"
                     src={props.user.avatar}
                     alt="user"
-                />
-                <h2 className="user-name">{`${props.user.firstName} ${
+                /> */}
+                {/* <h2 className="user-name">{`${props.user.firstName} ${
                     props.user.lastName
-                }`}</h2>
+                    }`}</h2> */}
                 <p className="user-bio">
                     Bacon ipsum dolor amet short ribs brisket venison rump
                     drumstick pig sausage prosciutto chicken spare ribs salami
