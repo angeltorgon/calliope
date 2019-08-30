@@ -6,6 +6,7 @@ import Firebase from "./firebase";
 import { loggedIn, loggedOut, checkingUser } from './store/actions';
 import "./App.scss";
 import Navbar from "./components/Navbar";
+import BottomNavbar from "./components/BottomNavbar";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Home from "./views/Home";
@@ -43,6 +44,7 @@ class App extends Component {
                     <PrivateRoute path="/poem-form" component={PoemForm} />
                     <PublicRoute exact path="/" component={Signup} />
                 </Switch>
+                <BottomNavbar />
             </div>
         );
     }
