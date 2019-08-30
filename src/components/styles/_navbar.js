@@ -64,11 +64,11 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#FFDAD8",
         padding: "10px",
+        borderLeft: "1px solid lightgrey",
 
         "&:hover": {
-            backgroundColor: "#ffcccc",
+            backgroundColor: "whitesmike",
             color: "black",
             textDecoration: "none"
         }
