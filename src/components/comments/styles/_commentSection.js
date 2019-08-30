@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     commentSectionContainer: {
-        maxHeight: "80px",
+        maxHeight: "100px",
         border: "1px solid whitesmoke",
         borderRadius: "5px",
         display: "flex",
@@ -21,14 +21,23 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "space-between",
         height: "60px",
-        marginTop: "25px"
+        marginTop: "30px"
     },
     commentInput: {
         width: "100%",
-        height: "100%",
-        borderRadius: "5px",
+        margin: "5px 0",
+        height: "45px",
         padding: "10px",
-        fontSize: "1.3rem"
+        borderRadius: "5px",
+        display: "flex",
+        border: "1px solid lightgrey",
+        fontSize: ".9rem",
+        "&:focus": {
+            outline: "none",
+            backgroundColor: "#fffafc",
+            boxShadow: "0px 0px 3px 1px rgba(112,82,112,1)",
+            border: "0px",
+        }
     },
     commentForm: {
         width: "90%",

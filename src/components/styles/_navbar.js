@@ -65,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         padding: "10px",
-        borderLeft: "1px solid lightgrey",
 
         "&:hover": {
             backgroundColor: "whitesmike",

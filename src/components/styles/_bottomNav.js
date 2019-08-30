@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#FFFFFF",
         border: 0,
         borderRadius: 3,
-        boxShadow: "0 1px 3px 2px rgba(5, 5, 5, .3)",
+        boxShadow: "4px 1px 3px 3.5px rgba(5, 5, 5, .3)",
         color: "black",
         height: "50px",
         display: "flex",
@@ -61,8 +61,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         padding: "30px",
-        borderLeft: ".2px solid lightgrey",
-        borderRight: ".2px solid lightgrey",
         "&:hover": {
             backgroundColor: "whitesmike",
             color: "black",

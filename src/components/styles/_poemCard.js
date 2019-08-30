@@ -15,11 +15,15 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "1px solid whitesmoke"
   },
   poem: {
-    padding: "25px 40px",
+    padding: "25px 100px",
     overflow: "hidden",
-    borderBottom: "1px solid whitesmoke",
+    border: "1px solid whitesmoke",
     marginBottom: "40px",
-    maxHeight: "310px"
+    maxHeight: "310px",
+    width: "100%",
+    textAlign: "center",
+    display: "flex",
+    backgroundColor: "#fffafc"
   },
   poemTitle: {
     margin: "0 auto",
