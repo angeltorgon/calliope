@@ -11,7 +11,7 @@ import Login from "./views/Login";
 import Signup from "./views/Signup";
 import Home from "./views/Home";
 import Profile from "./views/Profile";
-import PoemQuill from "./components/PoemQuill";
+import Write from "./views/Write";
 
 import PrivateRoute from "./helpers/PrivateRoute";
 import PublicRoute from "./helpers/PublicRoute";
@@ -41,7 +41,7 @@ class App extends Component {
                     <PublicRoute path="/login" component={Login} />
                     <PrivateRoute path="/home" component={Home} />
                     <PrivateRoute path="/profile" component={Profile} />
-                    <PrivateRoute path="/write" component={PoemQuill} />
+                    <PrivateRoute path="/write" component={Write} />
                     <PublicRoute exact path="/" component={Signup} />
                 </Switch>
                 <BottomNavbar />
