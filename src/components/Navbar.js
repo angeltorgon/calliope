@@ -5,81 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { authWithGoogle } from "../store/actions";
 import { withRouter } from "react-router-dom";
 import Firebase from "../firebase";
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1
-    },
-    nav: {
-        backgroundColor: "#FFFFFF",
-        border: 0,
-        borderRadius: 3,
-        boxShadow: "0 3px 5px 2px rgba(5, 5, 5, .3)",
-        color: "black",
-        height: "60px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center"
-    },
-    menuButton: {
-        marginRight: theme.spacing(2)
-    },
-    logo: {
-        textDecoration: "none",
-        fontFamily: "charcoal",
-        color: "white",
-        padding: "10px",
-        fontSize: "20px",
-        height: "100%",
-        paddingTop: "18px",
-        width: "150px",
-        textAlign: "center",
-        backgroundColor: "#DA6991",
-        "&:hover": {
-            color: "white",
-            textDecoration: "none",
-            backgroundColor: "#DE6998"
-        }
-    },
-    link: {
-        fontSize: "20px",
-        textDecoration: "none",
-        color: "white",
-        height: "100%",
-        width: "120px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#DA6991",
-        "&:hover": {
-            textDecoration: "none",
-            color: "white",
-            textDecoration: "none",
-            backgroundColor: "#DE6998"
-        }
-    },
-    linkContainer: {
-        height: "100%",
-        width: "auto",
-        display: "flex"
-    },
-    linkPink: {
-        fontSize: "20px",
-        textDecoration: "none",
-        color: "grey",
-        height: "100%",
-        width: "120px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#FFDAD8",
-        "&:hover": {
-            backgroundColor: "#FHGAG8",
-            color: "black",
-            textDecoration: "none"
-        }
-    }
-}));
+import useStyles from "./styles/_navbar"
 
 function Navbar(props) {
     const classes = useStyles();
@@ -99,16 +25,20 @@ function Navbar(props) {
                     </Link>
                     <div className={classes.linkContainer}>
 
-                        <img
-                            className={classes.avatar}
-                            src="https://img.icons8.com/material/96/000000/user--v1.png"
-                        />
+
                         <Link
                             to="/"
                             className={classes.linkPink}
                             onClick={handleLogout}
                         >
-                            Logout
+                            <img className={classes.logout} src="https://img.icons8.com/ios/50/000000/user.png" />
+                        </Link>
+                        <Link
+                            to="/"
+                            className={classes.linkPink}
+                            onClick={handleLogout}
+                        >
+                            <img className={classes.logout} src="https://img.icons8.com/ios/50/000000/exit.png"></img>
                         </Link>
                     </div>
                 </div>
