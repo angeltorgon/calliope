@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
         height: "48px",
         width: "150px",
         textAlign: "center",
-        borderRight: "1px solid whitesmoke",
         "&:hover": {
             color: "white",
             textDecoration: "none",
@@ -67,7 +66,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         backgroundColor: "#FFDAD8",
         padding: "10px",
-        borderLeft: ".3px solid whitesmoke",
 
         "&:hover": {
             backgroundColor: "#ffcccc",
