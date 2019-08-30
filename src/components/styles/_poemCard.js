@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "25px 40px",
     overflow: "hidden",
     borderBottom: "1px solid whitesmoke",
-    marginBottom: "40pxgc"
+    marginBottom: "40px",
+    maxHeight: "310px"
   },
   poemTitle: {
     margin: "0 auto",
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menu: {
     width: "40px",
-    height: "40px",
+    height: "35px",
   }
 }));
 

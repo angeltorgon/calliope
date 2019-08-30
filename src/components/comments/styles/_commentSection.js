@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     commentSectionContainer: {
-        minHeight: "300px",
+        maxHeight: "80px",
         border: "1px solid whitesmoke",
         borderRadius: "5px",
         display: "flex",
