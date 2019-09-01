@@ -29,6 +29,10 @@ function CodeNode(props) {
     )
 }
 
+function BoldMark(props) {
+    return <strong>{props.children}</strong>
+}
+
 // Define our app...
 const SlateEditor = () => {
     // Set the initial value when the app is first constructed.
@@ -42,22 +46,35 @@ const SlateEditor = () => {
     }
 
     const onKeyDown = (event, editor, next) => {
-        // console.log(event.key)
-        // return next()
-        if (event.key != '`' || !event.ctrlKey) return next()
+        if (!event.ctrlKey) return next()
 
-        // Prevent the ampersand character from being inserted.
-        event.preventDefault()
+        // Decide what to do based on the key code...
+        switch (event.key) {
+            // When "B" is pressed, add a "bold" mark to the text.
+            case 'b': {
+                const isBold = editor.value.marks.some(mark => mark.type == 'bold')
+                console.log("editor value", editor.value.marks.some((mark) => { console.log(mark.type) }));
 
-        // Change the value by inserting 'and' at the cursor's position.
-        // editor.insertText('and')
-        // editor.setBlocks('code')
-
-        // Determine whether any of the currently selected blocks are code blocks.
-        const isCode = editor.value.blocks.some(block => block.type == 'code')
-
-        // Toggle the block type depending on `isCode`.
-        editor.setBlocks(isCode ? 'paragraph' : 'code')
+                event.preventDefault()
+                if (isBold) {
+                    editor.removeMark('bold')
+                } else {
+                    editor.addMark('bold');
+                    break
+                }
+            }
+            // When "`" is pressed, keep our existing code block logic.
+            case '`': {
+                const isCode = editor.value.blocks.some(block => block.type == 'code')
+                event.preventDefault()
+                editor.setBlocks(isCode ? 'paragraph' : 'code')
+                break
+            }
+            // Otherwise, let other plugins handle it.
+            default: {
+                return next()
+            }
+        }
     }
 
     const renderBlock = (props, editor, next) => {
@@ -69,8 +86,18 @@ const SlateEditor = () => {
         }
     }
 
+    // Add a `renderMark` method to render marks.
+    const renderMark = (props, editor, next) => {
+        switch (props.mark.type) {
+            case 'bold':
+                return <BoldMark {...props} />
+            default:
+                return next()
+        }
+    }
+
     // Render the editor.
-    return <Editor value={state.value} onChange={onChange} onKeyDown={onKeyDown} renderBlock={renderBlock} />
+    return <Editor value={state.value} onChange={onChange} onKeyDown={onKeyDown} renderBlock={renderBlock} renderMark={renderMark} />
 
 }
 
