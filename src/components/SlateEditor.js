@@ -53,8 +53,6 @@ const SlateEditor = () => {
             // When "B" is pressed, add a "bold" mark to the text.
             case 'b': {
                 const isBold = editor.value.marks.some(mark => mark.type == 'bold')
-                console.log("editor value", editor.value.marks.some((mark) => { console.log(mark.type) }));
-
                 event.preventDefault()
                 if (isBold) {
                     editor.removeMark('bold')
