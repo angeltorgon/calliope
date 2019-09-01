@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-    editorContainer: {
+    container: {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
