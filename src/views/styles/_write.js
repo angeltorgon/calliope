@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-    quillContainer: {
+    editorContainer: {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -22,6 +22,9 @@ const useStyles = makeStyles(theme => ({
             boxShadow: "0px 0px 3px 1px rgba(112,82,112,1)",
             border: "0px",
         }
+    },
+    editor: {
+        border: "1px solid red"
     }
 }));
 

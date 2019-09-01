@@ -12,7 +12,6 @@ import Signup from "./views/Signup";
 import Home from "./views/Home";
 import Profile from "./views/Profile";
 import Write from "./views/Write";
-
 import PrivateRoute from "./helpers/PrivateRoute";
 import PublicRoute from "./helpers/PublicRoute";
 
