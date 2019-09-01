@@ -13,7 +13,11 @@ const initialValue = Value.fromJSON({
                 nodes: [
                     {
                         object: 'text',
-                        text: 'A line of hoooootext in a paragraph.',
+                        text: 'Title',
+                    },
+                    {
+                        object: 'text',
+                        text: 'Write your poem here...',
                     },
                 ],
             },
