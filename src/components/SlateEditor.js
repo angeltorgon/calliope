@@ -9,16 +9,22 @@ const initialValue = Value.fromJSON({
         nodes: [
             {
                 object: 'block',
-                type: 'paragraph',
+                type: 'quote',
                 nodes: [
                     {
                         object: 'text',
                         text: 'Title',
                     },
+                ],
+            },
+            {
+                object: 'block',
+                type: 'paragraph',
+                nodes: [
                     {
                         object: 'text',
-                        text: 'Write your poem here...',
-                    },
+                        text: 'Title',
+                    }
                 ],
             },
         ],
