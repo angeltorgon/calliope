@@ -39,10 +39,8 @@ function PoemCard(props) {
 
 const mapStateToProps = state => {
     return {
-        // user: state.authReducer.user
     };
 };
 
 export default connect()(PoemCard);
-// mapStateToProps,
-// { like, dislike, postComment }
+
