@@ -13,7 +13,6 @@ const initialValue = Value.fromJSON({
                 nodes: [
                     {
                         object: 'text',
-                        text: 'Title',
                     },
                 ],
             },
@@ -87,7 +86,7 @@ const SlateEditor = () => {
     }
 
     // Render the editor.
-    return <Editor className={classes.editor} value={state.value} onChange={onChange} onKeyDown={onKeyDown} renderBlock={renderBlock} renderMark={renderMark} />
+    return <Editor className={classes.editor} value={state.value} onChange={onChange} onKeyDown={onKeyDown} renderBlock={renderBlock} renderMark={renderMark} placeholder="Write your poetry..." />
 
 }
 
