@@ -21,9 +21,9 @@ export default function AlertDialog() {
 
     return (
         <div>
-            <Button className={classes.dialogButton} color="default" onClick={handleClickOpen}>
+            <div className={classes.dialogButton} color="default" onClick={handleClickOpen}>
                 <img className={classes.dialogHotDog} src="https://img.icons8.com/material-rounded/48/000000/menu-2.png" />
-            </Button>
+            </div>
             <Dialog
                 open={open}
                 onClose={handleClose}

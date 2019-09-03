@@ -2,13 +2,18 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     dialogButton: {
-        height: "50px",
-        width: "20px",
-        padding: "5px",
+        textDecoration: "none",
+        fontFamily: "charcoal",
+        color: "white",
+        fontSize: "20px",
+        padding: "3px",
+        textAlign: "center",
         borderRadius: "50%",
-        outline: "none",
-        "&:focus": {
-            outline: "none",
+        width: "50px",
+        "&:hover": {
+            color: "white",
+            textDecoration: "none",
+            backgroundColor: "#EAEBEB"
         }
     },
     dialogHotDog: {

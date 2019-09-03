@@ -35,7 +35,6 @@ class App extends Component {
     render() {
         return (
             <div className="app-container">
-                <Navbar />
                 <Switch>
                     <PublicRoute path="/login" component={Login} />
                     <PrivateRoute path="/home" component={Home} />
