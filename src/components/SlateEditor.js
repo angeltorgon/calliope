@@ -17,16 +17,6 @@ const initialValue = Value.fromJSON({
                     },
                 ],
             },
-            {
-                object: 'block',
-                type: 'paragraph',
-                nodes: [
-                    {
-                        object: 'text',
-                        text: 'Title',
-                    }
-                ],
-            },
         ],
     },
 })
@@ -66,20 +56,11 @@ const SlateEditor = () => {
                 const isBold = editor.value.marks.some(mark => mark.type == 'bold')
                 event.preventDefault()
                 if (isBold) {
-                    editor.removeMark('bold')
+                    editor.removeMark('bold');
                 } else {
                     editor.addMark('bold');
-                    break
                 }
             }
-            // When "`" is pressed, keep our existing code block logic.
-            case '`': {
-                const isCode = editor.value.blocks.some(block => block.type == 'code')
-                event.preventDefault()
-                editor.setBlocks(isCode ? 'paragraph' : 'code')
-                break
-            }
-            // Otherwise, let other plugins handle it.
             default: {
                 return next()
             }
