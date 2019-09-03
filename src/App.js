@@ -12,6 +12,7 @@ import Signup from "./views/Signup";
 import Home from "./views/Home";
 import Profile from "./views/Profile";
 import Write from "./views/Write";
+import Search from "./views/Search";
 import PrivateRoute from "./helpers/PrivateRoute";
 import PublicRoute from "./helpers/PublicRoute";
 
@@ -40,6 +41,7 @@ class App extends Component {
                     <PrivateRoute path="/home" component={Home} />
                     <PrivateRoute path="/profile" component={Profile} />
                     <PrivateRoute path="/write" component={Write} />
+                    <PrivateRoute path="/search" component={Search} />
                     <PublicRoute exact path="/" component={Signup} />
                 </Switch>
                 <BottomNavbar />
