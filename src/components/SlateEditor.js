@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { Editor } from 'slate-react'
 import { Value } from 'slate'
-// import { WriteStream } from 'tty';
+import useStyles from './styles/_slateEditor';
 
 const initialValue = Value.fromJSON({
     document: {
@@ -45,6 +45,7 @@ function BoldMark(props) {
 
 // Define our app...
 const SlateEditor = () => {
+    const classes = useStyles();
     // Set the initial value when the app is first constructed.
     const [state, setState] = useState({
         value: initialValue,
@@ -105,7 +106,7 @@ const SlateEditor = () => {
     }
 
     // Render the editor.
-    return <Editor value={state.value} onChange={onChange} onKeyDown={onKeyDown} renderBlock={renderBlock} renderMark={renderMark} />
+    return <Editor className={classes.editorContainer} value={state.value} onChange={onChange} onKeyDown={onKeyDown} renderBlock={renderBlock} renderMark={renderMark} />
 
 }
 
