@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import PoemList from "../components/PoemList.js";
 import { fetchPoems } from "../store/actions";
 
-function Home(props) {
+function Home() {
     return (
-        <div className="feed">
+        <div>
             <PoemList />
         </div>
     );
