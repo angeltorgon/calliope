@@ -2,7 +2,6 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     editorContainer: {
-        // border: "1px solid lightgrey",
         width: "100%",
         paddingTop: "15px",
         fontSize: ".9rem",
@@ -15,11 +14,13 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     editor: {
-        // border: "1px solid lightgrey",
         width: "100%",
         padding: "20px",
         fontSize: ".9rem",
         height: "100%",
+        "&::placeholder": {
+            color: "#B9BABC"
+        },
         "&:focus": {
             outline: "none",
             backgroundColor: "#fffafc",
