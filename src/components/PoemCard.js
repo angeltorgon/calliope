@@ -6,6 +6,7 @@ import { Card } from "@material-ui/core";
 import useStyles from "./styles/_poemCard";
 import UserStamp from "./UserStamp";
 import PoemStatusBar from "./PoemStatusBar";
+import PoemMenuDialog from "./dialogs/PoemMenuDialog"
 
 function PoemCard(props) {
     const classes = useStyles();
@@ -27,7 +28,7 @@ function PoemCard(props) {
         <Card className={classes.poemCard} key={poem.id}>
             <div className={classes.poemHeader}>
                 <UserStamp username={poem.username} />
-                <img className={classes.menu} src="https://img.icons8.com/windows/96/000000/menu-2.png" />
+                <PoemMenuDialog />
             </div>
             <h3 className={classes.poemTitle}>{poem.title}</h3>
             <div className={classes.poem}>{poem.poem}</div>

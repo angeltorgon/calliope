@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "20px"
   },
   poemHeader: {
-    height: "60px",
+    height: "70px",
     display: "flex",
     justifyContent: "space-between",
     marginBottom: "20px",
