@@ -42,10 +42,10 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "center"
     },
     mockup: {
-        border: "1px solid red",
+        borderRadius: "10px",
         width: "300px",
-        height: "600px",
-        margin: "0 40px 0 0",
+        height: "670px",
+        margin: "0 100px 0 0",
         [theme.breakpoints.down('sm')]: {
             display: "none"
         }
