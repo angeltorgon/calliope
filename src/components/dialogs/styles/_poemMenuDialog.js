@@ -13,6 +13,19 @@ const useStyles = makeStyles(theme => ({
         width: "30px",
         outline: "none",
 
+    },
+    menuDialog: {
+        borderRadius: "5px",
+        maxWidth: "400px",
+        width: "250px",
+        minWidth: "200px",
+        padding: "10px"
+    },
+    menuOption: {
+        margin: "3px",
+        display: "flex",
+        width: "100%",
+        justifyContent: "flex-start"
     }
 }));
 
