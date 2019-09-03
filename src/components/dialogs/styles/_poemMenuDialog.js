@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     dialogButton: {
-        height: "60px",
+        height: "50px",
         width: "20px",
         padding: "5px",
         borderRadius: "50%",

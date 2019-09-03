@@ -22,7 +22,7 @@ export default function AlertDialog() {
     return (
         <div>
             <Button className={classes.dialogButton} color="default" onClick={handleClickOpen}>
-                <img className={classes.dialogHotDog} src="https://img.icons8.com/windows/96/000000/menu-2.png" />
+                <img className={classes.dialogHotDog} src="https://img.icons8.com/material-rounded/48/000000/menu-2.png" />
             </Button>
             <Dialog
                 open={open}
@@ -30,7 +30,11 @@ export default function AlertDialog() {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+                <DialogTitle id="alert-dialog-title">
+                    <Button onClick={handleClose} color="primary">
+                        Close
+          </Button>
+                </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
                         Let Google help apps determine location. This means sending anonymous location data to
@@ -38,12 +42,7 @@ export default function AlertDialog() {
           </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color="primary">
-                        Disagree
-          </Button>
-                    <Button onClick={handleClose} color="primary" autoFocus>
-                        Agree
-          </Button>
+
                 </DialogActions>
             </Dialog>
         </div>
