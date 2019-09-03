@@ -3,9 +3,8 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
     editor: {
         border: "1px solid lightgrey",
-        borderRadius: "10px",
         width: "100%",
-        maxWidth: "500px",
+        // maxWidth: "500px",
         padding: "40px",
         marginTop: "40px",
         fontSize: ".9rem",

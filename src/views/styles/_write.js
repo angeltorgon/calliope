@@ -5,7 +5,7 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "60px 20px 90px 20px",
+        padding: "30px 0px 60px 0px",
         height: "100vh",
     },
 }));
