@@ -86,7 +86,11 @@ const SlateEditor = () => {
     }
 
     // Render the editor.
-    return <Editor className={classes.editor} value={state.value} onChange={onChange} onKeyDown={onKeyDown} renderBlock={renderBlock} renderMark={renderMark} placeholder="Write your poetry..." />
+    return (
+    <div className={classes.editorContainer} >
+        <input className={classes.titleInput} placeholder="Title"></input>
+        <Editor className={classes.editor} value={state.value} onChange={onChange} onKeyDown={onKeyDown} renderBlock={renderBlock} renderMark={renderMark} placeholder="Write your poetry..." />    
+    </div>)
 
 }
 

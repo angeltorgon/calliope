@@ -24,7 +24,7 @@ function Navbar(props) {
                             style={{ fill: "#000000" }}><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: "normal" }}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#de6998"><g id="surface1"><path d="M116.45833,9.63021l-64.5,71.66667l-4.25521,4.70313l4.25521,4.70313l64.5,71.66667l10.75,-9.40625l-60.24479,-66.96354l60.24479,-66.96354z"></path></g></g></g></svg>
                     </div>
                     <div className={classes.linkContainer}>
-                        <input className={classes.searchInput} name="password" placeholder="Search" />
+                        <input className={classes.searchInput} placeholder="Search" />
                     </div>
                 </div>
             ) : null}</>

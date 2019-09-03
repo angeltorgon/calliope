@@ -35,7 +35,6 @@ export default function PoemStatusBar(props) {
         handleLike();
     };
 
-
     return (
         <div className={classes.poemStatusBarContainer}>
 
