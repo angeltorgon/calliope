@@ -6,7 +6,7 @@ export default function Write() {
     const classes = useStyles();
 
     return (
-        <div className={classes.container}>
+        <div className={classes.editorContainer}>
             <SlateEditor />
         </div>
     )
