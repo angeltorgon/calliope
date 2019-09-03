@@ -7,6 +7,9 @@ const useStyles = makeStyles(theme => ({
         padding: "5px",
         borderRadius: "50%",
         outline: "none",
+        "&:focus": {
+            outline: "none",
+        }
     },
     dialogHotDog: {
         height: "40px",
@@ -25,7 +28,10 @@ const useStyles = makeStyles(theme => ({
         margin: "3px",
         display: "flex",
         width: "100%",
-        justifyContent: "flex-start"
+        justifyContent: "flex-start",
+        "&:focus": {
+            outline: "none",
+        }
     }
 }));
 
