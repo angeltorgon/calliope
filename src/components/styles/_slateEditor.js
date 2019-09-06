@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: "15px",
         fontSize: ".9rem",
         height: "100%",
+        backgroundColor: "#fffafc",
         "&:focus": {
             outline: "none",
             backgroundColor: "#fffafc",
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
         padding: "20px",
         fontSize: ".9rem",
         height: "100%",
+        backgroundColor: "#fffafc",
         "&::placeholder": {
             color: "#B9BABC"
         },
@@ -35,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         border: "0",
         fontSize: ".9rem",
+        backgroundColor: "#fffafc",
         "&::placeholder": {
             color: "#B9BABC"
         },

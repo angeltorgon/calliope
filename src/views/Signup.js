@@ -122,7 +122,7 @@ function Signup(props) {
 
     return (
         <div className={classes.container}>
-            <Card className={classes.mockup}><img className={classes.mockup} src={require("../images/iphone-x-mockup2.png")} /></Card>
+            {/* <Card className={classes.mockup}><img className={classes.mockup} src={require("../images/iphone-x-mockup2.png")} /></Card> */}
             <Card className={classes.card}>
                 {props.started ? (
                     <Loader type="Oval" color="#DA6991" height={80} width={80} />

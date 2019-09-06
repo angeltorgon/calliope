@@ -9,10 +9,21 @@ const initialValue = Value.fromJSON({
         nodes: [
             {
                 object: 'block',
-                type: 'quote',
+                type: 'title',
                 nodes: [
                     {
                         object: 'text',
+                        text:"Title"
+                    },
+                ],
+            },
+            {
+                object: 'block',
+                type: 'paragraph',
+                nodes: [
+                    {
+                        object: 'text',
+                        text:"Paragraph"
                     },
                 ],
             },
@@ -20,17 +31,26 @@ const initialValue = Value.fromJSON({
     },
 })
 
-function CodeNode(props) {
-    return (
-        <pre {...props.attributes}>
-            <code>{props.children}</code>
-        </pre>
-    )
-}
+const schema = {
+    document: {
+      nodes: [
+        {
+          match: [{ type: 'paragraph' }],
+        },
+      ],
+    },
+    blocks: {
+      paragraph: {
+        nodes: [
+          {
+            match: { object: 'text' },
+          },
+        ],
+      },
+    },
+  }
 
-function BoldMark(props) {
-    return <strong>{props.children}</strong>
-}
+
 
 // Define our app...
 const SlateEditor = () => {
@@ -45,52 +65,29 @@ const SlateEditor = () => {
         setState({ value });
     }
 
-    const onKeyDown = (event, editor, next) => {
-        if (!event.ctrlKey) return next()
+    const renderTitle = (props) => {
 
-        // Decide what to do based on the key code...
-        switch (event.key) {
-            // When "B" is pressed, add a "bold" mark to the text.
-            case 'b': {
-                const isBold = editor.value.marks.some(mark => mark.type == 'bold')
-                event.preventDefault()
-                if (isBold) {
-                    editor.removeMark('bold');
-                } else {
-                    editor.addMark('bold');
-                }
-            }
-            default: {
-                return next()
-            }
-        }
-    }
-
-    const renderBlock = (props, editor, next) => {
-        switch (props.node.type) {
-            case 'code':
-                return <CodeNode {...props} />
-            default:
-                return next()
-        }
-    }
-
-    // Add a `renderMark` method to render marks.
-    const renderMark = (props, editor, next) => {
-        switch (props.mark.type) {
-            case 'bold':
-                return <BoldMark {...props} />
-            default:
-                return next()
-        }
     }
 
     // Render the editor.
     return (
-    <div className={classes.editorContainer} >
-        <input className={classes.titleInput} placeholder="Title"></input>
-        <Editor className={classes.editor} value={state.value} onChange={onChange} onKeyDown={onKeyDown} renderBlock={renderBlock} renderMark={renderMark} placeholder="Write your poetry..." />    
-    </div>)
+        <div className={classes.editorContainer} >
+            <Editor schema={schema} className={classes.editor} value={state.value} onChange={onChange}  placeholder="Write your poetry..." />
+        </div>
+    )
 }
+
+const renderBlock = (props, editor, next) => {
+    const { attributes, children, node } = props
+    switch (node.type) {
+      case 'title':
+        return <h2 {...attributes}>{children}</h2>
+      case 'paragraph':
+        return <p {...attributes}>{children}</p>
+      default:
+        return next()
+    }
+  }
+
 
 export default SlateEditor;
