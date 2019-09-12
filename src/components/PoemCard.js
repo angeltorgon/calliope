@@ -9,6 +9,7 @@ import PoemStatusBar from "./PoemStatusBar";
 import PoemMenuDialog from "./dialogs/PoemMenuDialog"
 
 function PoemCard(props) {
+    console.log(props.poem);
     const classes = useStyles();
     const poemDoc = Firebase.Poems.doc(props.poem.docId);
     const [poem, setPoem] = useState(props.poem);
