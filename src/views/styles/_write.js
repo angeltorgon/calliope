@@ -8,16 +8,6 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "center",
         padding: "30px 0px 60px 0px",
         height: "100vh",
-    },
-    submitButton: {
-        position: "absolute",
-        bottom: "70px",
-        right: "20px"
-    },
-    saveButton: {
-        position: "absolute",
-        bottom: "70px",
-        right: "120px"
     }
 }));
 

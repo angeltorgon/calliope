@@ -52,7 +52,8 @@ const useStyles = makeStyles((theme) => ({
     linkContainer: {
         height: "100%",
         width: "auto",
-        display: "flex"
+        display: "flex",
+        alignItems: "center"
     },
     linkPink: {
         fontSize: "20px",
@@ -63,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         padding: "10px",
-
         "&:hover": {
             backgroundColor: "whitesmike",
             color: "black",
@@ -73,6 +73,23 @@ const useStyles = makeStyles((theme) => ({
     logout: {
         width: "40px",
         height: "40px",
+    },
+    publishButton: {
+        boxSizing: "border-box",
+        backgroundColor: "#DE6998",
+        color: "white",
+        height: "35px",
+        margin: "5px",
+        marginRight: "15px",
+        "&:hover": {
+            backgroundColor: "#d4618f",
+            textDecoration: "none",
+        }
+    },
+    saveButton: {
+        color: "#DE6998",
+        height: "35px",
+        margin: "5px"
     }
 }));
 

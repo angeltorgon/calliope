@@ -100,8 +100,6 @@ const SlateEditor = () => {
   return (
     <div className={classes.editorContainer} >
       <Editor renderBlock={renderBlock} schema={schema} className={classes.editor} value={state.value} onChange={onChange} placeholder="Write your poetry..." />
-      <button onClick={handleSubmit} className={classes.submitButton}>Submit</button>
-      <button onClick={handleSubmit} className={classes.saveButton}>Save As Draft</button>
     </div>
   )
 }

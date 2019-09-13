@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: "#fffafc",
             border: "0px",
         }
-    },
+    }
 }));
 
 export default useStyles;
