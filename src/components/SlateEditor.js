@@ -1,61 +1,57 @@
 // Import React!
 import React, { useState } from 'react';
 import { Editor } from 'slate-react';
-import { Value } from 'slate';
+import { Block, Value } from 'slate';
 import useStyles from './styles/_slateEditor';
 import Firebase from '../firebase';
 
 const initialValue = Value.fromJSON({
   document: {
-    nodes: [
+    "object": "document",
+    "nodes": [
       {
-        object: 'block',
-        type: 'title',
-        nodes: [
+        "object": "block",
+        "type": "title",
+        "nodes": [
           {
-            object: 'text',
-            text: "Title"
-          },
-        ],
+            "object": "text",
+            "text": "Give it a spicy title!"
+          }
+        ]
       },
       {
-        object: 'block',
-        type: 'paragraph',
-        nodes: [
+        "object": "block",
+        "type": "paragraph",
+        "nodes": [
           {
-            object: 'text',
-            text: "Paragraph"
-          },
-        ],
-      },
-    ],
-  },
+            "object": "text",
+            "text":
+              "This example shows how to enforce \n your layout with schema - specific rules. \n This document will always have a title \n block at the top and at least one \n paragraph in the body.Try \n deleting them and see what happens!"
+          }
+        ]
+      }
+    ]
+  }
 })
 
 const schema = {
   document: {
     nodes: [
-      {
-        object: 'block',
-        type: 'title',
-        nodes: [
-          {
-            object: 'text',
-            text: "Title"
-          },
-        ],
-      },
-      {
-        object: 'block',
-        type: 'paragraph',
-        nodes: [
-          {
-            object: 'text',
-            text: "Paragraph"
-          },
-        ],
-      },
+      { match: { type: 'title' }, min: 1, max: 1 },
+      { match: { type: 'paragraph' }, min: 1 },
     ],
+    normalize: (editor, { code, node, child, index }) => {
+      switch (code) {
+        case 'child_type_invalid': {
+          const type = index === 0 ? 'title' : 'paragraph'
+          return editor.setNodeByKey(child.key, type)
+        }
+        case 'child_min_invalid': {
+          const block = Block.create(index === 0 ? 'title' : 'paragraph')
+          return editor.insertNodeByKey(node.key, index, block)
+        }
+      }
+    },
   },
 }
 
@@ -105,7 +101,13 @@ const SlateEditor = () => {
 }
 
 const TitleNode = props => {
-  return <h1>{props.children}</h1>;
+  const classes = useStyles();
+  return <h1 className={classes.poemTitle}>{props.children}</h1>;
+};
+
+const PoemNode = props => {
+  const classes = useStyles();
+  return <quote className={classes.poemTitle}>{props.children}</quote>;
 };
 
 const renderBlock = (props, editor, next) => {
@@ -114,7 +116,7 @@ const renderBlock = (props, editor, next) => {
     case 'title':
       return <TitleNode {...attributes}>{children}</TitleNode>
     case 'paragraph':
-      return <span {...attributes}>{children}</span>
+      return <PoemNode {...attributes}>{children}</PoemNode>
     default:
       return next()
   }

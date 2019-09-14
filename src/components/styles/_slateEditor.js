@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: "#fffafc",
             border: "0px",
         }
+    },
+    poemTitle: {
+        color: "#f2a5c4"
     }
 }));
 
