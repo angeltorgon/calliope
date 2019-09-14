@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Editor } from 'slate-react';
 import { Block, Value } from 'slate';
 import useStyles from './styles/_slateEditor';
-import Firebase from '../firebase';
+import Firebase from '../../firebase';
 
 const initialValue = Value.fromJSON({
   document: {

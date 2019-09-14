@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { authWithGoogle } from "../store/actions";
+import { authWithGoogle } from "../../store/actions";
 import { withRouter } from "react-router-dom";
 import useStyles from "./styles/_writeNavbar";
 import { Button } from "@material-ui/core";

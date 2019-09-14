@@ -1,6 +1,6 @@
 import React from 'react';
-import SlateEditor from '../components/SlateEditor';
-import WriteNavbar from '../components/WriteNavbar';
+import SlateEditor from '../components/slate/SlateEditor';
+import WriteNavbar from '../components/slate/WriteNavbar';
 import useStyles from './styles/_write';
 
 export default function Write() {
