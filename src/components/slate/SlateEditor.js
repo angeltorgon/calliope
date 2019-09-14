@@ -12,7 +12,7 @@ const SlateEditor = (props) => {
   // Render the editor.
   return (
     <div className={classes.editorContainer} >
-      <Editor renderBlock={renderBlock} schema={schema} className={classes.editor} value={props.value} onChange={props.onChange} placeholder="Write your poetry..." />
+      <Editor autoFocus={true} renderBlock={renderBlock} schema={schema} className={classes.editor} value={props.value} onChange={props.onChange} placeholder="Write your poetry..." />
     </div>
   )
 }

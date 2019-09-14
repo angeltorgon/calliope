@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import PoemCard from "./PoemCard";
 import { makeStyles } from "@material-ui/core";
+import { Value } from "slate";
 
 import Firebase from "../firebase"
 
