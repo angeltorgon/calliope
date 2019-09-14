@@ -24,7 +24,7 @@ function Navbar(props) {
                     </div>
                     <div className={classes.linkContainer}>
                         <Button className={classes.saveButton}>Save</Button>
-                        <Button className={classes.publishButton}>Publish</Button>
+                        <Button onClick={props.handleSubmit} className={classes.publishButton}>Publish</Button>
                     </div>
                 </div>
             ) : null}</>
