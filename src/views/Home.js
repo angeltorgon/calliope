@@ -3,6 +3,7 @@ import Loader from "react-loader-spinner";
 import { connect } from "react-redux";
 import PoemList from "../components/PoemList.js";
 import Navbar from "../components/Navbar.js";
+import BottomNavbar from "../components/BottomNavbar";
 import { fetchPoems } from "../store/actions";
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
         <div>
             <Navbar />
             <PoemList />
+            <BottomNavbar />
         </div>
     );
 }
