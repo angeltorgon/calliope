@@ -18,58 +18,8 @@ const useStyles = makeStyles((theme) => ({
         bottom: 0,
         width: "100%"
     },
-    menuButton: {
-        marginRight: theme.spacing(2)
-    },
-    logo: {
-        textDecoration: "none",
-        fontFamily: "charcoal",
-        color: "white",
-        fontSize: "20px",
-        height: "48px",
-        width: "150px",
-        textAlign: "center",
-        "&:hover": {
-            color: "white",
-            textDecoration: "none",
-            backgroundColor: "#DE6998"
-        }
-    },
-    link: {
-        fontSize: "20px",
-        textDecoration: "none",
-        color: "white",
-        height: "100%",
-        width: "120px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#DA6991",
-        "&:hover": {
-            textDecoration: "none",
-            color: "white",
-            textDecoration: "none",
-            backgroundColor: "#DE6998"
-        }
-    },
-    linkPink: {
-        fontSize: "20px",
-        textDecoration: "none",
-        color: "grey",
-        height: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "30px",
-        "&:hover": {
-            backgroundColor: "whitesmike",
-            color: "black",
-            textDecoration: "none"
-        }
-    },
-    logout: {
-        width: "40px",
-        height: "40px",
+    icon: {
+
     }
 }));
 

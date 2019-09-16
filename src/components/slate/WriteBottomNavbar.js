@@ -13,7 +13,9 @@ function Navbar(props) {
     };
 
     return (
-        <div className={classes.nav}></div>
+        <div className={classes.nav}>
+            <i class="fas fa-bold"></i>
+        </div>
     )
 }
 
