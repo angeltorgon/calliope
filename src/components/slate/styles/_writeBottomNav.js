@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: "scroll"
     },
     icon: {
-        color: "lightpink",
+        color: "#F2A5C4",
     },
     iconButton: {
         "&:focus": {
