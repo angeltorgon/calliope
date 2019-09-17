@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { authWithGoogle } from "../../store/actions";
 import { withRouter } from "react-router-dom";
 import useStyles from "./styles/_writeBottomNav";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBold, faItalic, faUnderline, faAlignCenter, faAlignLeft, faAlignRight, faPalette, faFill } from '@fortawesome/free-solid-svg-icons'
 import { Button } from "@material-ui/core";
 
 function Navbar(props) {
@@ -15,6 +17,14 @@ function Navbar(props) {
     return (
         <div className={classes.nav}>
             <i class="fas fa-bold"></i>
+            <Button><FontAwesomeIcon className={classes.icon} icon={faBold} size="2x" /></Button>
+            <Button><FontAwesomeIcon className={classes.icon} icon={faItalic} size="2x" /></Button>
+            <Button><FontAwesomeIcon className={classes.icon} icon={faUnderline} size="2x" /></Button>
+            <Button><FontAwesomeIcon className={classes.icon} icon={faAlignLeft} size="2x" /></Button>
+            <Button><FontAwesomeIcon className={classes.icon} icon={faAlignCenter} size="2x" /></Button>
+            <Button><FontAwesomeIcon className={classes.icon} icon={faAlignRight} size="2x" /></Button>
+            <Button><FontAwesomeIcon className={classes.icon} icon={faPalette} size="2x" /></Button>
+            <Button><FontAwesomeIcon className={classes.icon} icon={faFill} size="2x" /></Button>
         </div>
     )
 }
