@@ -10,10 +10,6 @@ import { Button } from "@material-ui/core";
 function Navbar(props) {
     const classes = useStyles();
 
-    const goBack = e => {
-        props.history.goBack()
-    };
-
     return (
         <div className={classes.nav}>
             <i class="fas fa-bold"></i>

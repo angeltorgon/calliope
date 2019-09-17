@@ -84,12 +84,23 @@ const useStyles = makeStyles((theme) => ({
         "&:hover": {
             backgroundColor: "#d4618f",
             textDecoration: "none",
+        },
+        "&:focus": {
+            outline: "none",
+            boxShadow: "0px 0px 3px 1px rgba(112,82,112,1)",
+            border: "0px",
         }
     },
     saveButton: {
         color: "#DE6998",
         height: "35px",
-        margin: "5px"
+        margin: "5px",
+        "&:focus": {
+            outline: "none",
+            backgroundColor: "#fffafc",
+            boxShadow: "0px 0px 3px 1px rgba(112,82,112,1)",
+            border: "0px",
+        }
     }
 }));
 

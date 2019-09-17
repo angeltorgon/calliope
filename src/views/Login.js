@@ -17,7 +17,8 @@ function Login(props) {
     const classes = useStyles();
     const [inputs, setInputs] = useState({
         email: "",
-        password: ""
+        password: "",
+        signingUp: false,
     });
 
     const onChange = (e) => {
@@ -54,6 +55,7 @@ function Login(props) {
                             <p className={classes.error}>{props.error}</p>
                             <p>Don't have an account? <Link to="/">Signup</Link></p>
                         </>
+
                     )}
             </Card>
         </div>
