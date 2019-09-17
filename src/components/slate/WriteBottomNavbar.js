@@ -17,14 +17,14 @@ function Navbar(props) {
     return (
         <div className={classes.nav}>
             <i class="fas fa-bold"></i>
-            <Button><FontAwesomeIcon className={classes.icon} icon={faBold} size="2x" /></Button>
-            <Button><FontAwesomeIcon className={classes.icon} icon={faItalic} size="2x" /></Button>
-            <Button><FontAwesomeIcon className={classes.icon} icon={faUnderline} size="2x" /></Button>
-            <Button><FontAwesomeIcon className={classes.icon} icon={faAlignLeft} size="2x" /></Button>
-            <Button><FontAwesomeIcon className={classes.icon} icon={faAlignCenter} size="2x" /></Button>
-            <Button><FontAwesomeIcon className={classes.icon} icon={faAlignRight} size="2x" /></Button>
-            <Button><FontAwesomeIcon className={classes.icon} icon={faPalette} size="2x" /></Button>
-            <Button><FontAwesomeIcon className={classes.icon} icon={faFill} size="2x" /></Button>
+            <Button className={classes.iconButton}><FontAwesomeIcon className={classes.icon} icon={faBold} size="2x" ß /></Button>
+            <Button className={classes.iconButton}><FontAwesomeIcon className={classes.icon} icon={faItalic} size="2x" /></Button>
+            <Button className={classes.iconButton}><FontAwesomeIcon className={classes.icon} icon={faUnderline} size="2x" /></Button>
+            <Button className={classes.iconButton}><FontAwesomeIcon className={classes.icon} icon={faAlignLeft} size="2x" /></Button>
+            <Button className={classes.iconButton}><FontAwesomeIcon className={classes.icon} icon={faAlignCenter} size="2x" /></Button>
+            <Button className={classes.iconButton}><FontAwesomeIcon className={classes.icon} icon={faAlignRight} size="2x" /></Button>
+            <Button className={classes.iconButton}><FontAwesomeIcon className={classes.icon} icon={faPalette} size="2x" /></Button>
+            <Button className={classes.iconButton}><FontAwesomeIcon className={classes.icon} icon={faFill} size="2x" /></Button>
         </div>
     )
 }
