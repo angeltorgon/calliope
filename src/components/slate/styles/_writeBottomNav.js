@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         position: "fixed",
         bottom: 0,
-        width: "100%"
+        width: "100%",
+        overflow: "scroll"
     },
     icon: {
         color: "lightpink"
