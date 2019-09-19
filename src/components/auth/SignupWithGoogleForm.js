@@ -87,44 +87,19 @@ function signupWithGoogleForm(props) {
     };
     return (
         <form className={classes.loginForm} onSubmit={onSubmit}>
-            <input onFocus={onFocus} className={classes.formInput} type="email" name="email" placeholder="Email" value={inputs.email} onChange={changeHandler} />
             <div className={classes.inputContainer}>
 
                 <input className={classes.formInput} type="text" name="username" placeholder="Username" value={inputs.username} onChange={changeHandler} />
-                {/* <div className={classes.inputError}>x</div> */}
-                {usernameAvailable && searchedUsernameAvailable ?
-                    (<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                        className={classes.inputSuccess}
-                        width="50" height="50"
-                        viewBox="0 0 172 172"
-                        style={{ fill: "#000000" }}><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: "normal" }}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#2ecc71"><path d="M86,6.88c-43.62952,0 -79.12,35.49048 -79.12,79.12c0,43.62952 35.49048,79.12 79.12,79.12c43.62952,0 79.12,-35.49048 79.12,-79.12c0,-15.6864 -4.60863,-30.30871 -12.51031,-42.61703l-4.70984,5.56313c6.5188,10.84976 10.34015,23.5003 10.34015,37.0539c0,39.83176 -32.40824,72.24 -72.24,72.24c-39.83176,0 -72.24,-32.40824 -72.24,-72.24c0,-39.83176 32.40824,-72.24 72.24,-72.24c18.72392,0 35.75504,7.22319 48.60344,18.95359l4.50156,-5.31453c-14.0524,-12.7452 -32.6886,-20.51906 -53.105,-20.51906zM148.73297,26.67344l-66.4686,78.43469l-27.97687,-26.09563l-4.68969,5.03235l33.25109,31.01375l71.13813,-83.93735z"></path></g></g></svg>)
-                    : null}
-
-                {!usernameAvailable && searchedUsernameAvailable ?
-                    (<svg className={classes.inputError} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" z="10px"
-                        width="50" height="50"
-                        viewBox="0 0 172 172"
-                        style={{ fill: "#000000" }}><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: "normal" }}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#e74c3c"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM60.29406,55.04l20.94234,30.76515l-21.19765,31.15485h8.75453l16.5214,-24.41594h0.68531l16.22578,24.41594h9.26515l-20.98265,-30.80547l21.45297,-31.11453h-8.79485l-16.56172,24.63094h-0.69203l-16.3064,-24.63094z"></path></g></g></svg>) : null}
             </div>
-
-            <input className={classes.formInput} type="password" name="password" placeholder="Password" value={inputs.password} onChange={changeHandler} />
             <div className={classes.inputContainer}>
-                <input className={classes.formInput} type="password" name="confirmPassword" placeholder="Confirm Password" value={inputs.confirmPassword} onChange={changeHandler} />
-                {/* <div className={classes.inputError}>x</div> */}
-                {passwordSuccess ?
-                    (<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                        className={classes.inputSuccess}
-                        width="50" height="50"
-                        viewBox="0 0 172 172"
-                        style={{ fill: "#000000" }}><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: "normal" }}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#2ecc71"><path d="M86,6.88c-43.62952,0 -79.12,35.49048 -79.12,79.12c0,43.62952 35.49048,79.12 79.12,79.12c43.62952,0 79.12,-35.49048 79.12,-79.12c0,-15.6864 -4.60863,-30.30871 -12.51031,-42.61703l-4.70984,5.56313c6.5188,10.84976 10.34015,23.5003 10.34015,37.0539c0,39.83176 -32.40824,72.24 -72.24,72.24c-39.83176,0 -72.24,-32.40824 -72.24,-72.24c0,-39.83176 32.40824,-72.24 72.24,-72.24c18.72392,0 35.75504,7.22319 48.60344,18.95359l4.50156,-5.31453c-14.0524,-12.7452 -32.6886,-20.51906 -53.105,-20.51906zM148.73297,26.67344l-66.4686,78.43469l-27.97687,-26.09563l-4.68969,5.03235l33.25109,31.01375l71.13813,-83.93735z"></path></g></g></svg>)
-                    : null}
 
-                {error ?
-                    (<svg className={classes.inputError} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" z="10px"
-                        width="50" height="50"
-                        viewBox="0 0 172 172"
-                        style={{ fill: "#000000" }}><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: "normal" }}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#e74c3c"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM60.29406,55.04l20.94234,30.76515l-21.19765,31.15485h8.75453l16.5214,-24.41594h0.68531l16.22578,24.41594h9.26515l-20.98265,-30.80547l21.45297,-31.11453h-8.79485l-16.56172,24.63094h-0.69203l-16.3064,-24.63094z"></path></g></g></svg>) : null}
+                <input className={classes.formInput} type="text" name="bio" placeholder="Bio" value={inputs.username} onChange={changeHandler} />
             </div>
+            <div className={classes.inputContainer}>
+
+                <input className={classes.formInput} type="text" name="city" placeholder="City" value={inputs.username} onChange={changeHandler} />
+            </div>
+
             <button
                 variant="contained"
                 color="primary"
@@ -132,7 +107,7 @@ function signupWithGoogleForm(props) {
             // onClick={props.authWithGoogle}
             // onClick={signUp}
             >
-                Signup
+                Signup with Google
                                     </button>
             <p onClick={props.signUp} className={classes1.goBack}>Go back</p>
         </form>
