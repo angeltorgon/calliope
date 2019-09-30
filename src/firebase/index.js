@@ -15,9 +15,9 @@ class FirebaseClass {
 
     firebase = firebase.initializeApp(this.firebaseConfig);
 
-    firebaseAuth = firebase.auth();
+    firebaseAuth = firebase.auth(); // reference to our app
 
-    authWithGoogle = () => this.firebaseAuth.signInWithPopup(this.provider);
+    authWithGoogle = () => this.firebaseAuth.signInWithRedirect(this.provider);
 
     registerWithEmail = (email, password) =>
         this.firebaseAuth.createUserWithEmailAndPassword(email, password);

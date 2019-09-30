@@ -32,7 +32,9 @@ function Signup(props) {
         email: "",
         username: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        firstName: "",
+        lastName: ""
     });
 
 
@@ -49,26 +51,26 @@ function Signup(props) {
         props.signupWithEmail(inputs);
     };
 
-    const CustomTextInput = withStyles({
+    const CustomTextField = withStyles({
         root: {
             '& label.Mui-focused': {
                 color: "grey",
             },
-            '& .MuiInput-underline:after': {
-                borderBottomColor: 'green',
-            },
-            '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                    borderColor: 'lightgrey',
-                },
-                '&:hover fieldset': {
-                    borderColor: 'grey',
-                },
-                '&.Mui-focused fieldset': {
-                    border: ".5px solid grey",
-                    backgroundColor: '#fffafc',
-                },
-            },
+            // '& .MuiInput-underline:after': {
+            //     borderBottomColor: 'green',
+            // },
+            // '& .MuiOutlinedInput-root': {
+            //     '& fieldset': {
+            //         borderColor: 'lightgrey',
+            //     },
+            //     '&:hover fieldset': {
+            //         borderColor: 'grey',
+            //     },
+            //     '&.Mui-focused fieldset': {
+            //         border: ".5px solid lightgrey",
+            //         backgroundColor: '#fffafc',
+            //     },
+            // },
         },
     })(TextField);
 
@@ -88,7 +90,7 @@ function Signup(props) {
                     borderColor: 'grey',
                 },
                 '&.Mui-focused fieldset': {
-                    border: ".5px solid grey",
+                    border: ".5px solid lightgrey",
                     backgroundColor: '#fffafc',
                 },
             },
@@ -96,55 +98,11 @@ function Signup(props) {
     })(KeyboardDatePicker);
 
 
-    const changeHandler = (e) => {
-        setInputs({ ...inputs, [e.target.name]: e.target.value });
-        console.log("event value", e.target.value)
-
-        // if (e.target.name === "confirmPassword") {
-        //     if (e.target.value.length === inputs.password.length) {
-        //         console.log(e.target.value, inputs.password);
-        //         console.log("target inputs password", inputs.password);
-        //         if (e.target.value == inputs.password) {
-        //             console.log("show success icon");
-        //             setPasswordSuccess(true);
-        //             setError(false);
-        //             setReachedMaxLength(true);
-        //         } else {
-        //             setError(true);
-        //             setHadError(true);
-        //             setPasswordSuccess(false);
-        //             setReachedMaxLength(true);
-        //         }
-        //     } if (e.target.value.length > inputs.password.length) {
-        //         setError(true);
-        //         setPasswordSuccess(false);
-        //         setHadError(true);
-        //         setReachedMaxLength(true);
-        //         console.log("show error")
-
-        //     } if (hadError && e.target.value.length < inputs.password.length || reachedMaxLength && e.target.value.length < inputs.password.length) {
-        //         setError(true);
-        //         setPasswordSuccess(false);
-        //         console.log("show error")
-
-        //     }
-        // }
-
-        // if (e.target.name === "username") {
-        //     Firebase.gatUserByUsername(e.target.value)
-        //         .then((querySnapshot) => {
-        //             if (querySnapshot.empty) {
-        //                 setSearchedUsernameAvailable(true);
-        //                 setUsernameAvailable(true);
-        //             } else {
-        //                 setUsernameAvailable(false);
-        //                 setSearchedUsernameAvailable(true);
-        //             }
-        //         })
-        //         .catch(function (error) {
-        //             console.log("Error getting documents: ", error);
-        //         });
-        // }
+    const changeHandler = name => event => {
+        console.log("event value", event.target.value)
+        console.log("event name", name)
+        setInputs({ ...inputs, [name]: event.target.value });
+        console.log("inputs", inputs);
     };
 
     const signUp = () => {
@@ -176,30 +134,30 @@ function Signup(props) {
                                 </button>
                                     OR
                                     <form className={classes.loginForm} onSubmit={onSubmit}>
-                                        <CustomTextInput
+                                        <CustomTextField
                                             className={classes.formInput}
                                             type="email"
                                             name="email"
                                             variant="outlined"
-                                            placeholder="Email"
+                                            label="Email"
                                             value={inputs.email}
-                                            onChange={changeHandler} />
-                                        <CustomTextInput
+                                            onChange={changeHandler('email')} />
+                                        <TextField
                                             className={classes.formInput}
                                             type="password"
                                             name="password"
                                             variant="outlined"
-                                            placeholder="Password"
+                                            label="Password"
                                             value={inputs.password}
-                                            onChange={changeHandler} />
-                                        <CustomTextInput
+                                            onChange={changeHandler('password')} />
+                                        <TextField
                                             className={classes.formInput}
                                             type="password"
                                             name="confirmPassword"
                                             variant="outlined"
-                                            placeholder="Confirm Password"
+                                            label="Confirm Password"
                                             value={inputs.confirmPassword}
-                                            onChange={changeHandler} />
+                                            onChange={changeHandler('confirmPassword')} />
                                         <button className={classes.button} // onClick={signUpWithEmail}
                                         >Signup with Email</button>
                                     </form>
@@ -211,36 +169,36 @@ function Signup(props) {
                                     <form className={classes.loginForm} onSubmit={onSubmit}>
                                         <div className={classes.inputContainer}>
 
-                                            <CustomTextInput
+                                            <TextField
                                                 className={classes.formInput}
                                                 label="Username"
                                                 type="text"
                                                 variant="outlined"
                                                 name="username"
                                                 value={inputs.username}
-                                                onChange={changeHandler} />
+                                                onChange={changeHandler('username')} />
                                         </div>
                                         <div className={classes.inputContainer}>
 
-                                            <CustomTextInput 
-                                                className={classes.formInput} 
-                                                type="text" 
-                                                name="firstName" 
+                                            <TextField
+                                                className={classes.formInput}
+                                                type="text"
+                                                name="firstName"
                                                 variant="outlined"
-                                                placeholder="First Name" 
-                                                value={inputs.username} 
-                                                onChange={changeHandler} />
+                                                label="First Name"
+                                                value={inputs.firstName}
+                                                onChange={changeHandler('firstName')} />
                                         </div>
                                         <div className={classes.inputContainer}>
 
-                                            <CustomTextInput 
-                                                className={classes.formInput} 
-                                                type="text" 
-                                                name="lastName" 
+                                            <TextField
+                                                className={classes.formInput}
+                                                type="text"
+                                                name="lastName"
                                                 variant="outlined"
-                                                placeholder="Last Name" 
-                                                value={inputs.username} 
-                                                onChange={changeHandler} />
+                                                label="Last Name"
+                                                value={inputs.lastName}
+                                                onChange={changeHandler('lastName')} />
                                         </div>
                                         <div className={classes.inputContainer}>
                                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -253,7 +211,6 @@ function Signup(props) {
                                                     value={selectedDate}
                                                     onChange={handleDateChange}
                                                     inputVariant="outlined"
-                                                    styles={{ backgroundColor: 'blue' }}
                                                     KeyboardButtonProps={{
                                                         'aria-label': 'change date',
                                                     }}

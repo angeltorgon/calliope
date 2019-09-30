@@ -111,10 +111,6 @@ const useStyles = makeStyles(theme => ({
     datePicker: {
         width: "100%",
         margin: "5px 0",
-        padding: "10px",
-        borderRadius: "5px",
-        display: "flex",
-        fontSize: ".9rem",
         padding: "0px",
         "&:focus": {
             outline: "none",

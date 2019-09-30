@@ -26,11 +26,9 @@ class App extends Component {
             }
         });
     }
-
     componentDidMount() {
         this.authListener();
     }
-
     render() {
         return (
             <div className="app-container">
