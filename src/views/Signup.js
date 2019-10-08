@@ -1,20 +1,13 @@
 import 'date-fns';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
 import useStyles from "./styles/_publicRoutes";
 import { Link } from "react-router-dom";
-import Firebase from "../firebase";
-import SignupWithGoogleForm from "../components/auth/SignupWithGoogleForm"
-import SignupWithEmailForm from "../components/auth/SignupWithEmailForm"
 import TextInput from "../components/inputs/TextInput";
-
-import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
-import DateFnsUtils from '@date-io/date-fns';
 import {
     Card,
     Divider,
-    withStyles
 } from "@material-ui/core";
 
 import { authWithGoogle, signupWithEmail } from "../store/actions";
@@ -37,21 +30,12 @@ function Signup(props) {
         lastName: ""
     });
 
-
-    const [error, setError] = useState(false);
-    const [passwordSuccess, setPasswordSuccess] = useState(false);
-    const [hadError, setHadError] = useState(false);
-    const [reachedMaxLength, setReachedMaxLength] = useState(false);
-    const [usernameAvailable, setUsernameAvailable] = useState(null);
-    const [searchedUsernameAvailable, setSearchedUsernameAvailable] = useState(null);
-
-
     const onSubmit = (e) => {
         e.preventDefault();
         props.signupWithEmail(inputs);
     };
 
-    const changeHandler = name => event => {
+    const onChange = (event, name) => {
         setInputs({ ...inputs, [name]: event.target.value });
     };
 
@@ -86,22 +70,22 @@ function Signup(props) {
                                     <form className={classes.loginForm} onSubmit={onSubmit}>
                                         <TextInput
                                             className={classes.formInput}
+                                            type="email"
+                                            name="email"
+                                            variant="outlined"
+                                            label="Email"
+                                            placeholder="Email"
+                                            value={inputs.email}
+                                            onChange={onChange} />
+                                        <TextInput
+                                            className={classes.formInput}
                                             type="password"
                                             name="password"
                                             variant="outlined"
                                             label="Password"
                                             placeholder="Password"
                                             value={inputs.password}
-                                            onChange={changeHandler('password')} />
-                                        <TextInput
-                                            className={classes.formInput}
-                                            type="password"
-                                            name="confirmPassword"
-                                            variant="outlined"
-                                            label="Confirm Password"
-                                            placeholder="Confirm Password"
-                                            value={inputs.confirmPassword}
-                                            onChange={changeHandler('confirmPassword')} />
+                                            onChange={onChange} />
                                         <button className={classes.button} // onClick={signUpWithEmail}
                                         >Signup with Email</button>
                                     </form>
@@ -121,7 +105,7 @@ function Signup(props) {
                                                 name="username"
                                                 placeholder="Username"
                                                 value={inputs.username}
-                                                onChange={changeHandler('username')} />
+                                                onChange={onChange} />
                                         </div>
                                         <div className={classes.inputContainer}>
 
@@ -133,7 +117,7 @@ function Signup(props) {
                                                 label="First Name"
                                                 placeholder="First Name"
                                                 value={inputs.firstName}
-                                                onChange={changeHandler('firstName')} />
+                                                onChange={onChange} />
                                         </div>
                                         <div className={classes.inputContainer}>
 
@@ -145,7 +129,7 @@ function Signup(props) {
                                                 label="Last Name"
                                                 placeholder="Last Name"
                                                 value={inputs.lastName}
-                                                onChange={changeHandler('lastName')} />
+                                                onChange={onChange} />
                                         </div>
                                     </form>
                                     <button

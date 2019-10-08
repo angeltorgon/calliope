@@ -6,14 +6,13 @@ import { authWithGoogle } from "../store/actions";
 import Loader from "react-loader-spinner";
 import useStyles from "./styles/_publicRoutes";
 import { Link } from "react-router-dom";
-import { loginWithEmail } from "../store/actions"
+import { loginWithEmail } from "../store/actions";
 
 import TextInput from "../components/inputs/TextInput"
 
 import {
     Card,
     Divider,
-    Button
 } from "@material-ui/core";
 
 function Login(props) {
@@ -24,8 +23,8 @@ function Login(props) {
         signingUp: false,
     });
 
-    const onChange = (e, name) => {
-        setInputs({ ...inputs, [name]: e.target.value })
+    const onChange = (event, name) => {
+        setInputs({ ...inputs, [name]: event.target.value })
     };
 
     const onSubmit = () => {

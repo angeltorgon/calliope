@@ -30,35 +30,25 @@ export const authWithGoogle = () => dispatch => {
 
 export const signupWithEmail = user => dispatch => {
     dispatch({ type: AUTH_START });
-    Firebase.getUserByUsername(user.username)
-        .then((querySnapshot) => {
-            if (querySnapshot.empty) {
-                const { email, username, password } = user;
-                Firebase.registerWithEmail(email, password)
-                    .then(res => {
-                        localStorage.setItem("token", res.user.ra);
-                        Usernames.add({ username }).then(res => {
-                            dispatch({ type: AUTH_SUCCESS });
-                        }).catch((error) => {
-                            dispatch({ type: AUTH_FAILURE, payload: error.message });
-                            console.error(error);
-                            return "There was an error. Try again."
-                        });
-                    })
-                    .catch(error => {
-                        console.error(error);
-                        dispatch({ type: AUTH_FAILURE, payload: error.message });
-                    })
-            } else {
-                dispatch({ type: AUTH_FAILURE, payload: "User already exists" });
-            }
-
+    const { email, username, password } = user;
+    console.log(user, "user")
+    console.log(password, "password")
+    Firebase.registerWithEmail(email, password)
+        .then(res => {
+            console.log(res);
+            localStorage.setItem("token", res.user.ra);
+            Usernames.add({ username }).then(res => {
+                dispatch({ type: AUTH_SUCCESS });
+            }).catch((error) => {
+                dispatch({ type: AUTH_FAILURE, payload: error.message });
+                console.error(error);
+                return "There was an error. Try again."
+            });
         })
-        .catch(function (error) {
-            console.log("Error getting documents: ", error);
-        });
-
-
+        .catch(error => {
+            console.error(error);
+            dispatch({ type: AUTH_FAILURE, payload: error.message });
+        })
 };
 
 export const loginWithEmail = (email, password) => dispatch => {
