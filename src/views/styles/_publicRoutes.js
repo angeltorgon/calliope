@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     },
     textField: {
         marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1)
+        marginRight: theme.spacing(1),
     },
     dense: {
         marginTop: theme.spacing(2)
@@ -56,22 +56,7 @@ const useStyles = makeStyles(theme => ({
         alignItems: "center",
         justifyContent: "center",
         maxWidth: "400px",
-        width: "100%"
-    },
-    formInput: {
         width: "100%",
-        margin: "5px 0",
-        padding: "10px",
-        borderRadius: "5px",
-        display: "flex",
-        fontSize: ".9rem",
-        padding: "0px",
-        "&:focus": {
-            outline: "none",
-            backgroundColor: "#fffafc",
-            boxShadow: "0px 0px 3px 1px rgba(112,82,112,1)",
-            border: "0px",
-        }
     },
     inputError: {
         width: "10%",

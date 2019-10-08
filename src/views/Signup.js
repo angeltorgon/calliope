@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 import Firebase from "../firebase";
 import SignupWithGoogleForm from "../components/auth/SignupWithGoogleForm"
 import SignupWithEmailForm from "../components/auth/SignupWithEmailForm"
+import TextInput from "../components/inputs/TextInput";
 
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from '@date-io/date-fns';
 import {
     Card,
     Divider,
-    TextField,
     withStyles
 } from "@material-ui/core";
 
@@ -51,35 +51,8 @@ function Signup(props) {
         props.signupWithEmail(inputs);
     };
 
-    const CustomKeyboardDatePicker = withStyles({
-        root: {
-            '& label.Mui-focused': {
-                color: "grey",
-            },
-            '& .MuiInput-underline:after': {
-                borderBottomColor: 'green',
-            },
-            '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                    borderColor: 'lightgrey',
-                },
-                '&:hover fieldset': {
-                    borderColor: 'grey',
-                },
-                '&.Mui-focused fieldset': {
-                    border: ".5px solid lightgrey",
-                    backgroundColor: '#fffafc',
-                },
-            },
-        },
-    })(KeyboardDatePicker);
-
-
     const changeHandler = name => event => {
-        console.log("event value", event.target.value)
-        console.log("event name", name)
         setInputs({ ...inputs, [name]: event.target.value });
-        console.log("inputs", inputs);
     };
 
     const signUp = () => {
@@ -111,20 +84,22 @@ function Signup(props) {
                                 </button>
                                     OR
                                     <form className={classes.loginForm} onSubmit={onSubmit}>
-                                        <TextField
+                                        <TextInput
                                             className={classes.formInput}
                                             type="password"
                                             name="password"
                                             variant="outlined"
                                             label="Password"
+                                            placeholder="Password"
                                             value={inputs.password}
                                             onChange={changeHandler('password')} />
-                                        <TextField
+                                        <TextInput
                                             className={classes.formInput}
                                             type="password"
                                             name="confirmPassword"
                                             variant="outlined"
                                             label="Confirm Password"
+                                            placeholder="Confirm Password"
                                             value={inputs.confirmPassword}
                                             onChange={changeHandler('confirmPassword')} />
                                         <button className={classes.button} // onClick={signUpWithEmail}
@@ -138,34 +113,37 @@ function Signup(props) {
                                     <form className={classes.loginForm} onSubmit={onSubmit}>
                                         <div className={classes.inputContainer}>
 
-                                            <TextField
+                                            <TextInput
                                                 className={classes.formInput}
                                                 label="Username"
                                                 type="text"
                                                 variant="outlined"
                                                 name="username"
+                                                placeholder="Username"
                                                 value={inputs.username}
                                                 onChange={changeHandler('username')} />
                                         </div>
                                         <div className={classes.inputContainer}>
 
-                                            <TextField
+                                            <TextInput
                                                 className={classes.formInput}
                                                 type="text"
                                                 name="firstName"
                                                 variant="outlined"
                                                 label="First Name"
+                                                placeholder="First Name"
                                                 value={inputs.firstName}
                                                 onChange={changeHandler('firstName')} />
                                         </div>
                                         <div className={classes.inputContainer}>
 
-                                            <TextField
+                                            <TextInput
                                                 className={classes.formInput}
                                                 type="text"
                                                 name="lastName"
                                                 variant="outlined"
                                                 label="Last Name"
+                                                placeholder="Last Name"
                                                 value={inputs.lastName}
                                                 onChange={changeHandler('lastName')} />
                                         </div>

@@ -8,22 +8,25 @@ import useStyles from "./styles/_publicRoutes";
 import { Link } from "react-router-dom";
 import { loginWithEmail } from "../store/actions"
 
+import TextInput from "../components/inputs/TextInput"
+
 import {
     Card,
     Divider,
-    TextField
+    TextField,
+    withStyles
 } from "@material-ui/core";
 
 function Login(props) {
     const classes = useStyles();
     const [inputs, setInputs] = useState({
-        email: "",
+        email: "hello",
         password: "",
         signingUp: false,
     });
 
-    const onChange = (e) => {
-        setInputs({ ...inputs, [e.target.name]: e.target.value })
+    const onChange = (e, name) => {
+        setInputs({ ...inputs, [name]: e.target.value })
     };
 
     const onSubmit = () => {
@@ -49,20 +52,22 @@ function Login(props) {
                             </button>
                             OR
                             <form className={classes.loginForm} onSubmit={onSubmit}>
-                                <TextField 
-                                    variant="outlined" 
+                                <TextInput
+                                    variant="outlined"
                                     label="Email"
-                                    className={classes.formInput} 
-                                    type="email" name="email" 
-                                    value={inputs.email} 
-                                    onChange={onChange} />
-                                <TextField 
-                                    variant="outlined" 
-                                    className={classes.formInput} 
-                                    type="password" 
-                                    name="password" 
+                                    placeholder="Email"
+                                    className={classes.formInput}
+                                    type="email" name="email"
+                                    value={inputs.email}
+                                    onChange={e => onChange(e, "email")} />
+                                <TextInput
+                                    variant="outlined"
+                                    className={classes.formInput}
+                                    type="password"
+                                    name="password"
                                     label="Password"
-                                    value={inputs.password} 
+                                    placeholder="Password"
+                                    value={inputs.password}
                                     onChange={onChange} />
                                 <button className={classes.button}>Login</button>
                             </form>
