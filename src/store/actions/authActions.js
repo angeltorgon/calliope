@@ -8,6 +8,7 @@ export const USER = "USER";
 export const NO_USER = "NO_USER ";
 
 const Usernames = Firebase.Usernames;
+const Users = Firebase.Users;
 
 
 export const authWithGoogle = () => dispatch => {
@@ -30,19 +31,16 @@ export const authWithGoogle = () => dispatch => {
 
 export const signupWithEmail = user => dispatch => {
     dispatch({ type: AUTH_START });
-    const { email, username, password } = user;
-    console.log(user, "user")
-    console.log(password, "password")
+    const { email, password } = user;
     Firebase.registerWithEmail(email, password)
         .then(res => {
-            console.log(res);
             localStorage.setItem("token", res.user.ra);
-            Usernames.add({ username }).then(res => {
+            delete user.confirmPassword;
+            Users.add({ ...user, uid: res.user.uid }).then(res => {
                 dispatch({ type: AUTH_SUCCESS });
             }).catch((error) => {
                 dispatch({ type: AUTH_FAILURE, payload: error.message });
                 console.error(error);
-                return "There was an error. Try again."
             });
         })
         .catch(error => {

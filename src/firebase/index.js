@@ -10,27 +10,18 @@ class FirebaseClass {
         messagingSenderId: "976833235192",
         appId: "1:976833235192:web:ee123d5777eb0ff2"
     };
-
     provider = new firebase.auth.GoogleAuthProvider();
-
     firebase = firebase.initializeApp(this.firebaseConfig);
-
     firebaseAuth = firebase.auth(); // reference to our app
-
     authWithGoogle = () => this.firebaseAuth.signInWithRedirect(this.provider);
-
     registerWithEmail = (email, password) =>
         this.firebaseAuth.createUserWithEmailAndPassword(email, password);
-
     loginWithEmail = (email, password) =>
         this.firebaseAuth.signInWithEmailAndPassword(email, password);
-
     signout = () => this.firebaseAuth.signOut();
-
     Usernames = firebase.firestore().collection("usernames");
-
     Poems = firebase.firestore().collection("poems");
-
+    Users = firebase.firestore().collection("users");
     getUserByUsername = (username) => {
         return this.Usernames.where("username", "==", username).get();
     };
