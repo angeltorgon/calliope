@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     },
     textInput: {
         width: "100%",
-        height: "40px",
+        height: "50px",
         margin: "5px 0",
         padding: "10px",
         borderRadius: "5px",
@@ -17,8 +17,6 @@ const useStyles = makeStyles((theme) => ({
         "&:focus": {
             outline: "none",
             backgroundColor: "#fffafc",
-            boxShadow: "0px 0px 3px 1px rgba(112,82,112,1)",
-            border: "0px",
         }
     },
 }));

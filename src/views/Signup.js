@@ -67,7 +67,7 @@ function Signup(props) {
                     <Loader type="Oval" color="#DA6991" height={80} width={80} />
                 ) : (
                         <>
-                            <img className={classes.logo} src={require("../images/calliope-logo.png")}></img>
+                            <h1 className={classes.logo}>Calliope</h1>
                             <Divider variant="middle" />
 
                             {signingUp ?

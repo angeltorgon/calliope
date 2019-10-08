@@ -28,8 +28,9 @@ const useStyles = makeStyles(theme => ({
         color: "white",
         fontSize: "1rem",
         borderRadius: "5px",
+        transition: ".3s ease-in-out",
         "&:hover": {
-            backgroundColor: "#d55582"
+            backgroundColor: colors.primaryHover
         }
     },
     card: {
@@ -92,7 +93,10 @@ const useStyles = makeStyles(theme => ({
         color: "red"
     },
     logo: {
-        height: "100px"
+        height: "100px",
+        fontFamily: "Oleo Script, cursive",
+        fontSize: "50px",
+        color: colors.primary
     },
     datePicker: {
         width: "100%",
