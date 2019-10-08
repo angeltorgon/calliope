@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core";
+import colors from "../../helpers/colorPallete";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles(theme => ({
         height: "40px",
         margin: "10px",
         fontSize: "1.2rem",
-        backgroundColor: "#DA6991",
+        backgroundColor: colors.primary,
         maxWidth: "400px",
         color: "white",
         fontSize: "1rem",

@@ -13,14 +13,13 @@ import TextInput from "../components/inputs/TextInput"
 import {
     Card,
     Divider,
-    TextField,
-    withStyles
+    Button
 } from "@material-ui/core";
 
 function Login(props) {
     const classes = useStyles();
     const [inputs, setInputs] = useState({
-        email: "hello",
+        email: "",
         password: "",
         signingUp: false,
     });
@@ -57,7 +56,8 @@ function Login(props) {
                                     label="Email"
                                     placeholder="Email"
                                     className={classes.formInput}
-                                    type="email" name="email"
+                                    type="email"
+                                    name="email"
                                     value={inputs.email}
                                     onChange={e => onChange(e, "email")} />
                                 <TextInput
