@@ -11,6 +11,7 @@ import { loginWithEmail } from "../store/actions"
 import {
     Card,
     Divider,
+    TextField
 } from "@material-ui/core";
 
 function Login(props) {
@@ -48,8 +49,21 @@ function Login(props) {
                             </button>
                             OR
                             <form className={classes.loginForm} onSubmit={onSubmit}>
-                                <input className={classes.formInput} type="email" name="email" placeholder="Email" value={inputs.email} onChange={onChange} />
-                                <input className={classes.formInput} type="password" name="password" placeholder="Password" value={inputs.password} onChange={onChange} />
+                                <TextField 
+                                    variant="outlined" 
+                                    label="Email"
+                                    className={classes.formInput} 
+                                    type="email" name="email" 
+                                    value={inputs.email} 
+                                    onChange={onChange} />
+                                <TextField 
+                                    variant="outlined" 
+                                    className={classes.formInput} 
+                                    type="password" 
+                                    name="password" 
+                                    label="Password"
+                                    value={inputs.password} 
+                                    onChange={onChange} />
                                 <button className={classes.button}>Login</button>
                             </form>
                             <p className={classes.error}>{props.error}</p>

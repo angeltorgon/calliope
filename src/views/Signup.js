@@ -51,29 +51,6 @@ function Signup(props) {
         props.signupWithEmail(inputs);
     };
 
-    const CustomTextField = withStyles({
-        root: {
-            '& label.Mui-focused': {
-                color: "grey",
-            },
-            // '& .MuiInput-underline:after': {
-            //     borderBottomColor: 'green',
-            // },
-            // '& .MuiOutlinedInput-root': {
-            //     '& fieldset': {
-            //         borderColor: 'lightgrey',
-            //     },
-            //     '&:hover fieldset': {
-            //         borderColor: 'grey',
-            //     },
-            //     '&.Mui-focused fieldset': {
-            //         border: ".5px solid lightgrey",
-            //         backgroundColor: '#fffafc',
-            //     },
-            // },
-        },
-    })(TextField);
-
     const CustomKeyboardDatePicker = withStyles({
         root: {
             '& label.Mui-focused': {
@@ -134,14 +111,6 @@ function Signup(props) {
                                 </button>
                                     OR
                                     <form className={classes.loginForm} onSubmit={onSubmit}>
-                                        <CustomTextField
-                                            className={classes.formInput}
-                                            type="email"
-                                            name="email"
-                                            variant="outlined"
-                                            label="Email"
-                                            value={inputs.email}
-                                            onChange={changeHandler('email')} />
                                         <TextField
                                             className={classes.formInput}
                                             type="password"
@@ -199,23 +168,6 @@ function Signup(props) {
                                                 label="Last Name"
                                                 value={inputs.lastName}
                                                 onChange={changeHandler('lastName')} />
-                                        </div>
-                                        <div className={classes.inputContainer}>
-                                            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                                <CustomKeyboardDatePicker
-                                                    disableToolbar
-                                                    className={classes.datePicker}
-                                                    format="MM/dd/yyyy"
-                                                    id="date-picker-inline"
-                                                    variant="dialog"
-                                                    value={selectedDate}
-                                                    onChange={handleDateChange}
-                                                    inputVariant="outlined"
-                                                    KeyboardButtonProps={{
-                                                        'aria-label': 'change date',
-                                                    }}
-                                                />
-                                            </MuiPickersUtilsProvider>
                                         </div>
                                     </form>
                                     <button
