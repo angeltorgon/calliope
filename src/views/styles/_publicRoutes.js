@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-import colors from "../../helpers/colorPallete";
+import colors from "../../helpers/colorPalette";
 
 const useStyles = makeStyles(theme => ({
     container: {
