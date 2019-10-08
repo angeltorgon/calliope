@@ -29,6 +29,24 @@ export const authWithGoogle = () => dispatch => {
         });
 };
 
+export const signupWithGoogle = user => dispatch => {
+    console.log("signing up with google");
+    Firebase.getUserByUsername(user.username)
+        .then((querySnapshot) => {
+            if (querySnapshot.empty) {
+                const { email, username, password } = user;
+            } else {
+                dispatch({ type: AUTH_FAILURE, payload: "User already exists" });
+                console.log(querySnapshot)
+            }
+
+        })
+        .catch(function (error) {
+            console.log("Error getting documents: ", error);
+        });
+
+};
+
 export const signupWithEmail = user => dispatch => {
     dispatch({ type: AUTH_START });
     const { email, password } = user;

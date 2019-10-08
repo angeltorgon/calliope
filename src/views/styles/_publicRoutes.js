@@ -31,6 +31,9 @@ const useStyles = makeStyles(theme => ({
         transition: ".3s ease-in-out",
         "&:hover": {
             backgroundColor: colors.primaryHover
+        },
+        "&:disabled": {
+            backgroundColor: colors.disabled
         }
     },
     card: {

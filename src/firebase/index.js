@@ -23,7 +23,7 @@ class FirebaseClass {
     Poems = firebase.firestore().collection("poems");
     Users = firebase.firestore().collection("users");
     getUserByUsername = (username) => {
-        return this.Usernames.where("username", "==", username).get();
+        return this.Users.where("username", "==", username).get();
     };
 }
 

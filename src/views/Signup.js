@@ -10,7 +10,7 @@ import {
     Divider,
 } from "@material-ui/core";
 
-import { authWithGoogle, signupWithEmail } from "../store/actions";
+import { signupWithGoogle, signupWithEmail } from "../store/actions";
 
 
 
@@ -26,8 +26,7 @@ function Signup(props) {
         username: "",
         password: "",
         confirmPassword: "",
-        firstName: "",
-        lastName: ""
+        fullName: ""
     });
 
     const onSubmit = (e) => {
@@ -60,9 +59,8 @@ function Signup(props) {
                                         variant="contained"
                                         color="primary"
                                         className={classes.button}
-                                        disabled={true}
-                                    // onClick={props.authWithGoogle}
-                                    // onClick={signUpWithGoogle}
+                                        // disabled={true}
+                                        onClick={() => props.signupWithGoogle(inputs)}
                                     >
                                         Signup with Google
                                 </button>
@@ -112,31 +110,21 @@ function Signup(props) {
                                             <TextInput
                                                 className={classes.formInput}
                                                 type="text"
-                                                name="firstName"
+                                                name="fullName"
                                                 variant="outlined"
-                                                label="First Name"
-                                                placeholder="First Name"
-                                                value={inputs.firstName}
+                                                label="Full Name"
+                                                placeholder="Full Name"
+                                                value={inputs.fullName}
                                                 onChange={onChange} />
                                         </div>
                                         <div className={classes.inputContainer}>
-
-                                            <TextInput
-                                                className={classes.formInput}
-                                                type="text"
-                                                name="lastName"
-                                                variant="outlined"
-                                                label="Last Name"
-                                                placeholder="Last Name"
-                                                value={inputs.lastName}
-                                                onChange={onChange} />
                                         </div>
                                     </form>
                                     <button
                                         variant="contained"
                                         color="primary"
                                         className={classes.button}
-                                        // disabled={true}
+                                        disabled={true}
                                         // onClick={props.authWithGoogle}
                                         onClick={signUp}
                                     >
@@ -167,5 +155,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { authWithGoogle, signupWithEmail }
+    { signupWithGoogle, signupWithEmail }
 )(Signup);
