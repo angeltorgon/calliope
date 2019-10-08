@@ -17,16 +17,21 @@ import { signupWithGoogle, signupWithEmail } from "../store/actions";
 function Signup(props) {
     const classes = useStyles();
     const [signingUp, setSigningUp] = useState(false);
-    const [selectedDate, setSelectedDate] = useState(new Date('2014-08-18T21:11:54'));
-
-    const handleDateChange = date => setSelectedDate(date);
-
+    const [disabled, setDisabled] = useState(true);
     const [inputs, setInputs] = useState({
         email: "",
         username: "",
         password: "",
         confirmPassword: "",
         fullName: ""
+    });
+
+    const [inputErrors, setInputErrors] = useState({
+        email: null,
+        username: "username is taken *",
+        password: null,
+        confirmPassword: null,
+        fullName: null
     });
 
     const onSubmit = (e) => {
@@ -36,6 +41,12 @@ function Signup(props) {
 
     const onChange = (event, name) => {
         setInputs({ ...inputs, [name]: event.target.value });
+
+        if (inputs.username.length > 0 && inputs.fullName.length > 0) {
+            setDisabled(false);
+        } else {
+            setDisabled(true);
+        }
     };
 
     const signUp = () => {
@@ -59,7 +70,6 @@ function Signup(props) {
                                         variant="contained"
                                         color="primary"
                                         className={classes.button}
-                                        // disabled={true}
                                         onClick={() => props.signupWithGoogle(inputs)}
                                     >
                                         Signup with Google
@@ -84,8 +94,7 @@ function Signup(props) {
                                             placeholder="Password"
                                             value={inputs.password}
                                             onChange={onChange} />
-                                        <button className={classes.button} // onClick={signUpWithEmail}
-                                        >Signup with Email</button>
+                                        <button className={classes.button}>Signup with Email</button>
                                     </form>
                                     <p onClick={signUp}>Go Back</p>
                                 </>
@@ -103,7 +112,8 @@ function Signup(props) {
                                                 name="username"
                                                 placeholder="Username"
                                                 value={inputs.username}
-                                                onChange={onChange} />
+                                                onChange={onChange}
+                                                error={inputErrors.username} />
                                         </div>
                                         <div className={classes.inputContainer}>
 
@@ -115,6 +125,7 @@ function Signup(props) {
                                                 label="Full Name"
                                                 placeholder="Full Name"
                                                 value={inputs.fullName}
+                                                error={inputErrors.fullName}
                                                 onChange={onChange} />
                                         </div>
                                         <div className={classes.inputContainer}>
@@ -124,15 +135,12 @@ function Signup(props) {
                                         variant="contained"
                                         color="primary"
                                         className={classes.button}
-                                        disabled={true}
-                                        // onClick={props.authWithGoogle}
+                                        disabled={disabled}
                                         onClick={signUp}
                                     >
                                         Next
                                     </button>
                                 </>
-
-
                             }
                             <p>Already have an account? <Link to="/login">Login</Link></p>
                             <p className={classes.error}>{props.error}</p>

@@ -39,12 +39,10 @@ export const signupWithGoogle = user => dispatch => {
                 dispatch({ type: AUTH_FAILURE, payload: "User already exists" });
                 console.log(querySnapshot)
             }
-
         })
         .catch(function (error) {
             console.log("Error getting documents: ", error);
         });
-
 };
 
 export const signupWithEmail = user => dispatch => {
