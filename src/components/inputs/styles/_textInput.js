@@ -6,7 +6,8 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
-        padding: "0px"
+        padding: "0px",
+        posigion: "reletive",
     },
     textInput: {
         width: "100%",
@@ -23,12 +24,17 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     formInputError: {
-        border: "1px solid red"
+        border: "2px solid red"
     },
     errorMessage: {
         color: "red",
         fontSize: ".8rem",
         margin: "0px"
+    },
+    inputIcon: {
+        position: "absolute",
+        right: "5px",
+        bottom: "20px"
     }
 }));
 

@@ -41,12 +41,6 @@ function Signup(props) {
 
     const onChange = (event, name) => {
         setInputs({ ...inputs, [name]: event.target.value });
-
-        if (inputs.username.length > 0 && inputs.fullName.length > 0) {
-            setDisabled(false);
-        } else {
-            setDisabled(true);
-        }
     };
 
     const signUp = () => {
@@ -135,7 +129,7 @@ function Signup(props) {
                                         variant="contained"
                                         color="primary"
                                         className={classes.button}
-                                        disabled={disabled}
+                                        // disabled={disabled}
                                         onClick={signUp}
                                     >
                                         Next
