@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useStyles from './styles/_textInput';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle, faCheckCircle } from '@fortawesome/free-regular-svg-icons';
@@ -6,7 +6,12 @@ import { faTimesCircle, faCheckCircle } from '@fortawesome/free-regular-svg-icon
 
 export default function TextInput(props) {
     const classes = useStyles();
-    const [ success, setSuccess ] = useState(props.success);
+    const [ success, setSuccess ] = useState(false);
+
+    useEffect(() => {
+        setSuccess(props.success)
+        console.log(props.error);
+    }, [props.success])
 
     return (
         <div className={classes.textInputContainer}>

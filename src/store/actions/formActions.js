@@ -7,10 +7,9 @@ const Usernames = Firebase.Usernames;
 
 
 export const checkUsername = (username) => dispatch => {
-    var query = Usernames.where("username", "==", username)
-    query.onSnapshot((snapShot) => {
+    Usernames.where("username", "==", username)
+    .get().then((snapShot) => {
         snapShot.empty ? dispatch({ type: USERNAME_AVAILABLE }) : dispatch({ type: USERNAME_UNAVAILABLE });
     })
-    console.log(query, "Here chilling in actions...");
 };
 

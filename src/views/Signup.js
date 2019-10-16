@@ -1,5 +1,5 @@
 import 'date-fns';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
 import useStyles from "./styles/_publicRoutes";
@@ -28,10 +28,14 @@ function Signup(props) {
 
     const [inputErrors, setInputErrors] = useState({
         email: null,
-        username: "username is taken *",
+        username: null,
         password: null,
         confirmPassword: null,
         fullName: null
+    });
+
+    useEffect(() => {
+        setInputErrors({...inputErrors, username: props.usernameError});
     });
 
     const onSubmit = (e) => {
@@ -149,14 +153,14 @@ function Signup(props) {
 
 const mapStateToProps = state => {
     const { user, started, finished, error } = state.authReducer;
-    const { usernameAvailable } = state.formReducer;
-    console.log(usernameAvailable)
+    const { usernameAvailable, username } = state.formReducer;
     return {
         user: user,
         started: started,
         finished: finished,
         usernameAvailable: usernameAvailable,
-        error: error
+        error: error,
+        usernameError: username
     };
 };
 
@@ -165,6 +169,6 @@ export default connect(
     {
         signupWithGoogle,
         signupWithEmail,
-        checkUsername
+        checkUsername,
     }
 )(Signup);
