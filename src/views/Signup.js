@@ -41,7 +41,6 @@ function Signup(props) {
 
     const onChange = (event, name) => {
         setInputs({ ...inputs, [name]: event.target.value });
-        console.log(event.target, name);
         props.checkUsername(event.target.value);
     };
 
@@ -107,6 +106,7 @@ function Signup(props) {
                                                 variant="outlined"
                                                 name="username"
                                                 placeholder="Username"
+                                                success={props.usernameAvailable}
                                                 value={inputs.username}
                                                 onChange={onChange}
                                                 error={inputErrors.username} />
@@ -149,10 +149,13 @@ function Signup(props) {
 
 const mapStateToProps = state => {
     const { user, started, finished, error } = state.authReducer;
+    const { usernameAvailable } = state.formReducer;
+    console.log(usernameAvailable)
     return {
         user: user,
         started: started,
         finished: finished,
+        usernameAvailable: usernameAvailable,
         error: error
     };
 };

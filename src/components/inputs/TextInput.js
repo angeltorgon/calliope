@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useStyles from './styles/_textInput';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle, faCheckCircle } from '@fortawesome/free-regular-svg-icons';
@@ -6,6 +6,7 @@ import { faTimesCircle, faCheckCircle } from '@fortawesome/free-regular-svg-icon
 
 export default function TextInput(props) {
     const classes = useStyles();
+    const [ success, setSuccess ] = useState(props.success);
 
     return (
         <div className={classes.textInputContainer}>
@@ -16,8 +17,20 @@ export default function TextInput(props) {
                 placeholder={props.placeholder}
                 className={`${classes.textInput} ${props.error ? classes.formInputError : null}`}
                 type={props.type} />
-            <FontAwesomeIcon style={{ display: "none" }} size="2x" color="red" icon={faTimesCircle} className={classes.inputIcon} />
-            <FontAwesomeIcon size="2x" color="green" icon={faCheckCircle} className={classes.inputIcon} />
+
+            <FontAwesomeIcon 
+                style={!success && props.value.length > 0 ? { display: "block" } : { display: "none" }} 
+                size="2x" 
+                color="red" 
+                icon={faTimesCircle} 
+                className={classes.inputIcon} />
+
+            <FontAwesomeIcon 
+                style={success && props.value.length > 0 ? { display: "block" } : { display: "none" }}  
+                size="2x" 
+                color="green" 
+                icon={faCheckCircle} 
+                className={classes.inputIcon} />
         </div>
     )
 }

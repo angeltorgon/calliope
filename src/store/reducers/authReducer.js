@@ -1,4 +1,11 @@
-import { AUTH_START, AUTH_SUCCESS, AUTH_FAILURE, USER, NO_USER, CHECKING_USER } from "../actions";
+import {
+    AUTH_START,
+    AUTH_SUCCESS,
+    AUTH_FAILURE,
+    USER,
+    NO_USER,
+    CHECKING_USER
+} from "../actions";
 
 const initialState = {
     user: false,

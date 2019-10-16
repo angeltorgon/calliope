@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import PoemList from "../components/PoemList.js";
 import Navbar from "../components/Navbar.js";
 import BottomNavbar from "../components/BottomNavbar";
-import { fetchPoems } from "../store/actions";
+// import { fetchPoems } from "../store/actions";
 
 function Home() {
     return (
@@ -22,5 +22,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { fetchPoems }
+    // { fetchPoems }
 )(Home);
