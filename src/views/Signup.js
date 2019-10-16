@@ -10,7 +10,7 @@ import {
     Divider,
 } from "@material-ui/core";
 
-import { signupWithGoogle, signupWithEmail } from "../store/actions";
+import { signupWithGoogle, signupWithEmail, checkUsername } from "../store/actions";
 
 
 
@@ -41,6 +41,8 @@ function Signup(props) {
 
     const onChange = (event, name) => {
         setInputs({ ...inputs, [name]: event.target.value });
+        console.log(event.target, name);
+        props.checkUsername(event.target.value);
     };
 
     const signUp = () => {
@@ -157,5 +159,9 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { signupWithGoogle, signupWithEmail }
+    {
+        signupWithGoogle,
+        signupWithEmail,
+        checkUsername
+    }
 )(Signup);
