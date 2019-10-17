@@ -29,19 +29,29 @@ export const authWithGoogle = () => dispatch => {
         });
 };
 
-export const signupWithGoogle = user => dispatch => {
+export const signupWithGoogle = userInfo => dispatch => {
     console.log("signing up with google");
-    Firebase.getUserByUsername(user.username)
-        .then((querySnapshot) => {
-            if (querySnapshot.empty) {
-                const { email, username, password } = user;
-            } else {
-                dispatch({ type: AUTH_FAILURE, payload: "User already exists" });
-                console.log(querySnapshot)
-            }
+    dispatch({ type: AUTH_START });
+
+
+    const authWithGooglePromise = new Promise(function (req, res) {
+        ;
+        res("result")
+    })
+
+
+
+    Firebase.authWithGoogle()
+        .then(function (result) {
+            debugger
+            dispatch({ type: AUTH_SUCCESS });
         })
         .catch(function (error) {
-            console.log("Error getting documents: ", error);
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            var email = error.email;
+            var credential = error.credential;
+            dispatch({ type: AUTH_FAILURE, payload: errorMessage });
         });
 };
 
@@ -85,6 +95,18 @@ export const checkingUser = () => dispatch => {
 
 export const loggedIn = () => dispatch => {
     dispatch({ type: USER });
+    if (localStorage.getItem("username") && localStorage.getItem("fullName")) {
+        const user = {
+            username: localStorage.getItem("username"),
+            fullName: localStorage.getItem("fullName"),
+        }
+        Users.add({ ...user }).then(res => {
+            dispatch({ type: AUTH_SUCCESS });
+        }).catch((error) => {
+            dispatch({ type: AUTH_FAILURE, payload: error.message });
+            console.error(error);
+        });
+    };
 };
 
 export const loggedOut = () => dispatch => {

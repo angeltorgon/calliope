@@ -51,6 +51,8 @@ function Signup(props) {
 
     const signUp = () => {
         setSigningUp(!signingUp);
+        localStorage.setItem("username", inputs.username);
+        localStorage.setItem("fullName", inputs.fullName);
     };
 
     return (

@@ -34,7 +34,8 @@ const useStyles = makeStyles((theme) => ({
     inputIcon: {
         position: "absolute",
         right: "5px",
-        bottom: "20px"
+        bottom: "20px",
+        transition: "ease-in-out .4s"
     }
 }));
 
