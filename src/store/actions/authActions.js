@@ -29,30 +29,9 @@ export const authWithGoogle = () => dispatch => {
         });
 };
 
-export const signupWithGoogle = userInfo => dispatch => {
-    console.log("signing up with google");
+export const signupWithGoogle = () => dispatch => {
     dispatch({ type: AUTH_START });
-
-
-    const authWithGooglePromise = new Promise(function (req, res) {
-        ;
-        res("result")
-    })
-
-
-
     Firebase.authWithGoogle()
-        .then(function (result) {
-            debugger
-            dispatch({ type: AUTH_SUCCESS });
-        })
-        .catch(function (error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            var email = error.email;
-            var credential = error.credential;
-            dispatch({ type: AUTH_FAILURE, payload: errorMessage });
-        });
 };
 
 export const signupWithEmail = user => dispatch => {
@@ -62,7 +41,7 @@ export const signupWithEmail = user => dispatch => {
         .then(res => {
             localStorage.setItem("token", res.user.ra);
             delete user.confirmPassword;
-            Users.add({ ...user, uid: res.user.uid }).then(res => {
+            Users.add({ ...user, uid: res.user.uid, email, password }).then(res => {
                 dispatch({ type: AUTH_SUCCESS });
             }).catch((error) => {
                 dispatch({ type: AUTH_FAILURE, payload: error.message });
@@ -89,18 +68,19 @@ export const loginWithEmail = (email, password) => dispatch => {
 };
 
 export const checkingUser = () => dispatch => {
-    console.log("checking user")
     dispatch({ type: CHECKING_USER });
 };
 
-export const loggedIn = () => dispatch => {
+export const loggedIn = (user) => dispatch => {
     dispatch({ type: USER });
     if (localStorage.getItem("username") && localStorage.getItem("fullName")) {
-        const user = {
+        const userInfo = {
             username: localStorage.getItem("username"),
             fullName: localStorage.getItem("fullName"),
         }
-        Users.add({ ...user }).then(res => {
+        Users.add({ ...userInfo, uid: user.uid, email: user.email }).then(res => {
+            localStorage.removeItem("username");
+            localStorage.removeItem("fullName");
             dispatch({ type: AUTH_SUCCESS });
         }).catch((error) => {
             dispatch({ type: AUTH_FAILURE, payload: error.message });

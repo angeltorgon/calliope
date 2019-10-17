@@ -20,7 +20,7 @@ class App extends Component {
         this.props.checkingUser();
         Firebase.firebaseAuth.onAuthStateChanged((user) => {
             if (user) {
-                this.props.loggedIn()
+                this.props.loggedIn(user)
             } else {
                 this.props.loggedOut()
             }

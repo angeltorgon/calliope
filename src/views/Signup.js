@@ -72,7 +72,7 @@ function Signup(props) {
                                         variant="contained"
                                         color="primary"
                                         className={classes.button}
-                                        onClick={() => props.signupWithGoogle(inputs)}
+                                        onClick={props.signupWithGoogle}
                                     >
                                         Signup with Google
                                 </button>
