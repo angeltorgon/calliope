@@ -35,7 +35,8 @@ function Signup(props) {
     });
 
     useEffect(() => {
-        setInputErrors({...inputErrors, username: props.usernameError});
+        setInputErrors({ ...inputErrors, username: props.usernameError });
+        props.usernameAvailable && inputs.fullName.length > 3 ? setDisabled(false) : setDisabled(true);
     });
 
     const onSubmit = (e) => {
@@ -124,6 +125,7 @@ function Signup(props) {
                                                 variant="outlined"
                                                 label="Full Name"
                                                 placeholder="Full Name"
+                                                success={inputs.fullName.length > 3}
                                                 value={inputs.fullName}
                                                 error={inputErrors.fullName}
                                                 onChange={onChange} />
@@ -135,7 +137,7 @@ function Signup(props) {
                                         variant="contained"
                                         color="primary"
                                         className={classes.button}
-                                        // disabled={disabled}
+                                        disabled={disabled}
                                         onClick={signUp}
                                     >
                                         Next

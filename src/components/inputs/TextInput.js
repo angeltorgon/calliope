@@ -10,7 +10,6 @@ export default function TextInput(props) {
 
     useEffect(() => {
         setSuccess(props.success)
-        console.log(props.error);
     }, [props.success])
 
     return (
@@ -24,14 +23,14 @@ export default function TextInput(props) {
                 type={props.type} />
 
             <FontAwesomeIcon 
-                style={!success && props.value.length > 0 ? { display: "block" } : { display: "none" }} 
+                style={!success && props.value.length > 3 ? { display: "block" } : { display: "none" }} 
                 size="2x" 
                 color="red" 
                 icon={faTimesCircle} 
                 className={classes.inputIcon} />
 
             <FontAwesomeIcon 
-                style={success && props.value.length > 0 ? { display: "block" } : { display: "none" }}  
+                style={success && props.value.length > 3 ? { display: "block" } : { display: "none" }}  
                 size="2x" 
                 color="green" 
                 icon={faCheckCircle} 
