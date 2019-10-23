@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     headerContainer: {
-        marginTop: "60px"
+        border: "1px solid red"
     }
 }));
 
