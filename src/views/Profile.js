@@ -4,6 +4,7 @@ import BottomNavbar from "../components/BottomNavbar";
 import Navbar from "../components/Navbar";
 import { connect } from "react-redux";
 import ProfileHeader from "../components/dialogs/ProfileHeader";
+import ProfileImage from "../components/ProfileImage"
 
 // import { fetchUser, fetchUserPosts } from "../store/actions";
 
@@ -13,6 +14,7 @@ function Profile(props) {
         <div className={classes.profileContainer}>
             <Navbar />
             <ProfileHeader />
+            {/* <ProfileImage /> */}
             <BottomNavbar />
         </div>
     );

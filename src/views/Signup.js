@@ -5,6 +5,7 @@ import Loader from "react-loader-spinner";
 import useStyles from "./styles/_publicRoutes";
 import { Link } from "react-router-dom";
 import TextInput from "../components/inputs/TextInput";
+import colors from "../helpers/colorPalette";
 import {
     Card,
     Divider,
@@ -60,7 +61,7 @@ function Signup(props) {
             {/* <Card className={classes.mockup}><img className={classes.mockup} src={require("../images/iphone-x-mockup2.png")} /></Card> */}
             <Card className={classes.card}>
                 {props.started ? (
-                    <Loader type="Oval" color="#DA6991" height={80} width={80} />
+                    <Loader type="Oval" color={colors.primary} height={80} width={80} />
                 ) : (
                         <>
                             <h1 className={classes.logo}>Calliope</h1>

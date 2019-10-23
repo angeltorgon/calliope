@@ -6,7 +6,6 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         height: "100vh",
         width: "100%",
-        paddingTop: "60px",
         border: "1px solid blue"
     },
 }));

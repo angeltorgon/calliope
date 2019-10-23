@@ -7,7 +7,7 @@ export default function ProfileHeader() {
 
     return (
         <div className={classes.headerContainer}>
-            <h1>this is the profile header</h1>
+            <img className={classes.headerImage} src="https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
         </div>
     )
 }
