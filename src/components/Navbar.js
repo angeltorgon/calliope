@@ -23,7 +23,8 @@ function Navbar(props) {
             {props.user ? (
                 <div className={classes.nav}>
                     <Link to="/" >
-                        <img className={classes.logo} src={require("../images/calliope-logo.png")}></img>
+                        {/* <img className={classes.logo} src={require("../images/calliope-logo.png")}></img> */}
+                        <h1 className={classes.logo}>Calliope</h1>
                     </Link>
                     <div className={classes.linkContainer}>
                         <Link

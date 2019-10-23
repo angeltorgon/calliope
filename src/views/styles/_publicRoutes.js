@@ -97,8 +97,8 @@ const useStyles = makeStyles(theme => ({
     },
     logo: {
         height: "100px",
-        fontFamily: "Oleo Script, cursive",
-        fontSize: "50px",
+        fontFamily: "'Satisfy', cursive",
+        fontSize: "60px",
         color: colors.primary
     },
     datePicker: {

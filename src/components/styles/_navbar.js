@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core";
+import colors from "../../helpers/colorPalette";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,16 +24,14 @@ const useStyles = makeStyles((theme) => ({
     logo: {
         textDecoration: "none",
         fontFamily: "charcoal",
-        color: "white",
-        fontSize: "20px",
+        color: colors.primary,
+        fontSize: "35px",
         height: "48px",
         width: "150px",
         textAlign: "center",
-        "&:hover": {
-            color: "white",
-            textDecoration: "none",
-            backgroundColor: "#DE6998"
-        }
+        fontFamily: "'Satisfy', cursive",
+        padding: "5px",
+        fontWeight: "bolder"
     },
     link: {
         fontSize: "20px",
