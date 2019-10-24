@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core";
+import colors from "../../helpers/colorPalette"
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,17 +20,15 @@ const useStyles = makeStyles((theme) => ({
         width: "100%"
     },
     backButton: {
+        display: "flex",
         textDecoration: "none",
         fontFamily: "charcoal",
-        color: "white",
-        fontSize: "20px",
-        padding: "3px",
         textAlign: "center",
-        borderRadius: "50%",
+        marginLeft: "10px",
+        padding: "0, 20px",
         "&:hover": {
-            color: "white",
             textDecoration: "none",
-            backgroundColor: "#EAEBEB"
+            color: colors.primaryHover
         }
     },
     linkContainer: {
