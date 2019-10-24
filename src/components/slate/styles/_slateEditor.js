@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core";
+import colors from "../../../helpers/colorPalette";
 
 const useStyles = makeStyles((theme) => ({
     editorContainer: {
@@ -19,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
         padding: "20px",
         fontSize: ".9rem",
         height: "100%",
-        backgroundColor: "#fffafc",
+        backgroundColor: "white",
         "&::placeholder": {
             color: "#B9BABC"
         },
         "&:focus": {
             outline: "none",
-            backgroundColor: "#fffafc",
+            backgroundColor: "white",
             border: "0px",
         }
     },
@@ -37,9 +38,9 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         border: "0",
         fontSize: ".9rem",
-        backgroundColor: "#fffafc",
+        backgroundColor: "white",
         "&::placeholder": {
-            color: "#B9BABC"
+            color: colors.primary
         },
         "&:focus": {
             outline: "none",
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     poemTitle: {
-        color: "#f2a5c4"
+        color: colors.primary
     }
 }));
 
