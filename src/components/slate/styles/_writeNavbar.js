@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core";
+import colors from "../../../helpers/colorPalette";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,17 +20,15 @@ const useStyles = makeStyles((theme) => ({
         width: "100%"
     },
     backButton: {
+        display: "flex",
         textDecoration: "none",
         fontFamily: "charcoal",
-        color: "white",
-        fontSize: "20px",
-        padding: "3px",
         textAlign: "center",
-        borderRadius: "50%",
+        marginLeft: "10px",
+        padding: "0, 20px",
         "&:hover": {
-            color: "white",
             textDecoration: "none",
-            backgroundColor: "#EAEBEB"
+            color: colors.primaryHover
         }
     },
     link: {
@@ -76,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
     },
     publishButton: {
         boxSizing: "border-box",
-        backgroundColor: "#DE6998",
+        backgroundColor: colors.primary,
         color: "white",
         height: "35px",
         margin: "5px",
@@ -92,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     saveButton: {
-        color: "#DE6998",
+        color: colors.primaryHover,
         height: "35px",
         margin: "5px",
         "&:focus": {

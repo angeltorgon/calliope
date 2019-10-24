@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core";
+import colors from "../../../helpers/colorPalette";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: "scroll"
     },
     icon: {
-        color: "#F2A5C4",
+        color: colors.primary,
     },
     iconButton: {
         "&:focus": {
