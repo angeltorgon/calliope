@@ -42,12 +42,10 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#DA6991",
         "&:hover": {
             textDecoration: "none",
             color: "white",
             textDecoration: "none",
-            backgroundColor: "#DE6998"
         }
     },
     linkContainer: {
