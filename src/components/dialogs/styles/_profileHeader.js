@@ -5,10 +5,10 @@ const useStyles = makeStyles(theme => ({
         marginTop: "50px",
         width: "100%",
         height: "200px",
+        overflow: "hidden"
     },
     headerImage: {
-        height: "100%",
-        width: "100%"
+        widdth: "100%"
     }
 }));
 

@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "5px",
         marginRight: "15px",
         "&:hover": {
-            backgroundColor: "#d4618f",
+            backgroundColor: colors.primaryHover,
             textDecoration: "none",
         },
         "&:focus": {
@@ -91,12 +91,11 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     saveButton: {
-        color: colors.primaryHover,
+        color: colors.primary,
         height: "35px",
         margin: "5px",
         "&:focus": {
             outline: "none",
-            backgroundColor: "#fffafc",
             boxShadow: "0px 0px 3px 1px rgba(112,82,112,1)",
             border: "0px",
         }
