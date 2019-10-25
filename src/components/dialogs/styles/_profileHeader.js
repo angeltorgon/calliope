@@ -5,11 +5,12 @@ const useStyles = makeStyles(theme => ({
         marginTop: "50px",
         width: "100%",
         height: "200px",
-        overflow: "hidden",
-        position: "absolute"
+        position: "relative"
     },
     headerImage: {
         width: "100%",
+        height: "100%",
+        boxShadow: "0 1px 3px 2px rgba(5, 5, 5, .3)",
     },
     editButton: {
         color: "white",
