@@ -7,18 +7,18 @@ export default function ProfileInfo() {
     return (
         <div className={classes.profileInfoContainer}>
             <h1>Darla Jones</h1>
-            <p>HTX Love Live Laugh; Developer</p>
+            <p>HTX &#8986; Love Live Laugh &#128512; Developer &#128421;</p>
             <div className={classes.userStatsContainer}>
                 <div className={classes.stat}>
-                    <p>Posts</p>
+                    <strong>Posts</strong>
                     <p>200</p>
                 </div>
                 <div className={classes.stat}>
-                    <p>Followers</p>
+                    <strong>Followers</strong>
                     <p>92</p>
                 </div>
                 <div className={classes.stat}>
-                    <p>Following</p>
+                    <strong>Following</strong>
                     <p>429</p>
                 </div>
             </div>
