@@ -8,13 +8,17 @@ import Firebase from "../firebase"
 
 const useStyles = makeStyles(theme => ({
     poemListContainer: {
-        padding: "60px 20px 20px 20px"
+        // padding: "60px 20px 20px 20px",
+        margin: "0 auto",
+        width: "100%",
+        marginTop: "480px",
+        position: "absolute"
     }
 }));
 
 function PoemList(props) {
     const classes = useStyles();
-    const [poems, setPoems] = useState([]);
+    const [poems, setPoems] = useState([{ title: "poem ", docId: "123456", likes: 12, comments: ["hello", "loser"] }]);
 
     useEffect(() => {
         Firebase.Poems.get()

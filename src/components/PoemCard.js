@@ -23,7 +23,7 @@ function PoemCard(props) {
   }
 
   useEffect(() => {
-    console.log(Value.fromJSON(props.poem.value));
+    // console.log(Value.fromJSON(props.poem.value));
     fetchPoem();
   }, []);
 
@@ -34,11 +34,11 @@ function PoemCard(props) {
         <PoemMenuDialog />
       </div>
       <h3 className={classes.poemTitle}>Poem Title</h3>
-      <div className={classes.poem}>This example shows how to enforce 
- your layout with schema - specific rules. 
- This document will always have a title 
- block at the top and at least one 
- paragraph in the body.Try 
+      <div className={classes.poem}>This example shows how to enforce
+ your layout with schema - specific rules.
+ This document will always have a title
+ block at the top and at least one
+ paragraph in the body.Try
  deleting them and see what happens!</div>
       {/* <Editor renderBlock={renderBlock} className={classes.poem} value={Value.fromJSON(props.poem.value)} /> */}
       <PoemStatusBar fetchPoem={fetchPoem} poemDoc={poemDoc} docId={poem.docId} commentsLength={poem.comments.length} likes={poem.likes} />

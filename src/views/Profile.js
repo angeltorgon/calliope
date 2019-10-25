@@ -1,6 +1,7 @@
 import React from "react";
 import useStyles from "./styles/_profileContainer"
 import BottomNavbar from "../components/BottomNavbar";
+import PoemList from "../components/PoemList";
 import Navbar from "../components/Navbar";
 import { connect } from "react-redux";
 import ProfileHeader from "../components/dialogs/ProfileHeader";
@@ -15,6 +16,7 @@ function Profile(props) {
             <Navbar />
             <ProfileHeader />
             <ProfileInfo />
+            <PoemList style={{ marginTop: "480px" }} />
             <BottomNavbar />
         </div>
     );

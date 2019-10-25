@@ -14,11 +14,11 @@ export default function PoemStatusBar(props) {
     };
 
     useEffect(() => {
-        if (props.likes.includes("hellohello")) {
-            setIsLiked(true);
-        } else {
-            setIsLiked(false);
-        }
+        // if (props.likes.includes("hellohello")) {
+        //     setIsLiked(true);
+        // } else {
+        //     setIsLiked(false);
+        // }
     }, [props.likes]);
 
     const submitLike = () => {
