@@ -5,7 +5,8 @@ export const AUTH_SUCCESS = "SIGN_UP_SUCCESS";
 export const AUTH_FAILURE = "SIGN_UP_FAILURE";
 export const CHECKING_USER = "CHECKING_USER";
 export const USER = "USER";
-export const NO_USER = "NO_USER ";
+export const NO_USER = "NO_USER";
+export const GOT_USER = "GOT_USER";
 
 const Usernames = Firebase.Usernames;
 const Users = Firebase.Users;
@@ -41,8 +42,20 @@ export const signupWithEmail = user => dispatch => {
         .then(res => {
             localStorage.setItem("token", res.user.ra);
             delete user.confirmPassword;
-            Users.add({ ...user, uid: res.user.uid, email, password }).then(res => {
+            Users.add({ ...user, uid: res.user.uid, email, password }).then(response => {
                 dispatch({ type: AUTH_SUCCESS });
+                Users
+                    .where("uid", "==", res.user.uid)
+                    .get()
+                    .then((querySnapshot) => {
+                        querySnapshot.forEach(function (doc) {
+                            console.log(doc.data());
+                            dispatch({ type: "GOT_USER", payload: doc.data() })
+                        });
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    })
             }).catch((error) => {
                 dispatch({ type: AUTH_FAILURE, payload: error.message });
                 console.error(error);
