@@ -7,6 +7,7 @@ import Loader from "react-loader-spinner";
 import useStyles from "./styles/_publicRoutes";
 import { Link } from "react-router-dom";
 import { loginWithEmail } from "../store/actions";
+import colors from "../helpers/colorPalette";
 
 import TextInput from "../components/inputs/TextInput"
 
@@ -36,7 +37,7 @@ function Login(props) {
         <div className={classes.container}>
             <Card className={classes.card}>
                 {props.started ? (
-                    <Loader type="Oval" color="#DA6991" height={80} width={80} />
+                    <Loader type="Oval" color={colors.primary} height={80} width={80} />
                 ) : (
                         <>
                             <h1 className={classes.logo}>Calliope</h1>

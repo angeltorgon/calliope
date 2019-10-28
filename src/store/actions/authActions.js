@@ -42,7 +42,8 @@ export const signupWithEmail = user => dispatch => {
         .then(res => {
             localStorage.setItem("token", res.user.ra);
             delete user.confirmPassword;
-            Users.add({ ...user, uid: res.user.uid, email, password }).then(response => {
+            delete user.password;
+            Users.add({ ...user }).then(response => {
                 dispatch({ type: AUTH_SUCCESS });
                 Users
                     .where("uid", "==", res.user.uid)

@@ -6,7 +6,7 @@ export default function EditButton() {
 
     return (
         <button className={classes.editButton}>
-            EDIT
+            EDIT PROFILE
         </button>
     )
 }
