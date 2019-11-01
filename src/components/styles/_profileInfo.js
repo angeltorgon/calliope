@@ -3,11 +3,10 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles(theme => ({
     profileInfoContainer: {
         heigtht: "800px",
-        border: "1px solid whitesmoke",
         maxWidth: "1000px",
         margin: "0 auto",
-        marginTop: "60px",
-        width: "100%"
+        width: "100%",
+        padding: "0 20px"
     },
     userStatsContainer: {
         display: "flex",

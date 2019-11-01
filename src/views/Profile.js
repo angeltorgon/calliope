@@ -4,7 +4,7 @@ import BottomNavbar from "../components/BottomNavbar";
 import PoemList from "../components/PoemList";
 import Navbar from "../components/Navbar";
 import { connect } from "react-redux";
-import ProfileHeader from "../components/dialogs/ProfileHeader";
+import ProfileHeader from "../components/ProfileHeader";
 import ProfileInfo from "../components/ProfileInfo";
 
 // import { fetchUser, fetchUserPosts } from "../store/actions";
