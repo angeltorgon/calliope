@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
@@ -11,6 +10,7 @@ import Home from "./views/Home";
 import Profile from "./views/Profile";
 import Write from "./views/Write";
 import Search from "./views/Search";
+import Settings from "./views/Settings";
 import PrivateRoute from "./helpers/PrivateRoute";
 import PublicRoute from "./helpers/PublicRoute";
 
@@ -38,6 +38,7 @@ class App extends Component {
                     <PrivateRoute path="/profile" component={Profile} />
                     <PrivateRoute path="/write" component={Write} />
                     <PrivateRoute path="/search" component={Search} />
+                    <PrivateRoute path="/settings" component={Settings} />
                     <PublicRoute exact path="/" component={Signup} />
                 </Switch>
             </div>
