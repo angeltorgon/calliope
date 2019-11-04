@@ -4,7 +4,9 @@ import SlateEditor from '../components/slate/SlateEditor';
 import WriteNavbar from '../components/slate/WriteNavbar';
 import WriteBottomNavbar from '../components/slate/WriteBottomNavbar';
 import useStyles from './styles/_write';
-import initialValue from '../components/slate/helpers/value'
+import initialValue from '../components/slate/helpers/value';
+
+import RichText from '../components/slate/RichText';
 
 export default function Write() {
     const [state, setState] = useState({
@@ -43,6 +45,7 @@ export default function Write() {
         <div className={classes.editorContainer}>
             <WriteNavbar handleSubmit={handleSubmit} />
             <SlateEditor onChange={onChange} value={state.value} />
+            <RichText />
             <WriteBottomNavbar />
         </div>
     )
