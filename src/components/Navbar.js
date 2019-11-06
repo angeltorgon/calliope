@@ -18,25 +18,24 @@ function Navbar(props) {
         props.history.push("/");
     };
 
+    if (!props.user) return null
+
     return (
-        <>
-            {props.user ? (
-                <div className={classes.nav}>
-                    <Link to="/" className={classes.link} >
-                        <h1 className={classes.logo}>Calliope</h1>
-                    </Link>
-                    <div className={classes.linkContainer}>
-                        <Link
-                            to="/"
-                            className={classes.linkPink}
-                            onClick={handleLogout}
-                        >
-                            <FontAwesomeIcon icon={faSignOutAlt} size="2x" color={colors.primary} />
-                        </Link>
-                    </div>
-                </div>
-            ) : null}</>
-    );
+        <div className={classes.nav}>
+            <Link to="/" className={classes.link} >
+                <h1 className={classes.logo}>Calliope</h1>
+            </Link>
+            <div className={classes.linkContainer}>
+                <Link
+                    to="/"
+                    className={classes.linkPink}
+                    onClick={handleLogout}
+                >
+                    <FontAwesomeIcon icon={faSignOutAlt} size="2x" color={colors.primary} />
+                </Link>
+            </div>
+        </div>
+    )
 }
 
 const mapStateToProps = state => {
