@@ -14,18 +14,17 @@ function Navbar(props) {
         props.history.goBack()
     };
 
+    if (!props.user) return null;
+
     return (
-        <>
-            {props.user ? (
-                <div className={classes.nav}>
-                    <div onClick={goBack}>
-                        <FontAwesomeIcon className={classes.backButton} icon={faAngleLeft} size="3x" color={colors.primary} />
-                    </div>
-                    <div className={classes.linkContainer}>
-                        <input className={classes.searchInput} placeholder="Search" />
-                    </div>
-                </div>
-            ) : null}</>
+        <div className={classes.nav}>
+            <div onClick={goBack}>
+                <FontAwesomeIcon className={classes.backButton} icon={faAngleLeft} size="3x" color={colors.primary} />
+            </div>
+            <div className={classes.linkContainer}>
+                <input className={classes.searchInput} placeholder="Search" />
+            </div>
+        </div>
     );
 }
 
