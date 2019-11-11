@@ -5,7 +5,7 @@ export default function Button() {
     const classes = useStyles();
 
     return (
-        <button className={classes.editButton}>
+        <button className={classes.saveButton}>
             Save
         </button>
     )
