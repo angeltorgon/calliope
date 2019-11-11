@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useStyles from './styles/_profileHeader';
-import EditButton from "./ buttons/EditButton.js";
+import EditButton from "./buttons/EditButton.js";
 
 
 export default function ProfileHeader() {
