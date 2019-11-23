@@ -6,7 +6,8 @@ const useStyles = makeStyles(theme => ({
         maxWidth: "1000px",
         margin: "0 auto",
         width: "100%",
-        padding: "0 20px"
+        padding: "0 20px",
+        marginTop: "80px"
     },
     userStatsContainer: {
         display: "flex",

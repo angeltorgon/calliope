@@ -7,7 +7,6 @@ export default function ProfileInfo() {
 
     return (
         <div className={classes.profileInfoContainer}>
-            <ProfileImage />
             <h1>Darla Jones</h1>
             <p>HTX &#8986; Love Live Laugh &#128512; Developer &#128421;</p>
             <div className={classes.userStatsContainer}>

@@ -15,6 +15,11 @@ const useStyles = makeStyles(theme => ({
     editButton: {
         color: "white",
         position: "absolute"
+    },
+    profileImageContainer: {
+        position: "absolute",
+        bottom: "-60px",
+        left: "100px"
     }
 }));
 
