@@ -3,7 +3,7 @@ import useStyles from './styles/_settings'
 import SettingsNavbar from '../components/SettingsNavbar'
 import ProfileImage from '../components/ProfileImage'
 import TextInput from '../components/inputs/TextInput'
-import Button from '../components/buttons/Button'
+import SecondaryButton from '../components/buttons/SecondaryButton'
 
 export default function Settings() {
     const classes = useStyles();
@@ -15,7 +15,7 @@ export default function Settings() {
                 <form>
                     <TextInput value="" placeholder="Full Name" />
                     <TextInput value="" placeholder="Bio" />
-                    <Button />
+                    <SecondaryButton title="Save"/>
                 </form>
             </div>
         </div>
