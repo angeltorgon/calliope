@@ -1,5 +1,5 @@
 import React from "react";
-import useStyles from "./styles/_profileContainer"
+import useStyles from "./styles/_profile"
 import BottomNavbar from "../components/BottomNavbar";
 import PoemList from "../components/PoemList";
 import Navbar from "../components/Navbar";

@@ -13,8 +13,9 @@ const useStyles = makeStyles(theme => ({
         boxShadow: "0 1px 3px 2px rgba(5, 5, 5, .3)",
     },
     editButton: {
-        color: "white",
-        position: "absolute"
+        position: "absolute",
+        bottom: "10px",
+        right: "20px"
     },
     profileImageContainer: {
         position: "absolute",

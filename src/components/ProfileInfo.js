@@ -1,6 +1,5 @@
 import React from 'react';
 import useStyles from "./styles/_profileInfo";
-import ProfileImage from "./ProfileImage";
 
 export default function ProfileInfo() {
     const classes = useStyles();
