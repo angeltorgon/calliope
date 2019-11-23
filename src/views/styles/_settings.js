@@ -11,6 +11,11 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         justifyContent: "center",
         padding: "10px"
+    },
+    form: {
+        maxWidth: "500px",
+        margin: "0 auto",
+        padding: "10px"
     }
 }));
 

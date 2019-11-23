@@ -14,7 +14,7 @@ export default function Settings() {
                 <div className={classes.profileImageContainer}>
                     <ProfileImage />
                 </div>
-                <form>
+                <form className={classes.form}>
                     <TextInput value="" placeholder="Full Name" />
                     <TextInput value="" placeholder="Bio" />
                     <SecondaryButton title="Save"/>
