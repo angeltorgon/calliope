@@ -11,7 +11,9 @@ export default function Settings() {
         <div>
             <SettingsNavbar />
             <div className={classes.settingsContainer}>
-                <ProfileImage />
+                <div className={classes.profileImageContainer}>
+                    <ProfileImage />
+                </div>
                 <form>
                     <TextInput value="" placeholder="Full Name" />
                     <TextInput value="" placeholder="Bio" />
