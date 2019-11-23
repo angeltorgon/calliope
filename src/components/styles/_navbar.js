@@ -16,14 +16,14 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-between",
         alignItems: "center",
         position: "fixed",
-        width: "100%"
+        width: "100%",
+        zIndex: "10"
     },
     menuButton: {
         marginRight: theme.spacing(2)
     },
     logo: {
         textDecoration: "none",
-        fontFamily: "charcoal",
         color: colors.primary,
         fontSize: "35px",
         height: "48px",
