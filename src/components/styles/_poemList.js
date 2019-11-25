@@ -1,3 +1,4 @@
+import makeStyles from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
     poemListContainer: {
@@ -8,3 +9,5 @@ const useStyles = makeStyles(theme => ({
         position: "absolute"
     }
 }));
+
+export default useStyles;
