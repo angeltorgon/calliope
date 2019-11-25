@@ -8,6 +8,9 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         flexDirection: "column"
     },
+    poemListContainer: {
+        paddintTop: "480px"
+    }
 }));
 
 export default useStyles;

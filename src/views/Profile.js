@@ -16,7 +16,7 @@ function Profile(props) {
             <Navbar />
             <ProfileHeader />
             <ProfileInfo />
-            <PoemList style={{ marginTop: "480px" }} />
+            <div><PoemList className={classes.poemListContainer}/></div>
             <BottomNavbar />
         </div>
     );

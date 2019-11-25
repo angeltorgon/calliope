@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Loader from "react-loader-spinner";
 import { connect } from "react-redux";
 import PoemList from "../components/PoemList.js";
 import Navbar from "../components/Navbar.js";
