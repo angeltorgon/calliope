@@ -4,13 +4,14 @@ import { connect } from "react-redux";
 import PoemList from "../components/PoemList.js";
 import Navbar from "../components/Navbar.js";
 import BottomNavbar from "../components/BottomNavbar";
-// import { fetchPoems } from "../store/actions";
+import useStyles from "./styles/_home"
 
 function Home() {
+    const classes = useStyles()
     return (
         <div>
             <Navbar />
-            <PoemList />
+            <div className={classes.poemListContainer} ><PoemList /></div>
             <BottomNavbar />
         </div>
     );
