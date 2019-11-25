@@ -8,7 +8,6 @@ export const USER = "USER";
 export const NO_USER = "NO_USER";
 export const GOT_USER = "GOT_USER";
 
-const Usernames = Firebase.Usernames;
 const Users = Firebase.Users;
 
 
