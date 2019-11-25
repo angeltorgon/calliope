@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import PoemCard from "./PoemCard";
-import { useStyles } from "./styles/_poemList";
-import { makeStyles } from "@material-ui/core";
-import { Value } from "slate";
+import useStyles from "./styles/_poemList";
 
 import Firebase from "../firebase"
 
