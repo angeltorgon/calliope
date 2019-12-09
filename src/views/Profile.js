@@ -16,7 +16,7 @@ function Profile(props) {
             <Navbar />
             <ProfileHeader />
             <ProfileInfo />
-            <div><PoemList className={classes.poemListContainer}/></div>
+            <div className={classes.poemListContainer}><PoemList /></div>
             <BottomNavbar />
         </div>
     );

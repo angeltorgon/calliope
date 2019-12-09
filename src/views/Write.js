@@ -45,7 +45,7 @@ export default function Write() {
         <div className={classes.editorContainer}>
             <WriteNavbar handleSubmit={handleSubmit} />
             <SlateEditor onChange={onChange} value={state.value} />
-            <RichText />
+            {/* <RichText /> */}
             <WriteBottomNavbar />
         </div>
     )

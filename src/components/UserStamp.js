@@ -9,6 +9,7 @@ export default function UserStamp(props) {
         <div className="container-left">
             <div className={classes.poemStamp}>
                 <img
+                    alt="user icon avatar"
                     className={classes.avatar}
                     src="https://img.icons8.com/material/96/000000/user--v1.png"
                 />
