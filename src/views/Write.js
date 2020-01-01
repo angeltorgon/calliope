@@ -6,47 +6,47 @@ import WriteBottomNavbar from '../components/slate/WriteBottomNavbar';
 import useStyles from './styles/_write';
 import initialValue from '../components/slate/helpers/value';
 
-import RichText from '../components/slate/RichText';
 
 export default function Write() {
     const [state, setState] = useState({
-        value: initialValue,
+        title: "",
+        body: ""
     });
 
     // On change, update the app's React state with the new editor value.
-    const onChange = ({ value }) => {
-        // Save the value to Local Storage.
-        const content = JSON.stringify(value.toJSON());
-
-        // Make api call here to save changeson drafts collection
-        localStorage.setItem('content', content)
-        setState({ value })
+    const onChange = (e) => {
+        setState({...state, [e.target.name]: e.target.value})
     };
 
     // Make reference to poems firebase collection
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const content = JSON.stringify(state.value.toJSON());
         // submit poem to published poem collection
-        Firebase.Poems.doc().set({
-            value: content,
-            username: "hellohello", // need to get this from state
-            createdAt: new Date(),
-            likes: [],
-            comments: [],
-            published: true,
-        }, { merge: true })
-        console.log("content", content);
+        // Firebase.Poems.doc().set({
+        //     value: content,
+        //     username: "hellohello", // need to get this from state
+        //     createdAt: new Date(),
+        //     likes: [],
+        //     comments: [],
+        //     published: true,
+        // }, { merge: true })
+        console.log("content", state);
     };
 
     const classes = useStyles();
     return (
         <div className={classes.editorContainer}>
-            <WriteNavbar handleSubmit={handleSubmit} />
-            <SlateEditor onChange={onChange} value={state.value} />
-            {/* <RichText /> */}
-            <WriteBottomNavbar />
+            <form onSubmit={handleSubmit}>
+                <input onChange={onChange} value={state.title} name="title" placeholder="Give it a spicy title" />
+                <textarea onChange={onChange} value={state.body} name="body" placeholder="Give it a spicy body"></textarea>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     )
 }
+
+// <WriteNavbar handleSubmit={handleSubmit} />
+// <SlateEditor onChange={onChange} value={state.value} />
+// {/* <RichText /> */}
+// <WriteBottomNavbar />
