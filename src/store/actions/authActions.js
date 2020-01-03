@@ -49,7 +49,6 @@ export const signupWithEmail = user => dispatch => {
                     .get()
                     .then((querySnapshot) => {
                         querySnapshot.forEach(function (doc) {
-                            console.log(doc.data());
                             dispatch({ type: "GOT_USER", payload: doc.data() })
                         });
                     })

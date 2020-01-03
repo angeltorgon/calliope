@@ -34,7 +34,7 @@ class App extends Component {
             <div className="app-container">
                 <Switch>
                     <PublicRoute path="/login" component={Login} />
-                    <PrivateRoute path="/home" component={Write} />
+                    <PrivateRoute path="/home" component={Home} />
                     <PrivateRoute path="/profile" component={Profile} />
                     <PrivateRoute path="/write" component={Write} />
                     <PrivateRoute path="/search" component={Search} />

@@ -3,6 +3,7 @@ import {
     AUTH_SUCCESS,
     AUTH_FAILURE,
     USER,
+    GOT_USER,
     NO_USER,
     CHECKING_USER
 } from "../actions";
@@ -27,6 +28,8 @@ export const authReducer = (state = initialState, action) => {
             return { started: true };
         case USER:
             return { finished: false, error: null, started: false, user: true };
+        case GOT_USER:
+            return { finished: false, error: null, started: false, user: action.payload };
         case NO_USER:
             return { finished: false, error: null, started: false, user: false };
         default:

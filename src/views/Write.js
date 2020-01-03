@@ -6,7 +6,6 @@ import WriteBottomNavbar from '../components/slate/WriteBottomNavbar';
 import useStyles from './styles/_write';
 import initialValue from '../components/slate/helpers/value';
 
-
 export default function Write() {
     const [state, setState] = useState({
         title: "",
@@ -37,11 +36,13 @@ export default function Write() {
     const classes = useStyles();
     return (
         <div className={classes.editorContainer}>
+            <WriteNavbar/>
             <form onSubmit={handleSubmit}>
                 <input onChange={onChange} value={state.title} name="title" placeholder="Give it a spicy title" />
                 <textarea onChange={onChange} value={state.body} name="body" placeholder="Give it a spicy body"></textarea>
                 <button type="submit">Submit</button>
             </form>
+            <WriteBottomNavbar/>
         </div>
     )
 }
