@@ -8,6 +8,17 @@ const useStyles = makeStyles(theme => ({
         justifyContent: "center",
         padding: "30px 0px 60px 0px",
         height: "100vh",
+    },
+    form: {
+        display: "flex",
+        flexDirection: "column",
+        minWidth: "500px"
+    },
+    title: {
+        height: "30px"
+    },
+    body: {
+        height: "400px"
     }
 }));
 

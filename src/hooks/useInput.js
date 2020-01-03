@@ -4,9 +4,9 @@ export default function useInput() {
     const [value, setValue] = useState();
 
 
-    const onChange = () => {
+    const handleChanges = (e) => {
         setValue({[e.target.name]: e.target.value})
     }
 
-    return [value, setValue]
+    return [value, setValue, handleChanges]
 }
